@@ -46,7 +46,7 @@ function (state, action) {
 }
 ```
 
-被称为reducer是因为其内部采用的
+被称为reducer是因为其内部采用了[Array.prototype.reduce\(\)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)方法。
 
 ## state 状态
 
