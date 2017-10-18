@@ -88,9 +88,12 @@ import * as types from './actionTypes'; // 这里的目录根据实际存放位�
 
 ```
 import * as types from './actionTypes';
+
+{
+  type: types.ADD_TODO,
+  text: 'I wanna go to PP'
+}
 ```
-
-
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
