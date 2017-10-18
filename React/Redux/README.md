@@ -128,7 +128,7 @@ export const DELETE_TODO = 'DELETE_TODO';
 import * as types from './actionTypes'; // 这里的目录根据实际存放位置配置
 ```
 
-修改之前的`action.js`文件：
+修改之前的`actions.js`文件：
 
 ```
 import * as types from './actionTypes';
@@ -153,6 +153,4 @@ function addTodo (text) {
 ```
 
 如此，我们每次只需要调用`addTodo(text)`就可以得到一个新的action。
-
-
 
