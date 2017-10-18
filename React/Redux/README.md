@@ -41,6 +41,8 @@ reducer是**绝对纯净**的函数。它用于接受当前的（旧的）`state
 
 ```
 function (state, action) {
+    //doSomething
+    return newState;
 }
 ```
 
