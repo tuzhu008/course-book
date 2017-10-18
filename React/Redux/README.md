@@ -162,5 +162,5 @@ function addTodo (text) {
 store.dispatch(addTodo('I wanna go to bed'));
 ```
 
-
+改变 store 内 state 的惟一途径是对它 dispatch 一个action。
 
