@@ -33,3 +33,9 @@ let store = createStore(reducer, initialState)
 
 但到此为止有一个问题，创建仓库所需的reducer还未可知。
 
+## Reducer
+
+
+
+
+
