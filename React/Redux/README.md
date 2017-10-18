@@ -47,7 +47,7 @@ state 有三个API:
 
 * getState\(\)  用来获取状态
 * dispatch\(action\)  用来分发action
-* subscribe\(listener\)  用来设置监听
+* subscribe\(listener\)  用来设置监听，它返回一个函数，用来取消监听。
 
 ## action
 
