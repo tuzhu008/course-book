@@ -60,8 +60,6 @@ action是把数据从应用传到store的有效载荷，**是store数据的唯�
 action只是一个普通的对象。基本结构：
 
 ```
-const ADD_TODO = 'ADD_TODO';
-
 {
   type: 'ADD_TODO',
   text: 'I wanna go to PP'
