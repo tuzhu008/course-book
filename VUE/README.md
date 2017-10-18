@@ -8,6 +8,8 @@ npm install --save redux
 
 \#使用
 
+\#\#创建仓库
+
 ```
 import  { createStore } from 'redux';
 ```
