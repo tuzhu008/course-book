@@ -20,6 +20,8 @@ npm install --save redux
 import  { createStore } from 'redux';
 ```
 
+1. 创建仓库
+
 ```
 createStore(reducer, initialState)
 ```
