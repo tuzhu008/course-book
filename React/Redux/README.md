@@ -23,7 +23,7 @@ import  { createStore } from 'redux';
 2、创建仓库
 
 ```
-let store = createStore(reducer, initialState)
+let store = createStore(rootReducer, initialState)
 ```
 
 * `reducer`  状态管理函数
