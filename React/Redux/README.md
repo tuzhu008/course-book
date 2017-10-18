@@ -48,7 +48,7 @@ function (state, action) {
 
 被称为reducer是因为其内部采用了[Array.prototype.reduce\(\)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)方法。
 
-在reduxer返回新的state来完成的。
+在reduxer中返回返回新的state来完成的。
 
 一个仓库只有一个根reducer
 
@@ -138,6 +138,4 @@ function addTodo (text) {
 ```
 
 如此，我们每次只需要调用`addTodo(text)`就可以得到一个新的action。
-
-
 
