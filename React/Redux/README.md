@@ -105,7 +105,7 @@ import * as types from './actionTypes';
 }
 ```
 
-由于action中包含了更新
+由于action中包含了更新state所需数据，而这些数据不是固定的。比我我们要修改一个用户的昵称，这个昵称可以被随时修改，如果我们将action写死的话，这个昵称就无法改变了。
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
