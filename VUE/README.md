@@ -27,6 +27,7 @@ createStore(reducer, initialState)
 ```
 
 * reducer  状态管理函数
+* initialState 
 
 
 
