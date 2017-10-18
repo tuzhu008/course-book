@@ -50,7 +50,7 @@ function (state, action) {
 
 Redux中，state的更新都是靠reduxer中返回新的state来完成的。
 
-一个仓库只有一个根reducer，根reducer可以根据需要拆分成更小的reducer。只要明白了reducer存在的原因——更新state,就明白了拆分reducer的原因也在此——state的拆分。因为reducer只负责管理
+一个仓库只有一个根reducer，根reducer可以根据需要拆分成更小的reducer。只要明白了reducer存在的原因——更新state,就明白了拆分reducer的原因也在此——state的拆分。因为reducer只负责管理全局
 
 切记，不要在reducer里执行如下操作：
 
