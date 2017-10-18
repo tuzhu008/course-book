@@ -12,7 +12,7 @@ npm install --save redux
 
 # 创建store \(仓库\)
 
-store是一个对象，
+store是一个对象，一个
 
 1、导入创建仓库的方法
 
