@@ -156,5 +156,7 @@ function addTodo (text) {
 
 # 触发更新
 
+创建好了store，
+
 
 
