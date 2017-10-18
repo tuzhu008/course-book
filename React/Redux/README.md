@@ -43,13 +43,12 @@ reducer是**绝对纯净**的函数。它用于接受当前的（旧的）state 
 
 state是store中用来存放实际的数据的对象。state不是唯一的，它们以对象树的方式存放在这个单一的store中。
 
-state 有三个API: 
+state 有三个API:
 
 * getState\(\)  用来获取状态
+* dispatch\(\)  用来分发
 
 ## action
-
-
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
