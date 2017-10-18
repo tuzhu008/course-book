@@ -55,7 +55,7 @@ state 有三个API:
 
 ## action
 
-action是把数据从应用传到store的有效载荷，**是store数据的唯一来源**。也就是说
+action是把数据从应用传到store的有效载荷，**是store数据的唯一来源**。action中包含了state更新的一切信息。
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
