@@ -68,7 +68,7 @@ const ADD_TODO = 'ADD_TODO';
 }
 ```
 
-action一定含有一个值为**字符串**的type属性，这个属性用来唯一标识了一个action,也表示将要执行的动作。
+action一定含有一个值为**字符串**的type属性，这个属性用来唯一标识了一个action,也表示将要执行的操作。
 
 在
 
