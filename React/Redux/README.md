@@ -58,7 +58,16 @@ Redux中，state的更新都是靠reduxer中返回新的state来完成的。
 * 执行有副作用的操作，如 API 请求和路由跳转
 * 调用非纯函数，如`Date.now()`或`Math.random()`
 
-上面的reducer函数还可以使用ES6的默认值语法来精简
+上面的reducer函数还可以使用ES6的默认值语法来优化：
+
+```
+function (state, action) {
+    //doSomething
+    return newState;
+}
+```
+
+
 
 ## state 状态
 
