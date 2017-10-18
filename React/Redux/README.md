@@ -12,8 +12,6 @@ npm install --save redux
 
 # 创建仓库
 
-
-
 1、导入创建仓库的方法
 
 ```
@@ -33,7 +31,7 @@ let store = createStore(reducer, initialState)
 
 但到此为止有一个问题，创建仓库所需的reducer还未可知。
 
-## Reducer
+# Reducer
 
 reducer是**绝对纯净**的函数。它用于接受当前的（旧的）state 和 action,然后返回一个新的state。
 
