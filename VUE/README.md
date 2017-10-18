@@ -21,12 +21,8 @@ import  { createStore } from 'redux';
 createStore语法：
 
 ```
-createStore(reducer, 
+createStore(reducer, initialState)
 ```
-
-
-
-
 
 ---
 
