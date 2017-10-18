@@ -59,7 +59,8 @@ action是把数据从应用传到store的有效载荷，**是store数据的唯�
 
 ```
 {
-  type: 
+  type: ADD_TODO,
+  text: ''
 }
 ```
 
