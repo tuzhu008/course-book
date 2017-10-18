@@ -46,8 +46,8 @@ state是store中用来存放实际的数据的对象。state不是唯一的，�
 state 有三个API:
 
 * getState\(\)  用来获取状态
-* dispatch\(\)  用来分发
-
+* dispatch\(\)  用来分发action
+* 
 ## action
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
