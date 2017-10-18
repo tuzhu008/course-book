@@ -78,7 +78,11 @@ export const ADD_TODO = 'ADD_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 ```
 
-在使用
+在需要使用到`type`的文件内
+
+```
+import * as types from './actionTypes'; // 这里的目录根据实际存放位置配置
+```
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
