@@ -152,11 +152,9 @@ function addTodo (text) {
 
 如此，我们每次只需要调用`addTodo(text)`就可以得到一个新的action。
 
-
-
 ---
 
-# 触发
+# 触发更新
 
 
 
