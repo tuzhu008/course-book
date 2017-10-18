@@ -23,7 +23,7 @@ import  { createStore } from 'redux';
 1. 创建仓库
 
 ```
-const store = createStore(reducer, initialState)
+let store = createStore(reducer, initialState)
 ```
 
 * reducer  状态管理函数
