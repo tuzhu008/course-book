@@ -26,7 +26,7 @@ createStore语法：
 createStore(reducer, initialState)
 ```
 
-* reducer  状态
+* reducer  状态管理函数
 
 
 
