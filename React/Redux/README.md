@@ -159,7 +159,7 @@ function addTodo (text) {
 创建好了store，如何才能触发这些更新呢？使用store的`dispatch`一个action。
 
 ```
-store.dispatch(addTodo(''));
+store.dispatch(addTodo('I wanna go to bed'));
 ```
 
 
