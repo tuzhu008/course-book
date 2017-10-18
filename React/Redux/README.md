@@ -31,5 +31,5 @@ let store = createStore(reducer, initialState)
 
 在实际应用中，我们可以将接收到的服务器数据直接用于初始化仓库。
 
-但到此为止有一个问题，创建仓库所需的reducer还未定义
+但到此为止有一个问题，创建仓库所需的`reducer`还未定义
 
