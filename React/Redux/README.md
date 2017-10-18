@@ -78,6 +78,8 @@ export const ADD_TODO = 'ADD_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 ```
 
+在使用
+
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
 一个仓库只有一个根reducer
