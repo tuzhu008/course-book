@@ -70,7 +70,19 @@ action一定含有一个值为**字符串**的type属性，这个属性用来唯
 
 除了`type`属性外，action对象的结构可以自由增添。**但我们应该尽量减少在action中传递的数据**。
 
-我们常把action的`type`使用`const`声明为一个常量。虽然这样做并不是必须的，但这个一个好的实践，有助于减少错误和便于团队开发。在实际的项目中，这些action可能非常复杂和繁多，因此非常有必要对它进行管理。我们可以将`type`的常量声明全部都提取到一个单独的`actionTypes.js`文件中：
+我们常把action的`type`使用`const`声明为一个常量。虽然这样做并不是必须的，但这个一个好的实践，有助于减少错误和便于团队开发。
+
+```
+const ADD_TODO = 'ADD_TODO';
+{
+  type: ADD_TODO,
+  text: 'I wanna go to PP'
+}
+```
+
+
+
+在实际的项目中，这些action可能非常复杂和繁多，因此非常有必要对它进行管理。我们可以将`type`的常量声明全部都提取到一个单独的`actionTypes.js`文件中：
 
 ```
 export const ADD_TODO = 'ADD_TODO';
