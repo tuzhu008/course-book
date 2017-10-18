@@ -27,7 +27,7 @@ let store = createStore(rootReducer, initialState)
 ```
 
 * `rootReducer`  状态管理函数
-* `initialState`  用来初始化state的参数，这个参数是**可选的**，如果省略，创建完成后仓库的state为undefined
+* `initialState`  用来初始化state的参数，这个参数是**可选的**，如果省略，创建完成后仓库的state为`undefined`
 
 在实际应用中，我们可以将接收到的服务器数据直接用于初始化仓库。
 
