@@ -55,6 +55,8 @@ state 有三个API:
 
 ## action
 
+action是把
+
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
 一个仓库只有一个根reducer
