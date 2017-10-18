@@ -41,7 +41,7 @@ reducer是**绝对纯净**的函数。它用于接受当前的（旧的）state 
 
 ## state 状态
 
-state是用来
+state是store中用来存放实际的数据的
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
