@@ -37,7 +37,7 @@ let store = createStore(reducer, initialState)
 
 # Reducer
 
-reducer是**绝对纯净**的函数。它用于接受当前的（旧的）state 和 action,然后返回一个新的state。
+reducer是**绝对纯净**的函数。它用于接受当前的（旧的）`state` 和 `action`,然后返回一个新的`state`。
 
 ## state 状态
 
