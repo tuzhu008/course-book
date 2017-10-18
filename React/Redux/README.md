@@ -48,6 +48,12 @@ function (state, action) {
 
 被称为reducer是因为其内部采用了[Array.prototype.reduce\(\)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)方法。
 
+切记，不要在reducer里执行如下操作：
+
+* 修改传入参数
+* 执行有副作用的操作，如 API 请求和路由跳转；
+* 调用非纯函数，如`Date.now()`或`Math.random()`
+
 ## state 状态
 
 state是store中用来存放实际的数据。它可以是基本的数据类型，也可以是对象、数组、甚至是类似于[Immutable.js](http://facebook.github.io/immutable-js/)生成的数据结构。
