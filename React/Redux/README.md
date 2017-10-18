@@ -12,7 +12,7 @@ npm install --save redux
 
 # 创建store \(仓库\)
 
-store是一个对象，一个应用中只能有唯一一个store。
+store是一个对象，一个应用中只能有唯一一个store。里面存放了所有的数据。
 
 1、导入创建仓库的方法
 
