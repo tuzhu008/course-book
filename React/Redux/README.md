@@ -55,15 +55,22 @@ state 有三个API:
 
 ## action
 
-action是把数据从应用传到store的有效载荷，**是store数据的唯一来源**。action中包含了state更新的一切信息。action只是一个普通的对象。基本结构：
+action是把数据从应用传到store的有效载荷，**是store数据的唯一来源**。action中包含了state更新的一切信息。
+
+action只是一个普通的对象。基本结构：
 
 ```
 const ADD_TODO = 'ADD_TODO';
+
 {
   type: ADD_TODO,
   text: 'I wanna go to PP'
 }
 ```
+
+action一定含有一个值为**字符串**的type属性，
+
+
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
