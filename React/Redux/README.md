@@ -50,7 +50,7 @@ function (state, action) {
 
 Redux中，state的更新都是靠reduxer中返回新的state来完成的。
 
-一个仓库只有一个根reducer
+一个仓库只有一个根reducer，根reducer可以根据需要拆分成更小的reducer。
 
 切记，不要在reducer里执行如下操作：
 
