@@ -68,9 +68,7 @@ const ADD_TODO = 'ADD_TODO';
 }
 ```
 
-action一定含有一个值为**字符串**的type属性，
-
-
+action一定含有一个值为**字符串**的type属性，这个属性用来唯一标识了一个action,也示意了action的目的。
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
