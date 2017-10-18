@@ -48,6 +48,8 @@ function (state, action) {
 
 被称为reducer是因为其内部采用了[Array.prototype.reduce\(\)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)方法。
 
+在
+
 切记，不要在reducer里执行如下操作：
 
 * 修改传入参数
