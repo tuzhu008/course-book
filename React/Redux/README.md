@@ -80,8 +80,6 @@ const ADD_TODO = 'ADD_TODO';
 }
 ```
 
-
-
 在实际的项目中，这些action可能非常复杂和繁多，因此非常有必要对它进行管理。我们可以将`type`的常量声明全部都提取到一个单独的`actionTypes.js`文件中：
 
 ```
@@ -106,6 +104,8 @@ import * as types from './actionTypes';
   text: 'I wanna go to PP'
 }
 ```
+
+由于action中包含了更新
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
 
