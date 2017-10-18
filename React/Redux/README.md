@@ -61,13 +61,11 @@ Redux中，state的更新都是靠reduxer中返回新的state来完成的。
 上面的reducer函数还可以使用ES6的默认值语法来优化：
 
 ```
-function (state, action) {
+function (state = defualtSate, action) {
     //doSomething
     return newState;
 }
 ```
-
-
 
 ## state 状态
 
