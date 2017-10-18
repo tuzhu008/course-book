@@ -14,11 +14,15 @@ npm install --save redux
 
 ## 创建仓库
 
-
-
 ```
 import  { createStore } from 'redux';
 ```
+
+createStore语法：
+
+
+
+
 
 ---
 
