@@ -156,5 +156,11 @@ function addTodo (text) {
 
 # 触发更新
 
-创建好了store，如何才能触发这些更新呢？使用store的dispatch
+创建好了store，如何才能触发这些更新呢？使用store的`dispatch`一个action。
+
+```
+store.dispatch(
+```
+
+
 
