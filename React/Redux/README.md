@@ -20,9 +20,7 @@ npm install --save redux
 import  { createStore } from 'redux';
 ```
 
-
-
-创建仓库
+  2. 创建仓库
 
 ```
 let store = createStore(reducer, initialState)
