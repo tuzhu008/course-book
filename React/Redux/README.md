@@ -51,7 +51,7 @@ function (state, action) {
 切记，不要在reducer里执行如下操作：
 
 * 修改传入参数
-* 执行有副作用的操作，如 API 请求和路由跳转；
+* 执行有副作用的操作，如 API 请求和路由跳转
 * 调用非纯函数，如`Date.now()`或`Math.random()`
 
 ## state 状态
