@@ -26,8 +26,8 @@ import  { createStore } from 'redux';
 let store = createStore(reducer, initialState)
 ```
 
-* reducer  状态管理函数
-* initialState  用来初始化state的参数，这个参数是**可选的**，如果省略，创建完成后仓库的state为undefined
+* `reducer`  状态管理函数
+* `initialState`  用来初始化state的参数，这个参数是**可选的**，如果省略，创建完成后仓库的state为undefined
 
 在实际应用中，我们可以将接收到的服务器数据直接用于初始化仓库。
 
