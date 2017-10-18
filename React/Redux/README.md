@@ -49,6 +49,8 @@ state 有三个API:
 * dispatch\(action\)  用来分发action
 * subscribe\(listener\)  用来设置监听，它返回一个函数，用来取消监听。
 
+从上面的API可以看到，state是没有setter方法的，因此它不能被
+
 ## action
 
 整个Redux state的更新都是靠reduxer返回新的state来完成的。
