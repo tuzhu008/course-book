@@ -41,7 +41,9 @@ reducer是**绝对纯净**的函数。它用于接受当前的（旧的）state 
 
 ## state 状态
 
-state是store中用来存放实际的数据的对象。state不是唯一的，它们以对象树的方式存放在这个单一的store中。
+state是store中用来存放实际的数据。它可以是基本的数据类型，也可以是对象、数组、甚至是类似于Immutable.js生成的数据结构。
+
+state不是唯一的，它们以对象树的方式存放在这个单一的store中。
 
 state 有三个API:
 
@@ -49,7 +51,7 @@ state 有三个API:
 * dispatch\(action\)  用来分发action
 * subscribe\(listener\)  用来设置监听，它返回一个函数，用来取消监听。
 
-从上面的API可以看到，state是没有setter方法的，因此它不能被直接修改。想要修改state只能
+从上面的API可以看到，state是没有setter方法的，因此它不能被直接修改。想要修改state只能返回一个新的state。
 
 ## action
 
