@@ -110,10 +110,10 @@ import * as types from './actionTypes';
 ```
 import * as types from './actionTypes';
 
-function addTodo () {
+function addTodo (text) {
     return {
       type: types.ADD_TODO,
-      
+
     };
 }
 ```
