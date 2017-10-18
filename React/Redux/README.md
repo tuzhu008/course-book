@@ -35,7 +35,5 @@ let store = createStore(reducer, initialState)
 
 ## Reducer
 
-
-
-
+reducer是ju嗯对纯净的
 
