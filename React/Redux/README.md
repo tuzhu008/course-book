@@ -63,7 +63,7 @@ action只是一个普通的对象。基本结构：
 const ADD_TODO = 'ADD_TODO';
 
 {
-  type: ADD_TODO,
+  type: 'ADD_TODO',
   text: 'I wanna go to PP'
 }
 ```
