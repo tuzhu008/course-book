@@ -67,7 +67,7 @@ function (state = defualtSate, action) {
 }
 ```
 
-当
+当reducer被调用时，若传入的**`state === undefined`**，那么state就会被赋予默认值。注意：是全等
 
 ## 
 
