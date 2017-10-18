@@ -39,6 +39,11 @@ let store = createStore(reducer, initialState)
 
 reducer是**绝对纯净**的函数。它用于接受当前的（旧的）`state` 和 `action`,然后返回一个新的`state`。
 
+```
+function (state, action) {
+}
+```
+
 ## state 状态
 
 state是store中用来存放实际的数据。它可以是基本的数据类型，也可以是对象、数组、甚至是类似于[Immutable.js](http://facebook.github.io/immutable-js/)生成的数据结构。
@@ -56,8 +61,6 @@ state 有三个API:
 ## action
 
 action是把数据从应用传到store的有效载荷，**是store数据的唯一来源**。action中包含了state更新的一切信息。
-
-
 
 action只是一个普通的对象。基本结构：
 
