@@ -58,6 +58,8 @@ Redux中，state的更新都是靠reduxer中返回新的state来完成的。
 * 执行有副作用的操作，如 API 请求和路由跳转
 * 调用非纯函数，如`Date.now()`或`Math.random()`
 
+上面的reducer函数还可以使用ES6的默认值语法来精简
+
 ## state 状态
 
 state是store中用来存放实际的数据。它可以是基本的数据类型，也可以是对象、数组、甚至是类似于[Immutable.js](http://facebook.github.io/immutable-js/)生成的数据结构。
