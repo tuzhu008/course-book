@@ -46,6 +46,8 @@ function (state, action) {
 }
 ```
 
+被称为reducer是因为其内部采用的
+
 ## state 状态
 
 state是store中用来存放实际的数据。它可以是基本的数据类型，也可以是对象、数组、甚至是类似于[Immutable.js](http://facebook.github.io/immutable-js/)生成的数据结构。
