@@ -113,7 +113,7 @@ import * as types from './actionTypes';
 function addTodo (text) {
     return {
       type: types.ADD_TODO,
-      text: text
+      text // text: text的简写
     };
 }
 ```
