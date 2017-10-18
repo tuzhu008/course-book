@@ -10,14 +10,14 @@ npm install --save redux
 
 ---
 
-# 使用
+# 创建store \(仓库\)
 
-## 创建仓库
+store是一个对象，一个应用中只能有唯一一个store。里面存放了所有的数据。
 
 1、导入创建仓库的方法
 
 ```
-import  { createStore } from 'redux';1、
+import  { createStore } from 'redux';
 ```
 
 2、创建仓库
@@ -31,5 +31,31 @@ let store = createStore(reducer, initialState)
 
 在实际应用中，我们可以将接收到的服务器数据直接用于初始化仓库。
 
-但到此为止有一个问题，创建仓库所需的`reducer`还未定义
+但到此为止有一个问题，创建仓库所需的reducer还未可知。
+
+---
+
+# Reducer
+
+reducer是**绝对纯净**的函数。它用于接受当前的（旧的）state 和 action,然后返回一个新的state。
+
+## state 状态
+
+state是store中用来存放实际的数据。它可以是基本的数据类型，也可以是对象、数组、甚至是类似于[Immutable.js](http://facebook.github.io/immutable-js/)生成的数据结构。
+
+state不是唯一的，它们以对象树的方式存放在这个单一的store中。
+
+state 有三个API:
+
+* getState\(\)  用来获取状态
+* dispatch\(action\)  用来分发action
+* subscribe\(listener\)  用来设置监听，它返回一个函数，用来取消监听。
+
+从上面的API可以看到，state是没有setter方法的，因此它不能被直接修改。想要修改state只能返回一个新的state。
+
+## action
+
+整个Redux state的更新都是靠reduxer返回新的state来完成的。
+
+一个仓库只有一个根reducer
 
