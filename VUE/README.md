@@ -27,7 +27,7 @@ createStore(reducer, initialState)
 ```
 
 * reducer  状态管理函数
-* initialState  用来初始化state的
+* initialState  用来初始化state的参数
 
 
 
