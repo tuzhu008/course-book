@@ -35,5 +35,5 @@ let store = createStore(reducer, initialState)
 
 ## Reducer
 
-reducer是绝对纯净的
+reducer是绝对纯净的函数。
 
