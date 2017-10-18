@@ -10,7 +10,9 @@ npm install --save redux
 
 ---
 
-# 创建仓库
+# 创建store \(仓库\)
+
+
 
 1、导入创建仓库的方法
 
