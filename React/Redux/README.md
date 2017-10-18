@@ -48,7 +48,7 @@ function (state, action) {
 
 被称为reducer是因为其内部采用了[Array.prototype.reduce\(\)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)方法。
 
-Redux中，state的更新在reduxer中返回新的state来完成的。
+Redux中，state的更新都是靠reduxer中返回新的state来完成的。
 
 一个仓库只有一个根reducer
 
