@@ -3,7 +3,7 @@
 \#安装
 
 ```
-npm install
+npm install --save redux
 ```
 
 
