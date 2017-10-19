@@ -50,7 +50,7 @@ ReactDOM.render(
 它不修改传递给它的组件类;相反，它**返回**一个新的、连接的组件类，供您使用。
 
 <a id="connect-arguments"></a>
-#### Arguments
+#### Arguments 参数
 
 * [`mapStateToProps(state, [ownProps]): stateProps`] \(*函数*): 如果指定了这个参数，新组件将订阅Redux store的更新。这意味着任何时候store更新, `mapStateToProps` 都将被调用. `mapstatetoprop`的结果必须是一个简单的对象，它将被合并到组件的props中。如果您不想订阅store更新，可以通过`null`或`undefined`替代`mapStateToProps`。
 
