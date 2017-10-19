@@ -72,7 +72,7 @@ ReactDOM.render(
 
   >注意: 在高级场景中，需要对渲染性能进行更多的控制，`mapDispatchToProps()`也可以返回一个函数。在本例中，*该函数*将作为一个`mapDispatchToProps()`被用于特定的组件实例。这允许您执行每个实例的记忆化。您可以参考[# 279](https://github.com/reactjs/react-redux/pull/279)和测试它添加更多的细节。大多数应用都不需要这样。
 
-* [`mergeProps(stateProps, dispatchProps, ownProps): props`] \(*函数*): 如果指定了，它将传递`mapStateToProps()`、`mapDispatchToProps()`的结果，以及父母的props。从它返回的普通对象将作为props传递到它的包裹组件。您可以指定这个函数来选择一个基于props的状态的一部分，或者将action创建者绑定到一个来自props的特定的变量上。如果你省略了它，默认使用`Object.assign({}, ownProps, stateProps, dispatchProps)`。
+* [`mergeProps(stateProps, dispatchProps, ownProps): props`] \(*函数*): 如果指定了，它将传递`mapStateToProps()`、`mapDispatchToProps()`的结果，以及父母的props。从它返回的普通对象将作为props传递到它的包裹组件。您可以指定这个函数来选择一个基于props的状态的一部分，或者将action创建者绑定到一个来自props的特定的变量上。如果你省略了它，默认使用`Object.assign({}, ownProps, stateProps, dispatchProps)`。
 
 * [`options`] *(对象)* 如果指定了，进一步定制连接器的行为。除了可传递到`connectAdvanced()`的选项之外(见下面的)，`connect()`接受这些额外的选项:
   * [`pure`] *(布尔值)*: 为真,如果相关的props/state对象在它们各自的相等性检查中保持相等，`connect()`将避免重新渲染和调用`mapStateToProps`, `mapDispatchToProps`, 和 `mergeProps` 。假设包裹组件是一个“pure(纯)”组件，并且不依赖于任何输入或状态，除了它的props和所选的Redux store的state。默认值:`true`
