@@ -79,7 +79,7 @@ ReactDOM.render(
   * [`areStatesEqual`] *(函数)*: 当 `pure`为真时， 将传入的store state与之前的值进行比较 默认值: `全等 (===)`
   * [`areOwnPropsEqual`] *(函数)*: 当 `pure`为真时， 将传入的props与之前的值进行比较 默认值: `相等 (==）`
   * [`areStatePropsEqual`] *(函数)*: 当 `pure`为真时，将 `mapStateToProps` 的结果和之前的值进行比较，默认值: `相等 (==）`
-  * [`areMergedPropsEqual`] *(函数)*:当 `pure`为真时，将】 `mergeProps`的结果和之前的值进行比较， 默认值: `shallowEqual`
+  * [`areMergedPropsEqual`] *(函数)*:当 `pure`为真时，将】 `mergeProps`的结果和之前的值进行比较， 默认值: `shallowEqual`
   * [`storeKey`] *(字符串)*: 它是读取store上下文的关键。如果您处于不明智的位置————拥有多个store，那么您可能只需要这样做。 默认值: `'store'`
 
 <a id="connect-arguments-arity"></a>
