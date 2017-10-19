@@ -60,15 +60,15 @@ ReactDOM.render(
 
   >`mapStateToProps`函数接受整个Redux store的state作为单一参数，并返回一个对象来作为props被传递的。它通常被称为**选择器**。有效地利用[重新选择](https://github.com/reactjs/reselect)来有效地组合选择器和[计算导出的数据](http://redux.js.org/docs/recipes/ComputingDerivedData.html)。
 
-* [`mapDispatchToProps(dispatch, [ownProps]): dispatchProps`] \(*对象* 或者 *函数*): 如果一个对象被传递，它内部的每个函数都被假定为Redux action 创建者。一个具有相同函数名的对象，但是将每个action创建者封装到一个`dispatch`调用中，这样它们就可以直接被调用，将被合并到组件的props中。
+* [`mapDispatchToProps(dispatch, [ownProps]): dispatchProps`] \(*对象* 或者 *函数*): 如果传入的是一个对象，它内部的每个函数都被假定为Redux action 创建者。一个具有相同函数名的对象，但是将每个action创建者封装到一个`dispatch`调用中，这样它们就可以直接被调用，将被合并到组件的props中。
 
-   如果一个函数被传递，它将作为第一个参数被`dipatch`。您需要返回一个对象，该对象以某种方式使用分派来以您自己的方式绑定动作创建者。你可以按你的方式来返回一个以某种方式使用`dispatch`来绑定action创建者的对象，(提示:您可以使用Redux中的 [bindActionCreators()](http://reactjs.github.io/redux/docs/api/bindActionCreators.html) 助手。)
+   如果传入的是一个函数，它将作为第一个参数被`dipatch`。您需要返回一个对象，该对象以某种方式使用分派来以您自己的方式绑定动作创建者。你可以按你的方式来返回一个以某种方式使用`dispatch`来绑定action创建者的对象，(提示:您可以使用Redux中的 [bindActionCreators()](http://reactjs.github.io/redux/docs/api/bindActionCreators.html) 助手。)
   
 
   如果您的`mapDispatchToProps`函数被声明为带两个参数，那么`dispatch`将作为第一个参数被调用，并且props作为第二个参数传递给连接组件，当连接的组件接收到新的props时，函数将被重新调用。(第二个参数通常是按惯例将其作为`ownProps`。)
 
 
-  如果您不提供自己的`mapDispatchToProps`函数或包含action创建者的对象，那么默认的`mapDispatchToProps`实现只将`dispatch`注入到你的组件的props中。
+  如果您不提供自己的`mapDispatchToProps`函数或包含action创建者的对象，那么默认的`mapDispatchToProps`实现只将`dispatch`注入到你的组件的props中。
 
   >注意: 在高级场景中，需要对渲染性能进行更多的控制，`mapDispatchToProps()`也可以返回一个函数。在本例中，*该函数*将作为一个`mapDispatchToProps()`被用于特定的组件实例。这允许您执行每个实例的记忆化。您可以参考[# 279](https://github.com/reactjs/react-redux/pull/279)和测试它添加更多的细节。大多数应用都不需要这样。
 
