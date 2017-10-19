@@ -10,7 +10,7 @@ React与 [Redux](https://github.com/reactjs/redux). 的官方绑定方案
 [![redux channel on slack](https://img.shields.io/badge/slack-redux@reactiflux-61DAFB.svg?style=flat-square)](http://www.reactiflux.com)
 
 
-## 安装 
+## 安装
 
 
 React Redux 需要 **React 0.14 或者更高版本.**
@@ -19,7 +19,7 @@ React Redux 需要 **React 0.14 或者更高版本.**
 npm install --save react-redux
 ```
 
-假设您使用的是 [npm](http://npmjs.com/) 包管理器，其中有一个模块打包器，比如[Webpack](https://webpack.js.org/) 或者 [Browserify](http://browserify.org/) 以使用[CommonJS 模块](http://webpack.github.io/docs/commonjs.html).
+假设您使用的是 [npm](http://npmjs.com/) 包管理器，其中有一个模块打包器，比如[Webpack](https://webpack.js.org/) 或者 [Browserify](http://browserify.org/) 以使用[CommonJS 模块](http://webpack.github.io/docs/commonjs.html)。
 
 
 如果您还没有使用[npm](http://npmjs.com/)或现代模块打包器，并且更喜欢使用一个单文件[UMD](https://github.com/umdjs/umd)构建，使您可以使用一个全局对象，那么您可以从[cdnjs](https://cdnjs.com/libraries/react-redux)中获取一个预构建版本。对于任何严肃的应用程序，我们都**不推荐**这种方法，因为大多数与Redux互补的库只在[npm](http://npmjs.com/)上可用。
