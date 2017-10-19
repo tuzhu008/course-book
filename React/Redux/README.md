@@ -188,7 +188,11 @@ npm install --save react-redux
 
 阅读更多关于[react-redux](https://github.com/tuzhu008/course-book/tree/master/React/react-redux)信息
 
-我们在应用的根目录获取react-redux库的 `Provider`
+## 引入容器`Provider`
+
+`Provider`让Redux store可用,以使connect()在下面的组件层次结构中调用。
+
+我们在应用的入口文件`index.js`中获取react-redux库的 `Provider`
 
 ```
 import { Provider } from 'react-redux';
@@ -212,6 +216,30 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+`index.js`如：
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import store from './store/index';
+import { Provider } from 'react-redux';
 
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+registerServiceWorker();
 
+```
+## `connect`
 
+`connect`用来将一个React组件连接到React store。它返回一个新的,已连接的新组件。
+
+引入`connect`
+```
+import { connect } from 'react-redux';
+```

@@ -390,7 +390,6 @@ export default connect(mapStateToPropsFactory, mapDispatchToPropsFactory)(TodoAp
 <a id="connectAdvanced-returns"></a>
 #### Returns
 
-A higher-order React component class that builds props from the store state and passes them to the wrapped component. A higher-order component is a function which accepts a component argument and returns a new component.
 一个高阶React组件类，它构建来自store state的props，并将它们传递给包裹组件。一个高阶组件是一个接受组件参数并返回一个新组件的函数。
 
 ##### 静态属性
