@@ -175,30 +175,7 @@ Redux保持单向数据流，并且是严格。
 Redux数据的生命周期：
 
 1. 调用store.dispatch\(action\)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+2. store调用传入的reducer函数
 
 
 
