@@ -45,7 +45,7 @@ ReactDOM.render(
 <a id="connect"></a>
 ### `connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])`
 
-连接一个React组件到Redux store. `connect`是`connectAdvanced`的外观，为最常见的用例提供了一个方便的API。
+连接一个React组件到Redux store。`connect`是`connectAdvanced`的外观，为最常见的用例提供了一个方便的API。
 
 它不修改传递给它的组件类;相反，它**返回**一个新的、连接的组件类，供您使用。
 
