@@ -9,7 +9,7 @@
 
 #### Props
 
-* `store` (*[Redux Store](http://cn.redux.js.org//docs/basics/Store.html)*): 应用程序中只有有一个单一的store.
+* `store` (*[Redux Store](http://cn.redux.js.org//docs/basics/Store.html)*): 应用程序中只有有一个单一的store.
 * `children` (*React元素*) 根组件
 
 #### 案例
