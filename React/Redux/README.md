@@ -187,3 +187,23 @@ npm install --save react-redux
 ```
 
 阅读更多关于[react-redux](https://github.com/tuzhu008/course-book/tree/master/React/react-redux)信息
+
+我们在应用的根目录获取react-redux库的 `Provider`
+```
+import { Provider } from 'react-redux';
+```
+`Provider`是一个容器组件
+
+导入创建成功的store
+```
+import store from './store/index';
+```
+然后使用`Provider`封装App组件：
+```
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+```
