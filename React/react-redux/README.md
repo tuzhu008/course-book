@@ -32,7 +32,7 @@ npm install --save react-redux
 
 ## 文档
 
-- [Redux: 搭配React](http://cn.redux.js.org//docs/basics/UsageWithReact.html)
+- [Redux: 搭配React](http://www.redux.org.cn/docs/basics/UsageWithReact.html)
 - [API](docs/api.md#api)
   - [`<Provider store>`](docs/api.md#provider-store)
   - [`connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])`](docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
