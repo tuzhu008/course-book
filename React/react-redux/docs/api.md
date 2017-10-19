@@ -127,26 +127,26 @@ const mapStateToProps = (...args) => {
 
 * 如果您有不纯的，改变store state的reducers，您可能希望覆盖`areStatesEqual`来总是返回false(`areStatesEqual: () => false`)。(这也可能会影响其他的相等检查，取决于您的`mapStateToProps`函数。)
 
-* You may wish to override `areOwnPropsEqual` as a way to whitelist incoming props. You'd also have to implement `mapStateToProps`, `mapDispatchToProps` and `mergeProps` to also whitelist props. (It may be simpler to achieve this other ways, for example by using [recompose's mapProps](https://github.com/acdlite/recompose/blob/master/docs/API.md#mapprops).)
+* 您可能希望重写`areOwnPropsEqual`，作为一种将传入的props进行白名单的方法。您还必须使`mapStateToProps`、`mapDispatchToProps`和`mergeProps`同时实现白名单。(可能更简单的实现这一其他方面,例如通过使用[重组的mapProps](https://github.com/acdlite/recompose/blob/master/docs/API.md#mapProps)。
 
-* You may wish to override `areStatePropsEqual` to use `strictEqual` if your `mapStateToProps` uses a memoized selector that will only return a new object if a relevant prop has changed. This would be a very slight performance improvement, since would avoid extra equality checks on individual props each time `mapStateToProps` is called.
+* 如果你的`mapstatetoprop`使用了一个在相关的prop发生了变化，仅返回一个新的对象的记忆体选择器，你可能会想要重写`areStatePropsEqual`来使用`strictEqual`。这将是一个非常轻微的性能改进，因为每次调用`mapstatetoprop`时，都会避免对个别的props进行额外的相等检查。
 
-* You may wish to override `areMergedPropsEqual` to implement a `deepEqual` if your selectors produce complex props. ex: nested objects, new arrays, etc. (The deep equal check should be faster than just re-rendering.)
+* 如果您的选择器产生复杂的props，您可能希望覆盖`areMergedPropsEqual`来实现一个`deepEqual(深度相等）`。比如，嵌套对象、新数组等(深度相等的检查应该比重新渲染的速度更快。)
 
 #### Returns
 
-A higher-order React component class that passes state and action creators into your component derived from the supplied arguments. This is created by `connectAdvanced`, and details of this higher-order component are covered there.
+一个高阶React组件类，它将state和action创建者从提供的参数中传递给您的组件。这是由`connectAdvanced`创建的，并且这个高阶组件的详细资料在这里被覆盖。
 
 <a id="connect-examples"></a>
-#### Examples
+#### 案例
 
-##### Inject just `dispatch` and don't listen to store
+##### 只注入 `dispatch` 不监听 store
 
 ```js
 export default connect()(TodoApp)
 ```
 
-##### Inject all action creators  (`addTodo`, `completeTodo`, ...) without subscribing to the store
+##### 注入所有action创建者  (`addTodo`, `completeTodo`, ...)并不订阅 store
 
 ```js
 import * as actionCreators from './actionCreators'
@@ -154,17 +154,17 @@ import * as actionCreators from './actionCreators'
 export default connect(null, actionCreators)(TodoApp)
 ```
 
-##### Inject `dispatch` and every field in the global state
+##### 在全局state中注入`dispatch`和每个字段
 
->Don’t do this! It kills any performance optimizations because `TodoApp` will rerender after every state change.  
->It’s better to have more granular `connect()` on several components in your view hierarchy that each only  
->listen to a relevant slice of the state.
+>不要这样做!它会破坏任何性能优化，因为`TodoApp`会在每次状态更改之后重新渲染<br>
+>最好有更细粒度的`connect()`在视图层次结构中的几个组件上<br>
+>监听state的相关部分
 
 ```js
 export default connect(state => state)(TodoApp)
 ```
 
-##### Inject `dispatch` and `todos`
+##### 注入 `dispatch` 和 `todos`
 
 ```js
 function mapStateToProps(state) {
@@ -174,7 +174,7 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps)(TodoApp)
 ```
 
-##### Inject `todos` and all action creators
+##### 注入 `todos` 和所有action创建者
 
 ```js
 import * as actionCreators from './actionCreators'
@@ -186,7 +186,7 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, actionCreators)(TodoApp)
 ```
 
-##### Inject `todos` and all action creators (`addTodo`, `completeTodo`, ...) as `actions`
+##### 注入 `todos` 和所有创建者 (`addTodo`, `completeTodo`, ...) 作为 `actions`
 
 ```js
 import * as actionCreators from './actionCreators'
@@ -203,7 +203,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
 
-#####  Inject `todos` and a specific action creator (`addTodo`)
+#####  注入 `todos` 和 指定的action创建者 (`addTodo`)
 
 ```js
 import { addTodo } from './actionCreators'
@@ -220,7 +220,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
 
-#####  Inject `todos` and specific action creators (`addTodo` and `deleteTodo`) with shorthand syntax
+#####  使用简写语法注入 `todos` 和 指定的action创建者 (`addTodo` 和 `deleteTodo`)
 ```js
 import { addTodo, deleteTodo } from './actionCreators'
 
@@ -236,7 +236,7 @@ const mapDispatchToProps = {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
 
-##### Inject `todos`, todoActionCreators as `todoActions`, and counterActionCreators as `counterActions`
+##### 注入 `todos`, todoActionCreators as `todoActions`, and counterActionCreators as `counterActions`
 
 ```js
 import * as todoActionCreators from './todoActionCreators'
@@ -257,7 +257,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
 
-##### Inject `todos`, and todoActionCreators and counterActionCreators together as `actions`
+##### 注入 `todos`,  todoActionCreators 和 counterActionCreators 一起作为 `actions`
 
 ```js
 import * as todoActionCreators from './todoActionCreators'
@@ -277,7 +277,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
 
-##### Inject `todos`, and all todoActionCreators and counterActionCreators directly as props
+##### 注入 `todos`, 所有 todoActionCreators 和 counterActionCreators 直接作为 props
 
 ```js
 import * as todoActionCreators from './todoActionCreators'
@@ -295,7 +295,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
 
-##### Inject `todos` of a specific user depending on props
+##### 根据props注入特定用户的`todos`
 
 ```js
 import * as actionCreators from './actionCreators'
@@ -307,8 +307,7 @@ function mapStateToProps(state, ownProps) {
 export default connect(mapStateToProps)(TodoApp)
 ```
 
-##### Inject `todos` of a specific user depending on props, and inject `props.userId` into the action
-
+##### 根据props注入特定用户的`todos`,并且注入`props.userId`到action
 ```js
 import * as actionCreators from './actionCreators'
 
@@ -327,7 +326,7 @@ export default connect(mapStateToProps, actionCreators, mergeProps)(TodoApp)
 ```
 
 ##### Factory functions
-Factory functions can be used for performance optimizations
+工厂函数可以用来做性能优化
 
 ```js
 import { addTodo } from './actionCreators'
@@ -362,60 +361,62 @@ export default connect(mapStateToPropsFactory, mapDispatchToPropsFactory)(TodoAp
 <a id="connectAdvanced"></a>
 ### `connectAdvanced(selectorFactory, [connectOptions])`
 
-Connects a React component to a Redux store. It is the base for `connect()` but is less opinionated about how to combine `state`, `props`, and `dispatch` into your final props. It makes no assumptions about defaults or memoization of results, leaving those responsibilities to the caller.
+将一个React组件连接到Redux store。它是`connect()`的基础但是，对于如何将`state`、`props`和`dispatch`结合到最后的props中去，却不那么固执己见。它不假定对结果的默认或内存化，将这些责任留给调用者。
 
-It does not modify the component class passed to it; instead, it *returns* a new, connected component class for you to use.
+它不修改传递给它的组件类;相反，它*返回*一个新的、连接的组件类，供您使用。
 
 <a id="connectAdvanced-arguments"></a>
 #### Arguments
 
-* `selectorFactory(dispatch, factoryOptions): selector(state, ownProps): props` \(*Function*): Initializes a selector function (during each instance's constructor). That selector function is called any time the connector component needs to compute new props, as a result of a store state change or receiving new props. The result of `selector` is expected to be a plain object, which is passed as the props to the wrapped component. If a consecutive call to `selector` returns the same object (`===`) as its previous call, the component will not be re-rendered. It's the responsibility of `selector` to return that previous object when appropriate.
+* `selectorFactory(dispatch, factoryOptions): selector(state, ownProps): props` \(*函数*): 初始化一个选择器函数(在每个实例的构造函数中)。当连接器组件需要计算新的props，这个选择器函数就会被调用，因为它是store state更改或接收新props的结果。`selector`的结果将是一个简单的对象，它作为对包裹组件的props被传递。如果对`selector`的连续调用的返回值与先前调用的返回值相同(`===`)，则组件将不会被重新渲染。`selector`在适当的时候返回之前的对象是负责的。
 
-* [`connectOptions`] *(Object)* If specified, further customizes the behavior of the connector.
+* [`connectOptions`] *(对象)* 如果指定了，进一步定制连接器的行为。
 
-  * [`getDisplayName`] *(Function)*: computes the connector component's displayName property relative to that of the wrapped component. Usually overridden by wrapper functions. Default value: `name => 'ConnectAdvanced('+name+')'`
+  * [`getDisplayName`] *(函数)*: 计算连接器组件的displayName属性与包裹组件的相对属性。通常被包装器函数覆盖。 默认值: `name => 'ConnectAdvanced('+name+')'`
 
-  * [`methodName`] *(String)*: shown in error messages. Usually overridden by wrapper functions. Default value: `'connectAdvanced'`
+  * [`methodName`] *(字符串)*: 展示在错误信息中. 通常被包装器函数覆盖. 默认值: `'connectAdvanced'`
 
-  * [`renderCountProp`] *(String)*: if defined, a property named this value will be added to the props passed to the wrapped component. Its value will be the number of times the component has been rendered, which can be useful for tracking down unnecessary re-renders. Default value: `undefined`
+  * [`renderCountProp`] *(字符串)*: 如果定义了，命名为这个值的属性将被添加到传递给包裹组件的props中。它的值将是组件被渲染的次数，这对于跟踪不必要的重新渲染非常有用。默认值:`undefined`
 
-  * [`shouldHandleStateChanges`] *(Boolean)*: controls whether the connector component subscribes to redux store state changes. If set to false, it will only re-render on `componentWillReceiveProps`. Default value:  `true`
+  * [`shouldHandleStateChanges`] *(布尔值)*: controls whether the connector component subscribes to redux store state changes. If set to false, it will only re-render on `componentWillReceiveProps`. Default value:  `true`
+  控制 连接器组件是否订阅redux store state更改。如果设置为false,它只会在`componentWillReceiveProps`返回true时重新渲染。默认值:`true`
 
-  * [`storeKey`] *(String)*: the key of props/context to get the store. You probably only need this if you are in the inadvisable position of having multiple stores. Default value: `'store'`
+  * [`storeKey`] *(字符串)*: 它是获得store上下文或者prosp的关键。如果您处于不明智的位置——拥有多个存储空间，那么您可能只需要这样做。默认值: `'store'`
 
-  * [`withRef`] *(Boolean)*: If true, stores a ref to the wrapped component instance and makes it available via `getWrappedInstance()` method. Default value: `false`
+  * [`withRef`] *(布尔值)*: 如果为true, 将一个ref存储到包裹组件实例中，并通过`getWrappedInstance()`方法使其可用。默认值：`false`
  
-  * Addionally, any extra options passed via `connectOptions` will be passed through to your `selectorFactory` in the `factoryOptions` argument.
+  * 此外, 任何额外的选项通过 `connectOptions` 在 `factoryOptions` 参数中被传递到`selectorFactory`。
 
 <a id="connectAdvanced-returns"></a>
 #### Returns
 
 A higher-order React component class that builds props from the store state and passes them to the wrapped component. A higher-order component is a function which accepts a component argument and returns a new component.
+一个高阶React组件类，它构建来自store state的props，并将它们传递给包裹组件。一个高阶组件是一个接受组件参数并返回一个新组件的函数。
 
-##### Static Properties
+##### 静态属性
 
-* `WrappedComponent` *(Component)*: The original component class passed to `connectAdvanced(...)(Component)`.
+* `WrappedComponent` *(组件)*: 最初的组件类被传递到 `connectAdvanced(...)(Component)`.
 
-##### Static Methods
+##### 静态方法
 
-All the original static methods of the component are hoisted.
+所有的原始静态方法都被hoisted。
 
-##### Instance Methods
+##### 实例方法
 
 ###### `getWrappedInstance(): ReactComponent`
 
-Returns the wrapped component instance. Only available if you pass `{ withRef: true }` as part of the `options` argument.
+返回包裹组件示例。当你传递 `{ withRef: true }` 作为`options` 参数的一部分的时候可用.
 
-#### Remarks
+#### Remarks讲话
 
-* Since `connectAdvanced` returns a higher-order component, it needs to be invoked two times. The first time with its arguments as described above, and a second time, with the component: `connectAdvanced(selectorFactory)(MyComponent)`.
+* 由于`connectAdvanced`返回一个高阶组件，所以需要被调用两次。第一次使用上面描述的参数，第二次使用组件:`connectAdvanced(selectorFactory)(MyComponent)`。
 
-* `connectAdvanced` does not modify the passed React component. It returns a new, connected component, that you should use instead.
+* `connectAdvanced`不修改传递的React组件。它返回一个新的、连接的组件，您应该使用它来替代。
 
 <a id="connectAdvanced-examples"></a>
-#### Examples
+#### 案例
 
-##### Inject `todos` of a specific user depending on props, and inject `props.userId` into the action
+##### 根据props注入特定用户的`todos`，并且注入`props.userId`到action中
 ```js
 import * as actionCreators from './actionCreators'
 import { bindActionCreators } from 'redux'
@@ -439,15 +440,15 @@ export default connectAdvanced(selectorFactory)(TodoApp)
 <a id="createProvider"></a>
 ### `createProvider([storeKey])`
 
-Creates a new `<Provider>` which will set the Redux Store on the passed key of the context. You probably only need this if you are in the inadvisable position of having multiple stores. You will also need to pass the same `storeKey` to the `options` argument of [`connect`](#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
+创建一个新`<Provider>`，它将在传递的上下文关键字上设置Redux store。如果您处于不明智的位置——拥有多个存储空间，那么您可能只需要这样做。您还需要将相同的`storeKey`传递给[`connect`_](#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)的`options`参数
 
 <a id="createProvider-arguments"></a>
 #### Arguments
 
-* [`storeKey`] (*String*): The key of the context on which to set the store. Default value: `'store'`
+* [`storeKey`] (*字符串*):它是设置store上下文的关键。默认值: `'store'`
 
-#### Examples
-Before creating multiple stores, please go through this FAQ: [Can or should I create multiple stores?](http://redux.js.org/docs/faq/StoreSetup.html#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself)
+#### 案例
+在 创建多个store之前, 请通过这个常见问题解答: [可以创建多个store吗？](http://redux.js.org/docs/faq/StoreSetup.html#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself)
 
 ```js
 import {connect, createProvider} from 'react-redux'
@@ -473,4 +474,4 @@ function connectExtended(
 
 export {connectExtended as connect}
 ```
-Now you can import the above `Provider` and `connect` and use them.
+现在您可以导入上面的`Provider`并`connect`并使用它们。
