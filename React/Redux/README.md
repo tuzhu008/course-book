@@ -172,5 +172,33 @@ store.dispatch(addTodo('I wanna go to bed'));
 
 Redux保持单向数据流，并且是严格。
 
-Redux数据的生命周期
+Redux数据的生命周期：
+
+1. 调用store.dispatch\(action\)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
