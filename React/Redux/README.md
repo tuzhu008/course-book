@@ -170,5 +170,7 @@ store.dispatch(addTodo('I wanna go to bed'));
 
 # 数据流
 
-Redux保持单向数据流，并且是严格。的
+Redux保持单向数据流，并且是严格。
+
+Redux数据的声明周期
 
