@@ -98,7 +98,7 @@ const mapStateToProps = (state, ownProps = {}) => {
   console.log(ownProps); // undefined
 }
 ```
-没有强制参数或两个参数的函数 **可以接收** `ownProps`.
+没有强制参数或两个参数的函数 **可以接收** `ownProps`.
 ```javascript
 const mapStateToProps = (state, ownProps) => {
   console.log(state); // state
