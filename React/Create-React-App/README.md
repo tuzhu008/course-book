@@ -260,7 +260,7 @@ React 文档 包括 [a walkthrough][87]这个主题.
 
 [1]:	https://travis-ci.org/facebookincubator/create-react-app
 [2]:	#%E8%B5%B7%E6%AD%A5
-[3]:	https://github.com/tuzhu008/course/blob/master/create-react-app/package/react-scripts/template/README.md
+[3]:    ./Guide.md
 [4]:	https://github.com/facebookincubator/create-react-app/issues/new
 [5]:	http://localhost:3000/
 [6]:	https://github.com/creationix/nvm#installation
