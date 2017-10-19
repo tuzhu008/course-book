@@ -119,13 +119,13 @@ const mapStateToProps = (...args) => {
 ```
 
 <a id="connect-optimizing"></a>
-##### 当`pure`选项为真时优化连接
+##### 当`pure`选项为真时优化连接
 
 当`pure`选项为真, `connect`执行几个相等检查，以避免对`mapStateToProps`、`mapDispatchToProps`、`mergeProps`以及最后的`render`的不必要的调用。这其中包括了`areStatesEqual`, `areOwnPropsEqual`, `areStatePropsEqual`, 和 `areMergedPropsEqual`。虽然默认值可能是99%的情况，但是您可能希望用自定义实现来覆盖它们，以优化性能或其他原因。下面是几个例子:
 
 * 如果您的`mapStateToProps`函数的计算开销很大，并且你只关心state中的一小部分，那么您可能希望重写`areStatesEqual`。例如:`areStatesEqual: (next, prev) => prev.entities.todos === next.entities.todos`;这将有效地忽略对所有内容的状态更改。
 
-* 如果您有不纯的，改变store state的reducers，您可能希望覆盖`areStatesEqual`来总是返回false(`areStatesEqual: () => false`)。(这也可能会影响其他的相等检查，取决于您的`mapStateToProps`函数。)
+* 如果您有不纯的，改变store state的reducers，您可能希望覆盖`areStatesEqual`来总是返回false(`areStatesEqual: () => false`)。(这也可能会影响其他的相等检查，取决于您的`mapStateToProps`函数。)
 
 * 您可能希望重写`areOwnPropsEqual`，作为一种将传入的props进行白名单的方法。您还必须使`mapStateToProps`、`mapDispatchToProps`和`mergeProps`同时实现白名单。(可能更简单的实现这一其他方面,例如通过使用[重组的mapProps](https://github.com/acdlite/recompose/blob/master/docs/API.md#mapProps)。
 
@@ -135,7 +135,7 @@ const mapStateToProps = (...args) => {
 
 #### Returns
 
-一个高阶React组件类，它将state和action创建者从提供的参数中传递给您的组件。这是由`connectAdvanced`创建的，并且这个高阶组件的详细资料在这里被覆盖。
+一个高阶React组件类，它将state和action创建者从提供的参数中传递给您的组件。这是由`connectAdvanced`创建的，并且这个高阶组件的详细资料在这里被覆盖。
 
 <a id="connect-examples"></a>
 #### 案例
