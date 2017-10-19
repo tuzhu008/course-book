@@ -168,11 +168,7 @@ store.dispatch(addTodo('I wanna go to bed'));
 
 改变 store 内 state 的**惟一途径**是对它 dispatch 一个action。
 
-
-
 # 数据流
 
-Redux保持单向数据
-
-
+Redux保持单向数据流，并且是严格。
 
