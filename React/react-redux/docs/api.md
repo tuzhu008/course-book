@@ -3,7 +3,7 @@
 <a id="provider"></a>
 ### `<Provider store>`
 
-让Redux store可用,以使connect()在下面的组件层次结构中调用。通常，在没有包装一个父组件或祖先组件到`<Provider>`里情况下，您是不能使用`connect()`的。
+让Redux store可用,以使`connect()`在下面的组件层次结构中调用。通常，在没有包装一个父组件或祖先组件到`<Provider>`里情况下，您是不能使用`connect()`的。
 
 如果您*确实*需要，您可以手动将`store`作为一个`props`传递到每一个被`connect()`的组件中，但是我们只建议在单元测试中为存根`store`这样做，或者在非完全React的代码库中这样做。通常情况下，您应该使用该程序。
 

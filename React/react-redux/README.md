@@ -1,4 +1,4 @@
-React Redux 中文文档
+React Redux 中文文档
 =========================
 
 React与 [Redux](https://github.com/reactjs/redux). 的官方绑定方案
