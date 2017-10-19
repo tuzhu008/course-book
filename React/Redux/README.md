@@ -173,10 +173,19 @@ store.dispatch(addTodo('I wanna go to bed'));
 Redux保持单向数据流，并且是严格。
 
 Redux数据的生命周期：
+1. 调用 store.dispatch\(action\)
+1. Redux store 传入的 reducer 函数
+1. 根 reducer 把子 reducer 输出合并成一个单一的 state 树
+1. Redux store 保存了根 reducer 返回的完整 state 树
 
-1. 调用store.dispatch\(action\)
 
+# 引入React项目
 
+安装react-redux绑定库
+```
+npm install --save react-redux 
+```
+阅读更多关于react-redux信息
 
 
 
