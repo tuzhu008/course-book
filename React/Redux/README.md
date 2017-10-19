@@ -186,6 +186,4 @@ Redux数据的生命周期：
 npm install --save react-redux
 ```
 
-阅读更多关于react-redux信息
-
-
+阅读更多关于[react-redux](https://github.com/tuzhu008/course-book/tree/master/React/react-redux)信息
