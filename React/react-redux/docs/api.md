@@ -75,12 +75,12 @@ ReactDOM.render(
 * [`mergeProps(stateProps, dispatchProps, ownProps): props`] \(*函数*): 如果指定了，它将传递`mapStateToProps()`、`mapDispatchToProps()`的结果，以及父母的props。从它返回的普通对象将作为props传递到它的包裹组件。您可以指定这个函数来选择一个基于props的状态的一部分，或者将action创建者绑定到一个来自props的特定的变量上。如果你省略了它，默认使用`Object.assign({}, ownProps, stateProps, dispatchProps)`。
 
 * [`options`] *(对象)* 如果指定了，进一步定制连接器的行为。除了可传递到`connectAdvanced()`的选项之外(见下面的)，`connect()`接受这些额外的选项:
-  * [`pure`] *(布尔值)*: 为真,如果相关的props/state对象在它们各自的相等性检查中保持相等，`connect()`将避免重新渲染和调用`mapStateToProps`, `mapDispatchToProps`, 和 `mergeProps` 。假设包裹组件是一个“pure(纯)”组件，并且不依赖于任何输入或状态，除了它的props和所选的Redux store的state。默认值:`true`
+  * [`pure`] *(布尔值)*: 为真,如果相关的props/state对象在它们各自的相等性检查中保持相等，`connect()`将避免重新渲染和调用`mapStateToProps`, `mapDispatchToProps`, 和 `mergeProps` 。假设包裹组件是一个“pure(纯)”组件，并且不依赖于任何输入或状态，除了它的props和所选的Redux store的state。默认值:`true`
   * [`areStatesEqual`] *(函数)*: 当 `pure`为真时， 将传入的store state与之前的值进行比较 默认值: `全等 (===)`
   * [`areOwnPropsEqual`] *(函数)*: 当 `pure`为真时， 将传入的props与之前的值进行比较 默认值: `相等 (==）`
-  * [`areStatePropsEqual`] *(函数)*: 当 `pure`为真时，将 `mapStateToProps` 的结果和之前的值进行比较，默认值: `相等 (==）`
+  * [`areStatePropsEqual`] *(函数)*: 当 `pure`为真时，将 `mapStateToProps` 的结果和之前的值进行比较，默认值: `相等 (==）`
   * [`areMergedPropsEqual`] *(函数)*:当 `pure`为真时，将】 `mergeProps`的结果和之前的值进行比较， 默认值: `shallowEqual`
-  * [`storeKey`] *(字符串)*: 它是读取store上下文的关键。如果您处于不明智的位置————拥有多个store，那么您可能只需要这样做。 默认值: `'store'`
+  * [`storeKey`] *(字符串)*: 它是读取store上下文的关键。如果您处于不明智的位置————拥有多个store，那么您可能只需要这样做。 默认值: `'store'`
 
 <a id="connect-arguments-arity"></a>
 ##### Propsmapstatetoprop和mapDispatchToProps的参数数量决定了他们能不能接受own
