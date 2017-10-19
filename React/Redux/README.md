@@ -85,6 +85,10 @@ state 有三个API:
 
 从上面的API可以看到，state是没有setter方法的，因此它不能被直接修改。想要修改state只能返回一个新的state。
 
+从控制台打印store:
+
+![](/assets/QQ20171019-083843@2x.png)
+
 ## action
 
 action是把数据从应用传到store的有效载荷，**是store数据的唯一来源**。action中包含了state更新的一切信息。
@@ -156,7 +160,7 @@ function addTodo (text) {
 
 # 触发更新
 
-创建好了store，如何才能触发这些更新呢？使用store的`dispatch`一个action。
+创建好了store，如何才能触发这些更新呢？**使用store的`dispatch`一个action**。
 
 ```
 store.dispatch(addTodo('I wanna go to bed'));
