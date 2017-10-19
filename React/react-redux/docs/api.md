@@ -448,7 +448,7 @@ export default connectAdvanced(selectorFactory)(TodoApp)
 * [`storeKey`] (*字符串*):它是设置store上下文的关键。默认值: `'store'`
 
 #### 案例
-在 创建多个store之前, 请通过这个常见问题解答: [可以创建多个store吗？](http://redux.js.org/docs/faq/StoreSetup.html#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself)
+在 创建多个store之前, 请通过这个常见问题解答: [可以创建多个store吗？](http://redux.js.org/docs/faq/StoreSetup.html#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself)
 
 ```js
 import {connect, createProvider} from 'react-redux'
