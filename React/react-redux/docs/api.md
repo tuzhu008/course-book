@@ -58,7 +58,7 @@ ReactDOM.render(
 
   >注意: 在高级场景中，需要对渲染性能进行更多的控制，`mapStateToProps()`也可以返回一个函数。在本例中，*该函数*将被作为`mapStateToProps()`使用到特定的组件实例。这允许您对每个实例的进行记忆化（也就是缓存结果）。您可以参考[#279](https://github.com/reactjs/react-redux/pull/279)和测试它添加更多的细节。大多数应用都不需要这样做。
 
-  >`mapStateToProps`函数接受整个Redux store的state的作为单一参数，并返回一个作为props被传递的对象。它通常被称为**选择器**。有效地利用[重新选择](https://github.com/reactjs/reselect)来有效地组合选择器和[计算导出的数据](http://redux.js.org/docs/recipes/ComputingDerivedData.html)。
+  >`mapStateToProps`函数接受整个Redux store的state作为单一参数，并返回一个作为props被传递的对象。它通常被称为**选择器**。有效地利用[重新选择](https://github.com/reactjs/reselect)来有效地组合选择器和[计算导出的数据](http://redux.js.org/docs/recipes/ComputingDerivedData.html)。
 
 * [`mapDispatchToProps(dispatch, [ownProps]): dispatchProps`] \(*对象* 或者 *函数*): 如果一个对象被传递，它内部的每个函数都被假定为Redux action 创建者。一个具有相同函数名的对象，但是将每个action创建者封装到一个`dispatch`调用中，这样它们就可以直接被调用，将被合并到组件的props中。
 
