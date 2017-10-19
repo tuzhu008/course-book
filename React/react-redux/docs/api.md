@@ -146,7 +146,7 @@ const mapStateToProps = (...args) => {
 export default connect()(TodoApp)
 ```
 
-##### 注入所有action创建者  (`addTodo`, `completeTodo`, ...)并不订阅 store
+##### 注入所有action创建者  (`addTodo`, `completeTodo`, ...)并不订阅 store
 
 ```js
 import * as actionCreators from './actionCreators'
@@ -164,7 +164,7 @@ export default connect(null, actionCreators)(TodoApp)
 export default connect(state => state)(TodoApp)
 ```
 
-##### 注入 `dispatch` 和 `todos`
+##### 注入 `dispatch` 和 `todos`
 
 ```js
 function mapStateToProps(state) {
@@ -174,7 +174,7 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps)(TodoApp)
 ```
 
-##### 注入 `todos` 和所有action创建者
+##### 注入 `todos` 和所有action创建者
 
 ```js
 import * as actionCreators from './actionCreators'
@@ -257,7 +257,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
 
-##### 注入 `todos`,  todoActionCreators 和 counterActionCreators 一起作为 `actions`
+##### 注入 `todos`,  todoActionCreators 和 counterActionCreators 一起作为 `actions`
 
 ```js
 import * as todoActionCreators from './todoActionCreators'
@@ -277,7 +277,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
 
-##### 注入 `todos`, 所有 todoActionCreators 和 counterActionCreators 直接作为 props
+##### 注入 `todos`, 所有 todoActionCreators 和 counterActionCreators 直接作为 props
 
 ```js
 import * as todoActionCreators from './todoActionCreators'
@@ -326,7 +326,7 @@ export default connect(mapStateToProps, actionCreators, mergeProps)(TodoApp)
 ```
 
 ##### Factory functions
-工厂函数可以用来做性能优化
+工厂函数可以用来做性能优化
 
 ```js
 import { addTodo } from './actionCreators'
@@ -368,7 +368,7 @@ export default connect(mapStateToPropsFactory, mapDispatchToPropsFactory)(TodoAp
 <a id="connectAdvanced-arguments"></a>
 #### Arguments
 
-* `selectorFactory(dispatch, factoryOptions): selector(state, ownProps): props` \(*函数*): 初始化一个选择器函数(在每个实例的构造函数中)。当连接器组件需要计算新的props，这个选择器函数就会被调用，因为它是store state更改或接收新props的结果。`selector`的结果将是一个简单的对象，它作为对包裹组件的props被传递。如果对`selector`的连续调用的返回值与先前调用的返回值相同(`===`)，则组件将不会被重新渲染。`selector`在适当的时候返回之前的对象是负责的。
+* `selectorFactory(dispatch, factoryOptions): selector(state, ownProps): props` \(*函数*): 初始化一个选择器函数(在每个实例的构造函数中)。当连接器组件需要计算新的props，这个选择器函数就会被调用，因为它是store state更改或接收新props的结果。`selector`的结果将是一个简单的对象，它作为对包裹组件的props被传递。如果对`selector`的连续调用的返回值与先前调用的返回值相同(`===`)，则组件将不会被重新渲染。`selector`在适当的时候返回之前的对象是负责的。
 
 * [`connectOptions`] *(对象)* 如果指定了，进一步定制连接器的行为。
 
@@ -381,7 +381,7 @@ export default connect(mapStateToPropsFactory, mapDispatchToPropsFactory)(TodoAp
   * [`shouldHandleStateChanges`] *(布尔值)*: controls whether the connector component subscribes to redux store state changes. If set to false, it will only re-render on `componentWillReceiveProps`. Default value:  `true`
   控制 连接器组件是否订阅redux store state更改。如果设置为false,它只会在`componentWillReceiveProps`返回true时重新渲染。默认值:`true`
 
-  * [`storeKey`] *(字符串)*: 它是获得store上下文或者prosp的关键。如果您处于不明智的位置——拥有多个存储空间，那么您可能只需要这样做。默认值: `'store'`
+  * [`storeKey`] *(字符串)*: 它是获得store上下文或者prosp的关键。如果您处于不明智的位置——拥有多个存储空间，那么您可能只需要这样做。默认值: `'store'`
 
   * [`withRef`] *(布尔值)*: 如果为true, 将一个ref存储到包裹组件实例中，并通过`getWrappedInstance()`方法使其可用。默认值：`false`
  
@@ -416,7 +416,7 @@ A higher-order React component class that builds props from the store state and 
 <a id="connectAdvanced-examples"></a>
 #### 案例
 
-##### 根据props注入特定用户的`todos`，并且注入`props.userId`到action中
+##### 根据props注入特定用户的`todos`，并且注入`props.userId`到action中
 ```js
 import * as actionCreators from './actionCreators'
 import { bindActionCreators } from 'redux'
@@ -440,12 +440,12 @@ export default connectAdvanced(selectorFactory)(TodoApp)
 <a id="createProvider"></a>
 ### `createProvider([storeKey])`
 
-创建一个新`<Provider>`，它将在传递的上下文关键字上设置Redux store。如果您处于不明智的位置——拥有多个存储空间，那么您可能只需要这样做。您还需要将相同的`storeKey`传递给[`connect`_](#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)的`options`参数
+创建一个新`<Provider>`，它将在传递的上下文关键字上设置Redux store。如果您处于不明智的位置——拥有多个存储空间，那么您可能只需要这样做。您还需要将相同的`storeKey`传递给[`connect`_](#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)的`options`参数
 
 <a id="createProvider-arguments"></a>
 #### Arguments
 
-* [`storeKey`] (*字符串*):它是设置store上下文的关键。默认值: `'store'`
+* [`storeKey`] (*字符串*):它是设置store上下文的关键。默认值: `'store'`
 
 #### 案例
 在 创建多个store之前, 请通过这个常见问题解答: [可以创建多个store吗？](http://redux.js.org/docs/faq/StoreSetup.html#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself)
