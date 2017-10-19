@@ -176,6 +176,7 @@ Redux数据的生命周期：
 
 1. 调用store.dispatch\(action\)
 2. store调用传入的reducer函数
+3. 根reducer把多个子reducer合并成一个单一的state树
 
 
 
