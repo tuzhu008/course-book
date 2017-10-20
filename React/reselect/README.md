@@ -3,11 +3,14 @@
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-Simple “selector” library for Redux inspired by getters in [NuclearJS](https://github.com/optimizely/nuclear-js.git), [subscriptions](https://github.com/Day8/re-frame#just-a-read-only-cursor) in [re-frame](https://github.com/Day8/re-frame) and this [proposal](https://github.com/gaearon/redux/pull/169) from [speedskater](https://github.com/speedskater).
+为React提供简单的“选择器”库。本库受到[NuclearJS](https://github.com/optimizely/nuclear-js.git)中的getters,
+[re-frame](https://github.com/Day8/re-frame)中的[subscriptions](https://github.com/Day8/re-frame#just-a-read-only-cursor)和来自
+[speedskater](https://github.com/speedskater)的这个 
+[proposal](https://github.com/gaearon/redux/pull/169) 等的启发 .
 
-* Selectors can compute derived data, allowing Redux to store the minimal possible state.
-* Selectors are efficient. A selector is not recomputed unless one of its arguments change.
-* Selectors are composable. They can be used as input to other selectors.
+* 选择器可以计算派生的数据，允许Redux存储尽可能少的state。
+* 选择器是有效的。除非其中一个参数发生变化，否则选择器不会重新计算。
+* 选择器是可组合。它们可以用作其他选择器的输入。
 
 ```js
 import { createSelector } from 'reselect'
@@ -49,44 +52,44 @@ console.log(totalSelector(exampleState))    // { total: 2.322 }
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Example](#example)
-  - [Motivation for Memoized Selectors](#motivation-for-memoized-selectors)
-  - [Creating a Memoized Selector](#creating-a-memoized-selector)
-  - [Composing Selectors](#composing-selectors)
-  - [Connecting a Selector to the Redux Store](#connecting-a-selector-to-the-redux-store)
-  - [Accessing React Props in Selectors](#accessing-react-props-in-selectors)
-  - [Sharing Selectors with Props Across Multiple Components](#sharing-selectors-with-props-across-multiple-components)
+- [安装](#安装)
+- [案例](#案例)
+  - [缓存选择器的动机](#缓存选择器的动机)
+  - [创建一个缓存的选择器](#创建一个缓存的选择器)
+  - [组合选择器](#组合选择器)
+  - [连接一个选择器到Redux Store](#连接一个选择器到ReduxStore)
+  - [在选择器中访问React Props](#在选择器中访问ReactProps)
+  - [在多个组件之间共享带Props的选择器](#在多个组件之间共享带Props的选择器)
 - [API](#api)
   - [`createSelector`](#createselectorinputselectors--inputselectors-resultfunc)
   - [`defaultMemoize`](#defaultmemoizefunc-equalitycheck--defaultequalitycheck)
   - [`createSelectorCreator`](#createselectorcreatormemoize-memoizeoptions)
   - [`createStructuredSelector`](#createstructuredselectorinputselectors-selectorcreator--createselector)
 - [FAQ](#faq)
-  - [Why isn't my selector recomputing when the input state changes?](#q-why-isnt-my-selector-recomputing-when-the-input-state-changes)
-  - [Why is my selector recomputing when the input state stays the same?](#q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same)
-  - [Can I use Reselect without Redux?](#q-can-i-use-reselect-without-redux)
-  - [The default memoization function is no good, can I use a different one?](#q-the-default-memoization-function-is-no-good-can-i-use-a-different-one)
-  - [How do I test a selector?](#q-how-do-i-test-a-selector)
-  - [How do I create a selector that takes an argument? ](#q-how-do-i-create-a-selector-that-takes-an-argument)
-  - [How do I use Reselect with Immutable.js?](#q-how-do-i-use-reselect-with-immutablejs)
-  - [Can I share a selector across multiple components?](#q-can-i-share-a-selector-across-multiple-components)
+  - [当输入状态发生变化时，为什么我的选择器不进行重新计算?](#q-why-isnt-my-selector-recomputing-when-the-input-state-changes)
+  - [当输入状态保持不变时，为什么选择器重新计算?](#q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same)
+  - [我可以使用Reselect而不用Redux吗?](#q-can-i-use-reselect-without-redux)
+  - [默认的内存化函数是不好的，我可以使用另一个吗?](#q-the-default-memoization-function-is-no-good-can-i-use-a-different-one)
+  - [如何测试选择器?](#q-how-do-i-test-a-selector)
+  - [如何创建一个接受一个参数的选择器?](#q-how-do-i-create-a-selector-that-takes-an-argument)
+  - [如何同时Reselect与Immutable.js?](#q-how-do-i-use-reselect-with-immutablejs)
+  - [我可以在多个组件之间共享一个选择器吗?](#q-can-i-share-a-selector-across-multiple-components)
   - [Are there TypeScript typings?](#q-are-there-typescript-typings)
-  - [How can I make a curried selector?](#q-how-can-i-make-a-curried-selector)
+  - [如何制作一个咖喱选择器?](#q-how-can-i-make-a-curried-selector)
 
-- [Related Projects](#related-projects)
-- [License](#license)
+- [Related 项目](#related-projects)
+- [授权](#license)
 
-## Installation
+## 安装
     npm install reselect
 
-## Example
+## 案例
 
-If you prefer a video tutorial, you can find one [here](https://www.youtube.com/watch?v=6Xwo5mVxDqI).
+如果你喜欢视频教程，你可以在[这儿](https://www.youtube.com/watch?v=6Xwo5mVxDqI)找到.
 
-### Motivation for Memoized Selectors
+### 缓存选择器的动机
 
-> The examples in this section are based on the [Redux Todos List example](http://redux.js.org/docs/basics/UsageWithReact.html).
+> 本节中的案例基于 [React TodoList 示例](http://redux.js.org/docs/basics/UsageWithReact.html).
 
 #### `containers/VisibleTodoList.js`
 
@@ -128,15 +131,15 @@ const VisibleTodoList = connect(
 export default VisibleTodoList
 ```
 
-In the above example, `mapStateToProps` calls `getVisibleTodos` to calculate `todos`. This works great, but there is a drawback: `todos` is calculated every time the state tree is updated. If the state tree is large, or the calculation expensive, repeating the calculation on every update may cause performance problems. Reselect can help to avoid these unnecessary recalculations.
+在上面的例子中，`mapStateToProps`调用`getVisibleTodos`来计算`todos`。这很好，但是有一个缺点:每次更新状态树时都要计算`todos`。如果状态树很大，或者计算成本很高，那么在每次更新时重复计算可能会导致性能问题。Reselect可以帮助避免这些不必要的重新计算。
 
-### Creating a Memoized Selector
+### 创建一个缓存的选择器
 
-We would like to replace `getVisibleTodos` with a memoized selector that recalculates `todos` when the value of `state.todos` or `state.visibilityFilter` changes, but not when changes occur in other (unrelated) parts of the state tree.
+我们希望用一个缓存起来的选择器来替换`getVisibleTodos`，这个选择器会在`state.todos`值或者`state.visibilityFilter`变化时重新计算`todos`，但在变化发生在状态树的其他（不相关的）部分时不重新计算。
 
-Reselect provides a function `createSelector` for creating memoized selectors. `createSelector` takes an array of input-selectors and a transform function as its arguments. If the Redux state tree is mutated in a way that causes the value of an input-selector to change, the selector will call its transform function with the values of the input-selectors as arguments and return the result. If the values of the input-selectors are the same as the previous call to the selector, it will return the previously computed value instead of calling the transform function.
+Reselect提供了一个函数`createSelector`用于创建缓存选择器。`createSelector`接受了一个输入选择器数组和一个转换函数作为其参数。如果Redux状态树发生了变化，导致输入选择器的值发生变化，那么选择器将使用输入选择器的值作为参数调用它的转换函数，并返回结果。如果输入选择器的值与之前对选择器的调用相同，它将返回之前计算的值，而不是调用转换函数。
 
-Let's define a memoized selector named `getVisibleTodos` to replace the non-memoized version above:
+让我们定义一个名为`getVisibleTodos`的缓存选择器来替换上面的非记忆化版本:
 
 #### `selectors/index.js`
 
@@ -161,11 +164,11 @@ export const getVisibleTodos = createSelector(
 )
 ```
 
-In the example above, `getVisibilityFilter` and `getTodos` are input-selectors. They are created as ordinary non-memoized selector functions because they do not transform the data they select. `getVisibleTodos` on the other hand is a memoized selector. It takes `getVisibilityFilter` and `getTodos` as input-selectors, and a transform function that calculates the filtered todos list.
+在上面的例子中, `getVisibilityFilter` 和 `getTodos`是输入选择器。它们被创建为普通的非内存选择器函数，因为它们不转换所选择的数据。另一方面，`getVisibleTodos`是一个缓存选择器。它将`getVisibilityFilter`和`getTodos`作为输入选择器，并使用一个转换函数来计算经过过滤的todos列表。
 
-### Composing Selectors
+### 组合选择器
 
-A memoized selector can itself be an input-selector to another memoized selector. Here is `getVisibleTodos` being used as an input-selector to a selector that further filters the todos by keyword:
+一个缓存选择器本身可以作为另一个内存选择器的一个输入选择器。下面是`getVisibleTodos`作为一个选择器的输入选择器，它通过关键字进一步过滤todos:
 
 ```js
 const getKeyword = (state) => state.keyword
@@ -178,7 +181,7 @@ const getVisibleTodosFilteredByKeyword = createSelector(
 )
 ```
 
-### Connecting a Selector to the Redux Store
+### 连接一个选择器到ReduxStore
 
 If you are using [React Redux](https://github.com/reactjs/react-redux), you can call selectors as regular functions inside `mapStateToProps()`:
 
