@@ -6,7 +6,7 @@
 为React提供简单的“选择器”库。本库受到[NuclearJS](https://github.com/optimizely/nuclear-js.git)中的getters,
 [re-frame](https://github.com/Day8/re-frame)中的[subscriptions](https://github.com/Day8/re-frame#just-a-read-only-cursor)和来自
 [speedskater](https://github.com/speedskater)的这个 
-[proposal](https://github.com/gaearon/redux/pull/169) 等的启发 .
+[proposal](https://github.com/gaearon/redux/pull/169)等的启发 .
 
 * 选择器可以计算派生的数据，允许Redux存储尽可能少的state。
 * 选择器是有效的。除非其中一个参数发生变化，否则选择器不会重新计算。
