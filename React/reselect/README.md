@@ -3,7 +3,7 @@
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-为React提供简单的“选择器”库。本库受到[NuclearJS](https://github.com/optimizely/nuclear-js.git)中的getters,
+这是为React提供简单的“选择器”库。本库受到[NuclearJS](https://github.com/optimizely/nuclear-js.git)中的getters,
 [re-frame](https://github.com/Day8/re-frame)中的[subscriptions](https://github.com/Day8/re-frame#just-a-read-only-cursor)和来自
 [speedskater](https://github.com/speedskater)的这个 
 [proposal](https://github.com/gaearon/redux/pull/169)等的启发 .
