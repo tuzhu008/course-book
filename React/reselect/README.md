@@ -411,16 +411,16 @@ const VisibleTodoList = connect(
 
 export default VisibleTodoList
 ```
-
+> 这个实现的核心思想是利用了闭包，在函数内部返回一个保持对这个函数作用域内的资源引用的函数。
 ## API
 
 ### createSelector(...inputSelectors | [inputSelectors], resultFunc)
 
-Takes one or more selectors, or an array of selectors, computes their values and passes them as arguments to `resultFunc`.
+接收一个或多个输入选择器，或一个选择器数组，计算它们的值，并将它们作为参数传递给`resultFunc`。
 
-`createSelector` determines if the value returned by an input-selector has changed between calls using reference equality (`===`). Inputs to selectors created with `createSelector` should be immutable.
+`createSelector`确定输入选择器返回的值是否在使用引用相等(`===`)的调用之间进行了更改。使用`createSelector`创建的选择器的输入应该是不可变的。
 
-Selectors created with `createSelector` have a cache size of 1. This means they always recalculate when the value of an input-selector changes, as a selector only stores the preceding value of each input-selector.
+使用`createSelector`创建的选择器的缓存大小为1。这意味着当输入选择器的值发生变化时，它们总是重新计算，因为选择器只存储每个输入选择器前一个值。
 
 ```js
 const mySelector = createSelector(
@@ -429,7 +429,7 @@ const mySelector = createSelector(
   (value1, value2) => value1 + value2
 )
 
-// You can also pass an array of selectors
+// 你也可以传递一个选择器数组
 const totalSelector = createSelector(
   [
     state => state.values.value1,
@@ -439,15 +439,15 @@ const totalSelector = createSelector(
 )
 ```
 
-It can be useful to access the props of a component from within a selector. When a selector is connected to a component with `connect`, the component props are passed as the second argument to the selector:
+从选择器中访问组件的props是很有用的。当一个选择器连接到一个带有`connect`的组件时，组件的props将作为第二个参数传递给选择器:
 
 ```js
 const abSelector = (state, props) => state.a * props.b
 
-// props only (ignoring state argument)
+// 只有props (忽略 state 参数)
 const cSelector =  (_, props) => props.c
 
-// state only (props argument omitted as not required)
+// 只有state (props 参数被省略了，它不是必须的)
 const dSelector = state => state.d
 
 const totalSelector = createSelector(
@@ -463,11 +463,11 @@ const totalSelector = createSelector(
 
 ### defaultMemoize(func, equalityCheck = defaultEqualityCheck)
 
-`defaultMemoize` memoizes the function passed in the func parameter. It is the memoize function used by `createSelector`.
+`defaultMemoize` 存储传递过来的函数到fun参数中。它是被`createSelector`使用的存储函数。
 
-`defaultMemoize` has a cache size of 1. This means it always recalculates when the value of an argument changes.
+`defaultMemoize` 的缓存大小为1. 这意味着当一个参数的值发生变化时，它总是重新计算。
 
-`defaultMemoize` determines if an argument has changed by calling the `equalityCheck` function. As `defaultMemoize` is designed to be used with immutable data, the default `equalityCheck` function checks for changes using reference equality:
+defaultMemoize`通过调用`equalityCheck`函数来确定一个参数是否发生了变化。由于`defaultMemoize`被设计用于与不可变数据一起使用，默认的`equalityCheck`函数使用引用全等来检查更改。:
 
 ```js
 function defaultEqualityCheck(currentVal, previousVal) {
@@ -475,41 +475,41 @@ function defaultEqualityCheck(currentVal, previousVal) {
 }
 ```
 
-`defaultMemoize` can be used with `createSelectorCreator` to [customize the `equalityCheck` function](#customize-equalitycheck-for-defaultmemoize).
+`defaultMemoize` 可以被 `createSelectorCreator` 用来 [自定义 `equalityCheck` 函数](#customize-equalitycheck-for-defaultmemoize).
 
 ### createSelectorCreator(memoize, ...memoizeOptions)
 
-`createSelectorCreator` can be used to make a customized version of `createSelector`.
+`createSelectorCreator` 可以用来自定义一个 `createSelector`.
 
-The `memoize` argument is a memoization function to replace `defaultMemoize`.
+`memoize`是一个用来替换`defaultMemoize`的存储函数
 
-The `...memoizeOptions` rest parameters are zero or more configuration options to be passed to `memoizeFunc`. The selectors `resultFunc` is passed as the first argument to `memoize` and the `memoizeOptions` are passed as the second argument onwards:
+`...memoizeOptions` 展开参数有0个或者多个配置选项，它们被传递到`memoizeFunc`。选择器 `resultFunc`作为第一个参数被传递到`memoize`，而`memoizeOptions`作为第二个参数被传递：
 
 ```js
 const customSelectorCreator = createSelectorCreator(
-  customMemoize, // function to be used to memoize resultFunc
-  option1, // option1 will be passed as second argument to customMemoize
-  option2, // option2 will be passed as third argument to customMemoize
-  option3 // option3 will be passed as fourth argument to customMemoize
+  customMemoize, // 这个函数被用来缓存resultFunc
+  option1, // option1 将作为第二个参数被传递到customMemoize
+  option2, // option1 将作为第三个参数被传递到customMemoize
+  option3 // option1 将作为第四个参数被传递到customMemoize
 )
 
 const customSelector = customSelectorCreator(
   input1,
   input2,
-  resultFunc // resultFunc will be passed as first argument to customMemoize
+  resultFunc // resultFunc 将被作为第一个参数传递给customMemoize
 )
 ```
 
-Internally `customSelector` calls the memoize function as follows:
+在内部， `customSelector`调用memoize function:
 
 ```js
 customMemoize(resultFunc, option1, option2, option3)
 ```
 
-Here are some examples of how you might use `createSelectorCreator`:
+下面是一些例子，教你如何使用`createSelectorCreator`:
 
 #### Customize `equalityCheck` for `defaultMemoize`
-
+为`defaultMemoize`自定义`equalityCheck`
 ```js
 import { createSelectorCreator, defaultMemoize } from 'reselect'
 import isEqual from 'lodash.isEqual'
@@ -528,7 +528,7 @@ const mySelector = createDeepEqualSelector(
 ```
 
 #### Use memoize function from lodash for an unbounded cache
-
+使用来自lodash的memoize函数来进行无限缓存
 ```js
 import { createSelectorCreator } from 'reselect'
 import memoize from 'lodash.memoize'
@@ -551,7 +551,7 @@ const selector = customSelectorCreator(
 
 ### createStructuredSelector({inputSelectors}, selectorCreator = createSelector)
 
-`createStructuredSelector` is a convenience function for a common pattern that arises when using Reselect. The selector passed to a `connect` decorator often just takes the values of its input-selectors and maps them to keys in an object:
+`createStructuredSelector` 对于在使用Reselect时出现的常见模式，是一个方便的函数。传递给`connect`装饰器的选择器通常只获取其输入选择器的值并将其映射到对象中的键:
 
 ```js
 const mySelectorA = state => state.a
@@ -571,7 +571,7 @@ const structuredSelector = createSelector(
 )
 ```
 
-`createStructuredSelector` takes an object whose properties are input-selectors and returns a structured selector. The structured selector returns an object with the same keys as the `inputSelectors` argument, but with the selectors replaced with their values.
+`createStructuredSelector`选择器接受一个对象，它的属性是输入选择器，并返回一个结构化的选择器。这个结构化选择器返回一个与`inputselector`参数相同的对象，但是这个选择器替换了它们的值.
 
 ```js
 const mySelectorA = state => state.a
@@ -585,7 +585,7 @@ const structuredSelector = createStructuredSelector({
 const result = structuredSelector({ a: 1, b: 2 }) // will produce { x: 1, y: 2 }
 ```
 
-Structured selectors can be nested:
+结构化的选择器可以是嵌套的:
 
 ```js
 const nestedSelector = createStructuredSelector({
@@ -602,12 +602,13 @@ const nestedSelector = createStructuredSelector({
 ```
 
 ## FAQ
-
+常见问题解答
 ### Q: Why isn’t my selector recomputing when the input state changes?
+当输入状态发生变化时，为什么我的选择器不进行重新计算?
 
-A: Check that your memoization function is compatible with your state update function (i.e. the reducer if you are using Redux). For example, a selector created with `createSelector` will not work with a state update function that mutates an existing object instead of creating a new one each time. `createSelector` uses an identity check (`===`) to detect that an input has changed, so mutating an existing object will not trigger the selector to recompute because mutating an object does not change its identity. Note that if you are using Redux, mutating the state object is [almost certainly a mistake](http://redux.js.org/docs/Troubleshooting.html).
+A: 检查您的记忆化函数是否与您的状态更新函数兼容(例如，reducer,如果您使用Redux)。例如，使用`createSelector`创建的选择器使用状态更新函数来修改现有对象，而不是每次都创建一个新对象，那么它将不能正常工作，。`createSelector`使用身份检查(`===`)来检测输入是否发生了变化，因此对现有对象进行变异不会触发选择器重新计算，因为对对象进行变异不会改变其标识。注意，如果使用Redux，对状态对象进行修改[几乎肯定是错误的](http://redux.js.org/docs/Troubleshooting.html).
 
-The following example defines a simple selector that determines if the first todo item in an array of todos has been completed:
+下面的例子定义了一个简单的选择器，它判断todos数组中的第一个todo项是否已经完成:
 
 ```js
 const isFirstTodoCompleteSelector = createSelector(
@@ -616,7 +617,7 @@ const isFirstTodoCompleteSelector = createSelector(
 )
 ```
 
-The following state update function **will not** work with `isFirstTodoCompleteSelector`:
+以下状态更新函数将**无法**和`isFirstTodoCompleteSelector`正常工作
 
 ```js
 export default function todos(state = initialState, action) {
@@ -635,7 +636,7 @@ export default function todos(state = initialState, action) {
 }
 ```
 
-The following state update function **will** work with `isFirstTodoCompleteSelector`:
+以下状态更新函数将和`isFirstTodoCompleteSelector`正常工作
 
 ```js
 export default function todos(state = initialState, action) {
@@ -653,11 +654,13 @@ export default function todos(state = initialState, action) {
 }
 ```
 
-If you are not using Redux and have a requirement to work with mutable data, you can use `createSelectorCreator` to replace the default memoization function and/or use a different equality check function. See [here](#use-memoize-function-from-lodash-for-an-unbounded-cache) and [here](#customize-equalitycheck-for-defaultmemoize) for examples.
+如果您没有使用Redux，并且需要使用可变数据，那么您可以使用`createSelectorCreator`来替换默认的记忆化 function，或者使用一个不同的相等检查函数。 查阅 [here](#use-memoize-function-from-lodash-for-an-unbounded-cache) 和 [here](#customize-equalitycheck-for-defaultmemoize) 的示例
 
 ### Q: Why is my selector recomputing when the input state stays the same?
 
-A: Check that your memoization function is compatible with your state update function (i.e. the reducer if you are using Redux). For example, a selector created with `createSelector` that recomputes unexpectedly may be receiving a new object on each update whether the values it contains have changed or not. `createSelector` uses an identity check (`===`) to detect that an input has changed, so returning a new object on each update means that the selector will recompute on each update.
+当输入状态保持不变时，为什么选择器重新计算?
+
+A: 检查你的记忆化函数与你的状态更新函数兼容(例如，reducer,如果你使用的是Redux)。例如，一个由`createSelector`创建的选择器可能会在每次更新中接收到一个新对象，不管它所包含的值是否发生了变化。`createSelector`使用身份检查(`===`)来检测输入是否发生了变化，因此在每次更新中返回一个新对象意味着选择器将在每次更新中重新计算。
 
 ```js
 import { REMOVE_OLD } from '../constants/ActionTypes'
@@ -683,7 +686,7 @@ export default function todos(state = initialState, action) {
 }
 ```
 
-The following selector is going to recompute every time REMOVE_OLD is invoked because Array.filter always returns a new object. However, in the majority of cases the REMOVE_OLD action will not change the list of todos so the recomputation is unnecessary.
+上面的选择器将重新计算当每次`REMOVE_OLD`被调用时，因为 `Array.filter`总是返回一个新对象。然而，在大多数情况下，`REMOVE_OLD`操作不会改变todos的列表，因此重新计算是不必要的.
 
 ```js
 import { createSelector } from 'reselect'
@@ -698,7 +701,7 @@ export const visibleTodosSelector = createSelector(
 )
 ```
 
-You can eliminate unnecessary recomputations by returning a new object from the state update function only when a deep equality check has found that the list of todos has actually changed:
+您可以在只有当一个深度的相等检查发现todos的列表实际上已经改变了，才通过从状态更新函数中返回一个新对象来消除不必要的重新计算:
 
 ```js
 import { REMOVE_OLD } from '../constants/ActionTypes'
@@ -726,7 +729,7 @@ export default function todos(state = initialState, action) {
 }
 ```
 
-Alternatively, the default `equalityCheck` function in the selector can be replaced by a deep equality check:
+或者，选择器中默认的`equalityCheck`函数可以被一个深度的相等检查代替:
 
 ```js
 import { createSelectorCreator, defaultMemoize } from 'reselect'
@@ -749,22 +752,22 @@ const mySelector = createDeepEqualSelector(
 )
 ```
 
-Always check that the cost of an alternative `equalityCheck` function or deep equality check in the state update function is not greater than the cost of recomputing every time. If recomputing every time does work out to be the cheaper option, it may be that for this case Reselect is not giving you any benefit over passing a plain `mapStateToProps` function to `connect`.
+始终检查，在状态更新函数中的一个替代的`equalityCheck`函数或深度相等检查的成本是否大于每次重新计算的成本。如果每次重新计算都是更便宜的选择，那么在这种情况下，Reselect不会给您带来任何好处，因为通过的`mapStateToProps`函数来`connect`更简单。
 
 ### Q: Can I use Reselect without Redux?
+我可以使用Reselect，而不需要Redux
+A: 是的。Reselect对任何其他的包都没有依赖性，因此尽管它被设计为与Redux一起使用，但是它可以独立使用。它目前在传统的Flux应用中被成功使用
 
-A: Yes. Reselect has no dependencies on any other package, so although it was designed to be used with Redux it can be used independently. It is currently being used successfully in traditional Flux apps.
-
-> If you create selectors using `createSelector` make sure its arguments are immutable.
-> See [here](#createselectorinputselectors--inputselectors-resultfunc)
+> 如果你使用 `createSelector`创建了选择器，请确保它的参数是不可变的.
+> 参阅 [here](#createselectorinputselectors--inputselectors-resultfunc)
 
 ### Q: How do I create a selector that takes an argument?
+如何创建一个接收一个参数的选择器
+A: 请记住，选择器可以访问React props，因此，如果您的参数是(或可作为)React props，那么您可以使用该功能。 [获取更多信息](#accessing-react-props-in-selectors) 
 
-A: Keep in mind that selectors can access React props, so if your arguments are (or can be made available as) React props, you can use that functionality. [See here](#accessing-react-props-in-selectors) for details.
+另外，Reselect对于创建接受参数的选择器并没有内置的支持，但是这里有一些实现类似功能的建议...
 
-Otherwise, Reselect doesn't have built-in support for creating selectors that accepts arguments, but here are some suggestions for implementing similar functionality...
-
-If the argument is not dynamic you can use a factory function:
+如果参数不是动态的你可以使用工厂函数:
 
 ```js
 const expensiveItemSelectorFactory = minValue => {
@@ -780,7 +783,7 @@ const subtotalSelector = createSelector(
 )
 ```
 
-The general consensus [here](https://github.com/reactjs/reselect/issues/38) and [over at nuclear-js](https://github.com/optimizely/nuclear-js/issues/14) is that if a selector needs a dynamic argument, then that argument should probably be state in the store. If you decide that you do require a selector with a dynamic argument, then a selector that returns a memoized function may be suitable:
+普遍的共识 [here](https://github.com/reactjs/reselect/issues/38) 和 [over at nuclear-js](https://github.com/optimizely/nuclear-js/issues/14)如果选择器需要动态参数，那么该参数应该是store中的state。如果您决定需要一个带有动态参数的选择器，那么返回一个存储函数的选择器可能是合适的:
 
 ```js
 import { createSelector } from 'reselect'
@@ -800,12 +803,12 @@ const veryExpensive = expensiveFilter(1000000)
 ```
 
 ### Q: The default memoization function is no good, can I use a different one?
-
-A: We think it works great for a lot of use cases, but sure. See [these examples](#customize-equalitycheck-for-defaultmemoize).
+默认的记忆函数是不好，我可以用另一个吗?
+A: 我们认为它对很多用例都很有用, 但你可以选择使用其他的. 参阅 [这些例子](#customize-equalitycheck-for-defaultmemoize).
 
 ### Q: How do I test a selector?
-
-A: For a given input, a selector should always produce the same output. For this reason they are simple to unit test.
+如何测试选择器
+A: 对于给定的输入，选择器应该总是产生相同的输出。由于这个原因，他们很容易进行单元测试.
 
 ```js
 const selector = createSelector(
@@ -823,7 +826,7 @@ test("selector unit test", () => {
 })
 ```
 
-It may also be useful to check that the memoization function for a selector works correctly with the state update function (i.e. the reducer if you are using Redux). Each selector has a `recomputations` method that will return the number of times it has been recomputed:
+每个选择器都有一个`recomputations`方法，该方法将返回被重新计算的次数。它有可能对于检查一个选择器的记忆化函数是否正确地与状态更新函数一起工作(例如，reducer,如果您使用Redux)：
 
 ```js
 suite('selector', () => {
@@ -861,9 +864,9 @@ suite('selector', () => {
 })
 ```
 
-Additionally, selectors keep a reference to the last result function as `.resultFunc`. If you have selectors composed of many other selectors this can help you test each selector without coupling all of your tests to the shape of your state.
+Additionally, selectors keep a reference to the last result function as `.resultFunc`. If you have selectors composed of many other selectors this can help you test each selector without coupling all of your tests to the shape of your state此外，选择器保留对最后一个结果函数的引用作为`.resultFunc`。如果您的选择器由许多其他选择器组成，这可以帮助您测试每个选择器，而不需要将所有的测试与state的模型耦合.
 
-For example if you have a set of selectors like this:
+例如，如果你有一组这样的选择器:
 
 **selectors.js**
 ```js
@@ -879,7 +882,7 @@ export const myComposedSelector = createSelector(
 )
 ```
 
-And then a set of unit tests like this:
+然后是这样的一组单元测试:
 
 **test/selectors.js**
 
@@ -903,14 +906,14 @@ test("myComposedSelector unit test", () => {
 Finally, each selector has a `resetRecomputations` method that sets
 recomputations back to 0.  The intended use is for a complex selector that may
 have many independent tests and you don't want to manually manage the
-computation count or create a "dummy" selector for each test.
+computation count or create a "dummy" selector for each test.最后，每个选择器都有一个`resetRecomputations`方法，用来将重计算次数重置为0。它的用途是用于一个复杂的选择器
+，这个选择器可能有很多独立的测试，并且你不想手动管理计算计数或为每个测试创建一个“dummy”选择器
 
 ### Q: How do I use Reselect with Immutable.js?
+如何将Reselect与Immutable.js一同使用
+A: 使用`createSelector`创建的选择器可以与Immutable.js的数据结构配合使用。
 
-A: Selectors created with `createSelector` should work just fine with Immutable.js data structures.
-
-If your selector is recomputing and you don't think the state has changed, make sure you are aware of which Immutable.js update methods **always** return a new object and which update methods only return a new object **when the collection actually changes**.
-
+如果您的选择器是重新计算，并且您不认为状态发生了变化，请确保您知道哪个Immutable.js更新方法**总是**返回一个新对象，哪个方法在当集合实际发生变化时返回一个新对象。
 ```js
 import Immutable from 'immutable'
 
@@ -930,37 +933,39 @@ newMap = myMap.map(a => a * 1)
 assert.notEqual(myMap, newMap)
 ```
 
-If a selector's input is updated by an operation that always returns a new object, it may be performing unnecessary recomputations. See [here](#q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same) for a discussion on the pros and cons of using a deep equality check like `Immutable.is` to eliminate unnecessary recomputations.
+如果一个选择器的输入被一个总是返回一个新对象的操作所更新，那么它可能会执行不必要的重新计算。 参考 [here](#q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same) 了解关于为了消除不必要的重新计算使用像`Immutable.is`库一样进行深度相等检查的利弊的讨论。
 
 ### Q: Can I share a selector across multiple components?
+能否在多个组件之间共享一个选择器
 
-A: Selectors created using `createSelector` only have a cache size of one. This can make them unsuitable for sharing across multiple components if the arguments to the selector are different for each instance of the component. There are a couple of ways to get around this:
+A: 使用`createSelector`创建的选择器的缓存大小为1。如果选择器的参数对于组件的每个实例都是不同的，那么这就使得它们不适合跨多个组件共享。有很多方法可以解决这个
 
-* Create a factory function which returns a new selector for each instance of the component. There is built-in support for factory functions in React Redux v4.3 or higher. See [here](#sharing-selectors-with-props-across-multiple-components) for an example.
+* 创建一个工厂函数，该函数为每个组件实例返回一个新的选择器。在响应Redux v4.3或更高版本中，有内置的对工厂功能的支持 查看 [这个示例](#sharing-selectors-with-props-across-multiple-components)
 
-* Create a custom selector with a cache size greater than one.
+* 创建一个缓存大小大于1的的自定义选择器。
 
 ### Q: Are there TypeScript Typings?
 
-A: Yes! They are included and referenced in `package.json`. They should Just Work™.
+A: 是的! 它们包含在`package.json`中。 他们应该工作™.
 
-### Q: How can I make a [curried](https://github.com/hemanth/functional-programming-jargon#currying) selector?
+### Q: 怎么创建一个 [curried](https://github.com/hemanth/functional-programming-jargon#currying) 选择器?
 
-A: Try these [helper functions](https://github.com/reactjs/reselect/issues/159#issuecomment-238724788) courtesy of [MattSPalmer](https://github.com/MattSPalmer)
+A: 尝试这些  经由 [MattSPalmer](https://github.com/MattSPalmer)提供的[帮助 函数](https://github.com/reactjs/reselect/issues/159#issuecomment-238724788)
 
-## Related Projects
+## 相关项目
 
 ### [re-reselect](https://github.com/toomuchdesign/re-reselect)
 
-Enhances Reselect selectors by wrapping `createSelector` and returning a memoized collection of selectors indexed with the cache key returned by a custom resolver function.
 
-Useful to reduce selectors recalculation when the same selector is repeatedly called with one/few different arguments.
+通过包装`createSelector`来增强Reselect选择器，并返回由一个自定义解析器函数返回的cache键所索引的选择器。
+
+当相同的选择器被重复地调用一个/几个不同的参数时，可以减少选择器重新计算。
 
 ### [reselect-map](https://github.com/HeyImAlex/reselect-map)
 
-Can be useful when doing **very expensive** computations on elements of a collection because Reselect might not give you the granularity of caching that you need. Check out the reselect-maps README for examples.
+在对元素集合进行**非常昂贵**的计算时，可能会很有用，因为Reselect可能不会给您所需的缓存粒度。请查看reselect-maps的README。
 
-**The optimizations in reselect-map only apply in a small number of cases. If you are unsure whether you need it, you don't!**
+**reselect-map中所做的优化只适用于少数情况。如果你不确定是否需要它，你就不需要！**
 
 ## License
 

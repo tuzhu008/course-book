@@ -91,7 +91,7 @@ function mapStateToProps(state) {
 
 如果你的`mapStateToProps`函数声明为两个参数,它使用store state作为第一个参数和传递给连接组件的props作为第二个参数被调用,并且无论什么时候连接组件收到新的props（经过浅比较的）它都将被重新调用。(第二个参数按惯例通常是将其作为`ownProps`。)
 
-  >注意: 在高级场景中，需要对渲染性能进行更多的控制，`mapStateToProps()`也可以返回一个函数。在本例中，*该函数*将被作为`mapStateToProps()`使用到特定的组件实例。这允许您对每个实例的进行记忆化（也就是缓存结果）。您可以参考[#279](https://github.com/reactjs/react-redux/pull/279)和测试它添加更多的细节。大多数应用都不需要这样做。[参考实例](https://github.com/tuzhu008/course-book/tree/master/React/reselect#在多个组件之间共享带props的选择器)
+  >注意: 在高级场景中，需要对渲染性能进行更多的控制，`mapStateToProps()`也可以返回一个函数。在本例中，*该函数*将被作为`mapStateToProps()`使用到特定的组件实例，而不是每个实例。这允许您对每个实例的进行记忆化（也就是缓存结果）。您可以参考[#279](https://github.com/reactjs/react-redux/pull/279)和测试它添加更多的细节。大多数应用都不需要这样做。[参考实例](https://github.com/tuzhu008/course-book/tree/master/React/reselect#在多个组件之间共享带props的选择器)
 
   >`mapStateToProps`函数接受整个Redux store的state作为单一参数，并返回一个对象来作为props被传递的。它通常被称为**选择器**。利用[Reselect库](https://github.com/reactjs/reselect)来有效地组合选择器和[计算导出的数据](http://redux.js.org/docs/recipes/ComputingDerivedData.html)。
 
