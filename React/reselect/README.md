@@ -57,9 +57,9 @@ console.log(totalSelector(exampleState))    // { total: 2.322 }
   - [缓存选择器的动机](#缓存选择器的动机)
   - [创建一个缓存的选择器](#创建一个缓存的选择器)
   - [组合选择器](#组合选择器)
-  - [连接一个选择器到Redux Store](#连接一个选择器到ReduxStore)
-  - [在选择器中访问React Props](#在选择器中访问ReactProps)
-  - [在多个组件之间共享带Props的选择器](#在多个组件之间共享带Props的选择器)
+  - [连接一个选择器到Redux Store](#连接一个选择器到redux)
+  - [在选择器中访问React Props](#在选择器中访问react-props)
+  - [在多个组件之间共享带Props的选择器](#在多个组件之间共享带props的选择器)
 - [API](#api)
   - [`createSelector`](#createselectorinputselectors--inputselectors-resultfunc)
   - [`defaultMemoize`](#defaultmemoizefunc-equalitycheck--defaultequalitycheck)
@@ -181,9 +181,8 @@ const getVisibleTodosFilteredByKeyword = createSelector(
 )
 ```
 
-### 连接一个选择器到ReduxStore
-
-If you are using [React Redux](https://github.com/reactjs/react-redux), you can call selectors as regular functions inside `mapStateToProps()`:
+### 连接一个选择器到redux
+如果你使用 [React Redux](https://github.com/reactjs/react-redux),你可以在`mapStateToProps()`里将选择器作为常规函数调用：
 
 #### `containers/VisibleTodoList.js`
 
@@ -215,13 +214,13 @@ const VisibleTodoList = connect(
 export default VisibleTodoList
 ```
 
-### Accessing React Props in Selectors
+### 在选择器中访问React Props
 
-> This section introduces a hypothetical extension to our app that allows it to support multiple Todo Lists. Please note that a full implementation of this extension requires changes to the reducers, components, actions etc. that aren’t directly relevant to the topics discussed and have been omitted for brevity.
+> 这一节将向我们的应用程序引入一个假设的扩展，允许它支持多个Todo列表。请注意，这个扩展的完整实现需要对reducers、组件、actions等的更改，这些更改与讨论的主题不直接相关，并且为了简洁而省略了。
 
-So far we have only seen selectors receive the Redux store state as an argument, but a selector can receive props too.
+到目前为止，我们只看到选择器接收Redux store state作为参数，但是选择器也可以接收props。
 
-Here is an `App` component that renders three `VisibleTodoList` components, each of which has a `listId` prop:
+这里时一个`App` 组件，它渲染三个`VisibleTodoList`组件，每个`VisibleTodoList`都有一个`listId`的属性:
 
 #### `components/App.js`
 
@@ -240,7 +239,7 @@ const App = () => (
 )
 ```
 
-Each `VisibleTodoList` container should select a different slice of the state depending on the value of the `listId` prop, so let’s modify `getVisibilityFilter` and `getTodos` to accept a props argument:
+每个`VisibleTodoList`容器应该根据`listId`属性的值选择一个不同的状态，因此让我们修改`getVisibilityFilter`和`getTodos`来接受一个props参数:
 
 #### `selectors/todoSelectors.js`
 
@@ -270,7 +269,7 @@ const getVisibleTodos = createSelector(
 export default getVisibleTodos
 ```
 
-`props` can be passed to `getVisibleTodos` from `mapStateToProps`:
+`props` 可以从`mapStateToProps`传递到`getVisibleTodos`:
 
 ```js
 const mapStateToProps = (state, props) => {
@@ -280,11 +279,11 @@ const mapStateToProps = (state, props) => {
 }
 ```
 
-So now `getVisibleTodos` has access to `props`, and everything seems to be working fine.
+现在，`getVisibleTodos`可以访问`props`，一切看起来都很正常
 
-**But there is a problem!**
+**但是这有一个问题？**
 
-Using the `getVisibleTodos` selector with multiple instances of the `VisibleTodoList` container will not correctly memoize:
+使用带有`VisibleTodoList`容器的多个实例的`getVisibleTodos`选择器将不能正确地缓存:
 
 #### `containers/VisibleTodoList.js`
 
@@ -296,7 +295,7 @@ import { getVisibleTodos } from '../selectors'
 
 const mapStateToProps = (state, props) => {
   return {
-    // WARNING: THE FOLLOWING SELECTOR DOES NOT CORRECTLY MEMOIZE
+    // 警告: 下面的选择器不能正确地进行缓存
     todos: getVisibleTodos(state, props)
   }
 }
@@ -317,17 +316,17 @@ const VisibleTodoList = connect(
 export default VisibleTodoList
 ```
 
-A selector created with `createSelector` has a cache size of 1 and only returns the cached value when its set of arguments is the same as its previous set of arguments. If we alternate between rendering `<VisibleTodoList listId="1" />` and `<VisibleTodoList listId="2" />`, the shared selector will alternate between receiving `{listId: 1}` and `{listId: 2}` as its `props` argument. This will cause the arguments to be different on each call, so the selector will always recompute instead of returning the cached value. We’ll see how to overcome this limitation in the next section.
+使用`createSelector`创建的选择器有一个缓存大小为1，当它的参数集与之前的参数集相同时，只返回缓存的值。如果我们轮流渲染`<VisibleTodoList listId="1" />`和`<VisibleTodoList listId="2" />`，共享选择器将轮流接收 `{listId: 1}` and `{listId: 2}` 作为它们的 `props` 参数。这将导致每次调用的参数不同，所以选择器将总是重新计算而不是返回缓存的值。在下一节中，我们将了解如何克服这一限制。
 
-### Sharing Selectors with Props Across Multiple Components
+### 在多个组件之间共享带Props的选择器
 
-> The examples in this section require React Redux v4.3.0 or greater
+> 本节中的示例需要Redux v4.3.0或更高版本
 
-> An alternative approach be found in [re-reselect](https://github.com/toomuchdesign/re-reselect)
+> 另一种方法是 [re-reselect](https://github.com/toomuchdesign/re-reselect)
 
-To share a selector across multiple `VisibleTodoList` components while passing in `props` **and** retaining memoization, each instance of the component needs its own private copy of the selector.
+当传入`props`时，在多个`VisibleTodoList`组件之间共享一个选择器，**并且**保留缓存，每个组件的实例都需要它自己的选择器的私有副本。
 
-Let’s create a function named `makeGetVisibleTodos` that returns a new copy of the `getVisibleTodos` selector each time it is called:
+让我们创建一个名为`makeGetVisibleTodos`的函数，它将在每次调用`getVisibleTodos`选择器时返回一个新的副本:
 
 #### `selectors/todoSelectors.js`
 
@@ -359,11 +358,11 @@ const makeGetVisibleTodos = () => {
 export default makeGetVisibleTodos
 ```
 
-We also need a way to give each instance of a container access to its own private selector. The `mapStateToProps` argument of `connect` can help with this.
+我们还需要一种方法，将容器的每个实例都提供给它自己的私有选择器。`mapstatetoprop`的`connect`参数可以帮助解决这个问题。
 
-**If the `mapStateToProps` argument supplied to `connect` returns a function instead of an object, it will be used to create an individual `mapStateToProps` function for each instance of the container.**
+**如果`connect`提供的`mapstatetoprop`参数返回一个函数而不是一个对象，这个函数将被用于为容器的每个实例创建一个单独的`mapStateToProps`函数。**
 
-In the example below `makeMapStateToProps` creates a new `getVisibleTodos` selector, and returns a `mapStateToProps` function that has exclusive access to the new selector:
+在下面的示例中，`makeMapStateToProps`创建了一个新的`getVisibleTodos`选择器，并返回一个`mapStateToProps`函数，该函数具有对新选择器的独有的访问权:
 
 ```js
 const makeMapStateToProps = () => {
@@ -377,7 +376,7 @@ const makeMapStateToProps = () => {
 }
 ```
 
-If we pass `makeMapStateToProps` to `connect`, each instance of the `VisibleTodosList` container will get its own `mapStateToProps` function with a private `getVisibleTodos` selector. Memoization will now work correctly regardless of the render order of the `VisibleTodoList` containers.
+如果我们通过`makeMapStateToProps`来`connect`，`VisibleTodosList`容器的每个实例都将使用一个私有的`getVisibleTodos`选择器来获得它自己的`mapStateToProps`函数。记忆化现在都可以正确地工作，而不用考虑`VisibleTodoList`容器的渲染顺序。
 
 #### `containers/VisibleTodoList.js`
 
