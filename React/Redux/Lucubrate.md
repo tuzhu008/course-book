@@ -1,0 +1,2 @@
+初始化的时候每个reducer都会执行三次？
+每次dispatch action的时候都会触发每个reducer?
