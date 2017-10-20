@@ -16,13 +16,13 @@ store是一个对象，一个应用中只能有唯一一个store。里面存放�
 
 1、导入创建仓库的方法
 
-```
+```javascript
 import  { createStore } from 'redux';
 ```
 
 2、创建仓库
 
-```
+```javascript
 let store = createStore(rootReducer, initialState)
 ```
 
@@ -39,7 +39,7 @@ let store = createStore(rootReducer, initialState)
 
 reducer是**绝对纯净**的函数。它用于接受当前的（旧的）`state` 和 `action`,然后返回一个新的`state`。
 
-```
+```javascript
 function (state, action) {
     //doSomething
     return newState;
@@ -60,7 +60,7 @@ Redux中，state的更新都是靠reduxer中返回新的state来完成的。
 
 上面的reducer函数还可以使用ES6的默认值语法来优化：
 
-```
+```javascript
 function (state = defualtSate, action) {
     //doSomething
     return newState;
@@ -95,7 +95,7 @@ action是把数据从应用传到store的有效载荷，**是store数据的唯�
 
 action只是一个普通的对象。基本结构：
 
-```
+```javascript
 {
   type: 'ADD_TODO',
   text: 'I wanna go to PP'
@@ -108,7 +108,7 @@ action一定含有一个值为**字符串**的type属性，这个属性用来唯
 
 我们常把action的`type`使用`const`声明为一个常量。虽然这样做并不是必须的，但这个一个好的实践，有助于减少错误和便于团队开发。
 
-```
+```javascript
 const ADD_TODO = 'ADD_TODO';
 {
   type: ADD_TODO,
@@ -118,7 +118,7 @@ const ADD_TODO = 'ADD_TODO';
 
 在实际的项目中，这些action可能非常复杂和繁多，因此非常有必要对它进行管理。我们可以将`type`的常量声明全部都提取到一个单独的`actionTypes.js`文件中：
 
-```
+```javascript
 export const ADD_TODO = 'ADD_TODO';
 
 export const DELETE_TODO = 'DELETE_TODO';
@@ -126,13 +126,13 @@ export const DELETE_TODO = 'DELETE_TODO';
 
 在需要使用到`type`的文件内
 
-```
+```javascript
 import * as types from './actionTypes'; // 这里的目录根据实际存放位置配置
 ```
 
 修改之前的`actions.js`文件：
 
-```
+```javascript
 import * as types from './actionTypes';
 
 {
@@ -143,7 +143,7 @@ import * as types from './actionTypes';
 
 由于action中包含了更新state所需数据，而这些数据不是固定的。比我我们要修改一个用户的昵称，这个昵称可以被随时修改，如果我们将action写死的话，这个昵称就无法改变了。因此我们想要动态生成这个action，函数这时候就排上用场了。这个函数被称为**actionc创建函数。**
 
-```
+```javascript
 import * as types from './actionTypes';
 
 function addTodo (text) {
@@ -162,7 +162,7 @@ function addTodo (text) {
 
 创建好了store，如何才能触发这些更新呢？**使用store的**`dispatch`**一个action**。
 
-```
+```javascript
 store.dispatch(addTodo('I wanna go to bed'));
 ```
 
@@ -182,7 +182,7 @@ Redux数据的生命周期：
 
 安装react-redux绑定库
 
-```
+```javascript
 npm install --save react-redux
 ```
 
@@ -194,7 +194,7 @@ npm install --save react-redux
 
 我们在应用的入口文件`index.js`中获取react-redux库的 `Provider`
 
-```
+```javascript
 import { Provider } from 'react-redux';
 ```
 
@@ -202,13 +202,13 @@ import { Provider } from 'react-redux';
 
 导入创建成功的store
 
-```
+```javascript
 import store from './store/index';
 ```
 
 然后使用`Provider`封装App组件：
 
-```
+```javascript
 ReactDOM.render(
   <Provider store={store}>
     <App />
@@ -217,7 +217,7 @@ ReactDOM.render(
 );
 ```
 `index.js`如：
-```
+```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -240,6 +240,6 @@ registerServiceWorker();
 `connect`用来将一个React组件连接到React store。它返回一个新的,已连接的新组件。
 
 引入`connect`
-```
+```javascript
 import { connect } from 'react-redux';
 ```
