@@ -42,6 +42,7 @@ ReactDOM.render(
 ```
 
 <hr>
+
 <a id="connect"></a>
 ### `connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])`
 
@@ -392,6 +393,7 @@ function mapDispatchToPropsFactory(initialState, initialProps) {
 export default connect(mapStateToPropsFactory, mapDispatchToPropsFactory)(TodoApp)
 ```
 <hr>
+
 <a id="connectAdvanced"></a>
 ### `connectAdvanced(selectorFactory, [connectOptions])`
 
