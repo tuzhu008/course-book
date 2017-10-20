@@ -52,7 +52,41 @@ ReactDOM.render(
 <a id="connect-arguments"></a>
 #### Arguments 参数
 
-* [`mapStateToProps(state, [ownProps]): stateProps`] \(*函数*): 如果指定了这个参数，新组件将订阅Redux store的更新。这意味着任何时候store更新，`mapStateToProps` 都将被调用。 `mapStateToProps`的结果必须是一个简单的对象，它将被合并到组件的props中。如果您不想订阅store更新，可以通过`null`或`undefined`替代`mapStateToProps`。
+* [`mapStateToProps(state, [ownProps]): stateProps`] \(*函数*): 将store中的state映射到组件的props中。
+```javascript
+function mapStateToProps(state) {
+  return {
+    todos: state.todos,
+    visibilityFilter: state.visibilityFilter
+  };
+}
+```
+有时候我们只需要state数据的一部分，我们还可以在`mapStateToProp`中我们对需要的数据进行过滤：
+```javascript
+// 过滤todos
+function selectTodos(todos, filter) {
+  switch (filter) {
+    case VisibilityFilters.SHOW_ALL:
+      return todos;
+    case VisibilityFilters.SHOW_COMPLETED:
+      return todos.filter(todo => todo.completed);
+    case VisibilityFilters.SHOW_ACTIVE:
+      return todos.filter(todo => !todo.completed);
+    default:
+      return todos;
+  }
+}
+
+// 将过滤后的数据映射到props
+function mapStateToProps(state) {
+  return {
+    todos: selectTodos(state.todo, state.visibilityFilter);
+    visibilityFilter: state.visibilityFilter
+  };
+}
+```
+
+如果指定了这个参数，新组件将订阅Redux store的更新。这意味着任何时候store更新，`mapStateToProps` 都将被调用。 `mapStateToProps`的结果必须是一个简单的对象，它将被合并到组件的props中。如果您不想订阅store更新，可以通过`null`或`undefined`替代`mapStateToProps`。
 
 如果你的`mapStateToProps`函数声明为两个参数,它使用store state作为第一个参数和传递给连接组件的props作为第二个参数被调用,并且无论什么时候连接组件收到新的props（经过浅比较的）它都将被重新调用。(第二个参数按惯例通常是将其作为`ownProps`。)
 
