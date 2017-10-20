@@ -61,7 +61,7 @@ function mapStateToProps(state) {
   };
 }
 ```
-有时候我们只需要state数据的一部分，我们还可以在`mapStateToProp`中我们对需要的数据进行过滤：
+有时候我们只需要state数据的一部分，我们还可以在`mapStateToProp`中我们对需要的数据进行过滤：
 ```javascript
 // 过滤todos
 function selectTodos(todos, filter) {
