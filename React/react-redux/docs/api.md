@@ -1,7 +1,7 @@
 ## API
 
 <a id="provider"></a>
-### `<Provider store>`
+### `<Provider>`
 
 让Redux store可用,以使`connect()`在下面的组件层次结构中调用。通常，在没有包装一个父组件或祖先组件到`<Provider>`里情况下，您是不能使用`connect()`的。
 
