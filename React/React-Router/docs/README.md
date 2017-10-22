@@ -1,4 +1,4 @@
-# **中文文档**
+# **中文文档**
 
 版本：4.x
 
@@ -14,7 +14,7 @@
 * [处理更新阻塞](/React/React-Router/docs/guide/DealingWithUpdateBlocking.md)
 
 ## [API](/React/React-Router/docs/API.md)
-* [`<BrowserRouter>`](/React/React-Router/docs/API.md/#a)
+* [`<BrowserRouter>`](/React/React-Router/docs/API.md)
     - basename: string
     - getUserConfirmation: func
     - forceRefresh: bool
