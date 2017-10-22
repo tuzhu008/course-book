@@ -2,16 +2,16 @@
 
 版本：4.x
 
-## 指南：
-* [设计理念](/React/React-Router/docs/guide/Philosophy.md)
-* [快速开始](/React/React-Router/docs/guide/QuickStart.md)
-* [服务器渲染](/React/React-Router/docs/guide/ServerRendering.md)
-* [代码分割](/React/React-Router/docs/guide/CodeSplitting.md)
-* [滚动复位](/React/React-Router/docs/guide/ScrollRestoration.md)
-* [测试](/React/React-Router/docs/guide/Testing.md)
-* [集成Redux](/React/React-Router/docs/guide/ReduxIntegration.md)
-* [静态路由](/React/React-Router/docs/guide/StaticRoutes.md)
-* [处理更新阻塞](/React/React-Router/docs/guide/DealingWithUpdateBlocking.md)
+## [指南](./guide)：
+* [设计理念](./guide/Philosophy.md)
+* [快速开始](./guide/QuickStart.md)
+* [服务器渲染](./guide/ServerRendering.md)
+* [代码分割](./guide/CodeSplitting.md)
+* [滚动复位](./guide/ScrollRestoration.md)
+* [测试](./guide/Testing.md)
+* [集成Redux](./guide/ReduxIntegration.md)
+* [静态路由](./guide/StaticRoutes.md)
+* [处理更新阻塞](./guide/DealingWithUpdateBlocking.md)
 
 ## [API](./api)
 * `<BrowserRouter>`
