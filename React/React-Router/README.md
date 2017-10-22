@@ -20,7 +20,7 @@
 
 ## Docs
 
-**[查看这里的文档](https://reacttraining.com/react-router)**
+**[查看这里的文档](/React/React-Router/docs)**
 
 [从 2.x/3.x? 迁移](/packages/react-router/docs/guides/migrating.md)
 
