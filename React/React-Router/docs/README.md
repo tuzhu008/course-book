@@ -3,9 +3,9 @@
 版本：4.x
 
 ## 指南：
-* [设计理念](/React/React-Router/docs/guide/Philosophy.md)
+* [设计理念](/React/React-Router/docs/guide/Philosophy.md)
 * [快速开始](/React/React-Router/docs/guide/QuickStart.md)
-* [服务器渲染](/React/React-Router/docs/guide/ServerRendering.md)
+* [服务器渲染](/React/React-Router/docs/guide/ServerRendering.md)
 * [代码分割](/React/React-Router/docs/guide/CodeSplitting.md)
 * [滚动复位](/React/React-Router/docs/guide/ScrollRestoration.md)
 * [测试](/React/React-Router/docs/guide/Testing.md)
@@ -14,7 +14,7 @@
 * [处理更新阻塞](/React/React-Router/docs/guide/DealingWithUpdateBlocking.md)
 
 ## [API](/React/React-Router/docs/API.md)
-* [`<BrowserRouter>`](/React/React-Router/docs/API.md)
+* `<BrowserRouter>`
     - basename: string
     - getUserConfirmation: func
     - forceRefresh: bool
