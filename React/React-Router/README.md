@@ -13,11 +13,11 @@ React Router 保持 UI 与 URL 同步。它拥有简单的 API 与强大的功�
 ### 文档 & 帮助
 
 - [API 文档与指南](./docs)
-- [Change Log](https://github.com/rackt/react-router/blob/master/CHANGELOG.md)
+- [Change Log](https://github.com/ReactTraining/react-router/blob/master/CHANGES.md)
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/react-router)
 - [Codepen Boilerplate](http://codepen.io/anon/pen/xwQZdy?editors=001) 用于反馈 bug
 
-**注意：** **如果你仍然使用的是 React Router 0.13.x，可以在 [the 0.13.x branch](https://github.com/rackt/react-router/tree/0.13.x) 找到 [文档](https://github.com/rackt/react-router/tree/0.13.x/docs/guides)。升级信息可以查看 [change log](https://github.com/rackt/react-router/blob/master/CHANGELOG.md)。**
+**注意：** **如果你仍然使用的是 React Router 0.13.x，可以在 [the 0.13.x branch](https://github.com/rackt/react-router/tree/0.13.x) 找到 [文档](https://github.com/rackt/react-router/tree/0.13.x/docs/guides)。升级信息可以查看 [change log](https://github.com/ReactTraining/react-router/blob/master/CHANGES.md)。**
 
 如果有疑问和技术难点，请到[我们的 Reactiflux 频道](https://discord.gg/0ZcbPKXt5bYaNQ46)或 [Stack Overflow](http://stackoverflow.com/questions/tagged/react-router) 提问。这里的 issue 是**专门**为反馈 bug 和新特性提出所设立的。
 
