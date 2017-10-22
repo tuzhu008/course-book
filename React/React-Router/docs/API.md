@@ -361,11 +361,11 @@ const FadingRoute = ({ component: Component, ...rest }) => (
 ```
 Warning: <Route component> takes precendence over <Route render> so don’t use both in the same <Route>.
 
-children: func
+## **children: func**
 Sometimes you need to render whether the path matches the location or not. In these cases, you can use the function children prop. It works exactly like render except that it gets called whether there is a match or not.
 
 The children render prop receives all the same route props as the component and render methods, except when a route fails to match the URL, then match is null. This allows you to dynamically adjust your UI based on whether or not the route matches. Here we’re adding an active class if the route matches
-
+```js+html
 <ul>
   <ListItemLink to="/somewhere"/>
   <ListItemLink to="/somewhere-else"/>
@@ -378,8 +378,9 @@ const ListItemLink = ({ to, ...rest }) => (
     </li>
   )}/>
 )
+```
 This could also be useful for animations:
-
+```js
 <Route children={({ match, ...rest }) => (
   {/* Animate will always render, so you can use lifecycles
       to animate its child in and out */}
@@ -387,53 +388,75 @@ This could also be useful for animations:
     {match && <Something {...rest}/>}
   </Animate>
 )}/>
+```
 Warning: Both <Route component> and <Route render> take precendence over <Route children> so don’t use more than one in the same <Route>.
 
-path: string
+### **path: string**
 Any valid URL path that path-to-regexp understands.
 
+```js
 <Route path="/users/:id" component={User}/>
+```
 Routes without a path always match.
 
-exact: bool
+### **exact: bool**
 When true, will only match if the path matches the location.pathname exactly.
 
+```js
 <Route exact path="/one" component={About}/>
-path	location.pathname	exact	matches?
-/one	/one/two	true	no
-/one	/one/two	false	yes
-strict: bool
+```
+| path      |    location.pathname | exact  | matches? |
+| :--------: | :--------:| :--: | :--:|
+|/oner | /one/two |  true   |no|
+|/oner | /one/two |  false   |yes|
+
+### **strict: bool**
 When true, a path that has a trailing slash will only match a location.pathname with a trailing slash. This has no effect when there are additional URL segments in the location.pathname.
 
+```js
 <Route strict path="/one/" component={About}/>
-path	location.pathname	matches?
-/one/	/one	no
-/one/	/one/	yes
-/one/	/one/two	yes
-Warning: strict can be used to enforce that a location.pathname has no trailing slash, but in order to do this both strict and exact must be true.
+```
 
+| path      |    location.pathname | matches?   | 
+| :--------: | :--------:| :--: |
+|/one/ | /one |  no   |
+|/one/| /one/ |  yes   |
+|/one/| /one/two |  yes   |
+
+Warning: strict can be used to enforce that a location.pathname has no trailing slash, but in order to do this both strict and exact must be true.
+```js
 <Route exact strict path="/one" component={About}/>
+```
 path	location.pathname	matches?
 /one	/one	yes
 /one	/one/	no
 /one	/one/two	no
-location: object
+
+| path      |    location.pathname | matches?   | 
+| :--------: | :--------:| :--: |
+|/one | /one |  yes   |
+|/one | /one/ |  no   |
+|/one | /one/two |  no   |
+
+### **location: object**
 A <Route> element tries to match its path to the current history location (usually the current browser URL). However, a location with a different pathname can also be passed for matching.
 
 This is useful in cases when you need to match a <Route> to a location other than the current history location, as shown in the Animated Transitions example.
 
 If a <Route> element is wrapped in a <Switch> and matches the location passed to the <Switch> (or the current history location), then the location prop passed to <Route> will be overridden by the one used by the <Switch> (given here).
 
-<Router>
+## **`<Router>`**
 The common low-level interface for all router components. Typically apps will use one of the high-level routers instead:
 
-<BrowserRouter>
-<HashRouter>
-<MemoryRouter>
-<NativeRouter>
-<StaticRouter>
+* `<BrowserRouter`>
+* `<HashRouter>`
+* `<MemoryRouter>`
+* `<NativeRouter>`
+* `<StaticRouter>`
+
 The most common use-case for using the low-level <Router> is to synchronize a custom history with a state management lib like Redux or Mobx. Note that this is not required to use state management libs alongside React Router, it’s only for deep integration.
 
+```js
 import { Router } from 'react-router'
 import createBrowserHistory from 'history/createBrowserHistory'
 
@@ -442,26 +465,32 @@ const history = createBrowserHistory()
 <Router history={history}>
   <App/>
 </Router>
-history: object
+```
+### **history: object**
 A history object to use for navigation.
 
+```js
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const customHistory = createBrowserHistory()
 <Router history={customHistory}/>
-children: node
+```
+### **children: node**
 A single child element to render.
 
+```html
 <Router>
   <App/>
 </Router>
-<StaticRouter>
+```
+
+## **`<StaticRouter>`**
 A <Router> that never changes location.
 
 This can be useful in server-side rendering scenarios when the user isn’t actually clicking around, so the location never actually changes. Hence, the name: static. It’s also useful in simple tests when you just need to plug in a location and make assertions on the render output.
 
 Here’s an example node server that sends a 302 status code for <Redirect>s and regular HTML for other requests:
-
+```js
 import { createServer } from 'http'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
@@ -489,55 +518,66 @@ createServer((req, res) => {
     res.end()
   }
 }).listen(3000)
-basename: string
+```
+### **basename: string**
 The base URL for all locations. A properly formatted basename should have a leading slash, but no trailing slash.
 
+```js
 <StaticRouter basename="/calendar">
   <Link to="/today"/> // renders <a href="/calendar/today">
 </StaticRouter>
-location: string
+```
+### **location: string**
 The URL the server received, probably req.url on a node server.
 
+```js
 <StaticRouter location={req.url}>
   <App/>
 </StaticRouter>
-location: object
+```
+### **location: object**
 A location object shaped like { pathname, search, hash, state }
 
+```js
 <StaticRouter location={{ pathname: '/bubblegum' }}>
   <App/>
 </StaticRouter>
-context: object
+```
+### **context: object**
 A plain JavaScript object. During the render, components can add properties to the object to store information about the render.
-
+```js
 const context = {}
 <StaticRouter context={context}>
   <App />
 </StaticRouter>
+```
 When a <Route> matches, it will pass the context object to the component it renders as the staticContext prop. Check out the Server Rendering guide for more information on how to do this yourself.
 
 After the render, these properties can be used to to configure the server’s response.
-
+```js
 if(context.status === '404') {
   // ...
 }
-children: node
+```
+### **children: node**
 A single child element to render.
 
-<Switch>
+## **`<Switch>`**
 Renders the first child <Route> or <Redirect> that matches the location.
 
 How is this different than just using a bunch of <Route>s?
 
 <Switch> is unique in that it renders a route exclusively. In contrast, every <Route> that matches the location renders inclusively. Consider this code:
-
+```js
 <Route path="/about" component={About}/>
 <Route path="/:user" component={User}/>
 <Route component={NoMatch}/>
+```
 If the URL is /about, then <About>, <User>, and <NoMatch> will all render because they all match the path. This is by design, allowing us to compose <Route>s into our apps in many ways, like sidebars and breadcrumbs, bootstrap tabs, etc.
 
 Occasionally, however, we want to pick only one <Route> to render. If we’re at /about we don’t want to also match /:user (or show our “404” page). Here’s how to do it with Switch:
 
+```js
 import { Switch, Route } from 'react-router'
 
 <Switch>
@@ -546,10 +586,11 @@ import { Switch, Route } from 'react-router'
   <Route path="/:user" component={User}/>
   <Route component={NoMatch}/>
 </Switch>
+```
 Now, if we’re at /about, <Switch> will start looking for a matching <Route>. <Route path="/about"/> will match and <Switch> will stop looking for matches and render <About>. Similarly, if we’re at /michael then <User> will render.
 
 This is also useful for animated transitions since the matched <Route> is rendered in the same position as the previous one.
-
+```
 <Fade>
   <Switch>
     {/* there will only ever be one child here */}
@@ -565,7 +606,8 @@ This is also useful for animated transitions since the matched <Route> is render
       one might render null though, making transitions
       a bit more cumbersome to work out */}
 </Fade>
-Switch props
+```
+### **Switch props**
 location: object
 A location object to be used for matching children elements instead of the current history location (usually the current browser URL).
 
@@ -578,6 +620,7 @@ When you include a <Redirect> in a <Switch>, it can use any of the <Route>'s loc
 
 If a location prop is given to the <Switch>, it will override the location prop on the matching child element.
 
+```
 <Switch>
   <Route exact path="/" component={Home}/>
 
@@ -586,32 +629,36 @@ If a location prop is given to the <Switch>, it will override the location prop 
 
   <Route component={NoMatch}/>
 </Switch>
-history
+```
+## **`history`**
 The term “history” and "history object" in this documentation refers to the history package, which is one of only 2 major dependencies of React Router (besides React itself), and which provides several different implementations for managing session history in JavaScript in various environments.
 
 The following terms are also used:
 
-“browser history” - A DOM-specific implementation, useful in web browsers that support the HTML5 history API
-“hash history” - A DOM-specific implementation for legacy web browsers
-“memory history” - An in-memory history implementation, useful in testing and non-DOM environments like React Native
+* “browser history” - A DOM-specific implementation, useful in web browsers that support the HTML5 history API
+* “hash history” - A DOM-specific implementation for legacy web browsers
+* “memory history” - An in-memory history implementation, useful in testing and non-DOM environments like React Native
 history objects typically have the following properties and methods:
 
-length - (number) The number of entries in the history stack
-action - (string) The current action (PUSH, REPLACE, or POP)
-location - (object) The current location. May have the following properties:
-pathname - (string) The path of the URL
-search - (string) The URL query string
-hash - (string) The URL hash fragment
-state - (string) location-specific state that was provided to e.g. push(path, state) when this location was pushed onto the stack. Only available in browser and memory history.
-push(path, [state]) - (function) Pushes a new entry onto the history stack
-replace(path, [state]) - (function) Replaces the current entry on the history stack
-go(n) - (function) Moves the pointer in the history stack by n entries
-goBack() - (function) Equivalent to go(-1)
-goForward() - (function) Equivalent to go(1)
-block(prompt) - (function) Prevents navigation (see the history docs)
-history is mutable
+* length - (number) The number of entries in the history stack
+* action - (string) The current action (PUSH, REPLACE, or POP)
+* location - (object) The current location. May have the following properties:
+    - pathname - (string) The path of the URL
+    - search - (string) The URL query string
+    - hash - (string) The URL hash fragment
+    - state - (string) location-specific state that was provided to e.g. push(path, state) when this location was pushed onto the stack. Only available in browser and memory history.
+* push(path, [state]) - (function) Pushes a new entry onto the history stack
+* replace(path, [state]) - (function) Replaces the current entry on the history stack
+* go(n) - (function) Moves the pointer in the history stack by n entries
+* goBack() - (function) Equivalent to go(-1)
+* goForward() - (function) Equivalent to go(1)
+* block(prompt) - (function) Prevents navigation (see the history docs)
+
+### **history is mutable**
+
 The history object is mutable. Therefore it is recommended to access the location from the render props of <Route>, not from history.location. This ensures your assumptions about React are correct in lifecycle hooks. For example:
 
+```js
 class Comp extends React.Component {
   componentWillReceiveProps(nextProps) {
     // will be true
@@ -623,11 +670,13 @@ class Comp extends React.Component {
 }
 
 <Route component={Comp}/>
+```
 Additional properties may also be present depending on the implementation you’re using. Please refer to the history documentation for more details.
 
-location
+## **`location`**
 Locations represent where the app is now, where you want it to go, or even where it was. It looks like this:
 
+```js
 {
   key: 'ac3df4', // not with HashHistory!
   pathname: '/somewhere'
@@ -637,30 +686,38 @@ Locations represent where the app is now, where you want it to go, or even where
     [userDefined]: true
   }
 }
+```
 The router will provide you with a location object in a few places:
 
-Route component as this.props.location
-Route render as ({ location }) => ()
-Route children as ({ location }) => ()
-withRouter as this.props.location
+* Route component as this.props.location
+* Route render as ({ location }) => ()
+* Route children as ({ location }) => ()
+* withRouter as this.props.location
+
+
 It is also found on history.location but you shouldn’t use that because its mutable. You can read more about that in the history doc.
 
 A location object is never mutated so you can use it in the lifecycle hooks to determine when navigation happens, this is really useful for data fetching and animation.
 
+```js
 componentWillReceiveProps(nextProps) {
   if (nextProps.location !== this.props.location) {
     // navigated!
   }
 }
+```
 You can provide locations instead of strings to the various places that navigate:
 
-Web Link to
-Native Link to
-Redirect to
-history.push
-history.replace
+* Web Link to
+* Native Link to
+* Redirect to
+* history.push
+* history.replace
+
+
 Normally you just use a string, but if you need to add some “location state” that will be available whenever the app returns to that specific location, you can use a location object instead. This is useful if you want to branch UI based on navigation history instead of just paths (like modals).
 
+```js
 // usually all you need
 <Link to="/somewhere"/>
 
@@ -674,31 +731,39 @@ const location = {
 <Redirect to={location}/>
 history.push(location)
 history.replace(location)
+```
 Finally, you can pass a location to the following components:
 
-Route
-Switch
+* Route
+* Switch
+
+
 This will prevent them from using the actual location in the router’s state. This is useful for animation and pending navigation, or any time you want to trick a component into rendering at a different location than the real one.
 
-match
+## **`match`**
 A match object contains information about how a <Route path> matched the URL. match objects contain the following properties:
 
-params - (object) Key/value pairs parsed from the URL corresponding to the dynamic segments of the path
-isExact - (boolean) true if the entire URL was matched (no trailing characters)
-path - (string) The path pattern used to match. Useful for building nested <Route>s
-url - (string) The matched portion of the URL. Useful for building nested <Link>s
+* params - (object) Key/value pairs parsed from the URL corresponding to the dynamic segments of the path
+* isExact - (boolean) true if the entire URL was matched (no trailing characters)
+* path - (string) The path pattern used to match. Useful for building nested <Route>s
+* url - (string) The matched portion of the URL. Useful for building nested <Link>s
+
+
 You’ll have access match objects in various places:
 
-Route component as this.props.match
-Route render as ({ match }) => ()
-Route children as ({ match }) => ()
-withRouter as this.props.match
-matchPath as the return value
+* Route component as this.props.match
+* Route render as ({ match }) => ()
+* Route children as ({ match }) => ()
+* withRouter as this.props.match
+* matchPath as the return value
+
+
 If a Route does not have a path, and therefore always matches, you’ll get the closest parent match. Same goes for withRouter.
 
-matchPath
+## **`matchPath`**
 This lets you use the same matching code that <Route> uses except outside of the normal render cycle, like gathering up data dependencies before rendering on the server.
 
+```js
 import { matchPath } from 'react-router'
 
 const match = matchPath('/users/123', {
@@ -706,20 +771,22 @@ const match = matchPath('/users/123', {
   exact: true,
   strict: false
 })
-pathname
+```
+### **pathname**
 The first argument is the pathname you want to match. If you’re using this on the server with Node.js, it would be req.url.
 
-props
+### **props**
 The second argument are the props to match against, they are identical to the matching props Route accepts:
-
+```js
 {
   path, // like /users/:id
   strict, // optional, defaults to false
   exact // optional, defaults to false
 }
-withRouter
+```
+### **withRouter**
 You can get access to the history object’s properties and the closest <Route>'s match via the withRouter higher-order component. withRouter will re-render its component every time the route changes with the same props as <Route> render props: { match, location, history }.
-
+```js
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
@@ -744,31 +811,36 @@ class ShowTheLocation extends React.Component {
 // Create a new component that is "connected" (to borrow redux
 // terminology) to the router.
 const ShowTheLocationWithRouter = withRouter(ShowTheLocation)
+```
 Important Note
 If you are using withRouter to prevent updates from being blocked by shouldComponentUpdate, it is important that withRouter wraps the component that implements shouldComponentUpdate. For example, when using Redux:
-
+```js
 // This gets around shouldComponentUpdate
 withRouter(connect(...)(MyComponent))
 
 // This does not
 connect(...)(withRouter(MyComponent))
+```
+
 See this guide for more information.
 
 Static Methods and Properties
+
 All non-react specific static methods and properties of the wrapped component are automatically copied to the "connected" component.
 
-Component.WrappedComponent
+### **Component.WrappedComponent**
 The wrapped component is exposed as the static property WrappedComponent on the returned component, which can be used for testing the component in isolation, among other things.
-
+```js
 // MyComponent.js
 export default withRouter(MyComponent)
 
 // MyComponent.test.js
 import MyComponent from './MyComponent'
 render(<MyComponent.WrappedComponent location={{...}} ... />)
-wrappedComponentRef: func
+```
+### **wrappedComponentRef: func**
 A function that will be passed as the ref prop to the wrapped component.
-
+```js
 class Container extends React.Component {
   componentDidMount() {
     this.component.doSomething()  
@@ -780,3 +852,4 @@ class Container extends React.Component {
     )
   }
 }
+```
