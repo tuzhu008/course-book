@@ -12,7 +12,7 @@ React Router 保持 UI 与 URL 同步。它拥有简单的 API 与强大的功�
 
 ### 文档 & 帮助
 
-- [API 文档与指南](/docs)
+- [API 文档与指南](./docs)
 - [Change Log](https://github.com/rackt/react-router/blob/master/CHANGELOG.md)
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/react-router)
 - [Codepen Boilerplate](http://codepen.io/anon/pen/xwQZdy?editors=001) 用于反馈 bug
