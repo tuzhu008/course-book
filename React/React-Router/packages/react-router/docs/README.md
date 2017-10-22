@@ -2,16 +2,16 @@
 
 版本：4.x
 
-## [指南](./guide)：
-* [设计理念](./guide/Philosophy.md)
-* [快速开始](./guide/QuickStart.md)
-* [服务器渲染](./guide/ServerRendering.md)
-* [代码分割](./guide/CodeSplitting.md)
-* [滚动复位](./guide/ScrollRestoration.md)
-* [测试](./guide/Testing.md)
-* [集成Redux](./guide/ReduxIntegration.md)
-* [静态路由](./guide/StaticRoutes.md)
-* [处理更新阻塞](./guide/DealingWithUpdateBlocking.md)
+## [指南](./guides)：
+* [设计理念](./guides/Philosophy.md)
+* [快速开始](./guides/QuickStart.md)
+* [服务器渲染](./guides/ServerRendering.md)
+* [代码分割](./guides/CodeSplitting.md)
+* [滚动复位](./guides/ScrollRestoration.md)
+* [测试](./guides/Testing.md)
+* [集成Redux](./guides/ReduxIntegration.md)
+* [静态路由](./guides/StaticRoutes.md)
+* [处理更新阻塞](./guides/DealingWithUpdateBlocking.md)
 
 ## [API](./api)
 * `<BrowserRouter>`
