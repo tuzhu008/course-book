@@ -258,7 +258,7 @@ The URL to redirect to.
 ### **to: object**
 A location to redirect to.
 
-```js
+```html
 <Redirect to={{
   pathname: '/login',
   search: '?utm=your+face',
@@ -268,12 +268,12 @@ A location to redirect to.
 
 ### **push: bool**
 When true, redirecting will push a new entry onto the history instead of replacing the current one.
-```js
+```html
 <Redirect push to="/somewhere/else"/>
 ```
 ### **from: string**
 A pathname to redirect from. This can only be used to match a location when rendering a <Redirect> inside of a <Switch>. See <Switch children> for more details.
-```js
+```html
 <Switch>
   <Redirect from='/old-path' to='/new-path'/>
   <Route path='/new-path' component={Place}/>
@@ -294,48 +294,57 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 </Router>
 ```
 If the location of the app is / then the UI hierarchy will be something like:
-
+```html
 <div>
   <Home/>
   <!-- react-empty: 2 -->
 </div>
+```
 And if the location of the app is /news then the UI hierarchy will be:
 
+```html
 <div>
   <!-- react-empty: 1 -->
   <NewsFeed/>
 </div>
+```
 The “react-empty” comments are just implementation details of React’s null rendering. But for our purposes, it is instructive. A Route is always technically “rendered” even though its rendering null. As soon as the app location matches the route’s path, your component will be rendered.
 
-Route render methods
+### **Route render methods**
 There are 3 ways to render something with a <Route>:
 
-<Route component>
-<Route render>
-<Route children>
+* `<Route component>`
+* `<Route render>`
+* `<Route children>`
+
 Each is useful in different circumstances. You should use only one of these props on a given <Route>. See their explanations below to understand why you have 3 options. Most of the time you’ll use component.
 
-Route props
+### **Route props**
 All three render methods will be passed the same three route props
 
-match
-location
-history
-component
+* match
+* location
+* history
+
+
+### **component**
 A React component to render only when the location matches. It will be rendered with route props.
 
+```js
 <Route path="/user/:username" component={User}/>
 
 const User = ({ match }) => {
   return <h1>Hello {match.params.username}!</h1>
 }
+```
 When you use component (instead of render or children, below) the router uses React.createElement to create a new React element from the given component. That means if you provide an inline function to the component attribute, you would create a new component every render. This results in the existing component unmounting and the new component mounting instead of just updating the existing component. When using an inline function for inline rendering, use the render or the children prop (below).
 
-render: func
+### **render: func**
 This allows for convenient inline rendering and wrapping without the undesired remounting explained above.
 
 Instead of having a new React element created for you using the component prop, you can pass in a function to be called when the location matches. The render prop receives all the same route props as the component render prop.
 
+```js
 // convenient inline rendering
 <Route path="/home" render={() => <div>Home</div>}/>
 
@@ -349,6 +358,7 @@ const FadingRoute = ({ component: Component, ...rest }) => (
 )
 
 <FadingRoute path="/cool" component={Something}/>
+```
 Warning: <Route component> takes precendence over <Route render> so don’t use both in the same <Route>.
 
 children: func
