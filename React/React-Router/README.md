@@ -30,7 +30,7 @@
 
 ## 包
 
-这个仓库是我们使用[Lerna](https://github.com/lerna/lerna)管理的一个monorepo。这这意味着，实际上我们发布到npm的[几个包](https://github.com/ReactTraining/react-router/tree/master/packages)都来自于相同的代码库，包括:
+这个仓库是我们使用[Lerna](https://github.com/lerna/lerna)管理的一个[monorepo](/Questions/Q1/Monorepo.md)。这这意味着，实际上我们发布到npm的[几个包](https://github.com/ReactTraining/react-router/tree/master/packages)都来自于相同的代码库，包括:
 
 | Package | Version | Docs | Description |
 |---------|---------|------|-------------|
