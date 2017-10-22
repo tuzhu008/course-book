@@ -13,7 +13,7 @@
 * [静态路由](/React/React-Router/docs/guide/StaticRoutes.md)
 * [处理更新阻塞](/React/React-Router/docs/guide/DealingWithUpdateBlocking.md)
 
-## [API](/React/React-Router/docs/api)
+## [API](/api)
 * `<BrowserRouter>`
     - basename: string
     - getUserConfirmation: func
