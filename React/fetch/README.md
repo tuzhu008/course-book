@@ -1,89 +1,74 @@
 # window.fetch polyfill
 
-The `fetch()` function is a Promise-based mechanism for programmatically making
-web requests in the browser. This project is a polyfill that implements a subset
-of the standard [Fetch specification][], enough to make `fetch` a viable
-replacement for most uses of XMLHttpRequest in traditional web applications.
+`fetch()`函数是一种基于Promise的机制，用来在浏览器中以编程的方式做网络请求。这个项目是一个实现标准的[Fetch 规范][]的一个子集的polyfill，足以使`fetch`成为可行的，
+能够在传统的web应用程序中，替代大多数使用XMLHttpRequest的情况。
 
-This project adheres to the [Open Code of Conduct][]. By participating, you are
-expected to uphold this code.
+这个项目遵循[开源][]。通过参与,你也可以维护这段代码。
 
 ## Table of Contents
 
-* [Read this first](#read-this-first)
-* [Installation](#installation)
-* [Usage](#usage)
+* [先读读这个](#先读读这个)
+* [安装](#安装)
+* [用法](#用法)
   * [HTML](#html)
   * [JSON](#json)
   * [Response metadata](#response-metadata)
   * [Post form](#post-form)
   * [Post JSON](#post-json)
   * [File upload](#file-upload)
-  * [Caveats](#caveats)
-    * [Handling HTTP error statuses](#handling-http-error-statuses)
-    * [Sending cookies](#sending-cookies)
-    * [Receiving cookies](#receiving-cookies)
-    * [Obtaining the Response URL](#obtaining-the-response-url)
+  * [警告](#警告)
+    * [处理HTTP错误状态](#处理HTTP错误状态s)
+    * [发送cookies](#发送cookies)
+    * [接收cookies](#接收cookies)
+    * [获得响应URL](#获得响应URL)
 * [Browser Support](#browser-support)
 
-## Read this first
+## 先读读这个
 
-* If you believe you found a bug with how `fetch` behaves in Chrome or Firefox,
-  please **don't open an issue in this repository**. This project is a
-  _polyfill_, and since Chrome and Firefox both implement the `window.fetch`
-  function natively, no code from this project actually takes any effect in
-  these browsers. See [Browser support](#browser-support) for detailed
-  information.
+* 如果你相信你发现了`fetch`在Chrome或火狐浏览器中的一个错误
+  请 **不要在仓库中打开一个问题**. 这个项目是一个
+  _polyfill_, 由于Chrome和Firefox都各自实现了`windows.fetch`
+函数，项目中没有代码实际上对这些浏览器没有任何影响
+。详细查看[支持的浏览器](#支持的浏览器)信息。
+【译者注：】也就是说，产生问题，不要随便修改仓库，这可能不是fetch本身的错。
 
-* If you have trouble **making a request to another domain** (a different
-  subdomain or port number also constitutes another domain), please familiarize
-  yourself with all the intricacies and limitations of [CORS][] requests.
-  Because CORS requires participation of the server by implementing specific
-  HTTP response headers, it is often nontrivial to set up or debug. CORS is
-  exclusively handled by the browser's internal mechanisms which this polyfill
-  cannot influence.
+* 如果你在**向另一个领域提出请求**时遇到了麻烦(一个不同的
+子域名或端口号也构成了另一个域),请再去熟悉关于
+[CORS][]请求的所有复杂性和限制。 因为CORS需要服务器实现
+特殊的HTTP响应头信息，设置或调试通常是非常重要的。CORS是
+完全由浏览器的内部机制处理的，polyfill并不能做什么。
 
-* If you have trouble **maintaining the user's session** or [CSRF][] protection
-  through `fetch` requests, please ensure that you've read and understood the
-  [Sending cookies](#sending-cookies) section. `fetch` doesn't send cookies
-  unless you ask it to.
+* 如果你通过`fetch`请求在**维护用户会话**或[CSRF][]保护方面遇到困难，请确保您已经阅读并理解了
+[发送cookies](#发送cookies)部分。`fetch`并不能发送cookie，除非你要求。
 
-* This project **doesn't work under Node.js environments**. It's meant for web
-  browsers only. You should ensure that your application doesn't try to package
-  and run this on the server.
+* 这个项目**无法在Node环境工作**。这是用于web浏览器。您应该确保您的应用程序不会尝试打包并在服务器上运行这个。
 
-* If you have an idea for a new feature of `fetch`, **submit your feature
-  requests** to the [specification's repository](https://github.com/whatwg/fetch/issues).
-  We only add features and APIs that are part of the [Fetch specification][].
+* 若果你有一个关于`fetch`特性的好的想法，**提交你的特性请求**到[规范仓库](https://github.com/whatwg/fetch/issues)。我们只添加特性和API作为[Fetch 规范][]一部分。
 
-## Installation
+## 安装
 
-* `npm install whatwg-fetch --save`; or
+* `npm install whatwg-fetch --save`; 或者
 
-* `bower install fetch`; or
+* `bower install fetch`; 或者
 
 * `yarn add whatwg-fetch`.
 
-You will also need a Promise polyfill for [older browsers](http://caniuse.com/#feat=promises).
-We recommend [taylorhakes/promise-polyfill](https://github.com/taylorhakes/promise-polyfill)
-for its small size and Promises/A+ compatibility.
+你还需要为[老旧浏览器](http://caniuse.com/#feat=promises)添加一个Promise polyfill。我们推荐[taylorhakes/promise-polyfill](https://github.com/taylorhakes/promise-polyfill)，因为它不仅小，而且Promises/A+ 兼容性好。
 
-For use with webpack, add this package in the `entry` configuration option
-before your application entry point:
+要使用webpack，在您的应用程序入口之前，在`entry`配置选项中添加这个包：
 
 ```javascript
 entry: ['whatwg-fetch', ...]
 ```
-
-For Babel and ES2015+, make sure to import the file:
+为了能够正常使用Babel 和 ES2015+，请确保导入这个文件：
 
 ```javascript
 import 'whatwg-fetch'
 ```
 
-## Usage
+## 用法
 
-For a more comprehensive API reference that this polyfill supports, refer to
+polyfill支持的更全面的API，请[参考](./API.md)
 https://github.github.io/fetch/.
 
 ### HTML
@@ -162,25 +147,21 @@ fetch('/avatars', {
 })
 ```
 
-### Caveats
+### 警告
 
 The `fetch` specification differs from `jQuery.ajax()` in mainly two ways that
 bear keeping in mind:
+`fetch`规范与`jQuery.ajax()`不同主要有两种方式
 
-* The Promise returned from `fetch()` **won't reject on HTTP error status**
-  even if the response is an HTTP 404 or 500. Instead, it will resolve normally,
-  and it will only reject on network failure or if anything prevented the
-  request from completing.
 
-* By default, `fetch` **won't send or receive any cookies** from the server,
-  resulting in unauthenticated requests if the site relies on maintaining a user
-  session. See [Sending cookies](#sending-cookies) for how to opt into cookie
-  handling.
+* 从 `fetch()`返回的Promise **在Http错误状态时不会reject**，即使响应是HTTP 404或500。相反，它会正常地resolve，它只会在网络故障或任何阻止请求完成的情况下reject
+。
+* 默认情况下，`fetch`**不会发送或者接收任何来自于服务器cookies**，如果站点依赖于一个用户session，则会导致未经身份验证的请求。参见[发送cookies](#发送cookies)来如何选择cookie处理。
 
-#### Handling HTTP error statuses
+#### 处理HTTP错误状态
 
-To have `fetch` Promise reject on HTTP error statuses, i.e. on any non-2xx
-status, define a custom response handler:
+在HTTP错误状态下，来拥有`fetch` Promise reject，即，在任何非2xx上
+状态，定义一个自定义的响应处理程序:
 
 ```javascript
 function checkStatus(response) {
@@ -189,7 +170,7 @@ function checkStatus(response) {
   } else {
     var error = new Error(response.statusText)
     error.response = response
-    throw error
+    throw error 
   }
 }
 
@@ -207,10 +188,9 @@ fetch('/users')
   })
 ```
 
-#### Sending cookies
+#### 发送cookies
 
-To automatically send cookies for the current domain, the `credentials` option
-must be provided:
+为了自动为当前域发送cookie, 必须提供`credentials` 选项:
 
 ```javascript
 fetch('/users', {
@@ -218,12 +198,10 @@ fetch('/users', {
 })
 ```
 
-The "same-origin" value makes `fetch` behave similarly to XMLHttpRequest with
-regards to cookies. Otherwise, cookies won't get sent, resulting in these
-requests not preserving the authentication session.
+"same-origin" 值使 `fetch` 的行为与XMLHttpRequest 处理cookie的行为相似。否者, cookies不会被发送, 这些请求中的结果不保存身份验证会话。
 
-For [CORS][] requests, use the "include" value to allow sending credentials to
-other domains:
+为了能进行[CORS][]请求, 使用“include”值来允许发送凭据到
+其他领域:
 
 ```javascript
 fetch('https://example.com:1234/users', {
@@ -231,52 +209,44 @@ fetch('https://example.com:1234/users', {
 })
 ```
 
-#### Receiving cookies
+#### 接收cookies
 
-As with XMLHttpRequest, the `Set-Cookie` response header returned from the
-server is a [forbidden header name][] and therefore can't be programmatically
-read with `response.headers.get()`. Instead, it's the browser's responsibility
-to handle new cookies being set (if applicable to the current URL). Unless they
-are HTTP-only, new cookies will be available through `document.cookie`.
+与XMLHttpRequest一样，从服务器返回的`Set-Cookie`响应头是一个[forbidden header name][]，因此不能通过代码`response.headers.get()`来实现读取。相反，它是浏览器的责任，它会设置的新cookie(如果适用于当前的URL)。除非他们
+只有http，新的cookie将通过`document.cookie`提供。
 
-Bear in mind that the default behavior of `fetch` is to ignore the `Set-Cookie`
-header completely. To opt into accepting cookies from the server, you must use
-the `credentials` option.
+记住，`fetch`的默认行为是完全忽略`Set-Cookie`
+头完全。要选择接受来自服务器的cookie，您必须使用
+`credentials`选项。
 
-#### Obtaining the Response URL
+#### 获得响应URL
 
-Due to limitations of XMLHttpRequest, the `response.url` value might not be
-reliable after HTTP redirects on older browsers.
+由于XMLHttpRequest的限制，在老的浏览器上的HTTP重定向之后，`response.url`值可能不是可靠的。
+。
 
-The solution is to configure the server to set the response HTTP header
-`X-Request-URL` to the current URL after any redirect that might have happened.
-It should be safe to set it unconditionally.
+解决方案是，在可能发生的任何重定向之后，配置服务器来设置响应HTTP头`X-Request-URL`到当前URL。无条件地设置它是安全的。
 
 ``` ruby
 # Ruby on Rails controller example
 response.headers['X-Request-URL'] = request.url
 ```
 
-This server workaround is necessary if you need reliable `response.url` in
-Firefox < 32, Chrome < 37, Safari, or IE.
+如果在Firefox < 32, Chrome < 37, Safari, or IE.需要可靠的`response.url`，这个服务器方案是必要的。
 
-## Browser Support
+## 支持的浏览器
 
 - Chrome
 - Firefox
 - Safari 6.1+
 - Internet Explorer 10+
 
-Note: modern browsers such as Chrome, Firefox, Microsoft Edge, and Safari contain native
-implementations of `window.fetch`, therefore the code from this polyfill doesn't
-have any effect on those browsers. If you believe you've encountered an error
-with how `window.fetch` is implemented in any of these browsers, you should file
-an issue with that browser vendor instead of this project.
+注意:Chrome、Firefox、Microsoft Edge和Safari等现代浏览器都有本地实现的`window.fetch`。因此，来自这个polyfill的代码不会对这些浏览器有任何影响。如果你认为你遇到了错误
+，`window.fetch` 是在这些浏览器中如何实现的，您应该琢磨
+这是一个浏览器厂商的问题，而不是这个项目。
 
 
-  [fetch specification]: https://fetch.spec.whatwg.org
-  [open code of conduct]: http://todogroup.org/opencodeofconduct/#fetch/opensource@github.com
-  [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+  [Fetch 规范]: https://fetch.spec.whatwg.org
+  [开源]: http://todogroup.org/opencodeofconduct/#fetch/opensource@github.com
+  [cors]: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS
     "Cross-origin resource sharing"
   [csrf]: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet
     "Cross-site request forgery"
