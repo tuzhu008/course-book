@@ -22,7 +22,7 @@
 
 **[查看这里的文档](/React/React-Router/packages/react-router/docs)**
 
-[从 2.x/3.x? 迁移](/packages/react-router/docs/guides/migrating.md)
+[从 2.x/3.x? 迁移](./packages/react-router/docs/guides/migrating.md)
 
 [3.x 文档](https://github.com/ReactTraining/react-router/blob/v3/docs)
 
