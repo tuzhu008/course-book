@@ -21,7 +21,7 @@
     * [发送cookies](#发送cookies)
     * [接收cookies](#接收cookies)
     * [获得响应URL](#获得响应URL)
-* [Browser Support](#browser-support)
+* [支持的浏览器](#支持的浏览器)
 
 ## 先读读这个
 
