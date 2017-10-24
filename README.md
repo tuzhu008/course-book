@@ -1,7 +1,6 @@
-# My Awesome Book
+# 前端完整教程
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
-
+这个教程长期更新，用于记录前端的方方面面，不限于翻译，拷贝，总结。
 
 
 
