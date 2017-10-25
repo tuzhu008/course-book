@@ -1,7 +1,7 @@
 Redux Thunk
 =============
 
-Thunk [middleware](http://redux.js.org/docs/advanced/Middleware.html) for Redux.
+Thunk  是一个Redux [中间件](http://redux.js.org/docs/advanced/Middleware.html)
 
 [![build status](https://img.shields.io/travis/gaearon/redux-thunk/master.svg?style=flat-square)](https://travis-ci.org/gaearon/redux-thunk) 
 [![npm version](https://img.shields.io/npm/v/redux-thunk.svg?style=flat-square)](https://www.npmjs.com/package/redux-thunk)
@@ -11,41 +11,41 @@ Thunk [middleware](http://redux.js.org/docs/advanced/Middleware.html) for Redux.
 npm install --save redux-thunk
 ```
 
-## Note on 2.x Update
+## 注意 2.x 的更新
 
-Most tutorials today assume Redux Thunk 1.x so you might run into an issue when running their code with 2.x.  
-**If you use Redux Thunk 2.x in CommonJS environment, [don’t forget to add `.default` to your import](https://github.com/gaearon/redux-thunk/releases/tag/v2.0.0):**
+ 今天的大多数教程都假设是Redux Thunk 1.x。所以当你用2.x运行他们的代码时，你可能会遇到一个问题。
+**如果你在CommonJS环境中使用Redux Thunk 2.x , [不要忘了添加`.default`到导入语句中](https://github.com/gaearon/redux-thunk/releases/tag/v2.0.0):**
 
 ```diff
 - var ReduxThunk = require('redux-thunk')
 + var ReduxThunk = require('redux-thunk').default
 ```
 
-If you used ES modules, you’re already all good:
+如果使用 ES 模块, 这样做就好了:
 
 ```js
 import ReduxThunk from 'redux-thunk' // no changes here 😀
 ```
 
-Additionally, since 2.x, we also support a [UMD build](https://npmcdn.com/redux-thunk@2.0.1/dist/redux-thunk.min.js):
+另外, 从 2.x起， 我们也支持 [UMD build](https://npmcdn.com/redux-thunk@2.0.1/dist/redux-thunk.min.js):
 
 ```js
 var ReduxThunk = window.ReduxThunk.default
 ```
 
-As you can see, it also requires `.default` at the end.
+正如您所看到的，它在句末也需要`.default`
 
-## Why Do I Need This?
+## 为什么需要它？
 
-If you’re not sure whether you need it, you probably don’t.
+如果你不确定是否需要它，那你可能不需要。
 
-**[Read this for an in-depth introduction to thunks in Redux.](http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559)**
+**[请阅读这篇关于Redux thunks的深入介绍。](http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559)**
 
-## Motivation
+## 动机
 
-Redux Thunk [middleware](https://github.com/reactjs/redux/blob/master/docs/advanced/Middleware.md) allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. The inner function receives the store methods `dispatch` and `getState` as parameters.
+Redux Thunk [中间件](https://github.com/reactjs/redux/blob/master/docs/advanced/Middleware.md) 允许您编写返回一个函数而不是一个action的action creators。thunk可以用来延迟dispatch一个action，或者只在满足特定条件的情况下才进行dispatch。内部函数接收store的方法`dispatch`和`getState`作为参数。
 
-An action creator that returns a function to perform asynchronous dispatch:
+一个action creator，返回一个函数来执行异步dispatch:
 
 ```js
 const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
@@ -59,14 +59,14 @@ function increment() {
 function incrementAsync() {
   return dispatch => {
     setTimeout(() => {
-      // Yay! Can invoke sync or async actions with `dispatch`
+      // 你可以dispatch同步或者异步
       dispatch(increment());
     }, 1000);
   };
 }
 ```
+一个action creator，返回一个函数来执行有条件的dispatch:
 
-An action creator that returns a function to perform conditional dispatch:
 
 ```js
 function incrementIfOdd() {
@@ -82,52 +82,51 @@ function incrementIfOdd() {
 }
 ```
 
-## What’s a thunk?!
+## 什么是thunk?!
 
-A [thunk](https://en.wikipedia.org/wiki/Thunk) is a function that wraps an expression to delay its evaluation.
+[thunk](https://en.wikipedia.org/wiki/Thunk)是一个函数，它包装一个表达式来延迟它的求值。
 
 ```js
-// calculation of 1 + 2 is immediate
+// 计算 1 + 2 是 立即执行的
 // x === 3
 let x = 1 + 2;
 
-// calculation of 1 + 2 is delayed
-// foo can be called later to perform the calculation
-// foo is a thunk!
+// 计算 of 1 + 2 是 延迟的
+// 稍后可以调用foo来执行计算
+// foo就是一个 thunk!
 let foo = () => 1 + 2;
 ```
 
 
-## Installation
+## 安装
 
 ```
 npm install --save redux-thunk
 ```
 
-Then, to enable Redux Thunk, use [`applyMiddleware()`](http://redux.js.org/docs/api/applyMiddleware.html):
-
+然后, 使用 [`applyMiddleware()`](http://redux.js.org/docs/api/applyMiddleware.html)来启用 Redux Thunk
 ```js
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 
-// Note: this API requires redux@>=3.1.0
+// 注意: 这个 API 需要 redux@>=3.1.0
 const store = createStore(
   rootReducer,
   applyMiddleware(thunk)
 );
 ```
 
-## Composition
+## 构成
 
-Any return value from the inner function will be available as the return value of `dispatch` itself. This is convenient for orchestrating an asynchronous control flow with thunk action creators dispatching each other and returning Promises to wait for each other’s completion:
+内部函数的返回值都将作为`dispatch`本身的返回值而可用。这对于编排一个异步控制流是很方便的，因为这些thunk action creators会互相dispatch，并返回Promise来等待对方完成:
 
 ```js
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
-// Note: this API requires redux@>=3.1.0
+// 注意: 这个 API 需要 redux@>=3.1.0
 const store = createStore(
   rootReducer,
   applyMiddleware(thunk)
@@ -137,9 +136,9 @@ function fetchSecretSauce() {
   return fetch('https://www.google.com/search?q=secret+sauce');
 }
 
-// These are the normal action creators you have seen so far.
-// The actions they return can be dispatched without any middleware.
-// However, they only express “facts” and not the “async flow”.
+// 到目前为止你看到的都是一些普通的action creator。
+// 它们返回的action可以在没有任何中间件的情况下被dispatch。
+//但是，它们只表示“事实”，而不是“异步流”。
 
 function makeASandwich(forPerson, secretSauce) {
   return {
@@ -165,21 +164,21 @@ function withdrawMoney(amount) {
   };
 }
 
-// Even without middleware, you can dispatch an action:
+// 即使没有中间件，您也可以dispatch一个action:
 store.dispatch(withdrawMoney(100));
 
-// But what do you do when you need to start an asynchronous action,
-// such as an API call, or a router transition?
+// 但是当你需要启动一个异步action时，你会怎么做呢?
+// 例如一个API调用，或者一个路由器转换
 
-// Meet thunks.
-// A thunk is a function that returns a function.
-// This is a thunk.
+// 遇到 thunks.
+// thunk 是一个函数，它返回一个函数
+// 下面的就是一个thunk.
 
 function makeASandwichWithSecretSauce(forPerson) {
 
-  // Invert control!
-  // Return a function that accepts `dispatch` so we can dispatch later.
-  // Thunk middleware knows how to turn thunk async actions into actions.
+  // 反转控制!
+  // 返回一个接受`dispatch`参数的函数，这样我们就可以稍后进行dispatch。
+  // Thunk 中间件知道怎么返回一个thunk异步action到 action列表中。
 
   return function (dispatch) {
     return fetchSecretSauce().then(
@@ -189,38 +188,33 @@ function makeASandwichWithSecretSauce(forPerson) {
   };
 }
 
-// Thunk middleware lets me dispatch thunk async actions
-// as if they were actions!
+// Thunk中间件让我们可以像dispatch普通action一样的方式来dispatch thunk异步action
 
 store.dispatch(
   makeASandwichWithSecretSauce('Me')
 );
 
-// It even takes care to return the thunk’s return value
-// from the dispatch, so I can chain Promises as long as I return them.
-
+// 它甚至会从dispatch里返回thunk的返回值，因此只要thunk里面返回的是一个Promise,那我们就可以链接。
+// 意思有两点: dispatch可以返回一个thunk的返回值
+// 这个返回值是一个Promise，那么就可以接续链接
 store.dispatch(
   makeASandwichWithSecretSauce('My wife')
 ).then(() => {
   console.log('Done!');
 });
 
-// In fact I can write action creators that dispatch
-// actions and async actions from other action creators,
-// and I can build my control flow with Promises.
+// 事实上，我们可以嵌套dipatch action creaters,我可以用Promise来建立我的控制流程。
 
 function makeSandwichesForEverybody() {
   return function (dispatch, getState) {
     if (!getState().sandwiches.isShopOpen) {
 
-      // You don’t have to return Promises, but it’s a handy convention
-      // so the caller can always call .then() on async dispatch result.
+      // 你不需要返回Promise，但这是一个很方便的约定,因此，调用者可以在异步dispatch结果上调用.then()。
 
       return Promise.resolve();
     }
 
-    // We can dispatch both plain object actions and other thunks,
-    // which lets us compose the asynchronous actions in a single flow.
+    // 我们可以同时dispatch普通的actions和其他thunks,这让我们可以在单个流中组合异步操作。
 
     return dispatch(
       makeASandwichWithSecretSauce('My Grandma')
@@ -240,8 +234,7 @@ function makeSandwichesForEverybody() {
   };
 }
 
-// This is very useful for server side rendering, because I can wait
-// until data is available, then synchronously render the app.
+// 和对于服务端渲染非常有用，因为我们可以等待，知道数据可用为止，然后异步渲染应用
 
 store.dispatch(
   makeSandwichesForEverybody()
@@ -249,8 +242,8 @@ store.dispatch(
   response.send(ReactDOMServer.renderToString(<MyApp store={store} />))
 );
 
-// I can also dispatch a thunk async action from a component
-// any time its props change to load the missing data.
+// 我还可以从一个组件dispatch一个thunk异步action。
+// 任何时候它的props更改都会加载丢失的数据。
 
 import { connect } from 'react-redux';
 import { Component } from 'react';
@@ -282,9 +275,9 @@ export default connect(
 )(SandwichShop);
 ```
 
-## Injecting a Custom Argument
+## 注入一个自定义参数
 
-Since 2.1.0, Redux Thunk supports injecting a custom argument using the `withExtraArgument` function:
+从 2.1.0起, Redux Thunk支持使用`withExtraArgument`函数来注入一个自定义参数 :
 
 ```js
 const store = createStore(
@@ -292,15 +285,14 @@ const store = createStore(
   applyMiddleware(thunk.withExtraArgument(api))
 )
 
-// later
+// 然后
 function fetchUser(id) {
   return (dispatch, getState, api) => {
-    // you can use api here
+    // 你可以使用自定义参数了
   }
 }
 ```
-
-To pass multiple things, just wrap them in a single object and use destructuring:
+要传递多个东西，只需将它们封装在一个对象中，并使用解构:
 
 ```js
 const store = createStore(
@@ -308,10 +300,10 @@ const store = createStore(
   applyMiddleware(thunk.withExtraArgument({ api, whatever }))
 )
 
-// later
+// 然后
 function fetchUser(id) {
   return (dispatch, getState, { api, whatever }) => {
-    // you can use api and something else here here
+    // 你可以在这里使用api和其他东西
   }
 }
 ```
