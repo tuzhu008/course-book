@@ -1,18 +1,17 @@
 Redux DevTools
 =========================
 
-A live-editing time travel environment for [Redux](https://github.com/reactjs/redux).  
-**[See Dan's React Europe talk demoing it!](http://youtube.com/watch?v=xsSnOQynTHs)**  
+为[Redux](https://github.com/reactjs/redux)定制的一个实时编辑的时间旅行环 。 
 
-> Note that the implemention in this repository is different from [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension). Please refer to the latter for browser extension.
+> 注意，来自[Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)这个仓库中的实现是不同的。关于浏览器扩展，请参考后者。
 
-### Table of Contents
+### 内容列表
 
-- [Features](#features)
-- [Overview](#overview)
-- [Browser Extension](#browser-extension)
-- [Setup Instructions](#setup-instructions)
-- [Custom Monitors](#custom-monitors)
+- [特性](#特性)
+- [概述](#概述)
+- [浏览器扩展](#浏览器扩展)
+- [设置说明](#设置说明)
+- [自定义监视器](#自定义监视器)
 - [License](#license)
 
 [![build status](https://img.shields.io/travis/gaearon/redux-devtools/master.svg?style=flat-square)](https://travis-ci.org/gaearon/redux-devtools)
@@ -22,99 +21,97 @@ A live-editing time travel environment for [Redux](https://github.com/reactjs/re
 
 ![](http://i.imgur.com/J4GeW0M.gif)
 
-### Features
+### 特性
 
-* Lets you inspect every state and action payload
-* Lets you go back in time by “cancelling” actions
-* If you change the reducer code, each “staged” action will be re-evaluated
-* If the reducers throw, you will see during which action this happened, and what the error was
-* With `persistState()` store enhancer, you can persist debug sessions across page reloads
+* 让你检查每个state和action载荷
+* 让你通过“cancelling”动作回到过去
+* 如果您更改了reducer代码，则将重新对每个“staged”操作求值。
+* 如果reducers抛出，你会看到在什么时候发生了这样的动作，以及错误是什么
+* 用`persistState()`存储增强器，您可以跨页面重载持久化调试会话
 
-### Overview
+### 概述
 
-Redux DevTools is a development time package that provides power-ups for your Redux development workflow. Be careful to strip its code in production (see [walkthrough](./docs/Walkthrough.md) for instructions)! To use Redux DevTools, you need to choose a “monitor”—a React component that will serve as a UI for the DevTools. Different tasks and workflows require different UIs, so Redux DevTools is built to be flexible in this regard. We recommend using [`LogMonitor`](https://github.com/gaearon/redux-devtools-log-monitor) for inspecting the state and time travel, and wrap it in a [`DockMonitor`](https://github.com/gaearon/redux-devtools-dock-monitor) to quickly move it across the screen. That said, when you’re comfortable rolling up your own setup, feel free to do this, and share it with us.
+Redux DevTools是一个开发时间包，它为您的Redux开发工作流程提供了电源。注意在生产中去掉它的代码(请参阅 [walkthrough](./docs/Walkthrough.md)了解更多)!要使用Redux DevTools，您需要选择一个“monitor”——一个作为DevTools的UI的响应组件。不同的任务和工作流程需要不同的UI，因此在这方面，Redux DevTools的构建是灵活的。我们建议使用[LogMonitor](https://github.com/gaearon/redux-devtools-log-monitor)检查状态和时间旅行,并把它包裹在[`DockMonitor`](https://github.com/gaearon/redux-devtools-dock-monitor)里面来在屏幕上快速移动它。
 
-If you came here looking for what do the “Reset”, “Revert”, “Sweep” or “Commit” buttons do, check out [the `LogMonitor` documentation](https://github.com/gaearon/redux-devtools-log-monitor/blob/master/README.md#features).
+如果你来这里寻找什么“Reset”,“Revert”,“Sweep”或“Commit”按钮,查看[the `LogMonitor` 文档](https://github.com/gaearon/redux-devtools-log-monitor/blob/master/README.md#features).
 
-### Browser Extension
+### 浏览器扩展
 
-If you don’t want to bother with installing Redux DevTools and integrating it into your project, consider using [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for Chrome and Firefox. It provides access to the most popular monitors, is easy to configure to filter actions, and doesn’t require installing any packages.
+如果你不想麻烦地安装Redux DevTools将它集成到您的项目,可以考虑使用Chrome和Firefox地[Redux DevTools 扩展](https://github.com/zalmoxisus/redux-devtools-extension)。它提供了对最流行的监视器的访问，易于配置来过滤操作，并且不需要安装任何包。
 
-### Setup Instructions
+请参阅[使用文档](../redux-devtools-extension)以获得更多信息。
+### 设置说明
 
-Read the installation [walkthrough](./docs/Walkthrough.md) for integration instructions and usage examples (`<DevTools>` component, `DevTools.instrument()`, exclude from production builds, gotchas).
+阅读安装方式[walkthrough](./docs/Walkthrough.md)来获取集成说明和使用示例(`<DevTools>`组件、`DevTools.instrument()`，从生产构建中排除，gotchas)。
 
-### Running Examples
+### 运行示例
 
-Clone the project:
+克隆项目:
 
 ```
 git clone https://github.com/gaearon/redux-devtools.git
 cd redux-devtools
 ```
 
-Run `npm install` in the root folder:
-
+根目录运行`npm install`来安装依赖：
 ```
 npm install
 ```
 
-Now you can open an example folder and run `npm install` there:
-
+现在你可以打开example文件夹并运行 `npm install`：
 ```
 cd examples/counter # or examples/todomvc
 npm install
 ```
 
-Finally, run the development server and open the page:
-
+最后，在页面上运行开发服务器:
 ```
 npm start
 open http://localhost:3000
 ```
 
-Try clicking on actions in the log, or changing some code inside the reducers. You should see the action log re-evaluate the state on every code change.
+尝试在日志中单击actions，或者在reducers中更改一些代码。您应该看到action日志在每个代码更改中被重新计算。
 
-Also try opening `http://localhost:3000/?debug_session=123`, click around, and then refresh. You should see that all actions have been restored from the local storage.
+尝试打开`http://localhost:3000/?debug_session=123`，单击around，然后点击refresh。您应该看到，所有actions都已从本地存储中恢复。
 
-### Custom Monitors
+### 自定义监视器
 
-**DevTools accepts monitor components so you can build a completely custom UI.** [`LogMonitor`](https://github.com/gaearon/redux-devtools-log-monitor) and [`DockMonitor`](https://github.com/gaearon/redux-devtools-dock-monitor) are just examples of what is possible.
+**DevTools接受monitor组件，这样您就可以构建一个完全定制的UI。** [`LogMonitor`](https://github.com/gaearon/redux-devtools-log-monitor) 和 [`DockMonitor`](https://github.com/gaearon/redux-devtools-dock-monitor) 这只是可能的例子。
 
-**[I challenge you to build a custom monitor for Redux DevTools!](https://github.com/gaearon/redux-devtools/issues/3)**
+**[我邀请您为Redux DevTools构建一个自定义监视器！](https://github.com/gaearon/redux-devtools/issues/3)**
 
-Some crazy ideas for custom monitors:
+一些关于定制监控的疯狂想法:
 
-* A slider that lets you jump between computed states just by dragging it
-* An in-app layer that shows the last N states right in the app (e.g. for animation)
-* A time machine like interface where the last N states of your app reside on different Z layers
-* Feel free to come up with and implement your own! Check [`LogMonitor`](https://github.com/gaearon/redux-devtools-log-monitor) `propTypes` to see what you can do.
+* 一个滑动条可以让你在计算状态之间跳跃
+* 一个应用内层显示了应用中的最后N个状态 (e.g. for animation)
+* 一个像接口时间机器，比如你的应用的最后N个状态在不同的Z层上
+* 你可以自由地提出并实现你自己的！检查 [`LogMonitor`](https://github.com/gaearon/redux-devtools-log-monitor) `propTypes` 来看看你能做什么。
 
-In fact some of these are implemented already:
+事实上，其中一些已经实现了:
 
-#### [Slider Monitor](https://github.com/calesce/redux-slider-monitor)
+#### [滑块监控器](https://github.com/calesce/redux-slider-monitor)
 
 ![](https://camo.githubusercontent.com/47a3f427c9d2e0c763b74e33417b3001fe8604b6/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f662e636c2e6c792f6974656d732f3149335032323243334e3252314d3279314b33622f53637265656e2532305265636f7264696e67253230323031352d31322d3232253230617425323030372e3230253230504d2e6769663f763d3162363236376537)
 
-#### [Inspector](https://github.com/alexkuz/redux-devtools-inspector)
+#### [检查员](https://github.com/alexkuz/redux-devtools-inspector)
 
 ![](http://i.imgur.com/fYh8fk5.gif)
 
-#### [Diff Monitor](https://github.com/whetstone/redux-devtools-diff-monitor)
+#### [Diff监控](https://github.com/whetstone/redux-devtools-diff-monitor)
 
 ![](https://camo.githubusercontent.com/c2c0ba1ad82d003b5386404ae09c00763d73510c/687474703a2f2f692e696d6775722e636f6d2f72764352394f512e706e67)
 
-#### [Filterable Log Monitor](https://github.com/bvaughn/redux-devtools-filterable-log-monitor/)
+#### [滤过性的日志监控](https://github.com/bvaughn/redux-devtools-filterable-log-monitor/)
 
 ![redux-devtools-filterable-log-monitor](https://cloud.githubusercontent.com/assets/29597/12440009/182bb31c-beec-11e5-8fd0-bdda48e646b2.gif)
 
-#### [Chart Monitor](https://github.com/romseguy/redux-devtools-chart-monitor)
+#### [图表监控](https://github.com/romseguy/redux-devtools-chart-monitor)
 
 ![redux-devtools-chart-monitor](http://i.imgur.com/MSgvU6l.gif)
 
-#### [Filter Actions](https://github.com/zalmoxisus/redux-devtools-filter-actions)
+#### [过滤操作](https://github.com/zalmoxisus/redux-devtools-filter-actions)
 
-(Does not have a UI but can wrap any other monitor)
+(没有UI但是可以包装其他的监视器)
 
 <img src='http://i.imgur.com/TlqnU0J.png' width='400'>
 
@@ -124,7 +121,7 @@ In fact some of these are implemented already:
 
 #### Keep them coming!
 
-Create a PR to add your custom monitor.
+创建一个PR来添加您的自定义监视器。
 
 ### License
 
