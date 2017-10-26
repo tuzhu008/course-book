@@ -100,18 +100,28 @@ function mapStateToProps(state) {
 如下,addTodo是一个普通action,调用connect:
 ```js
 // 传入的是一个对象
-const Root = connect(mapStateToProps, { addTodo });
+const Root = connect(mapStateToProps, { addTodo })(App);
 ```
 一个具有相同函数名的对象，但是将每个action创建者封装到一个`dispatch`调用中，这样它们就可以直接被调用，将被合并到组件的props中。
 ```js
+// 经过封装的action
 export boundAddTodo = (text) => dispatch(addTodo(text));
 ```
 调用connect:
 ```js
-const Root = connect(mapStateToProps, { boundAddTodo });
+const Root = connect(mapStateToProps, { boundAddTodo })(App);
 ```
-   如果传入的是一个函数，它将作为第一个参数被`dipatch`。您需要返回一个对象，该对象以某种方式使用分派来以您自己的方式绑定动作创建者。你可以按你的方式来返回一个以某种方式使用`dispatch`来绑定action创建者的对象，(提示:您可以使用Redux中的 [bindActionCreators()](http://reactjs.github.io/redux/docs/api/bindActionCreators.html) 助手。)
-  
+   如果传入的是一个函数，这个函数接受`dispatch`作为第一个参数。您需要返回一个对象，该对象以某种方式使用分派来以您自己的方式绑定动作创建者。你可以按你的方式来返回一个以某种方式使用`dispatch`来绑定action创建者的对象，(提示:您可以使用Redux中的 [bindActionCreators()](http://reactjs.github.io/redux/docs/api/bindActionCreators.html) 助手。
+   )
+  ```js
+  function mapDispatchToProps (dispatch) {
+    return { 
+      actions: bindActionCreators    (actionCreators, dispatch) }
+}
+
+  export default connect(mapStateToProps, mapDispatchToProps)(App);
+  ```
+
 
   如果您的`mapDispatchToProps`函数被声明为带两个参数，那么`dispatch`将作为第一个参数被调用，并且props作为第二个参数传递给连接组件，当连接的组件接收到新的props时，函数将被重新调用。(第二个参数通常是按惯例将其作为`ownProps`。)
 
