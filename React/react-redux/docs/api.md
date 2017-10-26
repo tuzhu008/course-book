@@ -111,7 +111,7 @@ export boundAddTodo = (text) => dispatch(addTodo(text));
 ```js
 const Root = connect(mapStateToProps, { boundAddTodo })(App);
 ```
-   如果传入的是一个函数，这个函数接受`dispatch`作为第一个参数。您需要返回一个对象，该对象以某种方式使用分派来以您自己的方式绑定动作创建者。你可以按你的方式来返回一个以某种方式使用`dispatch`来绑定action创建者的对象，(提示:您可以使用Redux中的 [bindActionCreators()](http://reactjs.github.io/redux/docs/api/bindActionCreators.html) 助手。
+   如果传入的是一个函数，这个函数接受`dispatch`作为第一个参数。您需要返回一个对象，该对象以某种方式使用分派来以您自己的方式绑定动作创建者。你可以按你的方式来返回一个以某种方式使用`dispatch`来绑定action创建者的对象，(提示:您可以使用Redux中的 [bindActionCreators()](http://www.redux.org.cn/docs/api/bindActionCreators.html) 助手。
    )
   ```js
   function mapDispatchToProps (dispatch) {
@@ -123,14 +123,14 @@ const Root = connect(mapStateToProps, { boundAddTodo })(App);
   ```
 
 
-  如果您的`mapDispatchToProps`函数被声明为带两个参数，那么`dispatch`将作为第一个参数被调用，并且props作为第二个参数传递给连接组件，当连接的组件接收到新的props时，函数将被重新调用。(第二个参数通常是按惯例将其作为`ownProps`。)
+  如果您的`mapDispatchToProps`函数被声明为带两个参数，那么`dispatch`将作为第一个参数，并且props作为第二个参数传递给连接组件，当连接的组件接收到新的props时，函数将被重新调用。(第二个参数通常是按惯例将其作为`ownProps`。)
 
 
-  如果您不提供自己的`mapDispatchToProps`函数或包含action创建者的对象，那么默认的`mapDispatchToProps`实现只将`dispatch`注入到你的组件的props中。
+  如果您不提供自己的`mapDispatchToProps`函数或包含action创建者的对象，那么**默认**的`mapDispatchToProps`实现只将`dispatch`注入到你的组件的props中。
 
   >注意: 在高级场景中，需要对渲染性能进行更多的控制，`mapDispatchToProps()`也可以返回一个函数。在本例中，*该函数*将作为一个`mapDispatchToProps()`被用于特定的组件实例。这允许您执行每个实例的记忆化。您可以参考[# 279](https://github.com/reactjs/react-redux/pull/279)和测试它添加更多的细节。大多数应用都不需要这样。
 
-* [`mergeProps(stateProps, dispatchProps, ownProps): props`] \(*函数*): 如果指定了，它将传递`mapStateToProps()`、`mapDispatchToProps()`的结果，以及父母的props。从它返回的普通对象将作为props传递到它的包裹组件。您可以指定这个函数来选择一个基于props的状态的一部分，或者将action创建者绑定到一个来自props的特定的变量上。如果你省略了它，默认使用`Object.assign({}, ownProps, stateProps, dispatchProps)`。
+* [`mergeProps(stateProps, dispatchProps, ownProps): props`] \(*函数*): 如果指定了，它将传递`mapStateToProps()`、`mapDispatchToProps()`的结果，以及父母的props作为参数。从它返回的普通对象将作为props传递到它的包裹组件。您可以指定这个函数来选择一个基于props的状态的一部分，或者将action创建者绑定到一个来自props的特定的变量上。如果你省略了它，默认使用`Object.assign({}, ownProps, stateProps, dispatchProps)`。
 
 * [`options`] *(对象)* 如果指定了，进一步定制连接器的行为。除了可传递到`connectAdvanced()`的选项之外(见下面的)，`connect()`接受这些额外的选项:
   * [`pure`] *(布尔值)*: 为真,如果相关的props/state对象在它们各自的相等性检查中保持相等，`connect()`将避免重新渲染和调用`mapStateToProps`, `mapDispatchToProps`, 和 `mergeProps` 。假设包裹组件是一个“pure(纯)”组件，并且不依赖于任何输入或状态，除了它的props和所选的Redux store的state。默认值:`true`
