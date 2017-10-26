@@ -95,8 +95,21 @@ function mapStateToProps(state) {
 
   >`mapStateToProps`函数接受整个Redux store的state作为单一参数，并返回一个对象来作为props被传递的。它通常被称为**选择器**。利用[Reselect库](https://github.com/reactjs/reselect)来有效地组合选择器和[计算导出的数据](http://redux.js.org/docs/recipes/ComputingDerivedData.html)。
 
-* [`mapDispatchToProps(dispatch, [ownProps]): dispatchProps`] \(*对象* 或者 *函数*): 如果传入的是一个对象，它内部的每个函数都被假定为Redux action 创建者。一个具有相同函数名的对象，但是将每个action创建者封装到一个`dispatch`调用中，这样它们就可以直接被调用，将被合并到组件的props中。
+* [`mapDispatchToProps(dispatch, [ownProps]): dispatchProps`] \(*对象* 或者 *函数*): 如果传入的是一个对象，它内部的每个函数都被假定为Redux action创建者。
 
+如下,addTodo是一个普通action,调用connect:
+```js
+// 传入的是一个对象
+const Root = connect(mapStateToProps, { addTodo });
+```
+一个具有相同函数名的对象，但是将每个action创建者封装到一个`dispatch`调用中，这样它们就可以直接被调用，将被合并到组件的props中。
+```js
+export boundAddTodo = (text) => dispatch(addTodo(text));
+```
+调用connect:
+```js
+const Root = connect(mapStateToProps, { boundAddTodo });
+```
    如果传入的是一个函数，它将作为第一个参数被`dipatch`。您需要返回一个对象，该对象以某种方式使用分派来以您自己的方式绑定动作创建者。你可以按你的方式来返回一个以某种方式使用`dispatch`来绑定action创建者的对象，(提示:您可以使用Redux中的 [bindActionCreators()](http://reactjs.github.io/redux/docs/api/bindActionCreators.html) 助手。)
   
 
