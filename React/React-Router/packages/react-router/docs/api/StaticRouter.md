@@ -1,10 +1,10 @@
-# &lt;StaticRouter>
+# `<StaticRouter>`
 
-A [`<Router>`](Router.md) that never changes location.
+`<StaticRouter>`是一个 [`<Router>`](Router.md)， 它永远不会改变位置.
 
-This can be useful in server-side rendering scenarios when the user isn't actually clicking around, so the location never actually changes. Hence, the name: static. It's also useful in simple tests when you just need to plug in a location and make assertions on the render output.
+这在服务器端渲染场景中非常有用，当用户实际上并没有单击，因此位置实际上不会发生变化。因此,名称:静态的。在简单的测试中，当您只需插入一个location并在渲染输出上进行断言时，它也很有用。
 
-Here's an example node server that sends a 302 status code for [`<Redirect>`](Redirect.md)s and regular HTML for other requests:
+下面是一个示例node服务器，它为[`<Redirect>`](Redirect.md)s发送了一个302状态码，或者为其他请求发送常规HTML
 
 ```js
 import { createServer } from 'http'
@@ -14,7 +14,7 @@ import { StaticRouter } from 'react-router'
 
 createServer((req, res) => {
 
-  // This context object contains the results of the render
+  // 这个上下文对象包含渲染的结果
   const context = {}
 
   const html = ReactDOMServer.renderToString(
@@ -23,7 +23,7 @@ createServer((req, res) => {
     </StaticRouter>
   )
 
-  // context.url will contain the URL to redirect to if a <Redirect> was used
+  // 如果 <Redirect> 被使用，context.url 将包含URL来进行重定向
   if (context.url) {
     res.writeHead(302, {
       Location: context.url
@@ -38,7 +38,7 @@ createServer((req, res) => {
 
 ## basename: string
 
-The base URL for all locations. A properly formatted basename should have a leading slash, but no trailing slash.
+所有location的基本URL。一个格式正确的basename应该有一个头斜杠，但是没有尾斜杠。
 
 ```js
 <StaticRouter basename="/calendar">
@@ -48,7 +48,7 @@ The base URL for all locations. A properly formatted basename should have a lead
 
 ## location: string
 
-The URL the server received, probably `req.url` on a node server.
+服务器接收到的URL，在node服务器上可能是`req.url`。
 
 ```js
 <StaticRouter location={req.url}>
@@ -58,7 +58,7 @@ The URL the server received, probably `req.url` on a node server.
 
 ## location: object
 
-A location object shaped like `{ pathname, search, hash, state }`
+一个形如 `{ pathname, search, hash, state }`的location对象
 
 ```js
 <StaticRouter location={{ pathname: '/bubblegum' }}>
@@ -68,7 +68,7 @@ A location object shaped like `{ pathname, search, hash, state }`
 
 ## context: object
 
-A plain JavaScript object. During the render, components can add properties to the object to store information about the render.
+一个普通的JavaScript对象。在渲染期间，组件可以向对象添加属性来存储渲染的相关信息。
 
 ```js
 const context = {}
@@ -77,9 +77,9 @@ const context = {}
 </StaticRouter>
 ```
 
-When a `<Route>` matches, it will pass the context object to the component it renders as the `staticContext` prop. Check out the [Server Rendering guide](../../../react-router-dom/docs/guides/server-rendering.md) for more information on how to do this yourself.
+当`<Route>`匹配时，它将把context对象传递给它渲染的组件作为组件的`staticContext`属性。查看 [服务器渲染指南](../../../react-router-dom/docs/guides/server-rendering.md) 了解如何做这个的更多信息。
 
-After the render, these properties can be used to to configure the server's response.
+在渲染之后，可以使用这些属性来配置服务器的响应
 
 ```js
 if(context.status === '404') {
@@ -89,4 +89,4 @@ if(context.status === '404') {
 
 ## children: node
 
-A [single child element](https://facebook.github.io/react/docs/react-api.html#react.children.only) to render.
+一个用来渲染的[单一子元素](https://facebook.github.io/react/docs/react-api.html#react.children.only)。

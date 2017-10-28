@@ -1,4 +1,4 @@
-# &lt;Switch>
+# `<Switch>`
 
 渲染第一个子[`<Route>`](Route.md)或与该位置匹配的[`<Redirect>`](Redirect.md)
 **这和使用一堆`<Route>`有什么不一样呢?**

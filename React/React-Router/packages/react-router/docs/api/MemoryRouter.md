@@ -1,4 +1,4 @@
-# &lt;MemoryRouter>
+# `<MemoryRouter>`
 
 `<MemoryRouter>`是一个[`<Router>`](Router.md)，它将你的“URL”的历史保存在内存中(不读或写地址栏)。在测试和非浏览器环境中很有用，如[React Native](https://facebook.github.io/react-native/)
 

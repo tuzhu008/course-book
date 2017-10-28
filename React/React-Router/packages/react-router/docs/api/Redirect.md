@@ -1,6 +1,6 @@
-# &lt;Redirect>
+# `<Redirect>`
 
-Rendering a `<Redirect>` will navigate to a new location. The new location will override the current location in the history stack, like server-side redirects (HTTP 3xx) do.
+渲染一个`<Redirect>`将导航到一个新的位置。新的位置将覆盖历史堆栈中的当前位置，就像服务器端重定向(HTTP 3xx)那样。
 
 ```js
 import { Route, Redirect } from 'react-router'
@@ -16,8 +16,7 @@ import { Route, Redirect } from 'react-router'
 
 ## to: string
 
-The URL to redirect to. Any valid URL path that [`path-to-regexp`](https://www.npmjs.com/package/path-to-regexp) understands.
-All URL parameters that are used in `to` must be covered by `from`.
+重定向到的URL，[`path-to-regexp`](https://www.npmjs.com/package/path-to-regexp) 能解析的任何有效的URL路径。`to`里面使用的所有URL参数必须被`from`覆盖。因为它只是重定向而已。
 
 ```js
 <Redirect to="/somewhere/else"/>
@@ -25,7 +24,7 @@ All URL parameters that are used in `to` must be covered by `from`.
 
 ## to: object
 
-A location to redirect to. `pathname` can be any valid URL path that [`path-to-regexp`](https://www.npmjs.com/package/path-to-regexp) understands.
+用来重定向的location。`pathname`可以是任何能被 [`path-to-regexp`](https://www.npmjs.com/package/path-to-regexp) 解析的路径。
 
 ```js
 <Redirect to={{
@@ -37,7 +36,7 @@ A location to redirect to. `pathname` can be any valid URL path that [`path-to-r
 
 ## push: bool
 
-When `true`, redirecting will push a new entry onto the history instead of replacing the current one.
+当为`true`时，重定向将推动一个新的条目进入历史，而不是取代当前的条目。
 
 ```js
 <Redirect push to="/somewhere/else"/>
@@ -45,10 +44,9 @@ When `true`, redirecting will push a new entry onto the history instead of repla
 
 ## from: string
 
-A pathname to redirect from. Any valid URL path that [`path-to-regexp`](https://www.npmjs.com/package/path-to-regexp) understands.
-All matched URL parameters are provided to the pattern in `to`. Must contain all parameters that are used in `to`. Additional parameters not used by `to` are ignored. 
+一个路径名，用来表示从哪里重定向。它是任何可以被[`path-to-regexp`](https://www.npmjs.com/package/path-to-regexp) 解析的有效URL路径。所有匹配的URL参数都提供给`to`中的模式。在`to`中必须包含所使用的所有参数。`to`中未使用的附加参数被忽略。
 
-This can only be used to match a location when rendering a `<Redirect>` inside of a `<Switch>`. See [`<Switch children>`](./Switch.md#children-node) for more details.
+当它在`<Switch>`中渲染一个`<Redirect>`时，这只能用于匹配一个location。参见 [`<Switch children>`](./Switch.md#children-node)
 
 ```js
 <Switch>
@@ -58,7 +56,7 @@ This can only be used to match a location when rendering a `<Redirect>` inside o
 ```
 
 ```js
-// Redirect with matched parameters
+//含匹配参数的重定向
 <Switch>
   <Redirect from='/users/:id' to='/users/profile/:id'/>
   <Route path='/users/profile/:id' component={Profile}/>

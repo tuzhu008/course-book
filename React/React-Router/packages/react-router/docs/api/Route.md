@@ -1,4 +1,4 @@
-# &lt;Route>
+# `<Route>`
 
 Route组件可能是React Router中最重要的组件。它最基本的
 职责是当一个[location](./location.md)匹配到路由的`path`时，渲染一些UI。
