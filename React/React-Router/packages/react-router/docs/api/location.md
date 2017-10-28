@@ -1,11 +1,10 @@
 # location
 
-Locations represent where the app is now, where you want it to go, or
-even where it was. It looks like this:
+Location代表了应用现在的位置，你想要它去哪里，或者甚至它过去在哪儿。它看起来像这样:
 
 ```js
 {
-  key: 'ac3df4', // not with HashHistory!
+  key: 'ac3df4', // 不是HashHistory!
   pathname: '/somewhere'
   search: '?some=search-string',
   hash: '#howdy',
@@ -15,16 +14,18 @@ even where it was. It looks like this:
 }
 ```
 
-The router will provide you with a location object in a few places:
+路由器会在几个地方提供一个location对象:
 
-- [Route component](./Route.md#component) as `this.props.location`
-- [Route render](./Route.md#render-func) as `({ location }) => ()`
-- [Route children](./Route.md#children-func) as `({ location }) => ()`
-- [withRouter](./withRouter.md) as `this.props.location`
+- [Route component](./Route.md#component) 中作为 `this.props.location`
+- [Route render](./Route.md#render-func) 中作为 `({ location }) => ()`
+- [Route children](./Route.md#children-func) 中作为 `({ location }) => ()`
+- [withRouter](./withRouter.md) 中作为 `this.props.location`
 
-It is also found on `history.location` but you shouldn't use that because its mutable. You can read more about that in the [history](./history.md) doc.
 
-A location object is never mutated so you can use it in the lifecycle hooks to determine when navigation happens, this is really useful for data fetching and animation.
+它也在`history.location`被发现。但你不应该使用它，因为它是可变的。您可以在[history](./history.md)中读到更多关于它的信息。
+
+
+location对象永远不会发生突变，因此您可以在生命周期钩子中使用它，以确定什么时候进行导航，这对数据获取和动画非常有用。
 
 ```js
 componentWillReceiveProps(nextProps) {
@@ -33,8 +34,7 @@ componentWillReceiveProps(nextProps) {
   }
 }
 ```
-
-You can provide locations instead of strings to the various places that navigate:
+您可以提供locations，而不是字符串来导航的各个地方:
 
 - Web [Link to](../../../react-router-dom/docs/api/Link.md#to)
 - Native [Link to](../../../react-router-native/docs/api/Link.md#to)
@@ -42,13 +42,13 @@ You can provide locations instead of strings to the various places that navigate
 - [history.push](./history.md#push)
 - [history.replace](./history.md#push)
 
-Normally you just use a string, but if you need to add some "location state" that will be available whenever the app returns to that specific location, you can use a location object instead. This is useful if you want to branch UI based on navigation history instead of just paths (like modals).
+通常你只是使用一个字符串，但是如果你需要添加一些"location 状态"，这将是可用的。每当应用程序返回到特定的位置，你可以使用一个location对象替代这些字符串。如果您希望基于导航历史而不是仅仅路径(像模态框)来分支UI，这是非常有用的。
 
 ```jsx
-// usually all you need
+// 通常需要这样
 <Link to="/somewhere"/>
 
-// but you can use a location instead
+// 但你可以使用一个location来代替
 const location = {
   pathname: '/somewhere'
   state: { fromDashboard: true }
@@ -60,10 +60,10 @@ history.push(location)
 history.replace(location)
 ```
 
-Finally, you can pass a location to the following components:
+最后，您可以将一个location传递给以下组件:
 
 - [Route](./Route.md#location)
 - [Switch](./Switch.md#location)
 
-This will prevent them from using the actual location in the router's state. This is useful for animation and pending navigation, or any time you want to trick a component into rendering at a different location than the real one.
+这将阻止他们在路由器的状态中使用实际的位置。这对于动画和正在等待的导航是很有用的，或者任何时候您想要欺骗组件，渲染它们到不同的位置，而不是实际的位置。
 

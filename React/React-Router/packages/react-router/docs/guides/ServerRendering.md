@@ -3,7 +3,7 @@
 在服务器上渲染的情况略有不同，因为它都是无状态的。基本的思想是，我们将这个应用程序包装在一个无状态的`<StaticRouter>`下，而不是一个`<BrowserRouter>`。我们从服务器传递请求的url，这样路由就可以匹配，我们将在下文中讨论一个上下文prop。
 
 ```js
-// 客服端
+// 客户端
 <BrowserRouter>
   <App/>
 </BrowserRouter>
@@ -16,7 +16,7 @@
   <App/>
 </StaticRouter>
 ```
-当您在客户端上渲染一个<Redirect>时，浏览器的history会发生变化，我们会得到新的屏幕。在静态服务器环境中，我们不能改变应用程序的状态。相反，我们使用上下文prop来找出渲染的结果是什么。如果我们找到一个`context.url`，然后我们知道应用程序被重定向。这允许我们从服务器发送正确的重定向。
+当您在客户端上渲染一个`<Redirect>`时，浏览器的history会发生变化，我们会得到新的屏幕。在静态服务器环境中，我们不能改变应用程序的状态。相反，我们使用上下文prop来找出渲染的结果是什么。如果我们找到一个`context.url`，然后我们知道应用程序被重定向。这允许我们从服务器发送正确的重定向。
 ```js
 const context = {}
 const markup = ReactDOMServer.renderToString(
@@ -162,7 +162,7 @@ ReactDOM.render((
   </BrowserRouter>
 ), document.getElementById('app'))
 ```
-### **Data Loading**
+### **数据加载**
 
 关于数据加载，有很多不同的方法，目前还没有明确的最佳实践，所以我们试图用任何一种方法来组合，而不是针对其中一种或另一种方法。我们相信路由器能够适应你的应用程序的限制。
 

@@ -1,6 +1,6 @@
 ## **快速开始**
 
-开始一个React网络应用最简单的方法是使用一个叫做[Create React App](https://github.com/facebookincubator/create-react-app)的工具，一个有大量社区帮助的Facebook项目。
+开始一个React网络应用最简单的方法是使用一个叫做[Create React App](https://github.com/facebookincubator/create-react-app)的工具，它是一个有大量社区帮助的Facebook项目。
 
 如果你还没有安装，你可以先安装一个create-react-app，然后再用它来做一个新的项目。
 
@@ -12,9 +12,10 @@ cd demo-app
 ### **安装**
 React Router DOM [被发布到npm](https://www.npmjs.com/package/react-router-dom)，所以你可以用 npm 或 [yarn](https://yarnpkg.com/zh-Hans/) 来安装它。
 ```
-yarn add react-router-dom
-// or, if you're not using yarn
-npm install react-router-dom
+npm install react-router-dom --save
+// or, if you're not using npm
+yarn add react-router-dom 
+
 ```
 现在你可以复制/粘贴任何一个例子到`src/app.js`。这是最基本的一个:
 ```js

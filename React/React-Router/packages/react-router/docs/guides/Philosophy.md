@@ -87,7 +87,10 @@ ReactDOM.render((
     <App/>
   </BrowserRouter>
 ), el)
-Next, grab the link component to link to a new location:const App = () => (
+```
+接下来，获取Link组件链接到一个新的位置:
+```js
+const App = () => (
   <div>
     <nav>
       <Link to="/dashboard">Dashboard</Link>
@@ -119,7 +122,7 @@ const App = () => (
   <BrowserRouter>
     {/* 这里是一个div */}
     <div>
-      {/* 这里时一个路由 */}
+      {/* 这里是一个路由 */}
       <Route path="/tacos" component={Tacos}/>
     </div>
   </BrowserRouter>
@@ -141,7 +144,7 @@ const Tacos  = ({ match }) => (
 ```
 看到路由器没有“嵌套”API了吗?路由只是一个组件，就像div一样，为了嵌套路由或div，你只是……去做吧。
 
-Let’s get trickier.
+让我们看些更加复杂的。
 
 ### **响应式路由**
 
@@ -200,7 +203,7 @@ url: /invoices/dashboard
 |                      |                           |
 +----------------------+---------------------------+
 ```
-Now pause for a minute and think about the `/invoices` url for both screen sizes. Is it even a valid route for a large screen? What should we put on the right side?现在暂停一分钟，考虑一下两个屏幕大小的`/invoices`url。它甚至是一个大屏幕的有效路径吗?我们应该把什么放在右边呢?
+现在暂停一分钟，思考一下`/invoices`url对应两个屏幕尺寸的情形。对于一个大屏幕来讲，它是有效路径吗?我们应该把什么放在右边呢?
 
 ```
 Large Screen
@@ -263,4 +266,4 @@ const Invoices = () => (
 
 当用户将手机从竖屏转到横屏时，这段代码将自动重定向到dashboard。根据用户手中移动设备的动态特性，有效路由的设置会发生变化。
 
-这只是一个例子。我们还可以讨论很多其他的问题，但我们会用这个建议来**总结**:为了让你的直觉与反应路由器一致，考虑组件，而不是静态路由。考虑一下如何用响应的声明性可组合性来解决问题，因为几乎每一个“React Router问题”都可能是一个“React问题”。
+这只是一个例子。我们还可以讨论很多其他的问题，但我们会用这个建议来**总结**:为了让你的直觉与路由器一致，作为组件来思考，而不是静态路由。考虑一下如何用响应的声明性可组合性来解决问题，因为几乎每一个“React Router问题”都可能是一个“React问题”。

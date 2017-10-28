@@ -47,3 +47,7 @@ react-router 是由[React Training](https://reacttraining.com) 和许多 [亚马
 ## 致谢
 
 感谢[我们的赞助商](https://github.com/ReactTraining/react-router/blob/master/SPONSORS.md) 对React Router 开发的支持。
+
+## 译者备注
+
+[Github地址](https://github.com/ReactTraining/react-router)

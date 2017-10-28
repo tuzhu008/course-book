@@ -12,8 +12,9 @@ import loadSomething from 'bundle-loader?lazy!./Something'
     // do something w/ the module
   )}
 </Bundle>
-If the module is a component, we can render it right there:
-
+```
+如果这个模块是一个组件，我们可以在这里渲染它:
+```
 <Bundle load={loadSomething}>
   {(Comp) => (Comp
     ? <Comp/>
@@ -21,7 +22,7 @@ If the module is a component, we can render it right there:
   )}
 </Bundle>
 ```
-这个组件使用一个名为`load`的prop，我们从webpack bundle加载器中获得。我们马上就会讲到为什么要用这个。当组件装载或获得一个新的load prop时，它将调用load，然后将返回值放置在state中。最后，它在render中和模块一起返回。
+这个组件使用一个名为`load`的prop，我们从webpack 包加载器中获得。我们马上就会讲到为什么要用这个。当组件装载或获得一个新的load prop时，它将调用load，然后将返回值放置在state中。最后，它在render中和模块一起返回。
 
 ```js
 import React, { Component } from 'react'
