@@ -1,6 +1,6 @@
 # &lt;Prompt>
 
-Used to prompt the user before navigating away from a page. When your application enters a state that should prevent the user from navigating away (like a form is half-filled out), render a `<Prompt>`.用于在离开页面之前提示用户。当您的应用程序进入一个状态，该状态应该防止用户导航(就像表单被填满了)，这时渲染一个`<Prompt>`。
+用于在离开页面之前提示用户。当您的应用程序进入一个状态，该状态应该防止用户导航(就像表单被填满了)，这时渲染一个`<Prompt>`。
 
 ```js
 import { Prompt } from 'react-router'
