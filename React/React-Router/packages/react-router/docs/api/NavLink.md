@@ -33,6 +33,8 @@ import { NavLink } from 'react-router-dom'
 
 当为true时，则只有在location**完全**匹配时才会应用激活的class/style。
 
+默认值：`false`
+
 ```js
 <NavLink
   exact
@@ -40,9 +42,10 @@ import { NavLink } from 'react-router-dom'
 >Profile</NavLink>
 ```
 ## strict: bool
+
+默认值：false
 
-
-当为true时，在确定该位置是否与当前URL匹配时，将考虑位置路径名的末尾斜杠。请参阅 [`<Route strict>`](./Route.md#strict)获取更多信息
+当为true时，在确定`to`中的位置是否与当前URL匹配时，将考虑位置路径名的末尾斜杠。请参阅 [`<Route strict>`](./Route.md#strict)获取更多信息
 
 ```js
 <NavLink
