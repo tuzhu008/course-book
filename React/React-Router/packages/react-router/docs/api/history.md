@@ -27,7 +27,7 @@
 ## history是可变的
 
 history对象是可变的。例如:
-在此之前，推荐从[`<Route>`](./Route.md)的`render`的props访问[`location`](./location.md)（`this.props.loaction`），而不是从`history.location`。这确保了您对React的设想在生命周期钩子中是正确的。例如:
+在此之前，推荐从[`<Route>`](./Route.md)的`render`的props访问[`location`](./location.md)（`({location} =>{})`），而不是从`history.location`。这确保了您对React的设想在生命周期钩子中是正确的。例如:
 ```js
 class Comp extends React.Component {
   componentWillReceiveProps(nextProps) {

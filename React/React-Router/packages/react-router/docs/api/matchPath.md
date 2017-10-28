@@ -1,6 +1,6 @@
 # matchPath
 
-This lets you use the same matching code that `<Route>` uses except outside of the normal render cycle, like gathering up data dependencies before rendering on the server.
+这使您可以使用相同的匹配代码，`<Route>`在正常的渲染周期外使用，就像在服务器进行渲染之前收集数据依赖关系。
 
 ```js
 import { matchPath } from 'react-router'
@@ -14,13 +14,11 @@ const match = matchPath('/users/123', {
 
 ## pathname
 
-The first argument is the pathname you want to match. If you're using
-this on the server with Node.js, it would be `req.url`.
+第一个参数是您想要匹配的路径名。如果您正在使用Node服务器,它将是`req.url`。
 
 ## props
 
-The second argument are the props to match against, they are identical
-to the matching props `Route` accepts:
+第二个参数是定制匹配的props，它们和`Route`接收的匹配props是一样的
 
 ```js
 {

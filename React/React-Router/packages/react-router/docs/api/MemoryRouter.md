@@ -1,6 +1,6 @@
 # &lt;MemoryRouter>
 
-A [`<Router>`](Router.md) that keeps the history of your "URL" in memory (does not read or write to the address bar). Useful in tests and non-browser environments like [React Native](https://facebook.github.io/react-native/).
+`<MemoryRouter>`是一个[`<Router>`](Router.md)，它将你的“URL”的历史保存在内存中(不读或写地址栏)。在测试和非浏览器环境中很有用，如[React Native](https://facebook.github.io/react-native/)
 
 ```js
 import { MemoryRouter } from 'react-router'
@@ -11,8 +11,9 @@ import { MemoryRouter } from 'react-router'
 ```
 
 ## initialEntries: array
+初始化条目
 
-An array of `location`s in the history stack. These may be full-blown location objects with `{ pathname, search, hash, state }` or simple string URLs.
+history堆栈中的一个`location`数组。它们可能是具有`{ pathname, search, hash, state }`或简单字符串URLs的成熟location对象。
 
 ```js
 <MemoryRouter
@@ -25,15 +26,16 @@ An array of `location`s in the history stack. These may be full-blown location o
 
 ## initialIndex: number
 
-The initial location's index in the array of `initialEntries`.
+初始location在`initialEntries`数组中的索引。
 
 ## getUserConfirmation: func
 
-A function to use to confirm navigation. You must use this option when using `<MemoryRouter>` directly with a `<Prompt>`.
+
+用于确认导航的函数。当您配合一个[`<Prompt>`](./Prompt.md)直接使用`<MemoryRouter>`时您必须使用这个选项。
 
 ## keyLength: number
 
-The length of `location.key`. Defaults to 6.
+`location.key`的长度，默认值为6
 
 ```js
 <MemoryRouter keyLength={12}/>
@@ -41,4 +43,4 @@ The length of `location.key`. Defaults to 6.
 
 ## children: node
 
-A [single child element](https://facebook.github.io/react/docs/react-api.html#react.children.only) to render.
+一个[单一子元素](https://facebook.github.io/react/docs/react-api.html#react.children.only) 用来渲染。

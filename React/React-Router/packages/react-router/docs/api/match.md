@@ -1,19 +1,19 @@
 # match
 
-A `match` object contains information about how a `<Route path>` matched the URL. `match` objects contain the following properties:
+`match`对象包含关于`<Route path>`如何与URL匹配的信息。`match`对象包含以下属性:
 
-  - `params` - (object) Key/value pairs parsed from the URL corresponding to the dynamic segments of the path
-  - `isExact` - (boolean) `true` if the entire URL was matched (no trailing characters)
-  - `path` - (string) The path pattern used to match. Useful for building nested `<Route>`s
-  - `url` - (string) The matched portion of the URL. Useful for building nested `<Link>`s
+  - `params` - (object) 从URL中解析的键/值对，对应路径的动态字段
+  - `isExact` - (boolean) `true` 如果整个URL是匹配的(没有尾字符)
+  - `path` - (string) 用于匹配的路径模式。 用于构建嵌套的嵌套`<Route>`
+  - `url` - (string) URL被匹配到的部分。 用于构建嵌套的嵌套 `<Link>`
 
-You'll have access `match` objects in various places:
+您可以在不同的地方访问`match`对象:
 
-- [Route component](./Route.md#component) as `this.props.match`
-- [Route render](./Route.md#render-func) as `({ match }) => ()`
-- [Route children](./Route.md#children-func) as `({ match }) => ()`
-- [withRouter](./withRouter.md) as `this.props.match`
-- [matchPath](./matchPath.md) as the return value
+- [Route component](./Route.md#component) 中作为 `this.props.match`
+- [Route render](./Route.md#render-func) 中作为 `({ match }) => ()`
+- [Route children](./Route.md#children-func) 中作为 `({ match }) => ()`
+- [withRouter](./withRouter.md) 中作为 `this.props.match`
+- [matchPath](./matchPath.md) 中作为 the return value
 
-If a Route does not have a `path`, and therefore always matches, you'll get the closest parent match. Same goes for `withRouter`.
+如果一个Route没有`path`，因此总是匹配，那么您将得到最接近的父匹配。同样适用于`withRouter`。
 
