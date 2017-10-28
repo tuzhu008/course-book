@@ -14,41 +14,41 @@
 * [处理更新阻塞](./guides/DealingWithUpdateBlocking.md)
 
 ## [API](./api)
-* [`<BrowserRouter>`](./api/browserrouter.md)
+* [`<BrowserRouter>`](./api/BrowserRouter.md)
     - basename: string
     - getUserConfirmation: func
     - forceRefresh: bool
     - keyLength: number
     - children: node
-* [`<HashRouter>`](./api/hashrouter.md)
+* [`<HashRouter>`](./api/HashRouter.md)
     - basename: string
     - getUserConfirmation: func
     - hashType: string
     - children: node
-* [`<Link>`](./api/link.md)
+* [`<Link>`](./api/Link.md)
     - to: string
     - to: object
     - replace: bool
-* [`<NavLink>`](./api/navlink.md)
+* [`<NavLink>`](./api/NavLink.md)
     - activeClassName: string
     - activeStyle: object
     - exact: bool
     - strict: bool
     - isActive: func
     - location: object
-* [`<Prompt>`](./api/prompt.md)
-* [`<MemoryRouter>`](./api/memoryrouter.md)
+* [`<Prompt>`](./api/Prompt.md)
+* [`<MemoryRouter>`](./api/MemoryRouter.md)
     - initialEntries: array
     - initialIndex: number
     - getUserConfirmation: func
     - keyLength: number
     - children: node
-* [`<Redirect>`](./api/redirect.md)
+* [`<Redirect>`](./api/Redirect.md)
     - to: string
     - to: object
     - push: bool
     - from: string
-* [`<Route>`](./api/route.md)
+* [`<Route>`](./api/Route.md)
     - Route render methods
     - Route props
     - component
@@ -58,24 +58,24 @@
     - exact: bool
     - strict: bool
     - location: object
-* [`<Router>`](./api/router.md)
+* [`<Router>`](./api/Router.md)
     - history: object
     - children: node
-* [`<StaticRouter>`](./api/staticrouter.md)
+* [`<StaticRouter>`](./api/StaticRouter.md)
     - basename: string
     - location: string
     - location: object
     - context: object
     - children: node
-* [`<Switch>`](./api/switch.md)
+* [`<Switch>`](./api/Switch.md)
     - Switch props
 * [`history`](./api/history.md)
     - history is mutable
 * [`location`](./api/location.md)
 * [`match`](./api/match.md)
-* [`matchPath`](./api/matchpath.md)
+* [`matchPath`](./api/matchPath.md)
     - pathname
     - props
-* [`withRouter`](./api/withrouter.md)
+* [`withRouter`](./api/withRouter.md)
     - Component.WrappedComponent
     - wrappedComponentRef: func

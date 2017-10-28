@@ -14,7 +14,38 @@ import {
     Route,
     Link
 }
+
+const Home = () => (
+    <div>
+        <h2>Home</h2>
+    </div>
+);
+
+const About = () => (
+    <div>
+        <h2>About</h2>
+    </div>
+);
+
+const Licence = () => (
+    <div>
+        <h2>Licence</h2>
+    </div>
+);
+
+const App = () => (
+    <Router>
+        <div>
+            <ul>
+                <li><Link to=''></Link></li>
+                <li><Link></Link></li>
+                <li><Link></Link></li>
+            </ul>
+        </div>
+    </Router>
+);
 ```
+
 
 
 
