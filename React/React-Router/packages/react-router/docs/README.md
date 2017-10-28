@@ -14,41 +14,41 @@
 * [处理更新阻塞](./guides/DealingWithUpdateBlocking.md)
 
 ## [API](./api)
-* `<BrowserRouter>`
+* [`<BrowserRouter>`](./api/browserrouter.md)
     - basename: string
     - getUserConfirmation: func
     - forceRefresh: bool
     - keyLength: number
     - children: node
-* `<HashRouter>`
+* [`<HashRouter>`](./api/hashrouter.md)
     - basename: string
     - getUserConfirmation: func
     - hashType: string
     - children: node
-* `<Link>`
+* [`<Link>`](./api/link.md)
     - to: string
     - to: object
     - replace: bool
-* `<NavLink>`
+* [`<NavLink>`](./api/navlink.md)
     - activeClassName: string
     - activeStyle: object
     - exact: bool
     - strict: bool
     - isActive: func
     - location: object
-* `<Prompt>`
-* `<MemoryRouter>`
+* [`<Prompt>`](./api/prompt.md)
+* [`<MemoryRouter>`](./api/memoryrouter.md)
     - initialEntries: array
     - initialIndex: number
     - getUserConfirmation: func
     - keyLength: number
     - children: node
-* `<Redirect>`
+* [`<Redirect>`](./api/redirect.md)
     - to: string
     - to: object
     - push: bool
     - from: string
-* `<Route>`
+* [`<Route>`](./api/route.md)
     - Route render methods
     - Route props
     - component
@@ -58,24 +58,24 @@
     - exact: bool
     - strict: bool
     - location: object
-* `<Router>`
+* [`<Router>`](./api/router.md)
     - history: object
     - children: node
-* `<StaticRouter>`
+* [`<StaticRouter>`](./api/staticrouter.md)
     - basename: string
     - location: string
     - location: object
     - context: object
     - children: node
-* `<Switch>`
+* [`<Switch>`](./api/switch.md)
     - Switch props
-* `history`
+* [`history`](./api/history.md)
     - history is mutable
-* `location`
-* `match`
-* `matchPath`
+* [`location`](./api/location.md)
+* [`match`](./api/match.md)
+* [`matchPath`](./api/matchpath.md)
     - pathname
     - props
-* `withRouter`
+* [`withRouter`](./api/withrouter.md)
     - Component.WrappedComponent
     - wrappedComponentRef: func
