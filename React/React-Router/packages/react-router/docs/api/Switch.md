@@ -1,6 +1,6 @@
 # `<Switch>`
 
-渲染第一个子[`<Route>`](Route.md)或与该位置匹配的[`<Redirect>`](Redirect.md)
+`<Switch>`渲染第一个子[`<Route>`](Route.md)或与该位置匹配的[`<Redirect>`](Redirect.md)
 **这和使用一堆`<Route>`有什么不一样呢?**
 
 `<Switch>` 独特之处在于它只专门渲染一条路由。与之相反的是，未被`<Switch>`包裹情况下，每个匹配location的`<Route>`都会渲染:
@@ -27,7 +27,7 @@ import { Switch, Route } from 'react-router'
 </Switch>
 ```
 
-现在，如果我们在`/about`，`<Switch>`将开始查找匹配的`<Route>`，`<Route path="/about"/>`被匹配到， `<Switch>`会停止查找并渲染`<About>`。类似地，如果我们在`/michael`，那么`<User>`将会被渲染。
+现在，如果我们在`/about`，`<Switch>`将开始查找匹配的`<Route>`，`<Route path="/about"/>`被匹配到， `<Switch>`会 **停止查找**并渲染`<About>`。类似地，如果我们在`/michael`，那么`<User>`将会被渲染。
 
 这对于动画过渡也很有用，因为匹配到的`<Route>`将被渲染到与前一个相同的位置。
 
@@ -46,6 +46,7 @@ import { Switch, Route } from 'react-router'
   {/* 这里总会有两个孩子，一个可能会渲染为空值，从而让转换变得更麻烦 */}
 </Fade>
 ```
+# Switch props
 
 ## location: object
 
@@ -56,11 +57,11 @@ import { Switch, Route } from 'react-router'
 `<Switch>`的所有子元素应该是`<Route>`或者`<Redirect>`。
  只有第一个匹配当前location的子元素将被渲染。
 
-`<Route>`是用它们`path`属性来匹配的。`<Redirect>`使用他们的`from`属性来匹配的。没有任何路径支持或没有任何的支持，将始终与当前的位置相匹配。没有`path`的`<Route>`和没有`form`的`<Redirect>`会始终匹配当前位置。
+`<Route>`是用它们`path`属性来匹配的。`<Redirect>`使用他们的`from`属性来匹配的。没有`path`的`<Route>`和没有`form`的`<Redirect>`会始终匹配当前位置。
 
 当你将一个`<Redirect>`包含在`<Switch>`中的时候，它可以使用任意一个`<Route>`的loaction来匹配`path`、`exact`和`strict`这些属性。如果一个`location`属性被赋予到`<Switch>`上，它将覆盖匹配到的子元素的`location`属性。
 
-```js
+```html
 <Switch>
   <Route exact path="/" component={Home}/>
 

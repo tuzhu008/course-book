@@ -26,7 +26,7 @@ class UpdateBlocker extends React.PureComponent {
   // <a href='/faq'>F.A.Q.</a>
 </UpdateBlocker>
 ```
-当位置发生改变，`<UpdateBlocker>`不检测任何属性或者状态的变化，所以他们的子组件将不会重新渲染。
+当位置发生改变，`<UpdateBlocker>`检测不到任何属性或者状态的变化，所以他们的子组件将不会重新渲染。
 
 ```js
 // location = { pathname: '/faq' }
@@ -83,11 +83,11 @@ const MyConnectedComponent = observer(MyComponent)
 const MyConnectedComponent = withRouter(observer(MyComponent))
 ```
 
-**这不是最有效的解决方案**, but will prevent the blocked updates issue. For more info regarding this solution, 但是，它将预防更新被阻塞的问题。有关这个解决方案的更多信息，参阅 [Redux指南](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/redux.md#blocked-updates).  要理解为什么这不是最优解，轻阅读 [这个线程](https://github.com/ReactTraining/react-router/pull/5552#issuecomment-331502281).
+**这不是最有效的解决方案**, 但是，它将预防更新被阻塞的问题。有关这个解决方案的更多信息，参阅 [Redux指南](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/redux.md#blocked-updates).  要理解为什么这不是最优解，轻阅读 [这个线程](https://github.com/ReactTraining/react-router/pull/5552#issuecomment-331502281).
 
 #### 推荐解决方案
 
-在位置更改之后，避免重新渲染被阻塞的关键是将阻塞组件传递给`location`对象作为一个属性。无论何时位置发生变化，这将是不同的，所以比较程序会发现当前和下一个location是不同的。
+在位置更改之后，避免重新渲染被阻塞的关键是将`location`对象传递给被阻塞的组件作为一个属性。无论何时位置发生变化，location将是不同的，所以比较程序会发现当前和下一个location是不同的。
 
 ```js
 // location = { pathname: '/about' }
@@ -179,9 +179,9 @@ const MyComponent= () => (
 )
 ```
 
-2. 您可以使用`withRouter`高阶组件包裹一个组件，并且将当前的`location` 赋予给它作为它的属性。
+2. 您可以使用`withRouter`高阶组件包裹一个组件，并且被包裹的组件将会被赋予当前的`location` 作为它的属性。
 ```js
-// 在内部, withRouter 值渲染一个无路的<Route>
+// 在内部, withRouter 只渲染一个无路的<Route>
 const BlockAvoider = withRouter(Blocker)
 
 const MyComponent = () => (

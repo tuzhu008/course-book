@@ -22,7 +22,7 @@ Location代表了应用现在的位置，你想要它去哪里，或者甚至它
 - [withRouter](./withRouter.md) 中作为 `this.props.location`
 
 
-它也在`history.location`被发现。但你不应该使用它，因为它是可变的。您可以在[history](./history.md)中读到更多关于它的信息。
+它也存在于`history.location`，但你不应该使用它，因为它是可变的。您可以在[history](./history.md)中读到更多关于它的信息。
 
 
 location对象永远不会发生突变，因此您可以在生命周期钩子中使用它，以确定什么时候进行导航，这对数据获取和动画非常有用。
