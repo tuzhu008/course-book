@@ -13,10 +13,11 @@ import { Route, Redirect } from 'react-router'
   )
 )}/>
 ```
+# Props
 
 ## to: string
 
-重定向到的URL，[`path-to-regexp`](https://www.npmjs.com/package/path-to-regexp) 能解析的任何有效的URL路径。`to`里面使用的所有URL参数必须被`from`覆盖。因为它只是重定向而已。
+重定向到的URL，[_`path-to-regexp`_](https://www.npmjs.com/package/path-to-regexp) 能解析的任何有效的URL路径。`to`里面使用的所有URL参数必须被`from`覆盖。因为它只是重定向而已。
 
 ```js
 <Redirect to="/somewhere/else"/>

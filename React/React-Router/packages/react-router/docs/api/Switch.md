@@ -31,7 +31,7 @@ import { Switch, Route } from 'react-router'
 
 这对于动画过渡也很有用，因为匹配到的`<Route>`将被渲染到与前一个相同的位置。
 
-```js
+```html
 <Fade>
   <Switch>
     {/* 这里只会有一个child */}
@@ -59,7 +59,7 @@ import { Switch, Route } from 'react-router'
 
 `<Route>`是用它们`path`属性来匹配的。`<Redirect>`使用他们的`from`属性来匹配的。没有`path`的`<Route>`和没有`form`的`<Redirect>`会始终匹配当前位置。
 
-当你将一个`<Redirect>`包含在`<Switch>`中的时候，它可以使用任意一个`<Route>`的loaction来匹配`path`、`exact`和`strict`这些属性。如果一个`location`属性被赋予到`<Switch>`上，它将覆盖匹配到的子元素的`location`属性。
+当你将一个`<Redirect>`包含在`<Switch>`中的时候，它可以使用任意一个`<Route>`的loaction匹配属性：`path`、`exact`和`strict`。如果一个`location`属性被赋予到`<Switch>`上，它将覆盖匹配到的子元素的`location`属性。
 
 ```html
 <Switch>
