@@ -1,15 +1,15 @@
-## **Scroll Restoration**
+## **Scroll 复位**
 
-In earlier versions of React Router we provided out-of-the-box support for scroll restoration and people have been asking for it ever since. Hopefully this document helps you get what you need out of the scroll bar and routing!
+在早期版本的“React Router”中，我们为滚动复位提供了开箱即用的支持，从那时起人们就一直在要求它。希望这个文档能够帮助您获得滚动条和路由所需的内容。
 
-Browsers are starting to handle scroll restoration with history.pushState on their own in the same manner they handle it with normal browser navigation. It already works in chrome and it’s really great. Here’s the Scroll Restoration Spec.
+浏览器开始时history.pushState来处理历史上的滚动复位。他们用同样的方式处理自己的问题，用标准的浏览器导航来处理。它已经在chrome中运行了，它真的很棒。[这是滚动复位的规范](https://majido.github.io/scroll-restoration-proposal/history-based-api.html#web-idl)。
 
-Because browsers are starting to handle the “default case” and apps have varying scrolling needs (like this website!), we don’t ship with default scroll management. This guide should help you implement whatever scrolling needs you have.
+因为浏览器已经开始处理“默认情况”，而且应用程序有不同的滚动需求(比如这个网站！)，我们不使用默认的滚动管理。这个指南可以帮助你实现任何你想要的滚动需求。
 
-### **Scroll to top**
+### **滚动到顶部**
 
-Most of the time all you need is to “scroll to the top” because you have a long content page, that when navigated to, stays scrolled down. This is straightforward to handle with a <ScrollToTop> component that will scroll the window up on every navigation, make sure to wrap it in withRouter to give it access to the router’s props:
-`
+大多数时候，你需要的是“滚动到顶部”，因为你有一个很长的内容页，当你导航到它时，它会一直滚动下去。使用一个<ScrollToTop>组件来处理是很简单的。它每次导航都将向上滚动窗口。一定要把它包在 `withRouter`中，让它可以访问路由器的props:
+
 ```js
 class ScrollToTop extends Component {
   componentDidUpdate(prevProps) {
@@ -25,8 +25,8 @@ class ScrollToTop extends Component {
 
 export default withRouter(ScrollToTop)
 ```
-Then render it at the top of your app, but below Router
-```
+然后将它渲染在你的应用程序的顶部，但是在路由器下面
+```js
 const App = () => (
   <Router>
     <ScrollToTop>
@@ -35,10 +35,10 @@ const App = () => (
   </Router>
 )
 
-// or just render it bare anywhere you want, but just one :)
+// 或者只是把它呈现在你想要的任何地方，但只是一个 :)
 <ScrollToTop/>
 ```
-If you have a tab interface connected to the router, then you probably don’t want to be scrolling to the top when they switch tabs. Instead, how about a <ScrollToTopOnMount> in the specific places you need it?
+如果你有一个连接到路由器的标签界面，那么你可能不希望在切换选项卡时滚动到顶部。相反，在您需要的特定位置上，如何使用`<ScrollToTopOnMount>`?
 ```js
 class ScrollToTopOnMount extends Component {
   componentDidMount(prevProps) {
@@ -62,14 +62,16 @@ class LongContent extends Component {
 // somewhere else
 <Route path="/long-content" component={LongContent}/>
 ```
+这里，当路径匹配到长内容时，会渲染长内容组件，这时候会渲染`<ScrollToTopOnMount/>`,它的声明周期函数就会被执行，就会滚动到顶部了。
+### **通用解决方案**
 
-### **Generic Solution**
+对于一般的解决方案(以及浏览器开始实现的功能)，我们将讨论两件事:
 
-For a generic solution (and what browser are starting to implement natively) we’re talking about two things:
+- 在导航栏上滚动，这样你就不会启动一个新的屏幕滚动到底部
 
-Scrolling up on navigation so you don’t start a new screen scrolled to the bottom
-Restoring scroll positions of the window and overflow elements on “back” and “forward” clicks (but not Link clicks!)
-At one point we were wanting to ship a generic API. Here’s what we were headed toward:
+- 恢复窗口的滚动位置，并在“后退”和“前进”的点击(但不是链接点击！)时溢出元素（overflow elements）
+
+我们一度想要发布一个通用的API。下面是我们的方向:
 ```js
 <Router>
   <ScrollRestoration>
@@ -85,12 +87,12 @@ At one point we were wanting to ship a generic API. Here’s what we were headed
   </ScrollRestoration>
 </Router>
 ```
-First, ScrollRestoration would scroll the window up on navigation. Second, it would use location.key to save the window scroll position and the scroll positions of RestoredScroll components to sessionStorage. Then, when ScrollRestoration or RestoredScroll components mount, they could look up their position from sessionsStorage.
+首先，`ScrollRestoration`会在导航时滚动窗口。其次，它会使用`location.key`保存窗口滚动位置和`RestoredScroll`组件的滚动位置到`sessionStorage`。然后，当`ScrollRestoration`或`RestoredScroll`组件挂载时，它们可以从`sessionsStorage`中查找它们的位置。
 
-What got tricky for me was defining an “opt-out” API for when I didn’t want the window scroll to be managed. For example, if you have some tab navigation floating inside the content of your page you probably don’t want to scroll to the top (the tabs might be scrolled out of view!).
+对我来说，最棘手的是定义一个“选择退出”的API，在我不想让窗口滚动被管理的时候可以退出。例如，如果您在页面内容中有一些浮动的选项卡导航，那么您可能不希望滚动到顶部(这些选项卡可能会从视图中滚动)。
 
-When I learned that chrome manages scroll position for us now, and realized that different apps are going to have different scrolling needs, I kind of lost the belief that we needed to provide something–especially when people just want to scroll to the top (which you saw is straight-forward to add to your app on your own).
+当我现在得知chrome为我们管理滚动位置,我意识到不同的应用程序有不同的滚动需求,我有点失去了信念,那些我们需要提供一些东西尤其是当人们只是想滚动到顶部(你看到是自己直接添加到您的应用程序)。
 
-Based on this, we no longer feel strongly enough to do the work ourselves (like you we have limited time!). But, we’d love to help anybody who feels inclined to implement a generic solution. A solid solution could even live in the project. Hit us up if you get started on it :)
+基于这一点，我们不再有足够的强烈的感觉来完成这项工作(就像你，我们的时间有限！)但是，我们愿意帮助任何想要实现通用解决方案的人。
 
 

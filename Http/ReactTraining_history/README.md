@@ -6,25 +6,25 @@
 [npm-badge]: https://img.shields.io/npm/v/history.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/history
 
-[`history`](https://www.npmjs.com/package/history) is a JavaScript library that lets you easily manage session history anywhere JavaScript runs. `history` abstracts away the differences in various environments and provides a minimal API that lets you manage the history stack, navigate, confirm navigation, and persist state between sessions.
+[`history`](https://www.npmjs.com/package/history) 是一个JavaScript库，可以让您轻松地管理JavaScript运行的会话历史。`history`将不同环境中的差异抽象出来，并提供一个最小的API，让您能够管理历史堆栈、导航、确认导航，以及在会话之间保持状态。
 
-## Installation
+## 安装
 
-Using [npm](https://www.npmjs.com/):
+使用 [npm](https://www.npmjs.com/):
 
     $ npm install --save history
 
-Then with a module bundler like [webpack](https://webpack.github.io/), use as you would anything else:
+然后和 [webpack](https://webpack.github.io/)这样的模块打包器配合使用, 你也可以使用别的:
 
 ```js
-// using ES6 modules
+// 使用 ES6 模块
 import createHistory from 'history/createBrowserHistory'
 
-// using CommonJS modules
+// 使用 CommonJS 模块
 var createHistory = require('history').createBrowserHistory
 ```
 
-The UMD build is also available on [unpkg](https://unpkg.com):
+在 [unpkg](https://unpkg.com)UMD构建也可以使用：
 
 ```html
 <script src="https://unpkg.com/history/umd/history.min.js"></script>
@@ -32,68 +32,67 @@ The UMD build is also available on [unpkg](https://unpkg.com):
 
 You can find the library on `window.History`.
 
-## Usage
+## 使用方法
 
-`history` provides 3 different methods for creating a `history` object, depending on your environment.
+`history`根据您的环境，为创建`history`对象提供了3种不同的方法。
 
-- `createBrowserHistory` is for use in modern web browsers that support the [HTML5 history API](http://diveintohtml5.info/history.html) (see [cross-browser compatibility](http://caniuse.com/#feat=history))
-- `createMemoryHistory` is used as a reference implementation and may also be used in non-DOM environments, like [React Native](https://facebook.github.io/react-native/) or tests
-- `createHashHistory` is for use in legacy web browsers
+- `createBrowserHistory` 用在支持 [HTML5 history API](http://diveintohtml5.info/history.html) (参阅 [cross-browser 兼容性](http://caniuse.com/#feat=history))的现代浏览器中。
+- `createMemoryHistory` 是一个被用做一个参考实现，并可以被用来在非DOM环境中使用，比如 [React Native](https://facebook.github.io/react-native/) 或者测试环境。
+- `createHashHistory` 用于在遗留web浏览器中使用
 
-Depending on the method you want to use to keep track of history, you'll `import` (or `require`) one of these methods directly from the package root (i.e. `history/createBrowserHistory`). The remainder of this document uses the term `createHistory` to refer to any of these implementations.
+根据您希望使用的方法来跟踪历史记录，您将从包的根目录(例如. `history/createBrowserHistory`)直接`import`（或者`require`）这些方法中的一个。本文档的其余部分使用`createHistory`这个术语来指代这些实现中的任何一种。
 
-Basic usage looks like this:
+基本用法如下:
 
 ```js
 import createHistory from 'history/createBrowserHistory'
 
 const history = createHistory()
 
-// Get the current location.
+// 获取当前location
 const location = history.location
 
-// Listen for changes to the current location.
+// 监听当前location的更改
 const unlisten = history.listen((location, action) => {
-  // location is an object like window.location
+  // location是一个对象， 比如 window.location
   console.log(action, location.pathname, location.state)
 })
 
-// Use push, replace, and go to navigate around.
+// 使用push, replace, and go 来进行导航
 history.push('/home', { some: 'state' })
 
-// To stop listening, call the function returned from listen().
+// 为了停止侦听，请调用从listen()返回的函数。
 unlisten()
 ```
-
-The options that each `create` method takes, along with its default values, are:
+每个`create`方法的选项及其默认值都是:
 
 ```js
 createBrowserHistory({
-  basename: '',             // The base URL of the app (see below)
-  forceRefresh: false,      // Set true to force full page refreshes
-  keyLength: 6,             // The length of location.key
-  // A function to use to confirm navigation with the user (see below)
-  getUserConfirmation: (message, callback) => callback(window.confirm(message))
+  basename: '',             // 应用程序的基URL(见下文)
+  forceRefresh: false,      // 设置为true会强制刷新完整的页面
+  keyLength: 6,             // location.key的长度
+  // 用于用户确认导航的函数(见下文)
+  getUserConfirmation: (message, callback) => callback(window.confirm(message)) //默认使用
 })
 
 createMemoryHistory({
-  initialEntries: [ '/' ],  // The initial URLs in the history stack
-  initialIndex: 0,          // The starting index in the history stack
-  keyLength: 6,             // The length of location.key
-  // A function to use to confirm navigation with the user. Required
-  // if you return string prompts from transition hooks (see below)
+  initialEntries: [ '/' ],  // history堆栈中的初始URL数组
+  initialIndex: 0,          // 初始位置在 history堆栈中的索引
+  keyLength: 6,             //  location.key的长度
+  // 用于用户确认导航的函数. 是必须的
+  // 如果从过渡钩子返回字符串提示符 (见下文)
   getUserConfirmation: null
 })
 
 createHashHistory({
-  basename: '',             // The base URL of the app (see below)
-  hashType: 'slash',        // The hash type to use (see below)
-  // A function to use to confirm navigation with the user (see below)
+  basename: '',             // 应用程序的基URL (见下文)
+  hashType: 'slash',        // 使用的hash类型 (下下问)
+  // 用于用户确认导航的函数(见下文)
   getUserConfirmation: (message, callback) => callback(window.confirm(message))
 })
 ```
 
-### Properties
+### 属性
 
 Each `history` object has the following properties:
 
