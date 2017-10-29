@@ -1,16 +1,19 @@
-## **Redux Integration**
+## **Redux 集成**
 
-Redux is an important part of the React ecosystem. We want to make the integration of React Router and Redux as seamless as possible for people wanting to use both.
+Redux is an important part of the React ecosystem. We want to make the integration of React Router and Redux as seamless as possible for people wanting to use both.Redux是反应生态系统的重要组成部分。我们想让React Router和Redux的集成尽可能的无缝给想要同时使用两者的人来说。
 
-### **Blocked Updates**
+### **被阻止的更新**
 
-Generally, React Router and Redux work just fine together. Occasionally though, an app can have a component that doesn’t update when the location changes (child routes or active nav links don’t update).
+般来说，React Router和Redux能够很好的一起工作。有时，应用程序可以有一个组件在位置改变时不更新(子路由或活动导航链接不更新)。
 
-This happens if:
+如果发生这样的情况:
 
-The component is connected to redux via connect()(Comp).
-The component is not a “route component”, meaning it is not rendered like so: <Route component={SomeConnectedThing}/>
-The problem is that Redux implements shouldComponentUpdate and there’s no indication that anything has changed if it isn’t receiving props from the router. This is straightforward to fix. Find where you connect your component and wrap it in withRouter.
+该组件通过connect()(Comp)连接到redux。该组件不是一个“route 组件”，也就是说，它不是这样渲染的: 
+```
+<Route component={SomeConnectedThing}/>
+```
+问题是Redux实现了`shouldComponentUpdate`，没有任何迹象表明，如果它没有收到来自路由器的props，一切就会发生变化。这是很容易解决的。找到连connect组件的地方，并将其封装在 `withRouter`中。
+
 
 ```js
 // before
@@ -20,19 +23,22 @@ export default connect(mapStateToProps)(Something)
 import { withRouter } from 'react-router-dom'
 export default withRouter(connect(mapStateToProps)(Something))
 ```
-### **Deep integration**
-Some folks want to:
+### **深度集成**
+有些人想:
 
-* synchronize the routing data with, and accessed from, the store
-* be able to navigate by dispatching actions
-* have support for time travel debugging for route changes in the Redux devtools
-All of this requires deeper integration. Please note you don’t need this deep integration:
-
-* Route changes are unlikely to matter for time travel debugging.
-* Rather than dispatching actions to navigate you can pass the history object provided to route components to your actions and navigate with it there.
-* Routing data is already a prop of most of your components that care about it, whether it comes from the store or the router doesn’t change your component’s code.
+* 使用store同步路由数据，并从store中访问
+* 能够通过dispatch actions来进行导航
+* 在Redux devtools中支持路由更改的时间旅行调试
 
 
-However, we know some people feel strongly about this and so we want to provide the best deep integration possible. As of version 4 of React Router, the React Router Redux package is a part of the project. Please refer to it for deep integration.
+所有这些都需要更深层次的整合。请注意，您不需要这种深度集成:
+
+
+* 路由更改对时间旅行调试来说可能有问题
+* 你可以将history对象传递给route组件来进行你的操作和当行，而不是dispatch actions来导航
+* 路由数据已经是你的大部分组件的属性，不管它来自于store还是路由器都不会改变你的组件的代码。
+
+
+然而，我们知道有些人对此有强烈的感觉，所以我们想要提供最好的深度整合方案。作为React Router的第4版，React Router Redux包是项目的一部分。请参阅它进行深度集成。
 
 [React Router Redux](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux)
