@@ -144,9 +144,24 @@ const ListItemLink = ({ to, ...rest }) => (
 ```
 
 | path | location.pathname | exact | matches? |
-| :---: | :---: | :---: | :---: |
+| :--- | :--- | :---: | :---: |
+| `/one`  | `/one`  | `true` | yes |
+| `/one`  | `/one/`  | `true` | yes |
 | `/one`  | `/one/two`  | `true` | no |
+| `/one`  | `/one`  | `false` | yes |
+| `/one`  | `/one/`  | `false` | yes |
 | `/one`  | `/one/two`  | `false` | yes |
+| --  | -- | -- | -- |
+| `/one/`  | `/one`  | `true` | yes |
+| `/one/`  | `/one/`  | `true` | yes |
+| `/one/`  | `/one/two`  | `true` | no |
+| `/one/`  | `/one`  | `false` | yes |
+| `/one/`  | `/one/`  | `false` | yes |
+| `/one/`  | `/one/two`  | `false` | yes |
+
+从上可以看到，exact模式的匹配是双向的，exact只代表它们之间的比较模式。A与B进行匹配和B和A进行匹配是等价的。
+
+在exact或非exact模式下，`/one`和`/one/`都是等价的。而区别在于`/one/`、`/one/` 与`/one/two`是否匹配。
 
 ## strict: bool
 
@@ -163,6 +178,16 @@ const ListItemLink = ({ to, ...rest }) => (
 | `/one/` | `/one` | no |
 | `/one/` | `/one/` | yes |
 | `/one/` | `/one/two` | yes |
+| - | - |- |
+| `/one` | `/one` | yes |
+| `/one` | `/one/` | yes |
+| `/one` | `/one/two` | yes |
+
+从上可以看出，strict模式的匹配是单向的，它**只是针对于`path`中以`/`结尾的路径做限制**。也就是说，这个规则**对不以`/`结尾的路径不起作用**。
+
+strict会先将`location.pathname`中的末尾变为`/`，如果以一个字符或者字符串结尾，会去掉这些字符，如：`/one/two`会被转为`/one/`。因此`/one/`和`/one`不匹配，`/one/`和`/one/two`是匹配的。
+
+但此模式对`/`无用，因此`path='/'`与任何都是匹配的。唯一有用的是使用exact。
 
 **警告:** `strict`可以被用来来强制执行一个没有末尾斜杠的`location.pathname`。为了做到这点，`strict`和`exact`都必须为`ture`。
 
@@ -175,6 +200,11 @@ const ListItemLink = ({ to, ...rest }) => (
 | `/one` | `/one` | yes |
 | `/one` | `/one/` | no |
 | `/one` | `/one/two` | no |
+| `/one/` | `/one` | no |
+| `/one/` | `/one/` | yes |
+| `/one/` | `/one/two` | no |
+
+两种模式一起用，就可以用来使匹配必须一模一样。对字符敏感，对末尾的`/`也敏感。
 
 ## location: object
 

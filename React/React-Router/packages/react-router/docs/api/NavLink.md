@@ -43,6 +43,24 @@ import { NavLink } from 'react-router-dom'
   to="/profile"
 >Profile</NavLink>
 ```
+| to | location.pathname | exact | matches? |
+| :--- | :--- | :---: | :---: |
+| `/one`  | `/one`  | `true` | yes |
+| `/one`  | `/one/`  | `true` | yes |
+| `/one`  | `/one/two`  | `true` | no |
+| `/one`  | `/one`  | `false` | yes |
+| `/one`  | `/one/`  | `false` | yes |
+| `/one`  | `/one/two`  | `false` | yes |
+| --  | -- | -- | -- |
+| `/one/`  | `/one`  | `true` | yes |
+| `/one/`  | `/one/`  | `true` | yes |
+| `/one/`  | `/one/two`  | `true` | no |
+| `/one/`  | `/one`  | `false` | yes |
+| `/one/`  | `/one/`  | `false` | yes |
+| `/one/`  | `/one/two`  | `false` | yes |
+
+从上可以看到，exact模式的匹配是双向的，exact只代表`to`和`location.pathname`之间的比较模式。A与B进行匹配和B和A进行匹配是等价的。
+
 ## strict: bool
 
 默认值：`false`
@@ -55,9 +73,29 @@ import { NavLink } from 'react-router-dom'
   to="/events/"
 >Events</NavLink>
 ```
+| to | location.pathname | matches? |
+| :---: | :---: | :---: |
+| `/one/` | `/one` | no |
+| `/one/` | `/one/` | yes |
+| `/one/` | `/one/two` | yes |
+| - | - |- |
+| `/one` | `/one` | yes |
+| `/one` | `/one/` | yes |
+| `/one` | `/one/two` | yes |
+
+从上可以看出，strict模式的匹配是单向的，它**只是针对于`to`中以`/`结尾的路径做限制**。也就是说，这个规则**对不以`/`结尾的路径不起作用**。
+
+strict会先将`location.pathname`中的末尾变为`/`，如果以一个字符或者字符串结尾，会去掉这些字符，如：`/one/two`会被转为`/one/`。因此`/one/`和`/one`不匹配，`/one/`和`/one/two`是匹配的。
+
+但此模式对`/`无用，`to='/'`任何都匹配。
+
+
+
 ## isActive: func
 
 一个函数，返回值是bool类型。用于添加额外的逻辑，以确定链接是否是激活的。如果您想要做更多的事情，而不是验证该链接的路径名与当前URL的路径名匹配，那么就应该使用该方法。
+
+接收match、location等作为参数，不是一个对象，所以不需要解构`{ match, location }`。
 ```js
 // only consider an event active if its event id is an odd number只有当事件id为奇数时才考虑事件活动
 const oddEvent = (match, location) => {
@@ -77,3 +115,17 @@ const oddEvent = (match, location) => {
 
 `isActive`比较当前的历史位置(通常是当前的浏览器URL)。为了与不同的位置进行比较，可以传入一个`location`
 
+```js
+<NavLink 
+  to='/two'
+  isActive={(match, location) => {
+    //do Something
+    //这里接收到的location是当前的location
+  }}
+  loaction={oneLocating}>
+  Two
+  </NavLink>
+```
+当指定了location属性的时候，默认的当前的location就会被覆盖掉。也就是isActive的函数中接收到的location就是这个属性指定的location。
+
+当指定了location属性，isActive的函数接收的match会变为null?
