@@ -94,17 +94,19 @@ createHashHistory({
 
 ### 属性
 
-Each `history` object has the following properties:
+每个 `history`对象都有下面这些属性： 
 
-- `history.length` - The number of entries in the history stack
-- `history.location` - The current location (see below)
-- `history.action` - The current navigation action (see below)
+- `history.length` - history 堆栈的条目数
+- `history.location` - 当前的location (见下文)
+- `history.action` - 当前的导航动作(见下文)
 
-Additionally, `createMemoryHistory` provides `history.index` and `history.entries` properties that let you inspect the history stack.
 
-### Listening
 
-You can listen for changes to the current location using `history.listen`:
+另外, `createMemoryHistory` 提供 `history.index` 和 `history.entries`属性，让你能检查history堆栈。
+
+### 监听
+
+你可以使用`history.listen`来监听当前location的变化：
 
 ```js
 history.listen((location, action) => {
@@ -113,102 +115,101 @@ history.listen((location, action) => {
 })
 ```
 
-The `location` object implements a subset of [the `window.location` interface](https://developer.mozilla.org/en-US/docs/Web/API/Location), including:
+`location`实现了[_`window.location` 接口_](https://developer.mozilla.org/en-US/docs/Web/API/Location)的一个子集
 
-- `location.pathname` - The path of the URL
-- `location.search` - The URL query string
-- `location.hash` - The URL hash fragment
+- `location.pathname` - URL的路径
+- `location.search` - URL的查询字符串
+- `location.hash` - URL hash 片段
 
-Locations may also have the following properties:
 
-- `location.state` - Some extra state for this location that does not reside in the URL (supported in `createBrowserHistory` and `createMemoryHistory`)
-- `location.key` - A unique string representing this location (supported in `createBrowserHistory` and `createMemoryHistory`)
+Locations也可以有下列属性：
 
-The `action` is one of `PUSH`, `REPLACE`, or `POP` depending on how the user got to the current URL.
+- `location.state` - 这个location的额外状态不存在于URL中(`createBrowserHistory` 和 `createMemoryHistory`中支持这个属性)
+- `location.key` - 表示该位置的唯一字符串 (`createBrowserHistory` 和 `createMemoryHistory`支持该属性)
 
-### Navigation
+`action` 的值是 `PUSH`、 `REPLACE`、 `POP` 它们当中的一个，取决于用户是如何到达当前URL的。
 
-`history` objects may be used programmatically change the current location using the following methods:
+### 导航
+
+`history`对象可以以编程方式使用以下方法更改当前位置:
 
 - `history.push(path, [state])`
 - `history.replace(path, [state])`
 - `history.go(n)`
 - `history.goBack()`
 - `history.goForward()`
-- `history.canGo(n)` (only in `createMemoryHistory`)
+- `history.canGo(n)` (仅支持在`createMemoryHistory`使用)
 
-When using `push` or `replace` you can either specify both the URL path and state as separate arguments or include everything in a single location-like object as the first argument.
+当使用`push`或`replace`时，可以将URL路径和状态指定为单独的参数，或者将所有内容都包含在一个单一的类似location的对象中，作为第一个参数。
 
-1. A URL path *or*
-2. A location-like object with `{ pathname, search, hash, state }`
+1. 一个URL路径 *or*
+2. 一个类location对象 `{ pathname, search, hash, state }`
 
 ```js
-// Push a new entry onto the history stack.
+// 推入一个新条目到history堆栈 顶部.
 history.push('/home')
 
-// Push a new entry onto the history stack with a query string
-// and some state. Location state does not appear in the URL.
+// 推入一条含有查询字符串和一些状态的新条目到history堆栈顶部
+//位置state不会出现在URL中。
 history.push('/home?the=query', { some: 'state' })
 
-// If you prefer, use a single location-like object to specify both
-// the URL and state. This is equivalent to the example above.
+// 如果愿意，你可以使用一个类location对象来指定URL和state。
+// 这与上面的例子是等价的。
 history.push({
   pathname: '/home',
   search: '?the=query',
   state: { some: 'state' }
 })
 
-// Go back to the previous history entry. The following
-// two lines are synonymous.
+// 退回到以前的history条目
+// 下面两行代码是等价的
 history.go(-1)
 history.goBack()
 ```
 
-**Note:** Location state is only supported in `createBrowserHistory` and `createMemoryHistory`.
+**注意:** Location state 仅在`createBrowserHistory` 和 `createMemoryHistory`被支持。
 
-### Blocking Transitions
+### 阻止过度
 
-`history` lets you register a prompt message that will be shown to the user before location listeners are notified. This allows you to make sure the user wants to leave the current page before they navigate away.
+`history`允许您注册一个提示消息，消息会在位置侦听器收到通知之前，将显示给用户。这使您可以在跳转之前确保 用户的确想离开当前页面。
 
 ```js
-// Register a simple prompt message that will be shown the
-// user before they navigate away from the current page.
+
+// 注册一个简单的提示信息，它将在用户从当前页面跳转以前之前显示
 const unblock = history.block('Are you sure you want to leave this page?')
 
-// Or use a function that returns the message when it's needed.
+// 或者使用一个在需要时返回消息的函数。
 history.block((location, action) => {
-  // The location and action arguments indicate the location
-  // we're transitioning to and how we're getting there.
 
-  // A common use case is to prevent the user from leaving the
-  // page if there's a form they haven't submitted yet.
+  // location和action参数表明我们正在过渡的locaio以及我们怎么到达那里
+
+  // 一个常见的用例是防止用户离开页面，如果他们还没有提交表单的话。
   if (input.value !== '')
     return 'Are you sure you want to leave this page?'
 })
 
-// To stop blocking transitions, call the function returned from block().
+// 为了停止阻塞，调用从block()返回的函数。
 unblock()
 ```
 
-**Note:** You'll need to provide a `getUserConfirmation` function to use this feature with `createMemoryHistory` (see below).
+**注意:** 
+使用`getUserConfirmation`时，你需要提供一个`getUserConfirmation`方法来使用这个特性（见下文）。
 
-### Customizing the Confirm Dialog
+### 自定义 Confirm 对话框
+默认情况下, 使用[`window.confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm) 来显示提示信息给用户。如果你需要覆盖这个行为 (或者你正在使用 `createMemoryHistory`，一个不假定为DOM的环境)，在你想要创建你的history对象时，请提供一个`getUserConfirmation` 函数。
 
-By default, [`window.confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm) is used to show prompt messages to the user. If you need to override this behavior (or if you're using `createMemoryHistory`, which doesn't assume a DOM environment), provide a `getUserConfirmation` function when you create your history object.
 
 ```js
 const history = createHistory({
   getUserConfirmation(message, callback) {
-    // Show some custom dialog to the user and call
-    // callback(true) to continue the transiton, or
-    // callback(false) to abort it.
+    //给用户显示一些自定义对话框并调用 callback(true)来继续过度，或者调用callback(false)来中止。
   }
 })
 ```
 
-### Using a Base URL
+### 使用 基URL
 
-If all the URLs in your app are relative to some other "base" URL, use the `basename` option. This option transparently adds the given string to the front of all URLs you use.
+如果你的应用程序的URLs都是相对于一些其他"基" URL，请使用`basename`选项。这个选项透明地将给定的字符串添加到您使用的所有URL的前面。
 
 ```js
 const history = createHistory({
@@ -219,14 +220,15 @@ history.listen(location => {
   console.log(location.pathname) // /home
 })
 
-history.push('/home') // URL is now /the/base/home
+history.push('/home') // 现在URL是 /the/base/home
 ```
 
-**Note:** `basename` is not suppported in `createMemoryHistory`.
+**注意:** `createMemoryHistory`不支持`basename`.
 
-### Forcing Full Page Refreshes in createBrowserHistory
+### 在createBrowserHistory中强制完整页面刷新
 
-By default `createBrowserHistory` uses HTML5 `pushState` and `replaceState` to prevent reloading the entire page from the server while navigating around. If instead you would like to reload as the URL changes, use the `forceRefresh` option.
+
+默认情况下，`createBrowserHistory`使用HTML5的`pushState`和`replaceState`来阻止当在导航时从服务器重新加载整个页面
 
 ```js
 const history = createBrowserHistory({
@@ -234,33 +236,33 @@ const history = createBrowserHistory({
 })
 ```
 
-### Modifying the Hash Type in createHashHistory
+### 在createHashHistory中修改Hash类型
 
-By default `createHashHistory` uses a leading slash in hash-based URLs. You can use the `hashType` option to use a different hash formatting.
 
+默认情况下，`createHashHistory`在基于hash的URLs上使用一个头`slash`。你可以使用`hashType`来使用不一样的hash片段
 
 ```js
 const history = createHashHistory({
-  hashType: 'slash' // the default
+  hashType: 'slash' // 默认值
 })
 
-history.push('/home') // window.location.hash is #/home
+history.push('/home') // window.location.hash 是 #/home
 
 const history = createHashHistory({
-  hashType: 'noslash' // Omit the leading slash
+  hashType: 'noslash' // 省略头 slash
 })
 
-history.push('/home') // window.location.hash is #home
+history.push('/home') // window.location.hash 是#home
 
 const history = createHashHistory({
-  hashType: 'hashbang' // Google's legacy AJAX URL format
+  hashType: 'hashbang' // Google的遗留AJAX URL格式
 })
 
-history.push('/home') // window.location.hash is #!/home
+history.push('/home') // window.location.hash 是#!/home
 ```
 
-## Thanks
+## 致谢
 
-A big thank-you to [Dan Shaw](https://www.npmjs.com/~dshaw) for letting us use the `history` npm package name! Thanks Dan!
+非常感谢[Dan Shaw](https://www.npmjs.com/~dshaw) 允许我们使用`history` npm 包名！ Thanks Dan!
 
-Also, thanks to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to run our build in real browsers.
+也谢谢 [BrowserStack](https://www.browserstack.com/)为我们在实际浏览器中运行我们的构建的提供基础设施的支持。
