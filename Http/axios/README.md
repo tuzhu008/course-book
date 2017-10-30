@@ -1,14 +1,14 @@
 
 基于 Promise 的 HTTP 请求客户端，可同时在浏览器和 node.js 中使用。
-## <font color=#D02B34> **引入**
-### <font color=#08A3E4> **1、npm**
+##  **引入**
+###  **1、npm**
 
 ```
 npm install axios --save-dev
 ```
 axios是不能够像vuex和vue-router一样注入各个字组件中的。所以不能在`main.js`中，是**无效**的：
 
-```
+```js
 import axios from 'axios';
 
 new Vue ({
@@ -18,7 +18,7 @@ new Vue ({
 ```
 只能在需要Http请求的组件中导入
 
-```
+```js
 import axios from 'axios';
 export default({
 	mounted () {
@@ -27,23 +27,23 @@ export default({
 });
 ```
 
-###<font color=#08A3E4> **2、CDN**
+###  **2、CDN**
 
 在main.js头部或者需要服务的组件中插入。
-```
+```js
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
 这里只是示例，URL有效性并未验证，请自行寻找。
 
-##<font color=#D02B34> **请求类型**
+## **请求类型**
 
-###<font color=#08A3E4> **1、GET**
+### **1、GET**
 
-###<font color=#08A3E4> **2、POST**
-###<font color=#08A3E4> **3、PUT**
+### **2、POST**
+### **3、PUT**
 put查询的时候是按照路由的方式来的，而axios的`params`参数是作为查询的参数，会拼接为`notes/?id=12123`的形式，put需求的是`notes/id`所以url要自己拼接。因此params参数只适用于GET,POST,HEAD
-###<font color=#08A3E4> **4、PATCH**
-###<font color=#08A3E4> **5、DELETE**
+### **4、PATCH**
+### **5、DELETE**
 
 ```js
 axios({
@@ -61,10 +61,10 @@ axios({
     });
 ```
 
-###<font color=#08A3E4> **6、HEAD**
-##<font color=#D02B34> **请求配置**
+### **6、HEAD**
+## **请求配置**
 
-```
+```js
 {
   // `url` 是用于请求的服务器URL
   url: '/user',
@@ -154,10 +154,10 @@ axios({
   }
 }
 ```
-##<font color=#D02B34> **响应的数据结构**
+## **响应的数据结构**
 响应的数据包括下面的信息：
 
-```
+```js
 {
   // `data` 是服务器提供的响应
   data: {},
@@ -175,8 +175,3 @@ axios({
   config: {}
 }
 ```
-
-##<font color=#D02B34> **二级标题**
-###<font color=#08A3E4> **三级标题**
-####<font color=#1D8C20>**四级标题**
-<font size=5 color=red>**注：**
