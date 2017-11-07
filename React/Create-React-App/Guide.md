@@ -270,7 +270,7 @@ Visual Studio Code 和 WebStorm 支持Create React App 进行调试. 这使您�
 ```
 > 注意: 如果通过[HOST 或 PORT 环境变量][121] 进行调整，URL可能会有所不同 
 
-Start your app by running `npm start`, and start debugging in VS Code by pressing `F5` or by clicking the green debug icon. You can now write code, set breakpoints, make changes to the code, and debug your newly modified code—all from your editor. 运行`npm start`启动你的应用程序，并通过按`F5`或单击绿色调试图标开始在VS代码中进行调试。现在，您可以编写代码、设置断点、对代码进行更改，并从编辑器中调试新修改的代码。
+运行`npm start`启动你的应用程序，并通过按`F5`或单击绿色调试图标开始在VS代码中进行调试。现在，您可以编写代码、设置断点、对代码进行更改，并从编辑器中调试新修改的代码。
 
 ### WebStorm
 
@@ -491,7 +491,7 @@ class Button extends Component {
 
 **这不是React必须的** 但是很多人觉得这个功能很方便。您可以阅读此方法的好处[here][146]。然而，你应该意识到，这使得你的代码迁移到其他构建工具和浏览器比Webpack更不方便。  
 
-In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all CSS files will be concatenated into a single minified `.css` file in the build output. 在开发中，通过这种方式表示依赖关系，在编辑它们时，可以让您的样式重新加载。在生产过程中，所有CSS文件都将被连接到构建输出的一个单一的小`css`文件中。
+在开发中，通过这种方式表示依赖关系，在编辑它们时，可以让您的样式重新加载。在生产过程中，所有CSS文件都将被连接到构建输出的一个单一的小`css`文件中。
 
 如果您关心的是使用Webpack-specific的语义，那么您可以将所有CSS放到`src/index.css`中。它仍然是从`src/index.js`导入的，但是如果您以后迁移到不同的构建工具，您可以删除该导入.
 
