@@ -50,7 +50,7 @@ import { Switch, Route } from 'react-router'
 
 ## location: object
 
-[`location`](location.md)对象被用来匹配子元素，而不是当前的历史位置(通常是当前的浏览器URL)。
+[`location`](location.md)对象被**用来匹配子元素**，而不是当前的历史位置(通常是当前的浏览器URL)。
 
 ## children: node
 

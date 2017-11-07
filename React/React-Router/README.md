@@ -9,7 +9,7 @@
 </h3>
 
 <p align="center">
-  Declarative routing for <a href="https://facebook.github.io/react">React</a>
+ 声明式 <a href="https://facebook.github.io/react">React</a>路由
 </p>
 
 <p align="center">

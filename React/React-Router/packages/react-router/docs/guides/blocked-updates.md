@@ -2,7 +2,7 @@
 
 React Router有许多位置感知（location-aware）组件，它们使用当前`location`对象来确定它们渲染的内容。默认情况下，当前`location`会隐式地传递给使用React的上下文模型的组件。当位置发生变化时，这些组件应该使用来自上下文的新的`location`对象重新渲染。
 
-React提供了两种方法来优化应用程序的渲染性能:`shouldComponentUpdate` 生命周期方法和`PureComponent`。除非满足了合适的条件，否则都将阻止组件的重新渲染。不幸的是，这意味着，如果它们的重新渲染被阻止React Router的位置感知组件可能会变得与当前位置不同步。
+React提供了两种方法来优化应用程序的渲染性能:`shouldComponentUpdate` 生命周期方法和`PureComponent`。除非满足了合适的条件，否则都将阻止组件的重新渲染。不幸的是，这意味着，如果它们的重新渲染被阻止，React Router的位置感知组件可能会变得与当前位置不同步。
 
 ### 有问题的例子
 
@@ -26,7 +26,7 @@ class UpdateBlocker extends React.PureComponent {
   // <a href='/faq'>F.A.Q.</a>
 </UpdateBlocker>
 ```
-当位置发生改变，`<UpdateBlocker>`检测不到任何属性或者状态的变化，所以他们的子组件将不会重新渲染。
+当位置发生改变，`<UpdateBlocker>`检测不到任何属性或者状态的变化，所以他们的子组件将不会重新渲染。
 
 ```js
 // location = { pathname: '/faq' }
@@ -41,13 +41,13 @@ class UpdateBlocker extends React.PureComponent {
 
 ### `shouldComponentUpdate`
 
-为了让组件知道它应该在位置发生改变时更新，需要实现它的`shouldComponentUpdate`方法，使该方法能够检测位置的变化。
+为了让组件知道它应该在位置发生改变时更新，需要实现它的`shouldComponentUpdate`方法，使该方法能够检测位置的变化。
 
-如果你要自己实现`shouldComponentUpdate`，你**可以**比较当前的location和下一个`context.router`对象的location。然而，作为一个用户，您不应该直接使用上下文。相反，如果您可以比较当前和下一个位置而不触及上下文，则是理想的选择。
+如果你要自己实现`shouldComponentUpdate`，你**可以**比较当前的location和下一个`context.router`对象的location。然而，作为一个用户，您不应该直接使用上下文。相反，如果您可以比较当前和下一个位置而不触及上下文，则是理想的选择。
 
-#### 三方代码
+#### 三方代码
 
-您可能会遇到一些问题，组件在位置更改之后没有更新，尽管您自己没有调用`shouldComponentUpdate`。这很有可能是因为`shouldComponentUpdate`被第三方代码调用，例如:`react-redux`的 `connect` 和 `mobx-react`的`observer`.
+您可能会遇到一些问题，组件在位置更改之后没有更新，尽管您自己没有调用`shouldComponentUpdate`。这很有可能是因为`shouldComponentUpdate`被第三方代码调用，例如:`react-redux`的 `connect` 和 `mobx-react`的`observer`.
 
 ```js
 // react-redux
@@ -87,7 +87,7 @@ const MyConnectedComponent = withRouter(observer(MyComponent))
 
 #### 推荐解决方案
 
-在位置更改之后，避免重新渲染被阻塞的关键是将`location`对象传递给被阻塞的组件作为一个属性。无论何时位置发生变化，location将是不同的，所以比较程序会发现当前和下一个location是不同的。
+在位置更改之后，避免重新渲染被阻塞的关键是将`location`对象传递给被阻塞的组件作为一个属性。无论何时位置发生变化，location将是不同的，所以比较程序会发现当前和下一个location是不同的。
 
 ```js
 // location = { pathname: '/about' }
@@ -109,7 +109,7 @@ const MyConnectedComponent = withRouter(observer(MyComponent))
 
 #### 获取location
 
-为了将当前的`location`对象作为属性传递给组件，您必须能够访问它。组件可以访问该`location`的主要方式是通过一个`<Route>`。当一个`<Route>`匹配(或者总是使用`children`属性)时，它将当前`location`传递给它渲染的子元素。
+为了将当前的`location`对象作为属性传递给组件，首先是你必须要能够访问它。组件可以访问该`location`的主要方式是通过一个`<Route>`。当一个`<Route>`匹配(或者总是使用`children`属性)时，它将当前`location`传递给它渲染的子元素。
 
 ```js
 <Route path='/here' component={Here}/>

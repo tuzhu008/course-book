@@ -675,7 +675,7 @@ Webpack在CSS中找到了所有相关的模块引用(它们从`./`开始)，并�
 
 你也可以添加其他资源到`public`文件夹
 
-Note that we normally encourage you to `import` assets in JavaScript files instead.注意，我们通常建议你在JavaScript文件中`import`资源
+注意，我们通常建议你在JavaScript文件中`import`资源
 例如, 参阅这一小节 [添加样式表][152] and [添加图像和字体文件][153].
 这种机制提供了许多好处:
 

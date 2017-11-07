@@ -3,10 +3,15 @@
 > **注意：**<br>
 >`ReactTransitionGroup` 和 `ReactCSSTransitionGroup` 已经搬迁到`react-transition-group`，它是由社区维护的。 其1.x分支与现有的插件完全兼容。请在新库中提交bug和特性请求。
 
-The `ReactTransitionGroup`附加组件是一个低阶的动画API，`ReactCSSTransitionGroup`是一个轻松实现基础的CSS动画和过渡的附加组件。
+`ReactTransitionGroup`附加组件是一个低阶的动画API，`ReactCSSTransitionGroup`是一个轻松实现基础的CSS动画和过渡的附加组件。
+
+## 安装
+```bash
+npm install react-addons-css-transition-group --save
+```
 
 ## 高阶 API: `ReactCSSTransitionGroup`
-`ReactCSSTransitionGroup`是一个基于`ReactTransitionGroup`的高阶AIP，当一个React组件进入或者离开DOM时，它是一个执行CSS过度的一个简单方法。它受到了[ng-animate](https://docs.angularjs.org/api/ngAnimate)库的启发。 
+`ReactCSSTransitionGroup`是一个基于`ReactTransitionGroup`的高阶AIP，当一个React组件进入或者离开DOM时，它是一个执行CSS过渡的一个简单方法。它受到了[ng-animate](https://docs.angularjs.org/api/ngAnimate)库的启发。 
 
 ### 导入
 ```js
@@ -64,7 +69,7 @@ class TodoList extends React.Component {
 
 在这个组件中，当一个新的子组件被添加到`ReactCSSTransitionGroup`时，新添加的组件将会获得一个`example-enter`的class,`example-enter-active`将在下一刻添加到它上面。这是基于一个`transitionName`属性的约定。
 
-您可以使用这些类来触发一个CSS动画或过度。例如，尝试添加这个CSS并添加一个新的列表项:
+您可以使用这些类来触发一个CSS动画或过渡。例如，尝试添加这个CSS并添加一个新的列表项:
 ```css
 .example-enter {
   opacity: 0.01;
@@ -202,7 +207,7 @@ function ImageCarousel(props) {
 ### 禁用动画
 
 
-如果需要，可以禁用动画`enter`或`leave`动画。例如，有时您可能需要`enter`动画，而不需要`leave`动画，但是在删除您的DOM节点之前，`ReactCSSTransitionGroup`需要等待一个动画来完成。你可以添加瞬变输入=false或过渡假=假的道具，以使这些动画失效。你可以添加`transitionEnter={false}` 或者 `transitionLeave={false}`属性到`ReactCSSTransitionGroup`来禁用动画。
+如果需要，可以禁用动画`enter`或`leave`动画。例如，有时您可能需要`enter`动画，而不需要`leave`动画，但是在删除您的DOM节点之前，`ReactCSSTransitionGroup`需要等待一个动画来完成。你可以添加`transitionEnter={false}` 或者 `transitionLeave={false}`属性到`ReactCSSTransitionGroup`来禁用动画。
 
 >注意:<br>
 当使用了`ReactCSSTransitionGroup`时，当过渡结束或在动画中执行更复杂的逻辑时，您的组件无法得到通知。如果您想要更细粒度的控制，您可以使用低阶的`ReactTransitionGroup` API，它提供了自定义过渡所需的钩子。
