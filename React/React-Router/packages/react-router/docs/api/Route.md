@@ -159,7 +159,6 @@ const ListItemLink = ({ to, ...rest }) => (
 | `/one/`  | `/one/`  | `false` | yes |
 | `/one/`  | `/one/two`  | `false` | yes |
 
-从上可以看到，exact模式的匹配是双向的，exact只代表它们之间的比较模式。A与B进行匹配和B和A进行匹配是等价的。
 
 在exact或非exact模式下，`/one`和`/one/`都是等价的。而区别在于`/one/`、`/one/` 与`/one/two`是否匹配。
 
