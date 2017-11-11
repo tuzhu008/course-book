@@ -7,10 +7,10 @@ Semantic UI React是官方对[Semantic UI](https://semantic-ui.com/)进行的Rea
 
 - 释放jQuery
 - 声明式API
-- Augmentation
-- Shorthand Props
-- Sub Components
-- Auto Controlled State
+- Augmentation 
+- Shorthand Props 速记的属性
+- Sub Components 子组件
+- Auto Controlled State 自动控制状态
 
 安装介绍请移步[使用方法](#【使用方法】)
 ## **释放jQuery**
