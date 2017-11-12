@@ -4,22 +4,22 @@ components: Avatar
 
 # Avatars
 
-Avatars are found throughout material design with uses in everything from tables to dialog menus.
+Avatars意为替身，在这则为头像。如QQ或者微信的头像。在所有的material design中都发现了Avatars，从表格到对话菜单都有使用。
 
-## Image avatars
+## image avatars（图片头像）
 
-Image avatars can be created by passing standard `img` props `src` or `srcSet` into the component.
+可以通过将标准 `img`标签的属性`src`或`srcSet`传递到组件中创建图像avatars。
 
 {{demo='pages/demos/avatars/ImageAvatars.js'}}
 
-## Icon avatars
+## Icon avatars （图标头像）
 
-Icon avatars are created by passing an icon as `children`.
+将一个icon组件传递作为`children`来创建Icon avatars。
 
 {{demo='pages/demos/avatars/IconAvatars.js'}}
 
-## Letter avatars
+## Letter avatars（文字头像）
 
-Avatars containing simple characters can be created by passing your string as `children`.
+Avatars可以包含简单的字符，它将使用这些字符作为`children`来创建一个Avatars。
 
 {{demo='pages/demos/avatars/LetterAvatars.js'}}
