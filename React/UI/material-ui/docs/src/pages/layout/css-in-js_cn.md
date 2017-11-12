@@ -1,10 +1,7 @@
 # CSS in JS
 
-Sometimes wrapping things inside a component doesn't make much sense when all you
-what you want to achieve can be handled by a small CSS change. By using the
-`breakpoints` attribute of the theme you can utilise the same breakpoints used
-for the [Grid](/layout/grid) and [Hidden](/layout/hidden) components.
+有时候，把东西包装在一个组件里面是没有意义的。比如，当你您想要达到的目标可以通过一个小的CSS更改来处理。通过使用主题的`breakpoints`属性来使用用于`Grid`和`Hidden`组件的相同的断点。[译者注：也就是在非`Grid`和`Hidden`组件上也可以使用这个属性来达到相同的效果]
 
-This can be accomplished using [CSS-in-JS](/customization/css-in-js).
+可以使用[CSS-in-JS](/customization/css-in-js)来完成这一工作。
 
 {{demo='pages/layout/MediaQuery.js'}}

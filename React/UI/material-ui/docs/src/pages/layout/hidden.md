@@ -4,50 +4,48 @@ components: Hidden
 
 # Hidden
 
-All elements are visible unless **they are explicitly hidden**.
-To ease integration with our [responsive breakpoints](/layout/basics),
-this component can be used to hide any content,
-or you can use it in conjunction with our [`Grid`](/layout/grid) component.
+所有元素都是可见的，除非**它们被显式隐藏**。
+为了简化与我们的[响应式断点](/layout/basics)的集成，这个组件可以用来隐藏任何内容，或者您可以与我们的[`Grid`](/layout/grid)组件一起使用它。
 
-## How it works
+## 工作原理
 
-Hidden works with a range of breakpoints e.g. `xsUp` or `mdDown`, or one or more breakpoints e.g. `only='sm'` or `only={['md', 'xl']}`.
-Ranges and individual breakpoints can be used simultaneously to achieve very customized behavior.
+Hidden 与一系列的断电一起工作。比如 `xsUp` 或者 `mdDown`, 或者 一个或多个断点。 比如： `only='sm'` 或 `only={['md', 'xl']}`。
+可以同时使用范围和单独的断点来实现非常自定义的行为。
 
-## Implementations
+## 实现
 
 ### js
 
-By default, the `js` implementation is used, responsively hiding content based on using the `withWidth()` Higher-order Component that watches screen size.
-This has the benefit of not rendering any content at all unless the breakpoint is met.
+默认情况下，`js`实现被使用，基于使用观察屏幕尺寸的`withWidth()`高阶组件来响应式地隐藏内容。
+除非遇到了断点，否则它不会渲染任何内容。
 
 ### css
 
-For those using server side rendering, you can set `implementation="css"` if you don't want the browser to re-flow your content on the screen.
+对于使用服务器端渲染的用户，如果不想让浏览器在屏幕上重新排列内容，则可以设置`implementation="css"`。
 
-## Breakpoint up
+## 断点 up
 
-Using any breakpoint *up* property, the given *children* will be hidden *at or above* the breakpoint.
+使用任何断点*up*属性，给定的子元素将会在屏幕尺寸在断点或者在断电之上的时候被隐藏。
 
 {{demo='pages/layout/BreakpointUp.js'}}
 
-## Breakpoint down
+## 断点 down
 
-Using any breakpoint *down* property, the given *children* will be hidden *at or below* the breakpoint.
+使用任何断点*down*属性，给定的子元素将会在屏幕尺寸在断点或者在断点之下的时候被隐藏。
 
 {{demo='pages/layout/BreakpointDown.js'}}
 
-## Breakpoint only
+## 断点 only
 
-The `only` property can be used in two ways:
- - list a single breakpoint
- - list an array of breakpoints
+有两种方法可以使用`only`属性:
+ - 列出一个单一的断点
+ - 列出一个断点数组
 
 {{demo='pages/layout/BreakpointOnly.js'}}
 
-## Integration with Grid
+## 与网格集成
 
-It is quite common to alter `Grid` at different responsive breakpoints, and in many cases, you want to hide some of those elements.
-For brevity, where you are already using `Grid`, you may specify `Hidden` behaviors as the `hidden` prop.
+在不同的响应式断点中改变`Grid`是很常见的，在许多情况下，您需要隐藏其中的一些元素。
+为了简便起见，您已经使用了`Grid`，您可以将`Hidden`的行为指定为`hidden`属性。
 
 {{demo='pages/layout/GridIntegration.js'}}
