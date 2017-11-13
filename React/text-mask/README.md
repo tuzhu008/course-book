@@ -2,16 +2,15 @@
 
 [![Build Status](https://travis-ci.org/text-mask/text-mask.svg?branch=master)](https://travis-ci.org/text-mask/text-mask)
 
-Text Mask is an input mask library. It can create input masks for phone, date, currency, zip code, percentage, email, 
-and literally anything!
+Text Mask是一个输入掩码库。它可以为手机、日期、货币、邮政编码、百分比、电子邮件创建输入掩码，和字面上的东西!
 
-There are convenient wrappers for React, Angular 2, Ember, and Vue.
+它有方便的包装器提供给React, Angular 2, Ember, 和 Vue.
 
-## Live demo
+## 线上demo
 
-See it in action, [check out the demo page](https://text-mask.github.io/text-mask/).
+[查看demo页](https://text-mask.github.io/text-mask/).
 
-## Installation and usage
+## 安装和使用
 
 * [React](react#readme)
 * [Angular 2](angular2#readme) or [Angular 1](angular1#readme)
@@ -19,27 +18,26 @@ See it in action, [check out the demo page](https://text-mask.github.io/text-mas
 * [Vue](vue#readme)
 * [Vanilla JS](vanilla#readme)
 
-## Expected to work with...
+## 期望工作环境...
 
 IE9+, Android, Samsung Internet, Windows Phone, iOS, Opera, Firefox, Safari, and Chrome
 
-## Flexible
+## 灵活的
 
-Text Mask is very configurable and allows you to create any type of input mask with minimal APIs.
-[See the documentation for details](https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md#readme).
+Text Mask是非常可配置的，允许您使用最少的api创建任何类型的输入掩码。
+[查看这个文档获得更多细节](https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md#readme).
 
-## Extendable
+## 可扩展的
 
-You can easily expand the base functionality of Text Mask with addons for more mask types. 
+ 您可以轻松地扩展Text Mask的基本功能，增加更多的mask类型。
 [Checkout existing addons](https://github.com/text-mask/text-mask/tree/master/addons/#readme).
 
-## Robust
+## 健壮的
 
-Text Mask supports pasting, browser auto-fill, and all operations that a user would expect while interacting with
-an input field.
+Text Mask支持粘贴，浏览器自动填充，以及在与输入字段交互时，用户可以预期的所有操作。
 
-It works on mobile, has no 3rd party dependencies, and has a tiny footprint (less than 4KB gzipped).
+它在移动端工作，没有第三方依赖性，并且有一个很小的内存占用空间(少于4KB的压缩包)。
 
-## For any questions, suggestions, or feature requests
+## 对于任何问题、建议或特性请求
 
-[Please file an issue](https://github.com/text-mask/text-mask/issues)!
+[请提交问题](https://github.com/text-mask/text-mask/issues)!
