@@ -1,14 +1,14 @@
 # React Input Mask
 
-## Getting started
+## 起步
 
-First, install it.
+首先，安装它。
 
 ```bash
 npm i react-text-mask --save
 ```
 
-Then, require it and use it.
+然后引入使用它.
 
 ```js
 var React = require('react')
@@ -25,10 +25,10 @@ var MyComponent = React.createClass({
 })
 ```
 
-`<MaskedInput/>` is fully compatible with `<input/>` element. So, you can
-pass to it CSS classes, a placeholder attribute, or whatever.
+`<MaskedInput/>`与`<input/>`元素的是完全兼容的。所以,你可以
+传递给它的CSS clsss，placeholder属性，等等。
 
-For example, the following works:
+例如，以下是可以正常工作的:
 
 ```js
 <MaskedTextInput
@@ -40,23 +40,24 @@ For example, the following works:
 />
 ```
 
-## Documentation
+## 文档
 
-For more information about the `props` that you can pass to the component, see
-the [documentation here](https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md#readme).
+想了解更多关于你可以传递给组件的`props`的信息
+ 查看 [这个文档](https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md#readme).
+ [中文文档](../componentDocumentation.md)
 
-## Example
+## 示例
 
-To see an example of the code running, follow these steps:
+要查看运行代码的示例，请遵循以下步骤:
 
-1. Clone the repo, `git clone git@github.com:text-mask/text-mask.git`
+1. 克隆仓库, `git clone git@github.com:text-mask/text-mask.git`
 1. `cd text-mask`
 1. `npm install`
 1. `npm run react:dev`
 1. Open [http://localhost:3000](http://localhost:3000)
 
-The code of the example is in [`react/example`](https://github.com/text-mask/text-mask/tree/master/react/example).
+这个例子的代码是 [`react/example`](https://github.com/text-mask/text-mask/tree/master/react/example).
 
-## Contributing
+## 贡献
 
-We would love some contributions! Check out [this document](https://github.com/text-mask/text-mask/blob/master/howToContribute.md#readme) to get started.
+我们会喜欢一些贡献！看看[this document](https://github.com/text-mask/text-mask/blob/master/howToContribute.md#readme)

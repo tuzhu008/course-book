@@ -1,14 +1,14 @@
 # Vue Input Mask
 
-## Getting started
+## 开始
 
-First, install it.
+首先安装它
 
 ```bash
 npm i vue-text-mask --save
 ```
 
-Then, use it as follows:
+如下使用：
 
 ```html
 <template>
@@ -45,7 +45,8 @@ Then, use it as follows:
 </script>
 ```
 
-You could alternatively define the component globally:
+您也可以在全局范围内定义组件:
+
 ```js
 import Vue from 'vue'
 import MaskedInput from 'vue-text-mask'
@@ -53,23 +54,26 @@ import MaskedInput from 'vue-text-mask'
 Vue.component('masked-input', MaskedInput);
 ```
 
-`<masked-input>` is essentially a wrapped `<input>` element - so it supports all the regular input properties (type, placeholder, class, etc). It is compatible with v-model 2-way binding, and is reactive to changes to any of the [text mask props](https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md#readme).
+`<masked-input>`本质上是一个被包裹的`<input>`元素-因此它支持所有的常规输入属性(type, placeholder, class,等等)。它是兼容v-model 2-way双向绑定,对任何[text mask props](https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md#readme)的改变都是被动的。
 
-## Documentation
+## 文档
 
-For more information about the `props` that you can pass to the component, see
-the [documentation here](https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md#readme).
+想了解更多关于你可以传递给组件的`props`的信息
+ 查看 [这个文档](https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md#readme).
+ [中文文档](../componentDocumentation.md)
 
-## Example
+## 示例
 
-To see an example of the code running, follow these steps:
+要查看运行代码的示例，请遵循以下步骤:
 
-1. Clone the repo, `git clone git@github.com:text-mask/text-mask.git`
-2. `npm install`
-3. `npm run vue:dev`
-4. Open [http://localhost:3000](http://localhost:3000)
+1. 克隆仓库, `git clone git@github.com:text-mask/text-mask.git`
+1. `cd text-mask`
+1. `npm install`
+1. `npm run react:dev`
+1. Open [http://localhost:3000](http://localhost:3000)
 
-## Contributing
+这个例子的代码是 [`react/example`](https://github.com/text-mask/text-mask/tree/master/react/example).
 
-We would love some contributions! Check out
-[this document](https://github.com/text-mask/text-mask/blob/master/howToContribute.md#readme) to get started.
+## 贡献
+
+我们会喜欢一些贡献！看看[this document](https://github.com/text-mask/text-mask/blob/master/howToContribute.md#readme)
