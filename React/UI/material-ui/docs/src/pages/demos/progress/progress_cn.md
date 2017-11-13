@@ -4,41 +4,42 @@ components: CircularProgress, LinearProgress
 
 # Progress
 
-[Progress and activity indicators](https://material.io/guidelines/components/progress-activity.html)
-are visual indications of an app loading content.
+进度
 
-A single visual indicator should be used to represent each type of operation.
-For example, a refresh operation should display either a refresh bar or an activity circle, but not both.
+[进度和活动指示器](https://material.io/guidelines/components/progress-activity.html)是应用程序加载内容的视觉指示。
 
-**Determinate** indicators display how long an operation will take.
+应该使用一个单独的可视指示符来表示每种操作类型。例如，一个刷新操作应该显示一个refresh bar或一个活动的圆圈，但不能同时显示两个。
 
-**Indeterminate** indicators visualize an unspecified wait time.
+**确定的**指示器显示操作需要多长时间。
 
-## Circular
+**不确定的**指标显示了一个未指定的等待时间。
 
-### Indeterminate
+
+## Circular （圆形）
+
+### Indeterminate (不确定的)
 
 {{demo='pages/demos/progress/CircularIndeterminate.js'}}
 
-### Interactive Integration
+### 互动整合
 
 {{demo='pages/demos/progress/CircularIntegration.js'}}
 
-###  Determinate
+###  Determinate （确定的）
 
 {{demo='pages/demos/progress/CircularDeterminate.js'}}
 
-## Linear
+## Linear  （线性）
 
-### Indeterminate
+### Indeterminate （不确定）
 
 {{demo='pages/demos/progress/LinearIndeterminate.js'}}
 
-### Determinate
+### Determinate （确定的）
 
 {{demo='pages/demos/progress/LinearDeterminate.js'}}
 
-### Buffer
+### Buffer （缓冲）
 
 {{demo='pages/demos/progress/LinearBuffer.js'}}
 
