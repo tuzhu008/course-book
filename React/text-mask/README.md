@@ -41,3 +41,7 @@ Text Mask支持粘贴，浏览器自动填充，以及在与输入字段交互�
 ## 对于任何问题、建议或特性请求
 
 [请提交问题](https://github.com/text-mask/text-mask/issues)!
+
+## Github地址
+
+[text-mask](https://github.com/text-mask/text-mask)
