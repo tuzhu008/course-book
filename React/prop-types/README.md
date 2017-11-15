@@ -1,19 +1,18 @@
 # prop-types
 
-Runtime type checking for React props and similar objects.
+适用于 React props 和 类似对象的运行时类型检查
 
-You can use prop-types to document the intended types of properties passed to
-components. React (and potentially other libraries—see the checkPropTypes()
-reference below) will check props passed to your components against those
-definitions, and warn in development if they don’t match.
+您可以使用prop-types来记录所传递给组件的属性的预期类型。React(可能还有其他库——查看checkPropTypes()
+参考下面的参考资料)将检查传递给您的组件的props的
+定义，如果不匹配，则在开发中发出警告。
 
-## Installation
+## 安装
 
 ```shell
 npm install --save prop-types
 ```
 
-## Importing
+## 导入
 
 ```js
 import PropTypes from 'prop-types'; // ES6
@@ -22,36 +21,31 @@ var PropTypes = require('prop-types'); // ES5 with npm
 
 ### CDN
 
-If you prefer to exclude `prop-types` from your application and use it 
-globally via `window.PropTypes`, the `prop-types` package provides 
-single-file distributions, which are hosted on the following CDNs:
+如果您喜欢将`prop-types`在您的应用程序中排除并通过`window.PropTypes`全局使用它在，`prop-types`包提供单文件发行版，它托管在以下的CDNs:
 
 * [**unpkg**](https://unpkg.com/prop-types/)
 ```html
-<!-- development version -->
+<!-- 开发版本 -->
 <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
 
-<!-- production version -->
+<!-- 生产版本 -->
 <script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
 ```
 
 * [**cdnjs**](https://cdnjs.com/libraries/prop-types)
 ```html
-<!-- development version -->
+<!-- 开发版本 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"></script>
 
-<!-- production version -->
+<!-- 生产版本 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.min.js"></script>
 ```
 
-To load a specific version of `prop-types` replace `15.6.0` with the version number. 
+使用版本号来加载特定版本的`prop-types`替换`15.6.0`。
 
-## Usage
+## 使用方法
 
-PropTypes was originally exposed as part of the React core module, and is
-commonly used with React components.
-Here is an example of using PropTypes with a React component, which also
-documents the different validators provided:
+PropTypes最初是作为React核心模块的一部分公开的，并且通常用于React组件。下面是一个使用PropTypes和React组件的例子，它还提供了不同的验证器:
 
 ```js
 import React from 'react';
@@ -64,8 +58,8 @@ class MyComponent extends React.Component {
 }
 
 MyComponent.propTypes = {
-  // You can declare that a prop is a specific JS primitive. By default, these
-  // are all optional.
+  // 你可以声明一个prop是一个特定的JS原始类型
+  // 默认情况下，他们都是可选的
   optionalArray: PropTypes.array,
   optionalBool: PropTypes.bool,
   optionalFunc: PropTypes.func,
@@ -74,50 +68,44 @@ MyComponent.propTypes = {
   optionalString: PropTypes.string,
   optionalSymbol: PropTypes.symbol,
 
-  // Anything that can be rendered: numbers, strings, elements or an array
-  // (or fragment) containing these types.
+  // 任何东西都可以被渲染: numbers, strings, elements 或者 一个包含这些类型的array（或者是fragment[片段]）
   optionalNode: PropTypes.node,
 
-  // A React element.
+  //一个React元素.
   optionalElement: PropTypes.element,
 
-  // You can also declare that a prop is an instance of a class. This uses
-  // JS's instanceof operator.
+  // 你还可以声明一个prop是一个类的实例。这使用的是JS的 instanceof 操作符
   optionalMessage: PropTypes.instanceOf(Message),
 
-  // You can ensure that your prop is limited to specific values by treating
-  // it as an enum.
+  // 您可以通过将其视为enum来确保您的prop仅限于特定的值。
   optionalEnum: PropTypes.oneOf(['News', 'Photos']),
 
-  // An object that could be one of many types
+  // 一个可以是多种类型的对象
   optionalUnion: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.instanceOf(Message)
   ]),
 
-  // An array of a certain type
+  // 一种特定类型的数组
   optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
 
-  // An object with property values of a certain type
+  // 具有特定类型属性值的对象
   optionalObjectOf: PropTypes.objectOf(PropTypes.number),
 
-  // An object taking on a particular shape
+  // 一个特定形式的对象
   optionalObjectWithShape: PropTypes.shape({
     color: PropTypes.string,
     fontSize: PropTypes.number
   }),
 
-  // You can chain any of the above with `isRequired` to make sure a warning
-  // is shown if the prop isn't provided.
+  // 您可以使用 isRequired 将上述任何一种链接在一起，以确保在不提供该prop的情况下发出警告。
   requiredFunc: PropTypes.func.isRequired,
 
-  // A value of any data type
+  // 任何数据类型的值
   requiredAny: PropTypes.any.isRequired,
 
-  // You can also specify a custom validator. It should return an Error
-  // object if the validation fails. Don't `console.warn` or throw, as this
-  // won't work inside `oneOfType`.
+  //您还可以指定一个自定义的验证器。如果验证失败，它应该返回一个错误对象。不要`console.warn`，抛出，因为这在`oneOfType`中是行不通的。
   customProp: function(props, propName, componentName) {
     if (!/matchme/.test(props[propName])) {
       return new Error(
@@ -127,11 +115,9 @@ MyComponent.propTypes = {
     }
   },
 
-  // You can also supply a custom validator to `arrayOf` and `objectOf`.
-  // It should return an Error object if the validation fails. The validator
-  // will be called for each key in the array or object. The first two
-  // arguments of the validator are the array or object itself, and the
-  // current item's key.
+  // 您还可以向`arrayOf`和`objectOf`提供一个自定义的验证器。
+  // 如果验证失败，它应该返回一个错误对象。 验证器将调用数组或对象中的每个键。
+  // 验证器的前两个参数是数组或对象本身，以及当前项的键。
   customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
     if (!/matchme/.test(propValue[key])) {
       return new Error(
@@ -143,20 +129,21 @@ MyComponent.propTypes = {
 };
 ```
 
-Refer to the [React documentation](https://facebook.github.io/react/docs/typechecking-with-proptypes.html) for more information.
+参考[React 文档](https://facebook.github.io/react/docs/typechecking-with-proptypes.html) 获得更多信息。
 
-## Migrating from React.PropTypes
+## 从React.PropTypes迁移
 
-Check out [Migrating from React.PropTypes](https://facebook.github.io/react/blog/2017/04/07/react-v15.5.0.html#migrating-from-react.proptypes) for details on how to migrate to `prop-types` from `React.PropTypes`.
+看看 [从React.PropTypes迁移](https://facebook.github.io/react/blog/2017/04/07/react-v15.5.0.html#migrating-from-react.proptypes) 获得更多关于如何从`React.PropTypes`迁移到`prop-types`的细节。
 
-Note that this blog posts **mentions a codemod script that performs the conversion automatically**.
+注意： 这篇博客文章 **提到一个可以自动执行转换的codemod脚本**.
 
-There are also important notes below.
+下面还有重要的注释。
 
-## How to Depend on This Package?
+## 如何依赖这个包?
 
-For apps, we recommend putting it in `dependencies` with a caret range.
-For example:
+对于应用程序，我们建议将其与版本一起放在`package.json`的`dependencies`中
+
+例如:
 
 ```js
   "dependencies": {
@@ -164,7 +151,7 @@ For example:
   }
 ```
 
-For libraries, we *also* recommend leaving it in `dependencies`:
+对于库, 我们也建议将其放在`dependencies`中:
 
 ```js
   "dependencies": {
@@ -175,44 +162,45 @@ For libraries, we *also* recommend leaving it in `dependencies`:
   }
 ```
 
-**Note:** there are known issues in versions before 15.5.7 so we recommend using it as the minimal version.
+**注意:** 在15.5.7之前版本中有一些已知的问题，所以我们推荐使用它作为最低版本。
 
-Make sure that the version range uses a caret (`^`) and thus is broad enough for npm to efficiently deduplicate packages.
+确保版本范围使用了caret(`^`)，因此可以广泛地使用npm来有效地复制包。
 
-For UMD bundles of your components, make sure you **don’t** include `PropTypes` in the build. Usually this is done by marking it as an external (the specifics depend on your bundler), just like you do with React.
+对于您的组件的UMD捆绑包，请确保在构建中**不**包含`PropTypes`。通常这是通过把它标记为一个外部的(具体情况取决于你的打包器)，就像你的React一样。
 
-## Compatibility
+## 兼容性
 
 ### React 0.14
 
-This package is compatible with **React 0.14.9**. Compared to 0.14.8 (which was released a year ago), there are no other changes in 0.14.9, so it should be a painless upgrade.
+这个包与**React 0.14.9**是兼容的。与0.14.8(一年前发布的)相比，0.14.9没有其他的变化，所以应该是一个无痛的升级。
 
 ```shell
-# ATTENTION: Only run this if you still use React 0.14!
+# 注意: 只有在你仍然使用React 0.14的时候才运行这个！
 npm install --save react@^0.14.9 react-dom@^0.14.9
 ```
 
 ### React 15+
 
-This package is compatible with **React 15.3.0** and higher.
+这个包与**React 15.3.0**和更高版本兼容。
 
 ```
 npm install --save react@^15.3.0 react-dom@^15.3.0
 ```
 
-### What happens on other React versions?
+### 在其他React版本上会发生什么?
 
-It outputs warnings with the message below even though the developer doesn’t do anything wrong. Unfortunately there is no solution for this other than updating React to either 15.3.0 or higher, or 0.14.9 if you’re using React 0.14.
+即使开发人员没有做错任何事情，它也会输出警告信息。不幸的是，除了更新React到15.3.0或更高版本之外，没有任何解决方案，如果使用的是React0.14，则是0.14.9。
 
-## Difference from `React.PropTypes`: Don’t Call Validator Functions
+## 区别`React.PropTypes`: 不调用验证器函数
 
-First of all, **which version of React are you using**? You might be seeing this message because a component library has updated to use `prop-types` package, but your version of React is incompatible with it. See the [above section](#compatibility) for more details.
+首先，**which version of React are you using**?您可能会看到这个消息，因为组件库已经更新了使用`prop-types`包，但是您的React版本与它是不兼容的。有关更多细节，请参见[上面的部分](#兼容性)(兼容性)。
 
-Are you using either React 0.14.9 or a version higher than React 15.3.0? Read on.
+你使用的是0.14.9还是比React15.3.0更高的版本?继续读下去。
 
-When you migrate components to use the standalone `prop-types`, **all validator functions will start throwing an error if you call them directly**. This makes sure that nobody relies on them in production code, and it is safe to strip their implementations to optimize the bundle size.
+当您将组件迁移到使用独立的`prop-types`时，**如果您直接调用它们，所有验证器函数都将开始抛出一个错误**。这确保没有人在生产代码中依赖于它们，并且可以安全地将它们的实现去掉以优化包的大小。
 
-Code like this is still fine:
+
+这样的代码仍然很好:
 
 ```js
 MyComponent.propTypes = {
@@ -220,59 +208,56 @@ MyComponent.propTypes = {
 };
 ```
 
-However, code like this will not work with the `prop-types` package:
+但是，像这样的代码不能与`prop-types`包一起工作:
 
 ```js
 // Will not work with `prop-types` package!
 var errorOrNull = PropTypes.bool(42, 'myProp', 'MyComponent', 'prop');
 ```
 
-It will throw an error:
+它会抛出一个错误：
 
 ```
-Calling PropTypes validators directly is not supported by the `prop-types` package.
-Use PropTypes.checkPropTypes() to call them.
+直接调用PropTypes验证器不受`prop-types`包的支持。
+使用PropTypes.checkPropTypes()来调用它们。
 ```
 
-(If you see **a warning** rather than an error with this message, please check the [above section about compatibility](#compatibility).)
+(如果您看到这个消息的**警告**而不是错误，请检查[上面的关于兼容性的部分](#compatibility))
 
-This is new behavior, and you will only encounter it when you migrate from `React.PropTypes` to the `prop-types` package. For the vast majority of components, this doesn’t matter, and if you didn’t see [this warning](https://facebook.github.io/react/warnings/dont-call-proptypes.html) in your components, your code is safe to migrate. This is not a breaking change in React because you are only opting into this change for a component by explicitly changing your imports to use `prop-types`. If you temporarily need the old behavior, you can keep using `React.PropTypes` until React 16.
+这是一种新的行为，当你从`React.PropTypes`迁移到`prop-types`时，你只会遇到它。对于绝大多数的组件,这并不重要,如果你没有在你的组件看到[警告](https://facebook.github.io/react/warnings/dont-call-proptypes.html),您的代码是安全的迁移。这并不是React中一个突发的变化，因为您只是通过显式地将导入更改为使用`prop-types`来选择组件的更改。如果你暂时需要旧的行为，你可以继续使用`React.PropTypes`直到React 16。
 
-**If you absolutely need to trigger the validation manually**, call `PropTypes.checkPropTypes()`. Unlike the validators themselves, this function is safe to call in production, as it will be replaced by an empty function:
+**如果你需要手动触发验证**, 调用 `PropTypes.checkPropTypes()`。与验证器本身不同，这个函数在生产中是安全的，因为它将被一个空函数所替代:
 
 ```js
 // Works with standalone PropTypes
 PropTypes.checkPropTypes(MyComponent.propTypes, props, 'prop', 'MyComponent');
 ```
-See below for more info.
+更多信息请参见下面。
 
-**You might also see this error** if you’re calling a `PropTypes` validator from your own custom `PropTypes` validator. In this case, the fix is to make sure that you are passing *all* of the arguments to the inner function. There is a more in-depth explanation of how to fix it [on this page](https://facebook.github.io/react/warnings/dont-call-proptypes.html#fixing-the-false-positive-in-third-party-proptypes). Alternatively, you can temporarily keep using `React.PropTypes` until React 16, as it would still only warn in this case.
+**你可能也会看到这个错误** ，如果您从您自己的自定义`PropTypes`验证器中调用一个`PropTypes`s验证器。在本例中，修复(fix)的目的是确保将所有参数传递给内部函数。[在这个页面](https://facebook.github.io/react/warnings/dont-call-proptypes.html#fixing-the-false-positive-in-third-party-proptypes)有一个更深入的解释如何修理它的例子。或者，你可以暂时保持使用`React.PropTypes`直到React16，它才会发出警告，在这种情况下，它仍然会发出警告。
 
-If you use a bundler like Browserify or Webpack, don’t forget to [follow these instructions](https://facebook.github.io/react/docs/installation.html#development-and-production-versions) to correctly bundle your application in development or production mode. Otherwise you’ll ship unnecessary code to your users.
+如果使用像Browserify或Webpack的打包器,别忘了[按以下指示](https://facebook.github.io/react/docs/installation.html#development-and-production-versions)来在开发或生产模式中正确打包应用程序。否则，您将向您的用户发送不必要的代码。
 
 ## PropTypes.checkPropTypes
 
-React will automatically check the propTypes you set on the component, but if
-you are using PropTypes without React then you may want to manually call
-`PropTypes.checkPropTypes`, like so:
+React将自动检查您在组件上设置的propTypes，但是如果你使用了没有React的PropTypes，然后你可能想要手动调用`PropTypes.checkPropTypes`,像这样:
 
 ```js
 const myPropTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
-  // ... define your prop validations
+  // ... 定义你的prop验证器
 };
 
 const props = {
-  name: 'hello', // is valid
-  age: 'world', // not valid
+  name: 'hello', // 有效
+  age: 'world', // 无效
 };
 
-// Let's say your component is called 'MyComponent'
+// 比方说，你的组件被称为MyComponent
 
-// Works with standalone PropTypes
+// 适用于独立PropTypes
 PropTypes.checkPropTypes(myPropTypes, props, 'prop', 'MyComponent');
-// This will warn as follows:
-// Warning: Failed prop type: Invalid prop `age` of type `string` supplied to
-// `MyComponent`, expected `number`.
+// 这将会发出如下警告:
+// Warning: Failed prop type: Invalid prop `age` of type `string` supplied to `MyComponent`, expected `number`.
 ```
