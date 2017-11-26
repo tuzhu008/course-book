@@ -8,188 +8,140 @@
 </p>
 
 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。
- 
+
 Node.js 使用了一个事件驱动、非阻塞式 I/O 模型，使其轻量又高效。
- 
+
 Node.js 的包管理器 npm，是全球最大的开源库生态系统。
 
 Node.js 项目由 [Node.js 基金会](https://nodejs.org/en/foundation/) 提供支持。贡献、策略和发布都是在一个[开放的治理模型下](https://github.com/nodejs/node/blob/master/GOVERNANCE.md)进行管理的。
 
 
-**This project is bound by a [Code of Conduct][].**
+**这个项目受到[行为准则][]的约束。**
 
 
-# Table of Contents
+# 内容列表
 
-* [Support](#support)
-* [Release Types](#release-types)
-  * [Download](#download)
-    * [Current and LTS Releases](#current-and-lts-releases)
-    * [Nightly Releases](#nightly-releases)
-    * [API Documentation](#api-documentation)
-  * [Verifying Binaries](#verifying-binaries)
-* [Building Node.js](#building-nodejs)
-* [Security](#security)
-* [Current Project Team Members](#current-project-team-members)
-  * [TSC (Technical Steering Committee)](#tsc-technical-steering-committee)
-  * [Collaborators](#collaborators)
-  * [Release Team](#release-team)
-* [Contributing to Node.js](#contributing-to-nodejs)
+- [支持](#支持)
+- [发布类型](#发布类型)
+	- [下载](#下载)
+	- [验证二进制文件](#验证二进制文件)
+- [构建 Node.js](#构建-nodejs)
+- [安全](#安全)
+	- [Public disclosure preferred](#public-disclosure-preferred)
+	- [Private disclosure preferred](#private-disclosure-preferred)
+- [当前项目团队成员](#当前项目团队成员)
+	- [TSC (技术指导委员会)](#tsc-技术指导委员会)
+	- [TSC 过去的成员](#tsc-过去的成员)
+	- [合作伙伴](#合作伙伴)
+	- [Collaborator Emeriti](#collaborator-emeriti)
+	- [发布团队](#发布团队)
+- [贡献](#贡献)
 
-## Support
+## 支持
 
-Node.js contributors have limited availability to address general support
-questions. Please make sure you are using a [currently-supported version of
-Node.js](https://github.com/nodejs/Release#release-schedule).
+Node.js 贡献者在解决一般支持问题方面的可用性有限。请确保您使用的是[目前支持的node.js版本](https://github.com/nodejs/Release#release-schedule)。
 
-When looking for support, please first search for your question in these venues:
+在寻找支持的时候，请首先在这些地点搜索你的问题:
 
-* [Node.js Website][]
+* [Node.js 网站][]
 * [Node.js Help][]
 * [Open or closed issues in the Node.js GitHub organization](https://github.com/issues?utf8=%E2%9C%93&q=sort%3Aupdated-desc+org%3Anodejs+is%3Aissue)
-* [Questions tagged 'node.js' on StackOverflow][]
+* [StackOverflow 上的 'node.js' 问题标记][]
 
-If you didn't find an answer in one of the venues above, you can:
+如果你没有在上面的某个地点找到答案，你可以:
 
-* Join the **unofficial** [#node.js channel on chat.freenode.net][]. See
-<http://nodeirc.info/> for more information.
+* 加入这个**非官方的** [chat.freenode.net 上的 node.js 频道][]. 查看
+<http://nodeirc.info/> 获得更多信息。
 
-GitHub issues are meant for tracking enhancements and bugs, not general support.
+GitHub的问题是为了追踪增强和bug，而不是一般的支持。
 
-Remember, libre != gratis; the open source license grants you the freedom to use
-and modify, but not commitments of other people's time. Please be respectful,
-and set your expectations accordingly.
+记住,自由!=免费;开放源码许可授予您使用和修改的自由，但他人的时间的不是义务的 。请尊重他人，并相应地设定你的期望。
 
-## Release Types
+## 发布类型
 
-The Node.js project maintains multiple types of releases:
+Node.js 项目维护多种发行类型：
 
-* **Current**: Released from active development branches of this repository,
-  versioned by [SemVer](https://semver.org) and signed by a member of the
-  [Release Team](#release-team).
-  Code for Current releases is organized in this repository by major version
-  number. For example: [v4.x](https://github.com/nodejs/node/tree/v4.x).
-  The major version number of Current releases will increment every 6 months
-  allowing for breaking changes to be introduced. This happens in April and
-  October every year. Current release lines beginning in October each year have
-  a maximum support life of 8 months. Current release lines beginning in April
-  each year will convert to LTS (see below) after 6 months and receive further
-  support for 30 months.
-* **LTS**: Releases that receive Long-term Support, with a focus on stability
-  and security. Every second Current release line (major version) will become an
-  LTS line and receive 18 months of _Active LTS_ support and a further 12
-  months of _Maintenance_. LTS release lines are given alphabetically
-  ordered codenames, beginning with v4 Argon. LTS releases are less frequent
-  and will attempt to maintain consistent major and minor version numbers,
-  only incrementing patch version numbers. There are no breaking changes or
-  feature additions, except in some special circumstances.
-* **Nightly**: Versions of code in this repository on the current Current
-  branch, automatically built every 24-hours where changes exist. Use with
-  caution.
+* **Current**: 从这个存储库的活动开发分支中发布出来，由 [SemVer](https://semver.org) 进行版本控制，并由[发布团队](#release-team)的成员签署。当前版本的代码是由这个存储库中主版本号组织的。例如:[v4.x](https://github.com/nodejs/node/tree/v4.x)。当前版本的主版本号将每6个月增加一次，以允许对将要引入的更改进行修改。这发生在每年的4月和10月。目前的发行版从每年10月开始，每年最多支持8个月。目前每年4月开始的发行版将在6个月后转换为LTS(见下文)，并获得30个月的进一步支持。
 
-More information can be found in the [LTS README](https://github.com/nodejs/LTS/).
 
-### Download
+* **LTS**:
+  获得长期支持的发行版，主要关注稳定性和安全性。每一秒的当前发行版(主要版本)将成为LTS系列，并接受18个月的 _活动LTS_ 支持和12个月的 _维护_。LTS的发行版以字母顺序排列的代号，从 v4 氩开始。LTS版本不太频繁，并且会尝试保持一致的主要和次要版本号，只增加补丁版本号。除了在某些特殊情况下，没有任何更改或特性添加。
 
-Binaries, installers, and source tarballs are available at
+* **Nightly**: 这个存储库中的当前的 Current分支上的的代码版本，每24小时自动构建一次变更。请谨慎使用。
+
+更多信息请参阅[LTS README](https://github.com/nodejs/LTS/).
+
+### 下载
+
+二进制文件, 安装程序, 和 源 [tarball](https://baike.baidu.com/item/tarball/6505617?fr=aladdin) 可用都是可用的，请访问
 <https://nodejs.org>.
 
-#### Current and LTS Releases
-**Current** and **LTS** releases are available at
-<https://nodejs.org/download/release/>, listed under their version strings.
-The [latest](https://nodejs.org/download/release/latest/) directory is an
-alias for the latest Current release. The latest LTS release from an LTS
-line is available in the form: latest-_codename_. For example:
+#### Current版本 和 LTS版本
+
+<https://nodejs.org/download/release/> 上的**Current** 和 **LTS** 版本都是可用的, 在它们的版本字符串中列出。
+[latest](https://nodejs.org/download/release/latest/) 目录是最新 Current版本的别名。最新的LTS版本 LTS系列最新的LTS版本可以在表单中找到:latest-_代号_. 例如:
 <https://nodejs.org/download/release/latest-argon>.
 
-#### Nightly Releases
-**Nightly** builds are available at
-<https://nodejs.org/download/nightly/>, listed under their version
-string which includes their date (in UTC time) and the commit SHA at
-the HEAD of the release.
+#### Nightly 版本
 
-#### API Documentation
-**API documentation** is available in each release and nightly
-directory under _docs_. <https://nodejs.org/api/> points to the API
-documentation of the latest stable version.
+<https://nodejs.org/download/nightly/>上的 **Nightly** 构建是可用的，在发布头部列出包含日期(UTC时间)和提交SHA的版本字符串
 
-### Verifying Binaries
+#### API 文档
+每一个发布版本和每夜版本的 _docs_ 目录下的**API 文档** 都是可用的。<https://nodejs.org/api/> 指向最新稳定版本的 API文档。
 
-Current, LTS and Nightly download directories all contain a _SHASUMS256.txt_
-file that lists the SHA checksums for each file available for
-download.
+### 验证二进制文件
 
-The _SHASUMS256.txt_ can be downloaded using curl.
+Current, LTS 和 Nightly 下载目录都包含一个 _SHASUMS256.txt_ 文件，这个文件列出了可供下载的每个文件的SHA校验和。
+
+可以使用 curl 下载 _SHASUMS256.txt_ 文件。
 
 ```console
 $ curl -O https://nodejs.org/dist/vx.y.z/SHASUMS256.txt
 ```
-
-To check that a downloaded file matches the checksum, run
-it through `sha256sum` with a command such as:
+要检查下载的文件是否与校验和匹配，可以通过 `sha256sum` 运行它，并使用如下命令:
 
 ```console
 $ grep node-vx.y.z.tar.gz SHASUMS256.txt | sha256sum -c -
 ```
 
-_(Where "node-vx.y.z.tar.gz" is the name of the file you have
-downloaded)_
+_("node-vx.y.z.tar.gz"是你下载的文件的名称)_
 
-Additionally, Current and LTS releases (not Nightlies) have the GPG
-detached signature of SHASUMS256.txt available as SHASUMS256.txt.sig.
-You can use `gpg` to verify that SHASUMS256.txt has not been tampered with.
 
-To verify SHASUMS256.txt has not been altered, you will first need to import
-all of the GPG keys of individuals authorized to create releases. They are
-listed at the bottom of this README under [Release Team](#release-team).
-Use a command such as this to import the keys:
+另外，Current和LTS发行版(非每夜)具有 SHASUMS256.txt 的 GPG 分离签名作为 SHASUMS256.txt.sig。您可以使用 `gpg` 来验证 SHASUMS256.txt 是否被篡改过。
+
+为了验证 SHASUMS256.txt 没有被更改，您首先需要导入个人授权的所有GPG密钥来创建发布。他们被罗列在[Release Team](#release-team)下面的README的底部。使用这样的命令来导入密钥:
 
 ```console
 $ gpg --keyserver pool.sks-keyservers.net --recv-keys DD8F2338BAE7501E3DD5AC78C273792F7D83545D
 ```
 
-_(See the bottom of this README for a full script to import active
-release keys)_
+_(请参阅这个README的底部，以获得一个完整的脚本，以导入活动
+发布keys)_
 
-Next, download the SHASUMS256.txt.sig for the release:
+接下来，下载 SHASUMS256.txt.sig 用于发布:
 
 ```console
 $ curl -O https://nodejs.org/dist/vx.y.z/SHASUMS256.txt.sig
 ```
 
-After downloading the appropriate SHASUMS256.txt and SHASUMS256.txt.sig files,
-you can then use `gpg --verify SHASUMS256.txt.sig SHASUMS256.txt` to verify
-that the file has been signed by an authorized member of the Node.js team.
+下载适当的 SHASUMS256.txt 和 SHASUMS256.txt.sig 文件之后，你可以使用`gpg --verify SHASUMS256.txt.sig SHASUMS256.txt`来验证该文件已由 Node.js 团队的授权成员签署。
 
-Once verified, use the SHASUMS256.txt file to get the checksum for
-the binary verification command above.
+一旦验证了，使用 SHASUMS256.txt 文件来获得上面的二进制验证命令的校验和。
 
-## Building Node.js
+## 构建 Node.js
 
-See [BUILDING.md](BUILDING.md) for instructions on how to build
-Node.js from source. The document also contains a list of
-officially supported platforms.
+查看 [BUILDING.md](BUILDING.md) 获得关于如何从源代码构建 Node.js 的说明。该文档还包含一个官方支持的平台列表。
 
-## Security
+## 安全
 
-All security bugs in Node.js are taken seriously and should be reported by
-emailing security@nodejs.org. This will be delivered to a subset of the project
-team who handle security issues. Please don't disclose security bugs
-publicly until they have been handled by the security team.
+Node.js 中的所有安全漏洞都被认真对待，应该通过电子邮件 security@nodejs.org 来报告。这将交付给负责处理安全问题的项目团队的一个小团队。在被安全团队处理之前，请不要公开地安全漏洞。
 
-Your email will be acknowledged within 24 hours, and you’ll receive a more
-detailed response to your email within 48 hours indicating the next steps in
-handling your report.
+你的电子邮件将在24小时内得到确认，你将在48小时内收到一封更详细的回复邮件，表明下一步将处理你的报告。
 
-There are no hard and fast rules to determine if a bug is worth reporting as
-a security issue. The general rule is any issue worth reporting
-must allow an attacker to compromise the confidentiality, integrity
-or availability of the Node.js application or its system for which the attacker
-does not already have the capability.
+没有严格的规则来确定一个bug是否值得作为安全问题报告。一般规则是任何值得报告的问题都必须允许攻击者破坏 Node.js 应用程序或它的系统的机密性、完整性或可用性，然而攻击者还没有能力。
 
-To illustrate the point, here are some examples of past issues and what the
-Security Reponse Team thinks of them. When in doubt, however, please do send
-us a report nonetheless.
+为了说明这一点，下面是一些过去问题的例子，以及安全团队对他们的看法。然而，当有疑问的时候，请给我们发一份报告。
+
 
 
 ### Public disclosure preferred
@@ -226,14 +178,14 @@ us a report nonetheless.
 When in doubt, please do send us a report.
 
 
-## Current Project Team Members
+## 当前项目团队成员
 
 The Node.js project team comprises a group of core collaborators and a sub-group
 that forms the _Technical Steering Committee_ (TSC) which governs the project.
 For more information about the governance of the Node.js project, see
 [GOVERNANCE.md](./GOVERNANCE.md).
 
-### TSC (Technical Steering Committee)
+### TSC (技术指导委员会)
 
 * [addaleax](https://github.com/addaleax) -
 **Anna Henningsen** &lt;anna@addaleax.net&gt; (she/her)
@@ -276,7 +228,7 @@ For more information about the governance of the Node.js project, see
 * [Trott](https://github.com/Trott) -
 **Rich Trott** &lt;rtrott@gmail.com&gt; (he/him)
 
-### TSC Emeriti
+### TSC 过去的成员
 
 * [bnoordhuis](https://github.com/bnoordhuis) -
 **Ben Noordhuis** &lt;info@bnoordhuis.nl&gt;
@@ -293,7 +245,7 @@ For more information about the governance of the Node.js project, see
 * [shigeki](https://github.com/shigeki) -
 **Shigeki Ohtsu** &lt;ohtsu@ohtsu.org&gt; (he/him)
 
-### Collaborators
+### 合作伙伴
 
 * [abouthiroppy](https://github.com/abouthiroppy) -
 **Yuta Hiroto** &lt;hello@about-hiroppy.com&gt; (he/him)
@@ -534,7 +486,7 @@ For more information about the governance of the Node.js project, see
 Collaborators follow the [COLLABORATOR_GUIDE.md](./COLLABORATOR_GUIDE.md) in
 maintaining the Node.js project.
 
-### Release Team
+### 发布团队
 
 Node.js releases are signed with one of the following GPG keys:
 
@@ -582,16 +534,16 @@ Previous releases may also have been signed with one of the following GPG keys:
 * **Timothy J Fontaine** &lt;tjfontaine@gmail.com&gt;
 `7937DFD2AB06298B2293C3187D33FF9D0246406D`
 
-## Contributing to Node.js
+## 贡献
 
 * [Contributing to the project][]
 * [Working Groups][]
 
 [npm]: https://www.npmjs.com
-[Code of Conduct]: https://github.com/nodejs/TSC/blob/master/CODE_OF_CONDUCT.md
+[行为准则]: https://github.com/nodejs/TSC/blob/master/CODE_OF_CONDUCT.md
 [Contributing to the project]: CONTRIBUTING.md
 [Node.js Help]: https://github.com/nodejs/help
-[Node.js Website]: https://nodejs.org/en/
-[Questions tagged 'node.js' on StackOverflow]: https://stackoverflow.com/questions/tagged/node.js
+[Node.js 网站]: https://nodejs.org/en/
+[StackOverflow 上的 'node.js' 问题标记]: https://stackoverflow.com/questions/tagged/node.js
 [Working Groups]: https://github.com/nodejs/TSC/blob/master/WORKING_GROUPS.md
-[#node.js channel on chat.freenode.net]: https://webchat.freenode.net?channels=node.js&uio=d4
+[chat.freenode.net 上的 node.js 频道]: https://webchat.freenode.net?channels=node.js&uio=d4
