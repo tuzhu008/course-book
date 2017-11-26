@@ -28,3 +28,11 @@ _book/
 book.pdf
 book.epub
 book.mobi
+
+.DS_Store
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/_book/
