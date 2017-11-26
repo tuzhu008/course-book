@@ -6,7 +6,7 @@
 
 * [CSS](CSS/README.md)
 
-* [Javascript](JavaScript)
+* [Javascript](JavaScript/README.md)
 
 * [Http](Http/README.md)
 
