@@ -7,15 +7,14 @@
   <a title="CII Best Practices" href="https://bestpractices.coreinfrastructure.org/projects/29"><img src="https://bestpractices.coreinfrastructure.org/projects/29/badge"></a>
 </p>
 
-Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js
-uses an event-driven, non-blocking I/O model that makes it lightweight and
-efficient. The Node.js package ecosystem, [npm][], is the largest ecosystem of
-open source libraries in the world.
+Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。
+ 
+Node.js 使用了一个事件驱动、非阻塞式 I/O 模型，使其轻量又高效。
+ 
+Node.js 的包管理器 npm，是全球最大的开源库生态系统。
 
-The Node.js project is supported by the
-[Node.js Foundation](https://nodejs.org/en/foundation/). Contributions,
-policies, and releases are managed under an
-[open governance model](./GOVERNANCE.md).
+Node.js 项目由 [Node.js 基金会](https://nodejs.org/en/foundation/) 提供支持。贡献、策略和发布都是在一个[开放的治理模型下](https://github.com/nodejs/node/blob/master/GOVERNANCE.md)进行管理的。
+
 
 **This project is bound by a [Code of Conduct][].**
 
