@@ -1,0 +1,80 @@
+{
+  "title" : "webpack中文",
+  "author" : "tuzhu008",
+  "description" : "webpack学习资料和过程记录",
+  "language" : "zh-hans",
+  "root": ".",
+  "styles": {
+    "website": "styles/website.css"
+},
+  "plugins": [
+    "expandable-chapters-small",
+    "anchors",
+    "anchor-navigation-ex",
+    "favicon",
+    "copy-code-button",
+    "alerts",
+    "splitter",
+    "book-summary-scroll-position-saver",
+    "include-codeblock",
+    "ace",
+    "prism",
+    "prism-themes",
+    "-highlight",
+    "tbfed-pagefooter",
+    "github",
+    "sectionx"
+  ],
+  "pluginsConfig": {
+    "fontsettings": {
+        "theme": "night",
+        "family": "serif",
+        "size":  2
+    },
+    "anchor-navigation-ex": {
+      "showLevel": true,
+      "associatedWithSummary": true,
+      "printLog": false,
+      "multipleH1": true,
+      "mode": "float",
+      "float": {
+          "showLevelIcon": false,
+          "level1Icon": "fa fa-hand-o-right",
+          "level2Icon": "fa fa-hand-o-right",
+          "level3Icon": "fa fa-hand-o-right"
+      }
+    },
+    "include-codeblock": {
+      "template": "ace",
+      "unindent": true,
+      "theme": "monokai"
+    },
+    "favicon": {
+        "shortcut": "assets/images/favicon.ico",
+        "bookmark": "assets/images/favicon.ico",
+        "appleTouch": "assets/images/apple-touch-icon.png",
+        "appleTouchMore": {
+            "120x120": "assets/images/apple-touch-icon-120x120.png",
+            "180x180": "assets/images/apple-touch-icon-180x180.png"
+        }
+    },
+    "prism": {
+      "css": [
+        "prism-themes/themes/prism-atom-dark.css"
+      ]
+    },
+    "tbfed-pagefooter": {
+      "copyright":"Copyright &copy tuzhu008 2017",
+      "modify_label": "该文件修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "github": {
+      "url": "https://github.com/tuzhu008"
+    },
+    "sectionx": {
+      "tag": "b"
+    }
+  }
+}
+
+
