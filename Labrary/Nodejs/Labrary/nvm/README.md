@@ -34,30 +34,30 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Installation
+## 安装
 
-### Install script
+### 安装脚本
 
-To install or update nvm, you can use the [install script][2] using cURL:
+你可以使用cURL的 [安装脚本][2] 来安装和更新：
 
 ```sh
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 ```
 
-or Wget:
+或者 Wget:
 
 ```sh
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 ```
 
-<sub>The script clones the nvm repository to `~/.nvm` and adds the source line to your profile (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).</sub>
+<sub>这段脚本将克隆 nvm库到 `~/.nvm` ，请添加source 行到配置文件 (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).</sub>
 
 ```sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 ```
 
-You can customize the install source, directory, profile, and version using the `NVM_SOURCE`, `NVM_DIR`, `PROFILE`, and `NODE_VERSION` variables.
+你可以自定义安装 source, directory, profile, 和 version，请使用  `NVM_SOURCE`, `NVM_DIR`, `PROFILE`, 和 `NODE_VERSION` 变量.
 Eg: `curl ... | NVM_DIR=/usr/local/nvm bash` for a global install.
 
 <sub>*NB. The installer can use `git`, `curl`, or `wget` to download `nvm`, whatever is available.*</sub>
@@ -101,7 +101,7 @@ If you're running a system without prepackaged binary available, which means you
  - [bass](https://github.com/edc/bass) allows you to use utilities written for Bash in fish shell
  - [fast-nvm-fish](https://github.com/brigand/fast-nvm-fish) only works with version numbers (not aliases) but doesn't significantly slow your shell startup
  - [plugin-nvm](https://github.com/derekstavis/plugin-nvm) plugin for [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish), which makes nvm and its completions available in fish shell
- - [fnm](https://github.com/fisherman/fnm) - [fisherman](https://github.com/fisherman/fisherman)-based version manager for fish 
+ - [fnm](https://github.com/fisherman/fnm) - [fisherman](https://github.com/fisherman/fisherman)-based version manager for fish
 
 **Note:** We still have some problems with FreeBSD, because there is no official pre-built binary for FreeBSD, and building from source may need [patches](https://www.freshports.org/www/node/files/patch-deps_v8_src_base_platform_platform-posix.cc); see the issue ticket:
  - [[#900] [Bug] nodejs on FreeBSD may need to be patched ](https://github.com/creationix/nvm/issues/900)
@@ -121,12 +121,12 @@ Homebrew installation is not supported. If you have issues with homebrew-install
 
 **Note:** Git versions before v1.7 may face a problem of cloning nvm source from GitHub via https protocol, and there is also different behavior of git before v1.6, so the minimum required git version is v1.7.0 and we recommend v1.7.9.5 as it's the default version of the widely used Ubuntu 12.04 LTS. If you are interested in the problem we mentioned here, please refer to GitHub's [HTTPS cloning errors](https://help.github.com/articles/https-cloning-errors/) article.
 
-### Git install
+### Git 安装
 
-If you have `git` installed (requires git v1.7+):
+如果你已经安装了 `git` (需要 git v1.7+):
 
-1. clone this repo in the root of your user profile
-  - `cd ~/` from anywhere then `git clone https://github.com/creationix/nvm.git .nvm`
+1. 在用户配置文件的根目录中克隆这个"repo"
+  - 从任何地方运行`cd ~/` ，然后运行 `git clone https://github.com/creationix/nvm.git .nvm`
 2. `cd ~/.nvm` and check out the latest version with `git checkout v0.33.6`
 3. activate nvm by sourcing it from your shell: `. nvm.sh`
 
@@ -176,46 +176,48 @@ For manual upgrade with `git` (requires git v1.7+):
 ) && . "$NVM_DIR/nvm.sh"
 ```
 
-## Usage
+## 用法
 
-To download, compile, and install the latest release of node, do this:
+要下载、编译和安装最新的node版本，请执行如下:
 
 ```sh
 nvm install node
 ```
 
-And then in any new shell just use the installed version:
+然后在任何一个新的shell中使用已安装的版本:
 
 ```sh
 nvm use node
 ```
 
-Or you can just run it:
+或者你可以直接运行它:
 
 ```sh
 nvm run node --version
 ```
-Or, you can run any arbitrary command in a subshell with the desired version of node:
+或者，您可以在子shell中使用所需版本的node运行任意的命令，并使用所需版本的node:
 
 ```sh
 nvm exec 4.2 node --version
 ```
 
-You can also get the path to the executable to where it was installed:
+您还可以将可执行文件的路径设置为被安装的位置:
 
 ```sh
 nvm which 5.0
 ```
 
-In place of a version pointer like "0.10" or "5.0" or "4.2.1", you can use the following special default aliases with `nvm install`, `nvm use`, `nvm run`, `nvm exec`, `nvm which`, etc:
+替代像 "0.10" or "5.0" 或 "4.2.1"这样的版本指针，可以通过`nvm install`, `nvm use`, `nvm run`, `nvm exec`, `nvm which`等等使用下面特别的默认别名：
 
- - `node`: this installs the latest version of [`node`](https://nodejs.org/en/)
- - `iojs`: this installs the latest version of [`io.js`](https://iojs.org/en/)
- - `stable`: this alias is deprecated, and only truly applies to `node` `v0.12` and earlier. Currently, this is an alias for `node`.
- - `unstable`: this alias points to `node` `v0.11` - the last "unstable" node release, since post-1.0, all node versions are stable. (in semver, versions communicate breakage, not stability).
+ - `node`: 这将安装最新版本的 [`node`](https://nodejs.org/en/)
+ - `iojs`: 这将安装最新版本的 [`io.js`](https://iojs.org/en/)
+ - `stable`: 稳定。这个别名已被**弃用**，它只适用于 `node` `v0.12` 和更早的版本 。 目前, 这是`node`的别名。
+ - `unstable`: 不稳定。这个别名指向`node` `v0.11` - 最后一个 "unstable" node 发布, 自 1.0以后, 所有 node 版本都是稳定的。(在semver中，版本的通信易断裂，不稳定).
 
-### Long-term support
-Node has a [schedule](https://github.com/nodejs/LTS#lts_schedule) for long-term support (LTS) You can reference LTS versions in aliases and `.nvmrc` files with the notation `lts/*` for the latest LTS, and `lts/argon` for LTS releases from the "argon" line, for example. In addition, the following commands support LTS arguments:
+### 长期支持（LST）
+
+Node有一个用于长期支持(LTS)的[时间表](https://github.com/nodejs/LTS#lts_schedule)。您可以在别名引用LTS版本；带有`lts/*`记号的`.nvmrc`文件用于最新的LTS；`lts/argon`用于"argon"系列的LST发布版本。此外，下面的命令支持LTS参数:
+
  - `nvm install --lts` / `nvm install --lts=argon` / `nvm install 'lts/*'` / `nvm install lts/argon`
  - `nvm uninstall --lts` / `nvm uninstall --lts=argon` / `nvm uninstall 'lts/*'` / `nvm uninstall lts/argon`
  - `nvm use --lts` / `nvm use --lts=argon` / `nvm use 'lts/*'` / `nvm use lts/argon`
@@ -224,27 +226,29 @@ Node has a [schedule](https://github.com/nodejs/LTS#lts_schedule) for long-term 
  - `nvm ls-remote --lts` / `nvm ls-remote --lts=argon` `nvm ls-remote 'lts/*'` / `nvm ls-remote lts/argon`
  - `nvm version-remote --lts` / `nvm version-remote --lts=argon` / `nvm version-remote 'lts/*'` / `nvm version-remote lts/argon`
 
-Any time your local copy of `nvm` connects to https://nodejs.org, it will re-create the appropriate local aliases for all available LTS lines. These aliases (stored under `$NVM_DIR/alias/lts`), are managed by `nvm`, and you should not modify, remove, or create these files - expect your changes to be undone, and expect meddling with these files to cause bugs that will likely not be supported.
+任何时候，您本地的`nvm`副本都连接到 https://nodejs.org ，它将为所有可用的LTS线路重新创建适当的本地别名。这些别名(存储在`$NVM_DIR/alias/lts`中)由`nvm`管理，您不应该修改、删除或创建这些文件—您的更改会被取消，对这些文件的干预会从导致可能不支持的错误。
 
-### Migrating global packages while installing
-If you want to install a new version of Node.js and migrate npm packages from a previous version:
+### 在安装时迁移全局包
+
+如果您想要安装一个新版本的Node.js并从以前的版本迁移npm包:
 
 ```sh
 nvm install node --reinstall-packages-from=node
 ```
 
-This will first use "nvm version node" to identify the current version you're migrating packages from. Then it resolves the new version to install from the remote server and installs it. Lastly, it runs "nvm reinstall-packages" to reinstall the npm packages from your prior version of Node to the new one.
+这将首先使用 "nvm version node" 来识别您正在迁移包的当前版本。然后，它将解析来自远程服务器的新版本并安装它。最后，它运行 "nvm reinstall-packages"来将npm包从先前的 Node 版本重新安装到新版本。
 
-You can also install and migrate npm packages from specific versions of Node like this:
+您还可以从特定版本的Node安装和迁移npm包:
 
 ```sh
 nvm install 6 --reinstall-packages-from=5
 nvm install v4.2 --reinstall-packages-from=iojs
 ```
 
-### Default global packages from file while installing
+### 安装时默认的全局包
 
 If you have a list of default packages you want installed every time you install a new version we support that too. You can add anything npm would accept as a package argument on the command line.
+如果有一个默认包列表，想要每次安装一个新版本时都安装它，我们也支持这样。您可以在命令行中添加任何npm可接受的作为包参数。
 
 ```sh
 # $NVM_DIR/default-packages
@@ -255,54 +259,57 @@ stevemao/left-pad
 ```
 
 ### io.js
-If you want to install [io.js](https://github.com/iojs/io.js/):
+
+如果想要安装[io.js](https://github.com/iojs/io.js/):
 
 ```sh
 nvm install iojs
 ```
 
-If you want to install a new version of io.js and migrate npm packages from a previous version:
+如果想要安装一个新版本的 io.js，并迁移之前版本的 npm包：
 
 ```sh
 nvm install iojs --reinstall-packages-from=iojs
 ```
 
-The same guidelines mentioned for migrating npm packages in Node.js are applicable to io.js.
+在node中迁移npm包时也提到了的指导原则也同样适用于 io.js。
 
-### System version of node
-If you want to use the system-installed version of node, you can use the special default alias "system":
+### node 的系统版本
+
+如果您想使用系统安装的 node 版本，您可以使用特殊的默认别名"system":
 
 ```sh
 nvm use system
 nvm run system --version
 ```
 
-### Listing versions
-If you want to see what versions are installed:
+### 版本列表
+
+显示已安装的node版本：
 
 ```sh
 nvm ls
 ```
 
-If you want to see what versions are available to install:
+如果你想知道有哪些版本可供安装:
 
 ```sh
 nvm ls-remote
 ```
 
-To restore your PATH, you can deactivate it:
+为了恢复你的PATH，你可以停用它:
 
 ```sh
 nvm deactivate
 ```
 
-To set a default Node version to be used in any new shell, use the alias 'default':
+要在任何新shell中设置一个默认的节点版本，请使用别名'default':
 
 ```sh
 nvm alias default node
 ```
 
-To use a mirror of the node binaries, set `$NVM_NODEJS_ORG_MIRROR`:
+要使用node 的二进制文件镜像`$NVM_NODEJS_ORG_MIRROR`:
 
 ```sh
 export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist
@@ -311,7 +318,7 @@ nvm install node
 NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist nvm install 4.2
 ```
 
-To use a mirror of the io.js binaries, set `$NVM_IOJS_ORG_MIRROR`:
+要使用 io.js 的二进制文件镜像`$NVM_IOJS_ORG_MIRROR`:
 
 ```sh
 export NVM_IOJS_ORG_MIRROR=https://iojs.org/dist
@@ -320,14 +327,13 @@ nvm install iojs-v1.0.3
 NVM_IOJS_ORG_MIRROR=https://iojs.org/dist nvm install iojs-v1.0.3
 ```
 
-`nvm use` will not, by default, create a "current" symlink. Set `$NVM_SYMLINK_CURRENT` to "true" to enable this behavior, which is sometimes useful for IDEs. Note that using `nvm` in multiple shell tabs with this environment variable enabled can cause race conditions.
+默认情况下，`nvm use`不会创建一个 "current" 符号链接。将`$NVM_SYMLINK_CURRENT`设置为"true"，以启用该行为，这在IDE中有时是有用的。注意，在启用了这个环境变量的多个shell选项卡中使用`nvm`可能会导致竞态(race)条件.
 
 ### .nvmrc
 
-You can create a `.nvmrc` file containing version number in the project root directory (or any parent directory).
-`nvm use`, `nvm install`, `nvm exec`, `nvm run`, and `nvm which` will all respect an `.nvmrc` file when a version is not supplied on the command line.
+你可以在根目录（或者任何父目录）创建一个包含版本号的`.nvmrc`文件，当在命令行中为指定版本时，`nvm use`, `nvm install`, `nvm exec`, `nvm run`, 和 `nvm which` 等等都将遵从`.nvmrc`文件。
 
-For example, to make nvm default to the latest 5.9 release for the current directory:
+例如，要使nvm默认为当前目录的最新的5.9发行版:
 
 ```sh
 $ echo "5.9" > .nvmrc
@@ -335,7 +341,7 @@ $ echo "5.9" > .nvmrc
 $ echo "lts/*" > .nvmrc # to default to the latest LTS version
 ```
 
-Then when you run nvm:
+然后当你运行nvm:
 
 ```sh
 $ nvm use
@@ -343,21 +349,20 @@ Found '/path/to/project/.nvmrc' with version <5.9>
 Now using node v5.9.1 (npm v3.7.3)
 ```
 
-### Deeper Shell Integration
+### 深层的 Shell 集成
 
-You can use [`avn`](https://github.com/wbyoung/avn) to deeply integrate into your shell and automatically invoke `nvm` when changing directories. `avn` is **not** supported by the `nvm` development team. Please [report issues to the `avn` team](https://github.com/wbyoung/avn/issues/new).
+您可以使用[`avn`](https://github.com/wbyoung/avn) 深入集成到您的shell中，并在更改目录时自动调用`nvm`。`avn` 不受 `nvm` 开发团队的支持。请[向`avn` 团队报告问题](https://github.com/wbyoung/avn/issues/new)。
 
-If you prefer a lighter-weight solution, the recipes below have been contributed by `nvm` users. They are **not** supported by the `nvm` development team. We are, however, accepting pull requests for more examples.
+如果你更喜欢轻量的解决方案，下面的配方是由 `nvm` 用户贡献的。它们不受 `nvm` 开发团队的支持。然而，我们接受了更多的示例请求。
 
 #### zsh
 
-##### Calling `nvm use` automatically in a directory with a `.nvmrc` file
+##### 在带有`.nvmrc`文件的目录中自动调用`nvm use`
 
-Put this into your `$HOME/.zshrc` to call `nvm use` automatically whenever you enter a directory that contains an
-`.nvmrc` file with a string telling nvm which node to `use`:
+当你输入一个包含`.nvmrc`文件（这个文件告诉nvm应该`use`哪一个node）的目录时，把这个文件放到你的`$HOME/.zshrc`中来自动调用`nvm use`：
 
 ```zsh
-# place this after nvm initialization!
+# 在nvm初始化之后将其放置！
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -393,27 +398,27 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## Running tests
-Tests are written in [Urchin]. Install Urchin (and other dependencies) like so:
+## 运行测试
+
+测试是用[Urchin]写的。安装Urchin(和其他依赖项):
 
     npm install
 
-There are slow tests and fast tests. The slow tests do things like install node
-and check that the right versions are used. The fast tests fake this to test
-things like aliases and uninstalling. From the root of the nvm git repository,
-run the fast tests like this:
+有缓慢的测试和快速的测试。缓慢的测试会做一些事情，比如安装node，并检查是否使用了正确的版本。快速测试通过伪造来测试诸如别名和卸载之类的东西。从nvm git存储库的根目录中，运行如下快速测试:
 
     npm run test/fast
 
-Run the slow tests like this:
+运行慢测试
 
     npm run test/slow
 
-Run all of the tests like this:
+运行所有测试
 
     npm test
 
-Nota bene: Avoid running nvm while the tests are running.
+> **[info]** 留心: 
+>
+> 在测试运行时避免运行nvm。
 
 ## Bash completion
 
@@ -476,7 +481,7 @@ Shell settings:
 set -e
 ```
 
-## Installing nvm on Alpine Linux
+## 在 Alpine Linux 上安装 nvm
 In order to provide the best performance (and other optimisations), nvm will download and install pre-compiled binaries for Node (and npm) when you run `nvm install X`. The Node project compiles, tests and hosts/provides pre-these compiled binaries which are built for mainstream/traditional Linux distributions (such as Debian, Ubuntu, CentOS, RedHat et al).
 
 Alpine Linux, unlike mainstream/traditional Linux distributions, is based on [busybox](https://www.busybox.net/), a very compact (~5MB) Linux distribution. Busybox (and thus Alpine Linux) uses a different C/C++ stack to most mainstream/traditional Linux distributions - [musl](https://www.musl-libc.org/). This makes binary programs built for such mainstream/traditional incompatible with Alpine Linux, thus we cannot simply `nvm install X` on Alpine Linux and expect the downloaded binary to run correctly - you'll likely see "...does not exist" errors if you try that.
@@ -559,3 +564,59 @@ More on this issue in [dotphiles/dotzsh](https://github.com/dotphiles/dotzsh#mac
 [4]: https://github.com/creationix/nvm/releases/tag/v0.33.6
 [Urchin]: https://github.com/scraperwiki/urchin
 [Fish]: http://fishshell.com
+
+|指令|描述|
+|:-----------------------|:------------------------|
+| nvm --help| 显示帮助信息 |
+| nvm --version  |  打印nvm的版本 |
+ |nvm install [-s] <version> |                Download and install a <version>, [-s] from source. Uses .nvmrc if available
+   --reinstall-packages-from=<version>     When installing, reinstall packages installed in <node|iojs|node version number>
+   --lts                                   When installing, only select from LTS (long-term support) versions
+   --lts=<LTS name>                        When installing, only select from versions for a specific LTS line
+   --skip-default-packages                 When installing, skip the default-packages file if it exists
+   --latest-npm                            After installing, attempt to upgrade to the latest working npm on the given node version
+ nvm uninstall <version>                   Uninstall a version
+ nvm uninstall --lts                       Uninstall using automatic LTS (long-term support) alias `lts/*`, if available.
+ nvm uninstall --lts=<LTS name>            Uninstall using automatic alias for provided LTS line, if available.
+ nvm use [--silent] <version>              Modify PATH to use <version>. Uses .nvmrc if available
+   --lts                                   Uses automatic LTS (long-term support) alias `lts/*`, if available.
+   --lts=<LTS name>                        Uses automatic alias for provided LTS line, if available.
+ nvm exec [--silent] <version> [<command>] Run <command> on <version>. Uses .nvmrc if available
+   --lts                                   Uses automatic LTS (long-term support) alias `lts/*`, if available.
+   --lts=<LTS name>                        Uses automatic alias for provided LTS line, if available.
+ nvm run [--silent] <version> [<args>]     Run `node` on <version> with <args> as arguments. Uses .nvmrc if available
+   --lts                                   Uses automatic LTS (long-term support) alias `lts/*`, if available.
+   --lts=<LTS name>                        Uses automatic alias for provided LTS line, if available.
+ nvm current                               Display currently activated version
+ nvm ls                                    List installed versions
+ nvm ls <version>                          List versions matching a given <version>
+ nvm ls-remote                             List remote versions available for install
+   --lts                                   When listing, only show LTS (long-term support) versions
+ nvm ls-remote <version>                   List remote versions available for install, matching a given <version>
+   --lts                                   When listing, only show LTS (long-term support) versions
+   --lts=<LTS name>                        When listing, only show versions for a specific LTS line
+ nvm version <version>                     Resolve the given description to a single local version
+ nvm version-remote <version>              Resolve the given description to a single remote version
+   --lts                                   When listing, only select from LTS (long-term support) versions
+   --lts=<LTS name>                        When listing, only select from versions for a specific LTS line
+ nvm deactivate                            Undo effects of `nvm` on current shell
+ nvm alias [<pattern>]                     Show all aliases beginning with <pattern>
+ nvm alias <name> <version>                Set an alias named <name> pointing to <version>
+ nvm unalias <name>                        Deletes the alias named <name>
+ nvm install-latest-npm                    Attempt to upgrade to the latest working `npm` on the current node version
+ nvm reinstall-packages <version>          Reinstall global `npm` packages contained in <version> to current version
+ nvm unload                                Unload `nvm` from shell
+ nvm which [<version>]                     Display path to installed node version. Uses .nvmrc if available
+ nvm cache dir                             Display path to the cache directory for nvm
+ nvm cache clear                           Empty cache directory for nvm
+
+Example:
+ nvm install 8.0.0                     Install a specific version number
+ nvm use 8.0                           Use the latest available 8.0.x release
+ nvm run 6.10.3 app.js                 Run app.js using node 6.10.3
+ nvm exec 4.8.3 node app.js            Run `node app.js` with the PATH pointing to node 4.8.3
+ nvm alias default 8.1.0               Set default node version on a shell
+ nvm alias default node                Always default to the latest available node version on a shell
+
+Note:
+ to remove, delete, or uninstall nvm - just remove the `$NVM_DIR` folder (usually `~/.nvm`)
