@@ -6,9 +6,11 @@
 
 * [node-lessons](https://github.com/alsotang/)
 
-* [Node入门](https://www.nodebeginner.org/index-zh-cn.html)
+* [Node 入门](https://www.nodebeginner.org/index-zh-cn.html)
 
-* [7天学会Node.js](http://nqdeng.github.io/7-days-nodejs/)
+* [7天学会 Node.js](http://nqdeng.github.io/7-days-nodejs/)
+
+* [CommonJs 规范](http://javascript.ruanyifeng.com/nodejs/module.html)
 
 
 
