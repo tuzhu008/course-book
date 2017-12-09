@@ -52,8 +52,15 @@
 
     * [参考文档](Labrary/Nodejs/docsList.md)
     * [相关库](Labrary/Nodejs/Labrary/README.md)
-      - [node版本管理]((Labrary/Nodejs/Labrary/nvm/README.md))
+      * [node 版本管理](Labrary/Nodejs/Labrary/nvm/README.md)
+      * [request](Labrary/Nodejs/Labrary/request/README.md)
+      * [async](Labrary/Nodejs/Labrary/async/README.md)
+      * [supervisior](Labrary/Nodejs/Labrary/supervisor/README.md)
+      * [Express](Labrary/Nodejs/Labrary/express/README.md)
 
   * [UI 库](Labrary/UI/README.md)
 
   * 其他库
+
+
+
