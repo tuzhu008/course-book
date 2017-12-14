@@ -27,17 +27,25 @@ request('http://www.google.com', function (error, response, body) {
 
 ## 内容列表
 
+
 - [Streaming](#streaming)
-- [Promises & Async/Await](#promises--asyncawait)
+- [Promises & Async/Await](#promises-asyncawait)
 - [Forms](#forms)
-- [HTTP Authentication](#http-authentication)
-- [Custom HTTP Headers](#custom-http-headers)
-- [OAuth Signing](#oauth-signing)
+- [HTTP 身份验证](#http-身份验证)
+- [自定义 HTTP Headers](#自定义-http-headers)
+- [认证签名（OAuth Signing）](#认证签名oauth-signing)
 - [Proxies](#proxies)
-- [Unix Domain Sockets](#unix-domain-sockets)
-- [TLS/SSL Protocol](#tlsssl-protocol)
-- [Support for HAR 1.2](#support-for-har-12)
+- [UNIX Domain Sockets](#unix-domain-sockets)
+- [TLS/SSL 协议](#tlsssl-协议)
+- [对 HAR 1.2 的支持](#对-har-12-的支持)
 - [**All Available Options**](#requestoptions-callback)
+- [方便的方法](#方便的方法)
+- [调试](#调试)
+- [Timeouts](#timeouts)
+- [示例](#示例)
+
+
+
 
 
 Request 还提供了一些[方便的方法](#方便的方法)，比如`request.defaults` 和 `request.post`，有大量的[使用示例](#示例)和几个[调试技术](#调试)。
@@ -304,7 +312,7 @@ request.get('http://some.server.com/', {
 如果 `sendImmediately` 为 `false`，然后，`request` 将在收到来自服务器的 `401` 响应后使用适当的身份验证头进行重试(必须包含 `WWW-Authenticate` 头
 指示所需的身份验证方法).
 
-注意： 还可以使用 URL 本身指定基本身份验证，详细的信息 [RFC 1738](http://www.ietf.org/rfc/rfc1738.txt)。 
+注意： 还可以使用 URL 本身指定基本身份验证，详细的信息 [RFC 1738](http://www.ietf.org/rfc/rfc1738.txt)。
 在主机名`@` 标志之前，简单地传递`user:password`:
 
 ```js
@@ -615,7 +623,7 @@ var options = {
     agentOptions: {
         cert: fs.readFileSync(certFile),
         key: fs.readFileSync(keyFile),
-        // 在使用 PFX 或者 PKCS12 格式的私钥，证书和 CA 证书时，使用 `pfx` 属性替换 `cert` 和 `key` 
+        // 在使用 PFX 或者 PKCS12 格式的私钥，证书和 CA 证书时，使用 `pfx` 属性替换 `cert` 和 `key`
         // pfx: fs.readFileSync(pfxFilePath),
         passphrase: 'password',
         securityOptions: 'SSL_OP_NO_SSLv3'
@@ -740,7 +748,7 @@ request.get({
 
 ---
 
-- `followRedirect` - 遵循 HTTP 3xx 响应作为重定向(默认值: `true`)。该属性还可以作为一个函数实现，它将 `response` 对象作为单个参数，如果重定向应该继续则应该返回`true`，否则返回 `false`。 
+- `followRedirect` - 遵循 HTTP 3xx 响应作为重定向(默认值: `true`)。该属性还可以作为一个函数实现，它将 `response` 对象作为单个参数，如果重定向应该继续则应该返回`true`，否则返回 `false`。
 - `followAllRedirects` - 遵循 non-GET HTTP 3xx 响应作为重定向 (默认值: `false`)
 - `followOriginalHttpMethod` - 默认情况下重定向到 HTTP 方法 GET。可以启用这个属性来重定向到原始的 HTTP 方法(默认: `false`)
 - `maxRedirects` - 要执行的重定向的最大数量 (默认值: `10`)
@@ -757,67 +765,55 @@ request.get({
 - `agent` - `http(s).Agent` 实例
 - `agentClass` - 另外指定 agent 的类名
 - `agentOptions` - 传递给 agent 的选项。 **注意：** 对于 HTTPS ，请参见 [tls API doc for TLS/SSL options](http://nodejs.org/api/tls.html#tls_tls_connect_options_callback) 和 [上面的文档](#using-optionsagentoptions).
-- `forever` - set to `true` to use the [forever-agent](https://github.com/request/forever-agent) **Note:** Defaults to `http(s).Agent({keepAlive:true})` in node 0.12+
-- `pool` - an object describing which agents to use for the request. If this option is omitted the request will use the global agent (as long as your options allow for it). Otherwise, request will search the pool for your custom agent. If no custom agent is found, a new agent will be created and added to the pool. **Note:** `pool` is used only when the `agent` option is not specified.
-  - A `maxSockets` property can also be provided on the `pool` object to set the max number of sockets for all agents created (ex: `pool: {maxSockets: Infinity}`).
-  - Note that if you are sending multiple requests in a loop and creating
-    multiple new `pool` objects, `maxSockets` will not work as intended. To
-    work around this, either use [`request.defaults`](#requestdefaultsoptions)
-    with your pool options or create the pool object with the `maxSockets`
-    property outside of the loop.
-- `timeout` - integer containing the number of milliseconds to wait for a
-server to send response headers (and start the response body) before aborting
-the request. Note that if the underlying TCP connection cannot be established,
-the OS-wide TCP connection timeout will overrule the `timeout` option ([the
-default in Linux can be anywhere from 20-120 seconds][linux-timeout]).
+- `forever` - 设为 `true` 以使用 [forever-agent](https://github.com/request/forever-agent) **注意：** 在 node 0.12+ 中默认为 `http(s).Agent({keepAlive:true})`
+- `pool` - 一个描述用于请求的代理（agent）的对象。如果这个选项被省略，请求将使用全局代理(只要你的设置允许这样做)。否则请求将在池（pool）中搜索自定义代理。如果没有找到自定义的代理，就会创建一个新的代理并将其添加到池。**注意：** `pool` 仅在 `agent` 选项未被指定的时候使用。
+  - A `maxSockets` 属性可以被提供到 `pool` 对象，用以为所有被创建的代理设置最大的套接字（sockets）数量。(例如: `pool: {maxSockets: Infinity}`).
+  - 注意，如果你在一个循环中发送了多个请求并创建了多个新的 `pool` 对象，`maxSockets` 将不能按预期工作。为了解决这个问题，请同时使用  [`request.defaults`](#requestdefaultsoptions)与 pool 选项或者在循环之外创建一个池对象并设置 `maxSockets` 属性。
+- `timeout` - 一个整数，包含等待服务器发送响应头(并启动响应体)的毫秒数，超过这个事件，则中止请求。注意，如果不能建立底层的 TCP 连接，那么操作系统范围（OS-wide）的 TCP 连接超时将超过 `timeout` 选项（[Linux 中默认值可以是 20-120 秒][linux-timeout]）。
 
 [linux-timeout]: http://www.sekuda.com/overriding_the_default_linux_kernel_20_second_tcp_socket_connect_timeout
 
 ---
 
-- `localAddress` - local interface to bind for network connections.
-- `proxy` - an HTTP proxy to be used. Supports proxy Auth with Basic Auth, identical to support for the `url` parameter (by embedding the auth info in the `uri`)
-- `strictSSL` - if `true`, requires SSL certificates be valid. **Note:** to use your own certificate authority, you need to specify an agent that was created with that CA as an option.
-- `tunnel` - controls the behavior of
-  [HTTP `CONNECT` tunneling](https://en.wikipedia.org/wiki/HTTP_tunnel#HTTP_CONNECT_tunneling)
-  as follows:
-   - `undefined` (default) - `true` if the destination is `https`, `false` otherwise
-   - `true` - always tunnel to the destination by making a `CONNECT` request to
-     the proxy
-   - `false` - request the destination as a `GET` request.
-- `proxyHeaderWhiteList` - a whitelist of headers to send to a
-  tunneling proxy.
-- `proxyHeaderExclusiveList` - a whitelist of headers to send
-  exclusively to a tunneling proxy and not to destination.
+- `localAddress` - 用来绑定网络连接的本地接口。
+- `proxy` - 使用的 HTTP 代理。支持使用 Basic Auth 的 代理 Auth，与 `url` 参数的支持完全相同(通过将认证信息嵌入到 `uri` 中)
+- `strictSSL` - 如果为 `true`, 要求 SSL 证书是有效的。**注意：** 为了使用你自己的认证中心，您需要指定使用该 CA 作为选项创建的代理（agent）。
+- `tunnel` - 控制 [HTTP `CONNECT` 隧道](https://en.wikipedia.org/wiki/HTTP_tunnel#HTTP_CONNECT_tunneling) 的行为，
+  如下：
+   - `undefined` (默认) - `true` 如果目的地是 `https`，`false` 其他情况
+   - `true` - 通过向代理（proxy）发送一个 `CONNECT` 请求，始终通过隧道到达目的地
+   - `false` - 作为一个 `GET` 请求（名词），请求（动词）目的地。
+- `proxyHeaderWhiteList` - 一个 headers 白名单，用来发送一个隧道代理（tunneling proxy）。
+- `proxyHeaderExclusiveList` - 一个 headers 白名单，只发送给一个隧道代理，而不是目的地。
 
 ---
 
-- `time` - if `true`, the request-response cycle (including all redirects) is timed at millisecond resolution. When set, the following properties are added to the response object:
-  - `elapsedTime` Duration of the entire request/response in milliseconds (*deprecated*).
-  - `responseStartTime` Timestamp when the response began (in Unix Epoch milliseconds) (*deprecated*).
-  - `timingStart` Timestamp of the start of the request (in Unix Epoch milliseconds).
-  - `timings` Contains event timestamps in millisecond resolution relative to `timingStart`. If there were redirects, the properties reflect the timings of the final request in the redirect chain:
-    - `socket` Relative timestamp when the [`http`](https://nodejs.org/api/http.html#http_event_socket) module's `socket` event fires. This happens when the socket is assigned to the request.
-    - `lookup` Relative timestamp when the [`net`](https://nodejs.org/api/net.html#net_event_lookup) module's `lookup` event fires. This happens when the DNS has been resolved.
-    - `connect`: Relative timestamp when the [`net`](https://nodejs.org/api/net.html#net_event_connect) module's `connect` event fires. This happens when the server acknowledges the TCP connection.
-    - `response`: Relative timestamp when the [`http`](https://nodejs.org/api/http.html#http_event_response) module's `response` event fires. This happens when the first bytes are received from the server.
-    - `end`: Relative timestamp when the last bytes of the response are received.
-  - `timingPhases` Contains the durations of each request phase. If there were redirects, the properties reflect the timings of the final request in the redirect chain:
-    - `wait`: Duration of socket initialization (`timings.socket`)
-    - `dns`: Duration of DNS lookup (`timings.lookup` - `timings.socket`)
-    - `tcp`: Duration of TCP connection (`timings.connect` - `timings.socket`)
-    - `firstByte`: Duration of HTTP server response (`timings.response` - `timings.connect`)
-    - `download`: Duration of HTTP download (`timings.end` - `timings.response`)
-    - `total`: Duration entire HTTP round-trip (`timings.end`)
+- `time` - 如果为 `true`，请求-响应周期(包括所有重定向)都以毫秒级精度进行计时。在设置时，以下属性将被添加到响应对象:
+  - `elapsedTime` Duration of the entire request/response in milliseconds (*已弃用*).
+  - `responseStartTime` Timestamp when the response began (in Unix Epoch milliseconds) (*已弃用*).
+  - `timingStart` 请求开始的时间戳 (in Unix Epoch milliseconds).
+  - `timings` 事件相对于 `timingStart`的时间戳，毫秒级。 如果有重定向，这个属性反映了重定向链中的最终请求的时间(timings):
+    - `socket` 一个相对时间戳，[`http`](https://nodejs.org/api/http.html#http_event_socket) 模块的  `socket` 事件触发的时间。当将套接字分配给请求时，就会发生这种情况。
+    - `lookup` 一个相对时间戳，[`net`](https://nodejs.org/api/net.html#net_event_lookup) 模块的 `lookup` 事件触发的时间。这是在DNS被解析时发生的。
+    - `connect`: 一个相对时间戳，[`net`](https://nodejs.org/api/net.html#net_event_connect) 模块的 `connect` 事件触发的时间 。当服务器承认TCP连接时，就会发生这种情况。
+    - `response`: 一个相对时间戳，[`http`](https://nodejs.org/api/http.html#http_event_response) 模块的 `response` 事件触发的事件。当从服务器接收到第一个字节时，就会发生这种情况。
+    - `end`: 一个相对时间戳，当接收到响应的最后一个字节时。
+  - `timingPhases` 包含每个请求阶段的持续时间。如果有重定向，则属性反映重定向链中的最终请求的时间（timings）：
+    - `wait`: 套接字初始化时长(`timings.socket`)
+    - `dns`: DNS查询时长(`timings.lookup` - `timings.socket`)
+    - `tcp`: TCP连接的持续时长 (`timings.connect` - `timings.socket`)
+    - `firstByte`: HTTP服务器响应持续时长 (`timings.response` - `timings.connect`)
+    - `download`: HTTP下载时长 (`timings.end` - `timings.response`)
+    - `total`: 整个 HTTP 往返（round-trip）的持续时长 (`timings.end`)
 
-- `har` - a [HAR 1.2 Request Object](http://www.softwareishard.com/blog/har-12-spec/#request), will be processed from HAR format into options overwriting matching values *(see the [HAR 1.2 section](#support-for-har-1.2) for details)*
-- `callback` - alternatively pass the request's callback in the options object
+- `har` - 一个 [HAR 1.2 请求对象](http://www.softwareishard.com/blog/har-12-spec/#request)，将从 HAR 格式处理为覆盖匹配值的选项 *(参见 [HAR 1.2 部分](#support-for-har-1.2) 获取细节)*
+- `callback` - 在选项对象中另外传递请求的回调
 
-The callback argument gets 3 arguments:
+这个回调有 3 个参数:
 
-1. An `error` when applicable (usually from [`http.ClientRequest`](http://nodejs.org/api/http.html#http_class_http_clientrequest) object)
-2. An [`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage) object (Response object)
-3. The third is the `response` body (`String` or `Buffer`, or JSON object if the `json` option is supplied)
+1. 一个 `error` 对象，发生错误时可用 (通常来自[`http.ClientRequest`](http://nodejs.org/api/http.html#http_class_http_clientrequest) 对象)
+2. 一个 [`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage) 对象 (响应对象)
+3. 第三个是 `response` 主体 (`String` or `Buffer`, 或者 JSON 对象（如果提供了 `json` 选项）)
 
 [回到顶部 ->](#table-of-contents)
 
@@ -826,29 +822,26 @@ The callback argument gets 3 arguments:
 
 ## 方便的方法
 
-There are also shorthand methods for different HTTP METHODs and some other conveniences.
+对于不同的 HTTP 方法和其他一些便利，也有一些简单的方法。
 
 
 ### request.defaults(options)
 
-This method **returns a wrapper** around the normal request API that defaults
-to whatever options you pass to it.
+该方法将**返回一个包装器**，围绕常规请求API。它会将你传递给它的任何选项作为默认值。「译者注：也就是返回了一个将自定义设置作为默认值的包装器，当使用这个包装器进行其他的操作时，这些被设置的值都将是默认的。」
 
-**Note:** `request.defaults()` **does not** modify the global request API;
-instead, it **returns a wrapper** that has your default settings applied to it.
+**注意:** `request.defaults()` **不会** 修改全局的请求 API；
+相反, 它 **返回一个包装器** ，会将设置应用给它作为默认值。
+**注意:** 你可以在包装器上调用 `.defaults()` ,这是从 `request.defaults` 返回的，添加/覆盖以前默认的默认值。
 
-**Note:** You can call `.defaults()` on the wrapper that is returned from
-`request.defaults` to add/override defaults that were previously defaulted.
-
-For example:
+示例:
 ```js
-//requests using baseRequest() will set the 'x-token' header
+//请求使用 baseRequest() 将设置 'x-token' 头
 var baseRequest = request.defaults({
   headers: {'x-token': 'my-token'}
 })
 
-//requests using specialRequest() will include the 'x-token' header set in
-//baseRequest and will also include the 'special' header
+//请求使用 specialRequest() 将包含 在baseRequest 设置的 'x-token' 头
+// 也会包含 'special' 头
 var specialRequest = baseRequest.defaults({
   headers: {special: 'special value'}
 })
@@ -856,26 +849,26 @@ var specialRequest = baseRequest.defaults({
 
 ### request.METHOD()
 
-These HTTP method convenience functions act just like `request()` but with a default method already set for you:
+这些 HTTP 方法便利函数就像 `request()`，但是已经为您设置了一个默认的方法:
 
-- *request.get()*: Defaults to `method: "GET"`.
-- *request.post()*: Defaults to `method: "POST"`.
-- *request.put()*: Defaults to `method: "PUT"`.
-- *request.patch()*: Defaults to `method: "PATCH"`.
-- *request.del() / request.delete()*: Defaults to `method: "DELETE"`.
-- *request.head()*: Defaults to `method: "HEAD"`.
-- *request.options()*: Defaults to `method: "OPTIONS"`.
+- *request.get()*: 默认为 `method: "GET"`.
+- *request.post()*: 默认为 `method: "POST"`.
+- *request.put()*: 默认为 `method: "PUT"`.
+- *request.patch()*: 默认为 `method: "PATCH"`.
+- *request.del() / request.delete()*: 默认为 `method: "DELETE"`.
+- *request.head()*: 默认为 `method: "HEAD"`.
+- *request.options()*: 默认为 `method: "OPTIONS"`.
 
 ### request.cookie()
 
-Function that creates a new cookie.
+创建一个新 cookie 的函数。
 
 ```js
 request.cookie('key1=value1')
 ```
 ### request.jar()
 
-Function that creates a new cookie jar.
+创建一个新的 cookie jar 的函数。
 
 ```js
 request.jar()
@@ -889,16 +882,14 @@ request.jar()
 
 ## 调试
 
-There are at least three ways to debug the operation of `request`:
+至少有三种方法可以调试 `request`的操作:
 
-1. Launch the node process like `NODE_DEBUG=request node script.js`
+1. 启动 node 进程，如`NODE_DEBUG=request node script.js`
    (`lib,request,otherlib` works too).
 
-2. Set `require('request').debug = true` at any time (this does the same thing
-   as #1).
+2. 设置 `require('request').debug = true` 在任何时候 (这和方法1是一样的).
 
-3. Use the [request-debug module](https://github.com/request/request-debug) to
-   view request and response headers and bodies.
+3. 使用 [request-debug module](https://github.com/request/request-debug) 来查看请求和响应头和主体。
 
 [回到顶部 ->](#table-of-contents)
 
@@ -907,27 +898,17 @@ There are at least three ways to debug the operation of `request`:
 
 ## Timeouts
 
-Most requests to external servers should have a timeout attached, in case the
-server is not responding in a timely manner. Without a timeout, your code may
-have a socket open/consume resources for minutes or more.
+大多数对外部服务器的请求都应该有一个超时，以防服务器没有及时响应。如果没有超时，您的代码可能会有一个套接字打开/消耗资源几分钟或更多。
 
-There are two main types of timeouts: **connection timeouts** and **read
-timeouts**. A connect timeout occurs if the timeout is hit while your client is
-attempting to establish a connection to a remote machine (corresponding to the
-[connect() call][connect] on the socket). A read timeout occurs any time the
-server is too slow to send back a part of the response.
+有两种主要类型的超时:**连接超时**和**读取超时**。如果在您的客户端尝试建立到远程计算机的连接(对应于套接字上的 [connect() 调用][connect] )时，就会出现连接超时。任何时候服务器都太慢了，无法发送响应的一部分，就会出现读取超时。
 
-These two situations have widely different implications for what went wrong
-with the request, so it's useful to be able to distinguish them. You can detect
-timeout errors by checking `err.code` for an 'ETIMEDOUT' value. Further, you
-can detect whether the timeout was a connection timeout by checking if the
-`err.connect` property is set to `true`.
+这两种情况对于请求的错误有不同的影响，因此能够区分它们是很有用的。您可以通过检查 `err.code` 的 'ETIMEDOUT' 值来检测超时错误。此外，您可以通过检查`err.connect` 是否被设置为 `true`来检测超时是否是连接超时。
 
 ```js
 request.get('http://10.255.255.1', {timeout: 1500}, function(err) {
     console.log(err.code === 'ETIMEDOUT');
-    // Set to `true` if the timeout was a connection timeout, `false` or
-    // `undefined` otherwise.
+    // Set to `true` 如果超时是一个连接超时，为 `true`，
+    // 否则为 `false` 或者 `undefined`
     console.log(err.connect === true);
     process.exit(0);
 });
@@ -962,11 +943,10 @@ request.get('http://10.255.255.1', {timeout: 1500}, function(err) {
   )
 ```
 
-For backwards-compatibility, response compression is not supported by default.
-To accept gzip-compressed responses, set the `gzip` option to `true`. Note
-that the body data passed through `request` is automatically decompressed
-while the response object is unmodified and will contain compressed data if
-the server sent a compressed response.
+为了向后兼容性，默认情况下不支持响应压缩。
+要接受 经过 gzip 压缩的响应，将 `gzip` 选项设置为 `true`。
+注意，通过 `request` 传递的主体数据会自动地解压缩，而响应对象未被修改，
+如果服务器发送压缩的响应，则响应将会包含压缩的数据。
 
 ```js
   var request = require('request')
@@ -976,25 +956,25 @@ the server sent a compressed response.
     , gzip: true
     }
   , function (error, response, body) {
-      // body is the decompressed response body
+      // body 是经过压缩的响应主体
       console.log('server encoded the data as: ' + (response.headers['content-encoding'] || 'identity'))
       console.log('the decoded data is: ' + body)
     }
   )
   .on('data', function(data) {
-    // decompressed data as it is received
+    // 当收到数据时，对它进行解压
     console.log('decoded chunk: ' + data)
   })
   .on('response', function(response) {
-    // unmodified http.IncomingMessage object
+    // 为修改 http.IncomingMessage 对象
     response.on('data', function(data) {
-      // compressed data as it is received
+      // 接收到的压缩数据
       console.log('received ' + data.length + ' bytes of compressed data')
     })
   })
 ```
 
-Cookies are disabled by default (else, they would be used in subsequent requests). To enable cookies, set `jar` to `true` (either in `defaults` or `options`).
+默认情况下，cookie 是禁用的(否则，它们将在后续请求中使用)。要启用 cookie，将 `jar` 设置为 `true`(在 `defaults` 或 `options`中)。
 
 ```js
 var request = request.defaults({jar: true})
@@ -1003,7 +983,7 @@ request('http://www.google.com', function () {
 })
 ```
 
-To use a custom cookie jar (instead of `request`’s global cookie jar), set `jar` to an instance of `request.jar()` (either in `defaults` or `options`)
+要使用自定义的 cookie jar (而不是 `request` 的全局 cookie jar)，将 `jar` 设置为 `request.jar()` 的实例。(在 `defaults` 或 `options` 中)
 
 ```js
 var j = request.jar()
@@ -1013,7 +993,7 @@ request('http://www.google.com', function () {
 })
 ```
 
-OR
+或者
 
 ```js
 var j = request.jar();
@@ -1025,14 +1005,12 @@ request({url: url, jar: j}, function () {
 })
 ```
 
-To use a custom cookie store (such as a
-[`FileCookieStore`](https://github.com/mitsuru/tough-cookie-filestore)
-which supports saving to and restoring from JSON files), pass it as a parameter
-to `request.jar()`:
+要使用自定义的 cookie 仓库（例如
+[`FileCookieStore`](https://github.com/mitsuru/tough-cookie-filestore)，它支持从 JSON 文件中保存和恢复），将它作为一个参数传递给 `request.jar()`:
 
 ```js
 var FileCookieStore = require('tough-cookie-filestore');
-// NOTE - currently the 'cookies.json' file must already exist!
+// 注意 - 目前的 'cookies.json' 文件必须存在！
 var j = request.jar(new FileCookieStore('cookies.json'));
 request = request.defaults({ jar : j })
 request('http://www.google.com', function() {
@@ -1040,13 +1018,11 @@ request('http://www.google.com', function() {
 })
 ```
 
-The cookie store must be a
-[`tough-cookie`](https://github.com/SalesforceEng/tough-cookie)
-store and it must support synchronous operations; see the
-[`CookieStore` API docs](https://github.com/SalesforceEng/tough-cookie#cookiestore-api)
-for details.
+该 cookie 仓库必须时一个 [`tough-cookie`](https://github.com/SalesforceEng/tough-cookie) 仓库，并且它必须支持同步操作。参见
+[`CookieStore` API 文档](https://github.com/SalesforceEng/tough-cookie#cookiestore-api)
+获取细节。
 
-To inspect your cookie jar after a request:
+在请求后检查 cookie jar :
 
 ```js
 var j = request.jar()
