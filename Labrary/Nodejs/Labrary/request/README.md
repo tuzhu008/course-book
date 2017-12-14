@@ -60,13 +60,13 @@ request('http://google.com/doodle.png').pipe(fs.createWriteStream('doodle.png'))
 fs.createReadStream('file.json').pipe(request.put('http://mysite.com/obj.json'))
 ```
 
-Request can also `pipe` to itself. When doing so, `content-type` and `content-length` are preserved in the PUT headers.
+Request 也可以 `pipe` 到它自己。当这样做， `content-type` and `content-length` 会被保存到 PUT headers 中。
 
 ```js
 request.get('http://google.com/img.png').pipe(request.put('http://mysite.com/img.png'))
 ```
 
-Request emits a "response" event when a response is received. The `response` argument will be an instance of [http.IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage).
+当收到一个响应，Request 会发送一个 "response" 事件。 `response` 参数将会是 [http.IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage) 的一个实例。
 
 ```js
 request
@@ -78,7 +78,7 @@ request
   .pipe(request.put('http://mysite.com/img.png'))
 ```
 
-To easily handle errors when streaming requests, listen to the `error` event before piping:
+当正在进行流式请求的时候，为了能简单地处理错误，在使用 `pipe` 前监听 `error` 事件：
 
 ```js
 request
@@ -89,7 +89,7 @@ request
   .pipe(fs.createWriteStream('doodle.png'))
 ```
 
-Now let’s get fancy.
+现在，来点花哨的。
 
 ```js
 http.createServer(function (req, resp) {
@@ -103,7 +103,7 @@ http.createServer(function (req, resp) {
 })
 ```
 
-You can also `pipe()` from `http.ServerRequest` instances, as well as to `http.ServerResponse` instances. The HTTP method, headers, and entity-body data will be sent. Which means that, if you don't really care about security, you can do:
+你也可以从 `http.ServerRequest` 实例 `pipe()` ，以及 `pipe()` 到 http.ServerResponse` 实例。HTTP method, headers, 和 entity-body 数据将被发送。 这意味着，你不需要担心安全性地问题，可以这样做：
 
 ```js
 http.createServer(function (req, resp) {
@@ -115,13 +115,13 @@ http.createServer(function (req, resp) {
 })
 ```
 
-And since `pipe()` returns the destination stream in ≥ Node 0.5.x you can do one line proxying. :)
+由于 `pipe()` 在 ≥ Node 0.5.x 的版本中会返回目的流，因此你可以用一个行代理。:)
 
 ```js
 req.pipe(request('http://mysite.com/doodle.png')).pipe(resp)
 ```
 
-Also, none of this new functionality conflicts with requests previous features, it just expands them.
+另外，这些新功能与 request 之前的特性没有任何冲突，只是扩展了它们。
 
 ```js
 var r = request.defaults({'proxy':'http://localproxy.com'})
@@ -133,9 +133,9 @@ http.createServer(function (req, resp) {
 })
 ```
 
-You can still use intermediate proxies, the requests will still follow HTTP forwards, etc.
+你仍然可以使用中间代理，request 仍然遵循 HTTP 转发，等等。
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
@@ -143,15 +143,15 @@ You can still use intermediate proxies, the requests will still follow HTTP forw
 
 ## Promises & Async/Await
 
-`request` supports both streaming and callback interfaces natively. If you'd like `request` to return a Promise instead, you can use an alternative interface wrapper for `request`. These wrappers can be useful if you prefer to work with Promises, or if you'd like to use `async`/`await` in ES2017.
+`request` 生来就支持 streaming 和 callback 接口。如果你想要 `request` 返回一个 Promise 代替，你可以为 `request` 使用一个另外地接口包装器。如果您喜欢使用 Promise，或者使用 ES2017 中的 `async`/`await`，那么这些包装器是有用的。
 
-Several alternative interfaces are provided by the request team, including:
-- [`request-promise`](https://github.com/request/request-promise) (uses [Bluebird](https://github.com/petkaantonov/bluebird) Promises)
-- [`request-promise-native`](https://github.com/request/request-promise-native) (uses native Promises)
-- [`request-promise-any`](https://github.com/request/request-promise-any) (uses [any-promise](https://www.npmjs.com/package/any-promise) Promises)
+request 团队提供了几个可选的接口，包括：
+- [`request-promise`](https://github.com/request/request-promise) (使用 [Bluebird](https://github.com/petkaantonov/bluebird) Promises)
+- [`request-promise-native`](https://github.com/request/request-promise-native) (使用 native Promises)
+- [`request-promise-any`](https://github.com/request/request-promise-any) (使用 [any-promise](https://www.npmjs.com/package/any-promise) Promises)
 
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
@@ -159,12 +159,12 @@ Several alternative interfaces are provided by the request team, including:
 
 ## Forms
 
-`request` supports `application/x-www-form-urlencoded` and `multipart/form-data` form uploads. For `multipart/related` refer to the `multipart` API.
+`request` 支持 `application/x-www-form-urlencoded` 和 `multipart/form-data` 表单上传。对于 `multipart/related` 指的是 `multipart` API.
 
 
 #### application/x-www-form-urlencoded (URL-Encoded Forms)
 
-URL-encoded forms are simple.
+URL-encoded forms 很简单。
 
 ```js
 request.post('http://service.com/upload', {form:{key:'value'}})
@@ -175,27 +175,26 @@ request.post({url:'http://service.com/upload', form: {key:'value'}}, function(er
 ```
 
 
-#### multipart/form-data (Multipart Form Uploads)
+#### multipart/form-data (多部分表单上传)
 
-For `multipart/form-data` we use the [form-data](https://github.com/form-data/form-data) library by [@felixge](https://github.com/felixge). For the most cases, you can pass your upload form data via the `formData` option.
-
+对于 `multipart/form-data` 我们使用 [@felixge](https://github.com/felixge) 的 [form-data](https://github.com/form-data/form-data) 库。对于大多数情况，您可以通过 `formData` 选项传递您的上传表单数据。
 
 ```js
 var formData = {
-  // Pass a simple key-value pair
+  // 传递一个简单的键值对
   my_field: 'my_value',
-  // Pass data via Buffers
+  // 通过 Buffers 传递数据
   my_buffer: new Buffer([1, 2, 3]),
-  // Pass data via Streams
+  // 通过 Streams 传递数据
   my_file: fs.createReadStream(__dirname + '/unicycle.jpg'),
-  // Pass multiple values /w an Array
+  // 传递多个值 /w 一个数组
   attachments: [
     fs.createReadStream(__dirname + '/attachment1.jpg'),
     fs.createReadStream(__dirname + '/attachment2.jpg')
   ],
-  // Pass optional meta-data with an 'options' object with style: {value: DATA, options: OPTIONS}
-  // Use case: for some types of streams, you'll need to provide "file"-related information manually.
-  // See the `form-data` README for more information about options: https://github.com/form-data/form-data
+  // 使用一个样式为 {value: DATA, options: OPTIONS} 的 'options' 对象传递可选的元数据（meta-data）。
+  // 用例: 对于某些类型的流, 你需要手动地提供的 "file"-相关信息。
+  // 查看 `form-data` README 以获得更多关于选项（options）的更多信息: https://github.com/form-data/form-data
   custom_file: {
     value:  fs.createReadStream('/dev/urandom'),
     options: {
@@ -212,22 +211,22 @@ request.post({url:'http://service.com/upload', formData: formData}, function opt
 });
 ```
 
-For advanced cases, you can access the form-data object itself via `r.form()`. This can be modified until the request is fired on the next cycle of the event-loop. (Note that this calling `form()` will clear the currently set form data for that request.)
+对于高级的情况，您可以通过 `r.form()` 访问表单数据对象本身。这是可以修改的，直到在事件循环的下一个循环中触发请求。(注意，这个调用 `form()` 将为该请求清除当前设置的表单数据。)
 
 ```js
-// NOTE: Advanced use-case, for normal use see 'formData' usage above
+// 注意: 高级用例, 对于普通使用请查看上面的 'formData' 用法。
 var r = request.post('http://service.com/upload', function optionalCallback(err, httpResponse, body) {...})
 var form = r.form();
 form.append('my_field', 'my_value');
 form.append('my_buffer', new Buffer([1, 2, 3]));
 form.append('custom_file', fs.createReadStream(__dirname + '/unicycle.jpg'), {filename: 'unicycle.jpg'});
 ```
-See the [form-data README](https://github.com/form-data/form-data) for more information & examples.
+参见 [form-data README](https://github.com/form-data/form-data) 获取更多信息和示例。
 
 
 #### multipart/related
 
-Some variations in different HTTP implementations require a newline/CRLF before, after, or both before and after the boundary of a `multipart/related` request (using the multipart option). This has been observed in the .NET WebAPI version 4.0. You can turn on a boundary preambleCRLF or postamble by passing them as `true` to your request options.
+「不同的 HTTP 实现中的一些变体」在 「`multipart/related` (使用 multipart 选项)的边界之前或之后，或在之前和之后」需要一个 「newline/CRLF」。在 .NET WebAPI version 4.0 中这是可以被观测到的。您可以通过将它们作为 `true` 传递给您的请求选项来打开一个 boundary preambleCRLF 或 postamble
 
 ```js
   request({
@@ -243,7 +242,7 @@ Some variations in different HTTP implementations require a newline/CRLF before,
       { body: 'I am an attachment' },
       { body: fs.createReadStream('image.png') }
     ],
-    // alternatively pass an object containing additional options
+    // 或者传递一个包含额外选项的对象。
     multipart: {
       chunked: false,
       data: [
@@ -263,17 +262,17 @@ Some variations in different HTTP implementations require a newline/CRLF before,
   })
 ```
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
 
 
-## HTTP Authentication
+## HTTP 身份验证
 
 ```js
 request.get('http://some.server.com/').auth('username', 'password', false);
-// or
+// 或者
 request.get('http://some.server.com/', {
   'auth': {
     'user': 'username',
@@ -281,9 +280,9 @@ request.get('http://some.server.com/', {
     'sendImmediately': false
   }
 });
-// or
+// 或者
 request.get('http://some.server.com/').auth(null, null, true, 'bearerToken');
-// or
+// 或者
 request.get('http://some.server.com/', {
   'auth': {
     'bearer': 'bearerToken'
@@ -291,25 +290,22 @@ request.get('http://some.server.com/', {
 });
 ```
 
-If passed as an option, `auth` should be a hash containing values:
+如果传递一个选项对象，`auth`应该一个包含下面这些值的哈希：
 
 - `user` || `username`
 - `pass` || `password`
 - `sendImmediately` (optional)
 - `bearer` (optional)
 
-The method form takes parameters
+方法表单接受参数
 `auth(username, password, sendImmediately, bearer)`.
 
-`sendImmediately` defaults to `true`, which causes a basic or bearer
-authentication header to be sent. If `sendImmediately` is `false`, then
-`request` will retry with a proper authentication header after receiving a
-`401` response from the server (which must contain a `WWW-Authenticate` header
-indicating the required authentication method).
+`sendImmediately` 默认为 `true`， 这将导致发送一个基本的或不记名身份验证头。
+如果 `sendImmediately` 为 `false`，然后，`request` 将在收到来自服务器的 `401` 响应后使用适当的身份验证头进行重试(必须包含 `WWW-Authenticate` 头
+指示所需的身份验证方法).
 
-Note that you can also specify basic authentication using the URL itself, as
-detailed in [RFC 1738](http://www.ietf.org/rfc/rfc1738.txt). Simply pass the
-`user:password` before the host with an `@` sign:
+注意： 还可以使用 URL 本身指定基本身份验证，详细的信息 [RFC 1738](http://www.ietf.org/rfc/rfc1738.txt)。 
+在主机名`@` 标志之前，简单地传递`user:password`:
 
 ```js
 var username = 'username',
@@ -321,28 +317,25 @@ request({url: url}, function (error, response, body) {
 });
 ```
 
-Digest authentication is supported, but it only works with `sendImmediately`
-set to `false`; otherwise `request` will send basic authentication on the
-initial request, which will probably cause the request to fail.
+摘要身份认证（Digest authentication）是被支持的，当它仅在 `sendImmediately` 设置为 `false`工作；
+否则，`request` 将在初始请求时发送一个基本的身份验证，这可能会导致请求失败。
 
-Bearer authentication is supported, and is activated when the `bearer` value is
-available. The value may be either a `String` or a `Function` returning a
-`String`. Using a function to supply the bearer token is particularly useful if
-used in conjunction with `defaults` to allow a single function to supply the
-last known token at the time of sending a request, or to compute one on the fly.
+不记名身份验证 (Bearer authentication) 是被支持的，当 `bearer`的值是可用的时候被激活。
+`bearer`的值可以是一个 `String` 或者 一个返回`String` 的 `Function`。
+如果与 `defaults` 结合，使用一个函数来提供不记名令牌（token）是特别有用的。
+因为它允许单个函数在发送请求时提供最后一个已知的令牌，或者动态计算一个令牌。
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
 
 
-## Custom HTTP Headers
+## 自定义 HTTP Headers
 
-HTTP Headers, such as `User-Agent`, can be set in the `options` object.
-In the example below, we call the github API to find out the number
-of stars and forks for the request repository. This requires a
-custom `User-Agent` header as well as https.
+HTTP Headers, 如 `User-Agent`, 可以在 `options` 对象中设置。
+在下面的示例中，我们调用 github API 来找出 request 仓库的 stars 和 forks 的数量。
+这需要一个自定义的 `User-Agent` 头和 https。
 
 ```js
 var request = require('request');
@@ -365,20 +358,19 @@ function callback(error, response, body) {
 request(options, callback);
 ```
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
 
 
-## OAuth Signing
+## 认证签名（OAuth Signing）
 
-[OAuth version 1.0](https://tools.ietf.org/html/rfc5849) is supported. The
-default signing algorithm is
+[OAuth version 1.0](https://tools.ietf.org/html/rfc5849) 被支持。默认的签名算法是
 [HMAC-SHA1](https://tools.ietf.org/html/rfc5849#section-3.4.2):
 
 ```js
-// OAuth1.0 - 3-legged server side flow (Twitter example)
+// OAuth1.0 - 3-legged 服务端流程 (Twitter example)
 // step 1
 var qs = require('querystring')
   , oauth =
@@ -389,19 +381,18 @@ var qs = require('querystring')
   , url = 'https://api.twitter.com/oauth/request_token'
   ;
 request.post({url:url, oauth:oauth}, function (e, r, body) {
-  // Ideally, you would take the body in the response
-  // and construct a URL that a user clicks on (like a sign in button).
-  // The verifier is only available in the response after a user has
-  // verified with twitter that they are authorizing your app.
+
+  //理想情况下，您可以将主体放在响应中，并构造一个用户单击的 URL(如按钮上的符号)。
+  //验证器只有在用户通过了twitter的验证（他们正在授权你的应用程序）后的响应中才可用。
 
   // step 2
   var req_data = qs.parse(body)
   var uri = 'https://api.twitter.com/oauth/authenticate'
     + '?' + qs.stringify({oauth_token: req_data.oauth_token})
-  // redirect the user to the authorize uri
+  // 将用户重定向到授权 uri
 
   // step 3
-  // after the user is redirected back to your server
+  // 在用户被重定向回服务器之后
   var auth_data = qs.parse(body)
     , oauth =
       { consumer_key: CONSUMER_KEY
@@ -413,7 +404,7 @@ request.post({url:url, oauth:oauth}, function (e, r, body) {
     , url = 'https://api.twitter.com/oauth/access_token'
     ;
   request.post({url:url, oauth:oauth}, function (e, r, body) {
-    // ready to make signed requests on behalf of the user
+    // 准备代表用户签署已签名的请求
     var perm_data = qs.parse(body)
       , oauth =
         { consumer_key: CONSUMER_KEY
@@ -434,28 +425,24 @@ request.post({url:url, oauth:oauth}, function (e, r, body) {
 })
 ```
 
-For [RSA-SHA1 signing](https://tools.ietf.org/html/rfc5849#section-3.4.3), make
-the following changes to the OAuth options object:
-* Pass `signature_method : 'RSA-SHA1'`
-* Instead of `consumer_secret`, specify a `private_key` string in
-  [PEM format](http://how2ssl.com/articles/working_with_pem_files/)
+对于 [RSA-SHA1 signing](https://tools.ietf.org/html/rfc5849#section-3.4.3), 对 OAuth 选项对象进行以下更改:
+* 传递  `signature_method : 'RSA-SHA1'`
+* 替代 `consumer_secret`，指定一个 `private_key` 字符串到
+  [PEM format](http://how2ssl.com/articles/working_with_pem_files/) 中
 
-For [PLAINTEXT signing](http://oauth.net/core/1.0/#anchor22), make
-the following changes to the OAuth options object:
-* Pass `signature_method : 'PLAINTEXT'`
+对于 [PLAINTEXT signing](http://oauth.net/core/1.0/#anchor22), 对 OAuth 选项对象进行以下更改:
+* 传递 `signature_method : 'PLAINTEXT'`
 
-To send OAuth parameters via query params or in a post body as described in The
-[Consumer Request Parameters](http://oauth.net/core/1.0/#consumer_req_param)
-section of the oauth1 spec:
-* Pass `transport_method : 'query'` or `transport_method : 'body'` in the OAuth
-  options object.
-* `transport_method` defaults to `'header'`
+通过查询参数或在 oauth1 规范的[消费者请求参数](http://oauth.net/core/1.0/#consumer_req_param)部分中描述的一个post主体发送 OAuth 参数:
+* 传递 `transport_method : 'query'` 或 `transport_method : 'body'` 到 OAuth
+  选项对象中。
+* `transport_method` 默认为 `'header'`
 
-To use [Request Body Hash](https://oauth.googlecode.com/svn/spec/ext/body_hash/1.0/oauth-bodyhash.html) you can either
-* Manually generate the body hash and pass it as a string `body_hash: '...'`
-* Automatically generate the body hash by passing `body_hash: true`
+为了使用[请求主体哈希](https://oauth.googlecode.com/svn/spec/ext/body_hash/1.0/oauth-bodyhash.html) 你可以
+* 手动地生成主体哈希并传递它作为一个字符串`body_hash: '...'`
+* 传递 `body_hash: true` 来自动生成主体哈希。
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
@@ -463,14 +450,11 @@ To use [Request Body Hash](https://oauth.googlecode.com/svn/spec/ext/body_hash/1
 
 ## Proxies
 
-If you specify a `proxy` option, then the request (and any subsequent
-redirects) will be sent via a connection to the proxy server.
+如果指定了一个 `proxy` 选项，那么请求(以及随后的任何重定向)将通过连接到代理服务器来发送。
 
-If your endpoint is an `https` url, and you are using a proxy, then
-request will send a `CONNECT` request to the proxy server *first*, and
-then use the supplied connection to connect to the endpoint.
+如果您的端点是一个 `https` url，并且您正在使用一个代理，那么请求将*首先*发送一个 `CONNECT` 请求到代理服务器，然后使用所提供的连接连接到端点。
 
-That is, first it will make a request like:
+也就是说，首先它会发出这样的请求:
 
 ```
 HTTP/1.1 CONNECT endpoint-server.com:80
@@ -478,25 +462,20 @@ Host: proxy-server.com
 User-Agent: whatever user agent you specify
 ```
 
-and then the proxy server make a TCP connection to `endpoint-server`
-on port `80`, and return a response that looks like:
+然后，代理服务器在端口 80 上对 `endpoint-server` 进行 TCP 连接，并返回一个看起来像这样的响应:
 
 ```
 HTTP/1.1 200 OK
 ```
 
-At this point, the connection is left open, and the client is
-communicating directly with the `endpoint-server.com` machine.
+此时，连接将被打开，客户端将直接与 `endpoint-server.com` 机器进行通信。
 
-See [the wikipedia page on HTTP Tunneling](https://en.wikipedia.org/wiki/HTTP_tunnel)
-for more information.
+查看 [关于 HTTP 隧道的维基百科页面](https://en.wikipedia.org/wiki/HTTP_tunnel)
+获取更多信息。
 
-By default, when proxying `http` traffic, request will simply make a
-standard proxied `http` request. This is done by making the `url`
-section of the initial line of the request a fully qualified url to
-the endpoint.
+在默认情况下，当代理 `http` 流量时，请求将简单地创建一个标准的代理 `http`请求。这是通过将请求的初始行的 `url` 部分作为端点的完全限定的 url 来完成的。
 
-For example, it will make a single request that looks like:
+例如，它将发出一个看起来像这样的单一请求:
 
 ```
 HTTP/1.1 GET http://endpoint-server.com/some-url
@@ -506,22 +485,20 @@ Other-Headers: all go here
 request body or whatever
 ```
 
-Because a pure "http over http" tunnel offers no additional security
-or other features, it is generally simpler to go with a
-straightforward HTTP proxy in this case. However, if you would like
-to force a tunneling proxy, you may set the `tunnel` option to `true`.
+由于纯粹的 "http over http" 隧道没有提供额外的安全性或其他特性，因此在这种情况下使用明确的 HTTP 代理通常更简单。但是，如果您希望强制使用隧道代理，那么您可以将 `tunnel` 选项设置为 `true`。
+
+您还可以通过显式地设置 `tunnel : false` 来创建一个标准的代理 `http` 请求，但是**请注意，这将允许代理查看目标服务器的进出（to/from）流量(吞吐量)**。
+
 
 You can also make a standard proxied `http` request by explicitly setting
 `tunnel : false`, but **note that this will allow the proxy to see the traffic
 to/from the destination server**.
 
-If you are using a tunneling proxy, you may set the
-`proxyHeaderWhiteList` to share certain headers with the proxy.
+如果您使用的是一个隧道代理，您可以设置 `proxyHeaderWhiteList` 来与代理共享某些头部。
 
-You can also set the `proxyHeaderExclusiveList` to share certain
-headers only with the proxy and not with destination host.
+您还可以设置 `proxyHeaderExclusiveList` 来共享某些特定的只使用代理，而不使用目的地主机的头。
 
-By default, this set is:
+默认情况下，这个集合是:
 
 ```
 accept
@@ -550,14 +527,12 @@ user-agent
 via
 ```
 
-Note that, when using a tunneling proxy, the `proxy-authorization`
-header and any headers from custom `proxyHeaderExclusiveList` are
-*never* sent to the endpoint server, but only to the proxy server.
+注意，在使用隧道代理时，`proxy-authorization` 头和来自自定义 `proxyHeaderExclusiveList` 的任何头都**不会**发送到端点服务器，而是只发送到代理服务器。
 
 
-### Controlling proxy behaviour using environment variables
+### 使用环境变量控制代理行为
 
-The following environment variables are respected by `request`:
+`request` 遵循下面的环境变量:
 
  * `HTTP_PROXY` / `http_proxy`
  * `HTTPS_PROXY` / `https_proxy`
@@ -565,16 +540,18 @@ The following environment variables are respected by `request`:
 
 When `HTTP_PROXY` / `http_proxy` are set, they will be used to proxy non-SSL requests that do not have an explicit `proxy` configuration option present. Similarly, `HTTPS_PROXY` / `https_proxy` will be respected for SSL requests that do not have an explicit `proxy` configuration option. It is valid to define a proxy in one of the environment variables, but then override it for a specific request, using the `proxy` configuration option. Furthermore, the `proxy` configuration option can be explicitly set to false / null to opt out of proxying altogether for that request.
 
-`request` is also aware of the `NO_PROXY`/`no_proxy` environment variables. These variables provide a granular way to opt out of proxying, on a per-host basis. It should contain a comma separated list of hosts to opt out of proxying. It is also possible to opt of proxying when a particular destination port is used. Finally, the variable may be set to `*` to opt out of the implicit proxy configuration of the other environment variables.
+当设置了 `HTTP_PROXY` / `http_proxy` 时，它们将被用于代理「非 SSL」请求，这些请求没有显式的 `proxy` 配置选项。类似地，对于没有显式 `proxy` 配置选项的 SSL 请求，将遵循 `HTTPS_PROXY` / `https_proxy` 。在其中一个环境变量中定义一个代理是有效的，但是使用 `proxy` 配置选项将其覆盖到一个特定的请求。此外，`proxy` 配置选项可以显式地设置为 false/null，从而完全退出代理。
 
-Here's some examples of valid `no_proxy` values:
+`request` 还可以意识到 `NO_PROXY`/`no_proxy` 环境变量。这些变量提供了一种粒度的方法，可以在每个主机基础上选择代理。它应该包含一个逗号分隔的主机列表，以选择退出代理。在使用特定的目标端口时，也可以选择代理。最后，该变量可能被设置为 `*` 以退出其他环境变量的隐式代理配置。
 
- * `google.com` - don't proxy HTTP/HTTPS requests to Google.
- * `google.com:443` - don't proxy HTTPS requests to Google, but *do* proxy HTTP requests to Google.
- * `google.com:443, yahoo.com:80` - don't proxy HTTPS requests to Google, and don't proxy HTTP requests to Yahoo!
- * `*` - ignore `https_proxy`/`http_proxy` environment variables altogether.
+下面是一些有效的 `no_proxy` 值的例子:
 
-[back to top](#table-of-contents)
+ * `google.com` - 不将 HTTP/HTTPS 请求代理到 Google。
+ * `google.com:443` - 不将 HTTPS 请求代理到 Google，但是可以将 HTTP 请求代理到 Google。
+ * `google.com:443, yahoo.com:80` - 不将 HTTPS 请求代理到 Google，但是可以将 HTTP 请求代理到 Yahoo!
+ * `*` - 完全忽略 `https_proxy`/`http_proxy` 环境变量。
+
+[回到顶部 ->](#table-of-contents)
 
 
 ---
@@ -582,25 +559,26 @@ Here's some examples of valid `no_proxy` values:
 
 ## UNIX Domain Sockets
 
-`request` supports making requests to [UNIX Domain Sockets](https://en.wikipedia.org/wiki/Unix_domain_socket). To make one, use the following URL scheme:
+`request` 支持向[UNIX Domain Sockets](https://en.wikipedia.org/wiki/Unix_domain_socket) 发出请求。要制作一个，请使用下面的 URL 方案:
 
 ```js
-/* Pattern */ 'http://unix:SOCKET:PATH'
-/* Example */ request.get('http://unix:/absolute/path/to/unix.socket:/request/path')
+/* 模式 */ 'http://unix:SOCKET:PATH'
+/* 示例 */ request.get('http://unix:/absolute/path/to/unix.socket:/request/path')
 ```
 
-Note: The `SOCKET` path is assumed to be absolute to the root of the host file system.
+注意: `SOCKET` 路径被认为是对于主机文件系统的根是绝对路径。
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
 
 
-## TLS/SSL Protocol
+## TLS/SSL 协议
 
-TLS/SSL Protocol options, such as `cert`, `key` and `passphrase`, can be
-set directly in `options` object, in the `agentOptions` property of the `options` object, or even in `https.globalAgent.options`. Keep in mind that, although `agentOptions` allows for a slightly wider range of configurations, the recommended way is via `options` object directly, as using `agentOptions` or `https.globalAgent.options` would not be applied in the same way in proxied environments (as data travels through a TLS connection instead of an http/https agent).
+TLS/SSL 协议选项，如 `cert`, `key` 和 `passphrase`，可以直接在 `options` 对象中、`options` 对象的 `agentOptions` 属性中、`options` 对象的 `agentOptions`属性中，或者甚至是`https.globalAgent.options` 中设置。
+请记住，尽管 `agentOptions` 允许使用更广泛的配置，但是推荐的方法是直接通过 `options` 对象，因为在已代理的环境中使用 `agentOptions` 或 `https.globalAgent.options` 不会采用相同的方式(因为数据经过 TLS 连接而不是 http/https 代理)。
+
 
 ```js
 var fs = require('fs')
@@ -621,10 +599,9 @@ var options = {
 request.get(options);
 ```
 
-### Using `options.agentOptions`
+### 使用 `options.agentOptions`
 
-In the example below, we call an API that requires client side SSL certificate
-(in PEM format) with passphrase protected private key (in PEM format) and disable the SSLv3 protocol:
+在下面的示例中，我们调用一个API，它需要客户端 SSL 证书(以 PEM 格式)，并使用 passphrase 保护的私钥(以PEM格式)，并禁用 SSLv3 协议:
 
 ```js
 var fs = require('fs')
@@ -638,7 +615,7 @@ var options = {
     agentOptions: {
         cert: fs.readFileSync(certFile),
         key: fs.readFileSync(keyFile),
-        // Or use `pfx` property replacing `cert` and `key` when using private key, certificate and CA certs in PFX or PKCS12 format:
+        // 在使用 PFX 或者 PKCS12 格式的私钥，证书和 CA 证书时，使用 `pfx` 属性替换 `cert` 和 `key` 
         // pfx: fs.readFileSync(pfxFilePath),
         passphrase: 'password',
         securityOptions: 'SSL_OP_NO_SSLv3'
@@ -648,7 +625,7 @@ var options = {
 request.get(options);
 ```
 
-It is able to force using SSLv3 only by specifying `secureProtocol`:
+它只能通过指定 `secureProtocol` 来强制使用 SSLv3。
 
 ```js
 request.get({
@@ -659,10 +636,7 @@ request.get({
 });
 ```
 
-It is possible to accept other certificates than those signed by generally allowed Certificate Authorities (CAs).
-This can be useful, for example,  when using self-signed certificates.
-To require a different root certificate, you can specify the signing CA by adding the contents of the CA's certificate file to the `agentOptions`.
-The certificate the domain presents must be signed by the root certificate specified:
+可以接受其他证书，而不是通常允许的证书颁发机构(CAs)签署的证书。例如，当使用自签名证书时，这是很有用的。为了 require 一个不同的根证书，您可以通过将 CA 的证书文件的内容添加到  `agentOptions` 来指定签名CA。域名出品的证书必须由指定的根证书签署：
 
 ```js
 request.get({
@@ -673,21 +647,21 @@ request.get({
 });
 ```
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
 
-## Support for HAR 1.2
+## 对 HAR 1.2 的支持
 
-The `options.har` property will override the values: `url`, `method`, `qs`, `headers`, `form`, `formData`, `body`, `json`, as well as construct multipart data and read files from disk when `request.postData.params[].fileName` is present without a matching `value`.
+`options.har` 属性将覆盖值:`url`, `method`, `qs`, `headers`, `form`, `formData`, `body`, `json`，以及构造多部分数据（multipart data），并在 `request.postData.params[].fileName` 没有匹配 `value` 的情况下从磁盘读取文件。
 
-A validation step will check if the HAR Request format matches the latest spec (v1.2) and will skip parsing if not matching.
+验证步骤将检查 HAR Request 格式是否符合最新的规范(v1.2)，如果不匹配，则跳过解析。
 
 ```js
   var request = require('request')
   request({
-    // will be ignored
+    // 将被忽略
     method: 'GET',
     uri: 'http://www.google.com',
 
@@ -717,22 +691,22 @@ A validation step will check if the HAR Request format matches the latest spec (
     }
   })
 
-  // a POST request will be sent to http://www.mockbin.com
-  // with body an application/x-www-form-urlencoded body:
+  // 一个 POST 请求清北发送到 http://www.mockbin.com
+  // 带一个 application/x-www-form-urlencoded 主体:
   // foo=bar&hello=world
 ```
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
 
 ## request(options, callback)
 
-The first argument can be either a `url` or an `options` object. The only required option is `uri`; all others are optional.
+第一个参数可以是一个 `url`，也可以是一个 `options` 对象。唯一必须的选项是 `uri`;其他都是可选的。
 
-- `uri` || `url` - fully qualified uri or a parsed url object from `url.parse()`
-- `baseUrl` - fully qualified uri string used as the base url. Most useful with `request.defaults`, for example when you want to do many requests to the same domain. If `baseUrl` is `https://example.com/api/`, then requesting `/end/point?test=true` will fetch `https://example.com/api/end/point?test=true`. When `baseUrl` is given, `uri` must also be a string.
+- `uri` || `url` - 完全合格的 uri，或者一个来自 `url.parse()` 的已解析的 url
+- `baseUrl` - 一个完全合格的 uri，被用作基 url。fully qualified uri string used as the base url. 与 `request.defaults` 配合最有用处，例如，当想要对相同域名做很多次请求的时候。如果 `baseUrl` 是 `https://example.com/api/`，然后请求 `/end/point?test=true`，将获取 `https://example.com/api/end/point?test=true`。当给定了 `baseUrl`，`uri` 必须是一个字符串。
 - `method` - http method (default: `"GET"`)
 - `headers` - http headers (default: `{}`)
 
@@ -854,7 +828,7 @@ The callback argument gets 3 arguments:
 2. An [`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage) object (Response object)
 3. The third is the `response` body (`String` or `Buffer`, or JSON object if the `json` option is supplied)
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
@@ -916,7 +890,7 @@ Function that creates a new cookie jar.
 request.jar()
 ```
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
@@ -935,7 +909,7 @@ There are at least three ways to debug the operation of `request`:
 3. Use the [request-debug module](https://github.com/request/request-debug) to
    view request and response headers and bodies.
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
 
 
 ---
@@ -1092,4 +1066,4 @@ request({url: 'http://www.google.com', jar: j}, function () {
 })
 ```
 
-[back to top](#table-of-contents)
+[回到顶部 ->](#table-of-contents)
