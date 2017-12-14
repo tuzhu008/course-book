@@ -8,15 +8,17 @@
 [![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/async/badge?style=rounded)](https://www.jsdelivr.com/package/npm/async)
 
 
-Async is a utility module which provides straight-forward, powerful functions for working with [asynchronous JavaScript](http://caolan.github.io/async/global.html). Although originally designed for use with [Node.js](https://nodejs.org/) and installable via `npm install --save async`, it can also be used directly in the browser.
+Async 是一个实用程序模块，它为使用[异步 JavaScript](http://caolan.github.io/async/global.html) 提供了直接、强大的函数。尽管最初设计用于与 [Node.js](https://nodejs.org/) 一起使用，使用 `npm install --save async` 进行安装。 它也可以直接在浏览器中使用。
 
-For Documentation, visit <https://caolan.github.io/async/>
+获取英文原版文档, 请访问 <https://caolan.github.io/async/>
 
-*For Async v1.5.x documentation, go [HERE](https://github.com/caolan/async/blob/v1.5.2/README.md)*
+获取中文文档, 请访问 <https://tuzhu008.github.io/async_cn/>
+
+*获取 Async v1.5.x 版本的文档，请移步 [HERE](https://github.com/caolan/async/blob/v1.5.2/README.md)*
 
 
 ```javascript
-// for use with Node-style callbacks...
+// 关于使用 Node式 的回调 —— 回调函数作为最后一个参数，回调函数的第一参数为 Error对象
 var obj = {dev: "/dev.json", test: "/test.json", prod: "/prod.json"};
 var configs = {};
 
@@ -32,19 +34,19 @@ async.forEachOf(obj, (value, key, callback) => {
     });
 }, err => {
     if (err) console.error(err.message);
-    // configs is now a map of JSON data
+    // configs 现在是 JSON 数据的一个映射
     doSomethingWith(configs);
 });
 ```
 
 ```javascript
-// ...or ES2017 async functions
+// ...或者 ES2017 async 函数
 async.mapLimit(urls, 5, async function(url) {
     const response = await fetch(url)
     return response.body
 }, (err, results) => {
     if (err) throw err
-    // results is now an array of the response bodies
+    // results 现在是一个响应主体数组。
     console.log(results)
 })
 ```
