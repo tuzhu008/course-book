@@ -1,0 +1,1029 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>react-router-redux · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../fetch/" />
+    
+    
+    <link rel="prev" href="../../react-router/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../../">
+            
+                <a href="../../../../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../../../HTML/">
+            
+                <a href="../../../../../HTML/">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../../CSS/">
+            
+                <a href="../../../../../CSS/">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../../JavaScript/">
+            
+                <a href="../../../../../JavaScript/">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../../../Http/">
+            
+                <a href="../../../../../Http/">
+            
+                    
+                    Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Labrary
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../../VUE/">
+            
+                <a href="../../../../VUE/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../../docs/">
+            
+                <a href="../../../docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../../Create-React-App/">
+            
+                <a href="../../../Create-React-App/">
+            
+                    
+                    Create-React-App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.1" data-path="../../Redux/">
+            
+                <a href="../../Redux/">
+            
+                    
+                    redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.2" data-path="../../react-redux/">
+            
+                <a href="../../react-redux/">
+            
+                    
+                    react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.3" data-path="../../react-router/">
+            
+                <a href="../../react-router/">
+            
+                    
+                    react-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2.3.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    react-router-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.5" data-path="../../fetch/">
+            
+                <a href="../../fetch/">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.6" data-path="../../isomorphic-fetch/">
+            
+                <a href="../../isomorphic-fetch/">
+            
+                    
+                    isomorphic-fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.7" data-path="../../prop-types/">
+            
+                <a href="../../prop-types/">
+            
+                    
+                    prop-types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.8" data-path="../../react-autosuggest/">
+            
+                <a href="../../react-autosuggest/">
+            
+                    
+                    react-autosuggest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.9" data-path="../../recharts/">
+            
+                <a href="../../recharts/">
+            
+                    
+                    recharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.10" data-path="../../recompose/">
+            
+                <a href="../../recompose/">
+            
+                    
+                    recompose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.11" data-path="../../reselect/">
+            
+                <a href="../../reselect/">
+            
+                    
+                    reselect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.12" data-path="../../text-mask/">
+            
+                <a href="../../text-mask/">
+            
+                    
+                    text-mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13" data-path="../../_UI/">
+            
+                <a href="../../_UI/">
+            
+                    
+                    UI库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.13.1" data-path="../../_UI/Ant Design/">
+            
+                <a href="../../_UI/Ant Design/">
+            
+                    
+                    Ant Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.2" data-path="../../_UI/material-ui/">
+            
+                <a href="../../_UI/material-ui/">
+            
+                    
+                    Material-UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.3" data-path="../../_UI/react-bootstrap/">
+            
+                <a href="../../_UI/react-bootstrap/">
+            
+                    
+                    react-bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.4" data-path="../../_UI/Semantic-UI-React/">
+            
+                <a href="../../_UI/Semantic-UI-React/">
+            
+                    
+                    Semantic-UI-React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="../../../example/">
+            
+                <a href="../../../example/">
+            
+                    
+                    示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="../../../_Questions/questions.html">
+            
+                <a href="../../../_Questions/questions.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="../../../_experience/">
+            
+                <a href="../../../_experience/">
+            
+                    
+                    经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../../React Native/">
+            
+                <a href="../../../../React Native/">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../../Nodejs/">
+            
+                <a href="../../../../Nodejs/">
+            
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../../../../Nodejs/docsList.html">
+            
+                <a href="../../../../Nodejs/docsList.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../../../../Nodejs/Labrary/">
+            
+                <a href="../../../../Nodejs/Labrary/">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.2.1" data-path="../../../../Nodejs/Labrary/nvm/">
+            
+                <a href="../../../../Nodejs/Labrary/nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.2" data-path="../../../../Nodejs/Labrary/request/">
+            
+                <a href="../../../../Nodejs/Labrary/request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.3" data-path="../../../../Nodejs/Labrary/async/">
+            
+                <a href="../../../../Nodejs/Labrary/async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.4" data-path="../../../../Nodejs/Labrary/supervisor/">
+            
+                <a href="../../../../Nodejs/Labrary/supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.5" data-path="../../../../Nodejs/Labrary/express/">
+            
+                <a href="../../../../Nodejs/Labrary/express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../../UI/">
+            
+                <a href="../../../../UI/">
+            
+                    
+                    UI 库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    其他库
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../../.." >react-router-redux</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x6211;&#x4EEC;&#x6765;&#x5566;"><b>1. </b>&#x6211;&#x4EEC;&#x6765;&#x5566;</a></li><li><span class="title-icon "></span><a href="#react-router-redux"><b>2. </b>react-router-redux</a></li><ul><li><span class="title-icon "></span><a href="#installation"><b>2.1. </b>Installation</a></li><li><span class="title-icon "></span><a href="#how-it-works"><b>2.2. </b>How It Works</a></li><li><span class="title-icon "></span><a href="#tutorial"><b>2.3. </b>Tutorial</a></li><li><span class="title-icon "></span><a href="#examples"><b>2.4. </b>Examples</a></li><li><span class="title-icon "></span><a href="#api"><b>2.5. </b>API</a></li></ul></ul></div><a href="#&#x6211;&#x4EEC;&#x6765;&#x5566;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6211;&#x4EEC;&#x6765;&#x5566;"><a name="&#x6211;&#x4EEC;&#x6765;&#x5566;" class="anchor-navigation-ex-anchor" href="#&#x6211;&#x4EEC;&#x6765;&#x5566;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6211;&#x4EEC;&#x6765;&#x5566;</h1>
+<p>react-router-redux &#x5C06;&#x4E0E;react-router&#x957F;&#x671F;&#x76F8;&#x4F34;&#x3002; &#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x5B83;&#x5DF2;&#x7ECF;&#x5728;&#x90A3;&#x91CC;&#x5EFA;&#x7ACB;&#x8D77;&#x6765;&#x4E86;&#x3002; <a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux" target="_blank">&#x53BB;&#x770B;&#x4E00;&#x770B;!</a></p>
+<p><strong>&#x8FD9;&#x4E2A; repo &#x662F;&#x9488;&#x5BF9;react-router-redux 4.x, &#x5B83;&#x53EA;&#x4E0E;react-router 2.x and 3.x&#x517C;&#x5BB9;</strong></p>
+<p>&#x4E0B;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x7684;react-router-redux&#x5C06;&#x662F;5.0.0&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x4E0E;react-router4.x&#x517C;&#x5BB9;&#x3002;&#x76EE;&#x524D;&#x6B63;&#x5728;&#x79EF;&#x6781;&#x5F00;&#x53D1; <a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux" target="_blank">&#x5728;&#x8FD9;&#x91CC;</a>. &#x8BF7;&#x968F;&#x610F;&#x5E2E;&#x5FD9;&#xFF01;</p>
+<h1 id="react-router-redux"><a name="react-router-redux" class="anchor-navigation-ex-anchor" href="#react-router-redux"><i class="fa fa-link" aria-hidden="true"></i></a>2. react-router-redux</h1>
+<p><a href="https://www.npmjs.com/package/react-router-redux" target="_blank"><img src="https://img.shields.io/npm/v/react-router-redux.svg?style=flat-square" alt="npm version"></a> <a href="https://www.npmjs.com/package/react-router-redux" target="_blank"><img src="https://img.shields.io/npm/dm/react-router-redux.svg?style=flat-square" alt="npm downloads"></a> <a href="https://travis-ci.org/reactjs/react-router-redux" target="_blank"><img src="https://img.shields.io/travis/reactjs/react-router-redux/master.svg?style=flat-square" alt="build status"></a></p>
+<blockquote>
+<p><strong>&#x8BA9;&#x8DEF;&#x7531;&#x5668;&#x4E0E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;state&#x4FDD;&#x6301;&#x540C;&#x6B65;</strong> :sparkles:</p>
+</blockquote>
+<p><em>Formerly known as redux-simple-router</em></p>
+<p>You&apos;re a smart person. You use <a href="https://github.com/reactjs/redux" target="_blank">Redux</a> to manage your application state. You use <a href="https://github.com/reactjs/react-router" target="_blank">React Router</a> to do routing. All is good.</p>
+<p>But the two libraries don&apos;t coordinate. You want to do time travel with your application state, but React Router doesn&apos;t navigate between pages when you replay actions. It controls an important part of application state: the URL.</p>
+<p>This library helps you keep that bit of state in sync with your Redux store. We keep a copy of the current location hidden in state. When you rewind your application state with a tool like <a href="https://github.com/gaearon/redux-devtools" target="_blank">Redux DevTools</a>, that state change is propagated to React Router so it can adjust the component tree accordingly. You can jump around in state, rewinding, replaying, and resetting as much as you&apos;d like, and this library will ensure the two stay in sync at all times.</p>
+<p><strong>This library is not <em>necessary</em> for using Redux together with React Router. You can use the two together just fine without any additional libraries. It is useful if you care about recording, persisting, and replaying user actions, using time travel. If you don&apos;t care about these features, just <a href="http://stackoverflow.com/questions/36722584/how-to-sync-redux-state-and-url-hash-tag-params/36749963#36749963" target="_blank">use Redux and React Router directly</a>.</strong></p>
+<h2 id="installation"><a name="installation" class="anchor-navigation-ex-anchor" href="#installation"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. Installation</h2>
+<pre class="language-"><code>npm install --save react-router-redux
+</code></pre><h2 id="how-it-works"><a name="how-it-works" class="anchor-navigation-ex-anchor" href="#how-it-works"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. How It Works</h2>
+<p>This library allows you to use React Router&apos;s APIs as they are documented. And, you can use redux like you normally would, with a single app state. The library simply enhances a history instance to allow it to synchronize any changes it receives into application state.</p>
+<p><a href="https://github.com/reactjs/history" target="_blank">history</a> + <code>store</code> (<a href="https://github.com/reactjs/redux" target="_blank">redux</a>) &#x2192; <a href="https://github.com/reactjs/react-router-redux" target="_blank"><strong>react-router-redux</strong></a> &#x2192; enhanced <a href="https://github.com/reactjs/history" target="_blank">history</a> &#x2192; <a href="https://github.com/reactjs/react-router" target="_blank">react-router</a></p>
+<h2 id="tutorial"><a name="tutorial" class="anchor-navigation-ex-anchor" href="#tutorial"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. Tutorial</h2>
+<p>Let&apos;s take a look at a simple example.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">&apos;react-dom&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createStore<span class="token punctuation">,</span> combineReducers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Router<span class="token punctuation">,</span> Route<span class="token punctuation">,</span> browserHistory <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> syncHistoryWithStore<span class="token punctuation">,</span> routerReducer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-redux&apos;</span>
+
+<span class="token keyword">import</span> reducers <span class="token keyword">from</span> <span class="token string">&apos;&lt;project-path&gt;/reducers&apos;</span>
+
+<span class="token comment" spellcheck="true">// Add the reducer to your store on the `routing` key</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>
+  <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token operator">...</span>reducers<span class="token punctuation">,</span>
+    routing<span class="token punctuation">:</span> routerReducer
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// Create an enhanced history that syncs navigation events with the store</span>
+<span class="token keyword">const</span> history <span class="token operator">=</span> <span class="token function">syncHistoryWithStore</span><span class="token punctuation">(</span>browserHistory<span class="token punctuation">,</span> store<span class="token punctuation">)</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">/* Tell the Router to use our enhanced history */</span> <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>Router history<span class="token operator">=</span><span class="token punctuation">{</span>history<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>App<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;foo&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Foo<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;bar&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Bar<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Router<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;mount&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>Now any time you navigate, which can come from pressing browser buttons or navigating in your application code, the enhanced history will first pass the new location through the Redux store and then on to React Router to update the component tree. If you time travel, it will also pass the new state to React Router to update the component tree again.</p>
+<h4 id="how-do-i-watch-for-navigation-events-such-as-for-analytics"><a name="how-do-i-watch-for-navigation-events-such-as-for-analytics" class="anchor-navigation-ex-anchor" href="#how-do-i-watch-for-navigation-events-such-as-for-analytics"><i class="fa fa-link" aria-hidden="true"></i></a><a name="how-do-i-watch-for-navigation-events-such-as-for-analytics" class="plugin-anchor" href="#how-do-i-watch-for-navigation-events-such-as-for-analytics"><i class="fa fa-link" aria-hidden="true"></i></a>How do I watch for navigation events, such as for analytics?</h4>
+<p>Simply listen to the enhanced history via <code>history.listen</code>. This takes in a function that will receive a <code>location</code> any time the store updates. This includes any time travel activity performed on the store.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> history <span class="token operator">=</span> <span class="token function">syncHistoryWithStore</span><span class="token punctuation">(</span>browserHistory<span class="token punctuation">,</span> store<span class="token punctuation">)</span>
+
+history<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>location <span class="token operator">=</span><span class="token operator">&gt;</span> analyticsService<span class="token punctuation">.</span><span class="token function">track</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>For other kinds of events in your system, you can use middleware on your Redux store like normal to watch any action that is dispatched to the store.</p>
+<h4 id="what-if-i-use-immutablejs-or-another-state-wrapper-with-my-redux-store"><a name="what-if-i-use-immutablejs-or-another-state-wrapper-with-my-redux-store" class="anchor-navigation-ex-anchor" href="#what-if-i-use-immutablejs-or-another-state-wrapper-with-my-redux-store"><i class="fa fa-link" aria-hidden="true"></i></a><a name="what-if-i-use-immutablejs-or-another-state-wrapper-with-my-redux-store" class="plugin-anchor" href="#what-if-i-use-immutablejs-or-another-state-wrapper-with-my-redux-store"><i class="fa fa-link" aria-hidden="true"></i></a>What if I use Immutable.js or another state wrapper with my Redux store?</h4>
+<p>When using a wrapper for your store&apos;s state, such as Immutable.js, you will need to change two things from the standard setup:</p>
+<ol>
+<li>By default, the library expects to find the history state at <code>state.routing</code>. If your wrapper prevents accessing properties directly, or you want to put the routing state elsewhere, pass a selector function to access the historystate via the <code>selectLocationState</code> option on <code>syncHistoryWithStore</code>.</li>
+<li>Provide your own reducer function that will receive actions of type <code>LOCATION_CHANGE</code> and return the payload merged into the <code>locationBeforeTransitions</code> property of the routing state. For example, <code>state.set(&quot;routing&quot;, {locationBeforeTransitions: action.payload})</code>.</li>
+</ol>
+<p>These two hooks will allow you to store the state that this library uses in whatever format or wrapper you would like.</p>
+<h4 id="how-do-i-access-router-state-in-a-container-component"><a name="how-do-i-access-router-state-in-a-container-component" class="anchor-navigation-ex-anchor" href="#how-do-i-access-router-state-in-a-container-component"><i class="fa fa-link" aria-hidden="true"></i></a><a name="how-do-i-access-router-state-in-a-container-component" class="plugin-anchor" href="#how-do-i-access-router-state-in-a-container-component"><i class="fa fa-link" aria-hidden="true"></i></a>How do I access router state in a container component?</h4>
+<p>React Router <a href="https://github.com/ReactTraining/react-router/blob/v3/docs/Introduction.md#getting-url-parameters" target="_blank">provides route information via a route component&apos;s props</a>. This makes it easy to access them from a container component. When using <a href="https://github.com/reactjs/react-redux" target="_blank">react-redux</a> to <code>connect()</code> your components to state, you can access the router&apos;s props from the <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank">2nd argument of <code>mapStateToProps</code></a>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">mapStateToProps</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> ownProps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> ownProps<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+    filter<span class="token punctuation">:</span> ownProps<span class="token punctuation">.</span>location<span class="token punctuation">.</span>query<span class="token punctuation">.</span>filter
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>You should not read the location state directly from the Redux store. This is because React Router operates asynchronously (to handle things such as dynamically-loaded components) and your component tree may not yet be updated in sync with your Redux state. You should rely on the props passed by React Router, as they are only updated after it has processed all asynchronous code.</p>
+<h4 id="what-if-i-want-to-issue-navigation-events-via-redux-actions"><a name="what-if-i-want-to-issue-navigation-events-via-redux-actions" class="anchor-navigation-ex-anchor" href="#what-if-i-want-to-issue-navigation-events-via-redux-actions"><i class="fa fa-link" aria-hidden="true"></i></a><a name="what-if-i-want-to-issue-navigation-events-via-redux-actions" class="plugin-anchor" href="#what-if-i-want-to-issue-navigation-events-via-redux-actions"><i class="fa fa-link" aria-hidden="true"></i></a>What if I want to issue navigation events via Redux actions?</h4>
+<p>React Router provides singleton versions of history (<code>browserHistory</code> and <code>hashHistory</code>) that you can import and use from anywhere in your application. However, if you prefer Redux style actions, the library also provides a set of action creators and a middleware to capture them and redirect them to your history instance.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore<span class="token punctuation">,</span> combineReducers<span class="token punctuation">,</span> applyMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> routerMiddleware<span class="token punctuation">,</span> push <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-redux&apos;</span>
+
+<span class="token comment" spellcheck="true">// Apply the middleware to the store</span>
+<span class="token keyword">const</span> middleware <span class="token operator">=</span> <span class="token function">routerMiddleware</span><span class="token punctuation">(</span>browserHistory<span class="token punctuation">)</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>
+  reducers<span class="token punctuation">,</span>
+  <span class="token function">applyMiddleware</span><span class="token punctuation">(</span>middleware<span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// Dispatch from anywhere like normal.</span>
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&apos;/foo&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="examples"><a name="examples" class="anchor-navigation-ex-anchor" href="#examples"><i class="fa fa-link" aria-hidden="true"></i></a>2.4. Examples</h2>
+<ul>
+<li><a href="../../../../../examples/basic">examples/basic</a> - basic reference implementation</li>
+</ul>
+<p>Examples from the community:</p>
+<ul>
+<li><a href="https://github.com/krasevych/react-redux-styled-hot-universal" target="_blank">react-redux-styled-hot-universal</a> (SSR, Universal Webpack, Redux, React-router, Webpack 2, Babel, Styled Components and more...)</li>
+<li><a href="https://github.com/shakacode/react-webpack-rails-tutorial" target="_blank">shakacode/react-webpack-rails-tutorial</a> - react-router-redux including <strong>Server Rendering</strong> using <a href="https://github.com/shakacode/react_on_rails/" target="_blank">React on Rails</a>, live at <a href="http://www.reactrails.com/" target="_blank">www.reactrails.com</a>.</li>
+<li><a href="https://github.com/davezuko/react-redux-starter-kit" target="_blank">davezuko/react-redux-starter-kit</a> - popular redux starter kit<ul>
+<li><strong>tip</strong>: migrating from react-router-redux <code>^3.0.0</code>? use <a href="https://github.com/davezuko/react-redux-starter-kit/commit/0df26907" target="_blank">this commit</a> as a reference</li>
+</ul>
+</li>
+<li><a href="https://github.com/svrcekmichal/universal-react" target="_blank">svrcekmichal/universal-react</a> - Universal react app with async actions provided by <a href="https://github.com/svrcekmichal/reasync" target="_blank">svrcekmichal/reasync</a> package</li>
+<li><a href="https://github.com/StevenIseki/react-router-redux-example" target="_blank">steveniseki/react-router-redux-example</a> - minimal react-router-redux example includes css modules and universal rendering</li>
+<li><a href="https://github.com/choonkending/react-webpack-node" target="_blank">choonkending/react-webpack-node</a> - Full-stack universal Redux App</li>
+<li><a href="https://github.com/kuy/treemap-with-router" target="_blank">kuy/treemap-with-router</a> - An example for react-router-redux with d3&apos;s treemap.</li>
+</ul>
+<p>&#x2192; <em>Have an example to add? Send us a PR!</em> &#x2190;</p>
+<h2 id="api"><a name="api" class="anchor-navigation-ex-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>2.5. API</h2>
+<h4 id="routerreducer"><a name="routerreducer" class="anchor-navigation-ex-anchor" href="#routerreducer"><i class="fa fa-link" aria-hidden="true"></i></a><a name="routerreducer" class="plugin-anchor" href="#routerreducer"><i class="fa fa-link" aria-hidden="true"></i></a><code>routerReducer()</code></h4>
+<p><strong>You must add this reducer to your store for syncing to work.</strong></p>
+<p>A reducer function that stores location updates from <code>history</code>. If you use <code>combineReducers</code>, it should be nested under the <code>routing</code> key.</p>
+<h4 id="history--synchistorywithstorehistory-store-options"><a name="history--synchistorywithstorehistory-store-options" class="anchor-navigation-ex-anchor" href="#history--synchistorywithstorehistory-store-options"><i class="fa fa-link" aria-hidden="true"></i></a><a name="history--synchistorywithstorehistory-store-options" class="plugin-anchor" href="#history--synchistorywithstorehistory-store-options"><i class="fa fa-link" aria-hidden="true"></i></a><code>history = syncHistoryWithStore(history, store, [options])</code></h4>
+<p>Creates an enhanced history from the provided history. This history changes <code>history.listen</code> to pass all location updates through the provided store first. This ensures if the store is updated either from a navigation event or from a time travel action, such as a replay, the listeners of the enhanced history will stay in sync.</p>
+<p><strong>You must provide the enhanced history to your <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Router</span><span class="token punctuation">&gt;</span></span></code> component.</strong> This ensures your routes stay in sync with your location and your store at the same time.</p>
+<p>The <code>options</code> object takes in the following optional keys:</p>
+<ul>
+<li><code>selectLocationState</code> - (default <code>state =&gt; state.routing</code>) A selector function to obtain the history state from your store. Useful when not using the provided <code>routerReducer</code> to store history state. Allows you to use wrappers, such as Immutable.js.</li>
+<li><code>adjustUrlOnReplay</code> - (default <code>true</code>) When <code>false</code>, the URL will not be kept in sync during time travel. This is useful when using <code>persistState</code> from Redux DevTools and not wanting to maintain the URL state when restoring state.</li>
+</ul>
+<h4 id="pushlocation-replacelocation-gonumber-goback-goforward"><a name="pushlocation-replacelocation-gonumber-goback-goforward" class="anchor-navigation-ex-anchor" href="#pushlocation-replacelocation-gonumber-goback-goforward"><i class="fa fa-link" aria-hidden="true"></i></a><a name="pushlocation-replacelocation-gonumber-goback-goforward" class="plugin-anchor" href="#pushlocation-replacelocation-gonumber-goback-goforward"><i class="fa fa-link" aria-hidden="true"></i></a><code>push(location)</code>, <code>replace(location)</code>, <code>go(number)</code>, <code>goBack()</code>, <code>goForward()</code></h4>
+<p><strong>You must install <code>routerMiddleware</code> for these action creators to work.</strong></p>
+<p>Action creators that correspond with the [history methods of the same name]
+(<a href="https://github.com/ReactTraining/history/blob/v3/docs/GettingStarted.md#navigation" target="_blank">https://github.com/ReactTraining/history/blob/v3/docs/GettingStarted.md#navigation</a>). For reference they are defined as follows:</p>
+<ul>
+<li><code>push</code> - Pushes a new location to history, becoming the current location.</li>
+<li><code>replace</code> - Replaces the current location in history.</li>
+<li><code>go</code> - Moves backwards or forwards a relative number of locations in history.</li>
+<li><code>goForward</code> - Moves forward one location. Equivalent to <code>go(1)</code></li>
+<li><code>goBack</code> - Moves backwards one location. Equivalent to <code>go(-1)</code></li>
+</ul>
+<p>Both <code>push</code> and <code>replace</code> take in a <a href="https://github.com/ReactTraining/history/blob/v3/docs/Location.md" target="_blank">location descriptor</a>, which can be an object describing the URL or a plain string URL.</p>
+<p>These action creators are also available in one single object as <code>routerActions</code>, which can be used as a convenience when using Redux&apos;s <code>bindActionCreators()</code>.</p>
+<h4 id="routermiddlewarehistory"><a name="routermiddlewarehistory" class="anchor-navigation-ex-anchor" href="#routermiddlewarehistory"><i class="fa fa-link" aria-hidden="true"></i></a><a name="routermiddlewarehistory" class="plugin-anchor" href="#routermiddlewarehistory"><i class="fa fa-link" aria-hidden="true"></i></a><code>routerMiddleware(history)</code></h4>
+<p>A middleware you can apply to your Redux <code>store</code> to capture dispatched actions created by the action creators. It will redirect those actions to the provided <code>history</code> instance.</p>
+<h4 id="locationchange"><a name="locationchange" class="anchor-navigation-ex-anchor" href="#locationchange"><i class="fa fa-link" aria-hidden="true"></i></a><a name="locationchange" class="plugin-anchor" href="#locationchange"><i class="fa fa-link" aria-hidden="true"></i></a><code>LOCATION_CHANGE</code></h4>
+<p>An action type that you can listen for in your reducers to be notified of route updates. Fires <em>after</em> any changes to history.</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-26 15:52:19
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../react-router/" class="navigation navigation-prev " aria-label="Previous page: react-router">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../fetch/" class="navigation navigation-next " aria-label="Next page: fetch">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"react-router-redux","level":"1.6.2.3.4","depth":4,"next":{"title":"fetch","level":"1.6.2.3.5","depth":4,"path":"Labrary/React/Labrary/fetch/README.md","ref":"Labrary/React/Labrary/fetch/README.md","articles":[]},"previous":{"title":"react-router","level":"1.6.2.3.3","depth":4,"path":"Labrary/React/Labrary/react-router/README.md","ref":"Labrary/React/Labrary/react-router/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"Labrary/React/Labrary/react-router-redux/4.x/README.md","mtime":"2017-11-26T07:52:19.603Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-14T10:33:49.807Z"},"basePath":"../../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,988 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Ant Design · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../material-ui/" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../../">
+            
+                <a href="../../../../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../../../HTML/">
+            
+                <a href="../../../../../HTML/">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../../CSS/">
+            
+                <a href="../../../../../CSS/">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../../JavaScript/">
+            
+                <a href="../../../../../JavaScript/">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../../../Http/">
+            
+                <a href="../../../../../Http/">
+            
+                    
+                    Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Labrary
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../../VUE/">
+            
+                <a href="../../../../VUE/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../../docs/">
+            
+                <a href="../../../docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../../Create-React-App/">
+            
+                <a href="../../../Create-React-App/">
+            
+                    
+                    Create-React-App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.1" data-path="../../Redux/">
+            
+                <a href="../../Redux/">
+            
+                    
+                    redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.2" data-path="../../react-redux/">
+            
+                <a href="../../react-redux/">
+            
+                    
+                    react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.3" data-path="../../react-router/">
+            
+                <a href="../../react-router/">
+            
+                    
+                    react-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.4" data-path="../../react-router-redux/4.x/">
+            
+                <a href="../../react-router-redux/4.x/">
+            
+                    
+                    react-router-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.5" data-path="../../fetch/">
+            
+                <a href="../../fetch/">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.6" data-path="../../isomorphic-fetch/">
+            
+                <a href="../../isomorphic-fetch/">
+            
+                    
+                    isomorphic-fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.7" data-path="../../prop-types/">
+            
+                <a href="../../prop-types/">
+            
+                    
+                    prop-types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.8" data-path="../../react-autosuggest/">
+            
+                <a href="../../react-autosuggest/">
+            
+                    
+                    react-autosuggest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.9" data-path="../../recharts/">
+            
+                <a href="../../recharts/">
+            
+                    
+                    recharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.10" data-path="../../recompose/">
+            
+                <a href="../../recompose/">
+            
+                    
+                    recompose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.11" data-path="../../reselect/">
+            
+                <a href="../../reselect/">
+            
+                    
+                    reselect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.12" data-path="../../text-mask/">
+            
+                <a href="../../text-mask/">
+            
+                    
+                    text-mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    UI库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.2.3.13.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Ant Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.2" data-path="../material-ui/">
+            
+                <a href="../material-ui/">
+            
+                    
+                    Material-UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.3" data-path="../react-bootstrap/">
+            
+                <a href="../react-bootstrap/">
+            
+                    
+                    react-bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.4" data-path="../Semantic-UI-React/">
+            
+                <a href="../Semantic-UI-React/">
+            
+                    
+                    Semantic-UI-React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="../../../example/">
+            
+                <a href="../../../example/">
+            
+                    
+                    示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="../../../_Questions/questions.html">
+            
+                <a href="../../../_Questions/questions.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="../../../_experience/">
+            
+                <a href="../../../_experience/">
+            
+                    
+                    经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../../React Native/">
+            
+                <a href="../../../../React Native/">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../../Nodejs/">
+            
+                <a href="../../../../Nodejs/">
+            
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../../../../Nodejs/docsList.html">
+            
+                <a href="../../../../Nodejs/docsList.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../../../../Nodejs/Labrary/">
+            
+                <a href="../../../../Nodejs/Labrary/">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.2.1" data-path="../../../../Nodejs/Labrary/nvm/">
+            
+                <a href="../../../../Nodejs/Labrary/nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.2" data-path="../../../../Nodejs/Labrary/request/">
+            
+                <a href="../../../../Nodejs/Labrary/request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.3" data-path="../../../../Nodejs/Labrary/async/">
+            
+                <a href="../../../../Nodejs/Labrary/async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.4" data-path="../../../../Nodejs/Labrary/supervisor/">
+            
+                <a href="../../../../Nodejs/Labrary/supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.5" data-path="../../../../Nodejs/Labrary/express/">
+            
+                <a href="../../../../Nodejs/Labrary/express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../../UI/">
+            
+                <a href="../../../../UI/">
+            
+                    
+                    UI 库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    其他库
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../../.." >Ant Design</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#ant-design"><b>1. </b>Ant Design</a></li><ul><li><span class="title-icon "></span><a href="#&#x7279;&#x6027;"><b>1.1. </b>&#x7279;&#x6027;</a></li><li><span class="title-icon "></span><a href="#&#x652F;&#x6301;&#x73AF;&#x5883;"><b>1.2. </b>&#x652F;&#x6301;&#x73AF;&#x5883;</a></li><li><span class="title-icon "></span><a href="#&#x53C2;&#x4E0E;&#x5171;&#x5EFA;-"><b>1.3. </b>&#x53C2;&#x4E0E;&#x5171;&#x5EFA; </a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;"><b>1.4. </b>&#x5B89;&#x88C5;</a></li><li><span class="title-icon "></span><a href="#&#x793A;&#x4F8B;"><b>1.5. </b>&#x793A;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#typescript"><b>1.6. </b>TypeScript</a></li><li><span class="title-icon "></span><a href="#&#x56FD;&#x9645;&#x5316;"><b>1.7. </b>&#x56FD;&#x9645;&#x5316;</a></li><li><span class="title-icon "></span><a href="#&#x94FE;&#x63A5;"><b>1.8. </b>&#x94FE;&#x63A5;</a></li><li><span class="title-icon "></span><a href="#&#x672C;&#x5730;&#x5F00;&#x53D1;"><b>1.9. </b>&#x672C;&#x5730;&#x5F00;&#x53D1;</a></li><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x8D21;&#x732E;"><b>1.10. </b>&#x5982;&#x4F55;&#x8D21;&#x732E;</a></li><li><span class="title-icon "></span><a href="#&#x793E;&#x533A;&#x4E92;&#x52A9;"><b>1.11. </b>&#x793E;&#x533A;&#x4E92;&#x52A9;</a></li></ul></ul></div><a href="#ant-design" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p align="center">
+  <a href="http://ant.design" target="_blank">
+    <img width="320" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+  </a>
+</p>
+
+<h1 id="ant-design"><a name="ant-design" class="anchor-navigation-ex-anchor" href="#ant-design"><i class="fa fa-link" aria-hidden="true"></i></a>1. Ant Design</h1>
+<p><a href="https://travis-ci.org/ant-design/ant-design" target="_blank"><img src="https://img.shields.io/travis/ant-design/ant-design.svg?style=flat-square" alt=""></a>
+<a href="https://codecov.io/gh/ant-design/ant-design/branch/master" target="_blank"><img src="https://img.shields.io/codecov/c/github/ant-design/ant-design/master.svg?style=flat-square" alt="Codecov"></a>
+<a href="https://gemnasium.com/ant-design/ant-design" target="_blank"><img src="https://img.shields.io/gemnasium/react-component/trigger.svg?style=flat-square" alt="Dependency Status"></a></p>
+<p><a href="https://www.npmjs.org/package/antd" target="_blank"><img src="https://img.shields.io/npm/v/antd.svg?style=flat-square" alt="npm package"></a>
+<a href="https://npmjs.org/package/antd" target="_blank"><img src="http://img.shields.io/npm/dm/antd.svg?style=flat-square" alt="NPM downloads"></a>
+<a href="http://isitmaintained.com/project/ant-design/ant-design" title="Percentage of issues still open" target="_blank"><img src="http://isitmaintained.com/badge/open/ant-design/ant-design.svg" alt="Percentage of issues still open"></a>
+<a href="https://gitter.im/ant-design/ant-design-english?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge" target="_blank"><img src="https://badges.gitter.im/ant-design/ant-design-english.svg" alt="Gitter"></a> (English)
+<a href="https://gitter.im/ant-design/ant-design?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge" target="_blank"><img src="https://img.shields.io/gitter/room/ant-design/ant-design.svg?style=flat-square" alt="Join the chat at https://gitter.im/ant-design/ant-design"></a>&#xFF08;&#x4E2D;&#x6587;&#xFF09;</p>
+<p>&#x4E00;&#x5957;&#x4F01;&#x4E1A;&#x7EA7;&#x7684; UI &#x8BBE;&#x8BA1;&#x8BED;&#x8A00;&#x548C; React &#x5B9E;&#x73B0;&#x3002;</p>
+<p><a href="README-EN.md">README in English</a></p>
+<h2 id="&#x7279;&#x6027;"><a name="&#x7279;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x7279;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7279;&#x6027;</h2>
+<ul>
+<li>&#x63D0;&#x70BC;&#x81EA;&#x4F01;&#x4E1A;&#x7EA7;&#x4E2D;&#x540E;&#x53F0;&#x4EA7;&#x54C1;&#x7684;&#x4EA4;&#x4E92;&#x8BED;&#x8A00;&#x548C;&#x89C6;&#x89C9;&#x98CE;&#x683C;&#x3002;</li>
+<li>&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684;&#x9AD8;&#x8D28;&#x91CF; React &#x7EC4;&#x4EF6;&#x3002;</li>
+<li>&#x4F7F;&#x7528; TypeScript &#x6784;&#x5EFA;&#xFF0C;&#x63D0;&#x4F9B;&#x5B8C;&#x6574;&#x7684;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x57FA;&#x4E8E; npm + webpack + <a href="https://github.com/dvajs/dva" target="_blank">dva</a> &#x7684;&#x4F01;&#x4E1A;&#x7EA7;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#x3002;</li>
+</ul>
+<h2 id="&#x652F;&#x6301;&#x73AF;&#x5883;"><a name="&#x652F;&#x6301;&#x73AF;&#x5883;" class="anchor-navigation-ex-anchor" href="#&#x652F;&#x6301;&#x73AF;&#x5883;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x652F;&#x6301;&#x73AF;&#x5883;</h2>
+<ul>
+<li>&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x548C; IE9 &#x53CA;&#x4EE5;&#x4E0A;&#x3002;</li>
+<li>&#x652F;&#x6301;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x3002;</li>
+<li><a href="http://electron.atom.io/" target="_blank">Electron</a></li>
+</ul>
+<h2 id="&#x53C2;&#x4E0E;&#x5171;&#x5EFA;-"><a name="&#x53C2;&#x4E0E;&#x5171;&#x5EFA;-" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x4E0E;&#x5171;&#x5EFA;-"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x53C2;&#x4E0E;&#x5171;&#x5EFA; </h2>
+<p><code>antd</code> &#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF0C;&#x6211;&#x4EEC;&#x6B22;&#x8FCE;&#x793E;&#x533A;&#x53C2;&#x4E0E;&#x5171;&#x5EFA;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5BF9;&#x6B64;&#x9879;&#x76EE;&#x611F;&#x5174;&#x8DA3;&#xFF0C;&#x6709; <a href="https://opensource.guide/how-to-contribute/" target="_blank">&#x5F88;&#x591A;&#x65B9;&#x5F0F;</a> &#x8FDB;&#x884C;&#x53C2;&#x4E0E;&#x3002;&#x4F60;&#x53EF;&#x4EE5; watch &#x8FD9;&#x4E2A;&#x4ED3;&#x5E93;&#xFF0C;&#x52A0;&#x5165; <a href="https://github.com/ant-design/ant-design/issues?q=is%3Aopen+is%3Aissue+label%3ADiscussion" target="_blank">issue &#x4E2D;&#x7684;&#x8BA8;&#x8BBA;</a>&#xFF0C;&#x4EE5;&#x53CA;&#x5C1D;&#x8BD5;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B; <a href="https://github.com/ant-design/ant-design/issues?q=is%3Aopen+is%3Aissue+label%3A%22PR+welcome%22" target="_blank">&#x5DF2;&#x63A5;&#x53D7;&#x7684;&#x7279;&#x6027;</a>&#x3002;&#x6211;&#x4EEC;&#x4F1A;&#x7ED9;&#x4E88;&#x6709;&#x6D3B;&#x8DC3;&#x8D21;&#x732E;&#x7684;&#x793E;&#x533A;&#x6210;&#x5458; <a href="https://github.com/ant-design/ant-design/issues/3222" target="_blank">collaborator &#x6743;&#x9650;</a>&#x3002;</p>
+<h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x5B89;&#x88C5;</h2>
+<pre class="language-"><code class="lang-bash"><span class="token function">npm</span> <span class="token function">install</span> antd
+</code></pre>
+<h2 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x793A;&#x4F8B;</h2>
+<pre class="language-"><code class="lang-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> DatePicker <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;antd&apos;</span><span class="token punctuation">;</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>DatePicker</span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">,</span> mountNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5F15;&#x5165;&#x6837;&#x5F0F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-jsx"><span class="token keyword">import</span> <span class="token string">&apos;antd/dist/antd.css&apos;</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// or &apos;antd/dist/antd.less&apos;</span>
+</code></pre>
+<p>&#x6309;&#x9700;&#x52A0;&#x8F7D;&#x53EF;&#x901A;&#x8FC7;&#x6B64;&#x5199;&#x6CD5; <code>import DatePicker from &apos;antd/lib/date-picker&apos;</code> &#x6216;&#x4F7F;&#x7528; Babel &#x63D2;&#x4EF6; <a href="https://github.com/ant-design/babel-plugin-import" target="_blank">babel-plugin-import</a>&#xFF0C;&#x6216;&#x4F7F;&#x7528; TypeScript &#x63D2;&#x4EF6; <a href="https://github.com/Brooooooklyn/ts-import-plugin" target="_blank">ts-import-plugin</a>&#x3002;</p>
+<h2 id="typescript"><a name="typescript" class="anchor-navigation-ex-anchor" href="#typescript"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. TypeScript</h2>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// tsconfig.json</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;compilerOptions&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;moduleResolution&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;node&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;jsx&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;preserve&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;allowSyntheticDefaultImports&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<ul>
+<li>&#x8BBE;&#x7F6E; <code>allowSyntheticDefaultImports</code> &#x907F;&#x514D; <code>error TS1192: Module &apos;react&apos; has no default export</code> &#x7684;&#x9519;&#x8BEF;&#x3002;</li>
+<li>&#x4E0D;&#x8981;&#x4F7F;&#x7528; @types/antd, antd &#x5DF2;&#x7ECF;&#x81EA;&#x5E26;&#x4E86; TypeScript &#x5B9A;&#x4E49;&#x3002;</li>
+</ul>
+</blockquote>
+<h2 id="&#x56FD;&#x9645;&#x5316;"><a name="&#x56FD;&#x9645;&#x5316;" class="anchor-navigation-ex-anchor" href="#&#x56FD;&#x9645;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. &#x56FD;&#x9645;&#x5316;</h2>
+<p>&#x53C2;&#x8003; <a href="http://ant.design/docs/react/i18n" target="_blank">&#x56FD;&#x9645;&#x5316;&#x6587;&#x6863;</a>&#x3002;</p>
+<h2 id="&#x94FE;&#x63A5;"><a name="&#x94FE;&#x63A5;" class="anchor-navigation-ex-anchor" href="#&#x94FE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. &#x94FE;&#x63A5;</h2>
+<ul>
+<li><a href="http://ant.design/index-cn" target="_blank">&#x9996;&#x9875;</a></li>
+<li><a href="http://ant.design/docs/react/introduce-cn" target="_blank">UI &#x7EC4;&#x4EF6;&#x5E93;</a></li>
+<li><a href="CHANGELOG.en-US.md">&#x66F4;&#x65B0;&#x65E5;&#x5FD7;</a></li>
+<li><a href="https://github.com/dvajs/dva-cli" target="_blank">&#x5B98;&#x65B9;&#x811A;&#x624B;&#x67B6;</a></li>
+<li><a href="http://ant-tool.github.io/" target="_blank">&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x6587;&#x6863;</a></li>
+<li><a href="http://scaffold.ant.design" target="_blank">&#x811A;&#x624B;&#x67B6;&#x5E02;&#x573A;</a></li>
+<li><a href="http://react-component.github.io/" target="_blank">React &#x5E95;&#x5C42;&#x57FA;&#x7840;&#x7EC4;&#x4EF6;</a></li>
+<li><a href="http://mobile.ant.design" target="_blank">&#x79FB;&#x52A8;&#x7AEF;&#x7EC4;&#x4EF6;</a></li>
+<li><a href="https://motion.ant.design" target="_blank">&#x52A8;&#x6548;</a></li>
+<li><a href="https://github.com/ant-design/ant-design/wiki/Ant-Design-%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E7%AE%80%E7%89%88" target="_blank">&#x8BBE;&#x8BA1;&#x89C4;&#x8303;&#x901F;&#x67E5;&#x624B;&#x518C;</a></li>
+<li><a href="https://github.com/ant-design/ant-design/wiki/Development" target="_blank">&#x5F00;&#x53D1;&#x8005;&#x8BF4;&#x660E;</a></li>
+<li><a href="https://github.com/ant-design/ant-design/wiki/%E8%BD%AE%E5%80%BC%E8%A7%84%E5%88%99%E5%92%8C%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B" target="_blank">&#x7248;&#x672C;&#x53D1;&#x5E03;&#x89C4;&#x5219;</a></li>
+<li><a href="https://github.com/ant-design/ant-design/wiki/FAQ" target="_blank">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a></li>
+<li><a href="http://codepen.io/benjycui/pen/KgPZrE?editors=001" target="_blank">CodePen &#x6A21;&#x677F;</a> for bug reports</li>
+<li><a href="https://github.com/websemantics/awesome-ant-design" target="_blank">Awesome Ant Design</a></li>
+<li><a href="http://ant.design/docs/react/customize-theme-cn" target="_blank">&#x5B9A;&#x5236;&#x4E3B;&#x9898;</a></li>
+</ul>
+<h2 id="&#x672C;&#x5730;&#x5F00;&#x53D1;"><a name="&#x672C;&#x5730;&#x5F00;&#x53D1;" class="anchor-navigation-ex-anchor" href="#&#x672C;&#x5730;&#x5F00;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. &#x672C;&#x5730;&#x5F00;&#x53D1;</h2>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> clone git@github.com:ant-design/ant-design.git
+$ <span class="token function">npm</span> <span class="token function">install</span>
+$ <span class="token function">npm</span> start
+</code></pre>
+<p>&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE; <a href="http://127.0.0.1:8001" target="_blank">http://127.0.0.1:8001</a> &#xFF0C;&#x66F4;&#x591A;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x6587;&#x6863;&#x53C2;&#x89C1;: <a href="https://github.com/ant-design/ant-design/wiki/Development" target="_blank">https://github.com/ant-design/ant-design/wiki/Development</a> &#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x8D21;&#x732E;"><a name="&#x5982;&#x4F55;&#x8D21;&#x732E;" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x8D21;&#x732E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. &#x5982;&#x4F55;&#x8D21;&#x732E;</h2>
+<p>&#x5728;&#x4EFB;&#x4F55;&#x5F62;&#x5F0F;&#x7684;&#x53C2;&#x4E0E;&#x524D;&#xFF0C;&#x8BF7;&#x5148;&#x9605;&#x8BFB; <a href="https://github.com/ant-design/ant-design/blob/master/.github/CONTRIBUTING.md" target="_blank">&#x8D21;&#x732E;&#x8005;&#x6587;&#x6863;</a>&#x3002;&#x5982;&#x679C;&#x4F60;&#x5E0C;&#x671B;&#x53C2;&#x4E0E;&#x8D21;&#x732E;&#xFF0C;&#x6B22;&#x8FCE; <a href="https://github.com/ant-design/ant-design/pulls" target="_blank">Pull Request</a>&#xFF0C;&#x6216;&#x7ED9;&#x6211;&#x4EEC; <a href="http://new-issue.ant.design/" target="_blank">&#x62A5;&#x544A; Bug</a>&#x3002;</p>
+<blockquote>
+<p>&#x5F3A;&#x70C8;&#x63A8;&#x8350;&#x9605;&#x8BFB; <a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way" target="_blank">&#x300A;&#x63D0;&#x95EE;&#x7684;&#x667A;&#x6167;&#x300B;</a>&#x3001;<a href="https://github.com/seajs/seajs/issues/545" target="_blank">&#x300A;&#x5982;&#x4F55;&#x5411;&#x5F00;&#x6E90;&#x793E;&#x533A;&#x63D0;&#x95EE;&#x9898;&#x300B;</a> &#x548C; <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/bugs-cn.html" target="_blank">&#x300A;&#x5982;&#x4F55;&#x6709;&#x6548;&#x5730;&#x62A5;&#x544A; Bug&#x300B;</a>&#x3001;<a href="https://zhuanlan.zhihu.com/p/25795393" target="_blank">&#x300A;&#x5982;&#x4F55;&#x5411;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x63D0;&#x4EA4;&#x65E0;&#x6CD5;&#x89E3;&#x7B54;&#x7684;&#x95EE;&#x9898;&#x300B;</a>&#xFF0C;&#x66F4;&#x597D;&#x7684;&#x95EE;&#x9898;&#x66F4;&#x5BB9;&#x6613;&#x83B7;&#x5F97;&#x5E2E;&#x52A9;&#x3002;</p>
+</blockquote>
+<h2 id="&#x793E;&#x533A;&#x4E92;&#x52A9;"><a name="&#x793E;&#x533A;&#x4E92;&#x52A9;" class="anchor-navigation-ex-anchor" href="#&#x793E;&#x533A;&#x4E92;&#x52A9;"><i class="fa fa-link" aria-hidden="true"></i></a>1.11. &#x793E;&#x533A;&#x4E92;&#x52A9;</h2>
+<p>&#x5982;&#x679C;&#x60A8;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x78B0;&#x5230;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x51E0;&#x4E2A;&#x9014;&#x5F84;&#x5BFB;&#x6C42;&#x5E2E;&#x52A9;&#xFF0C;&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x4E5F;&#x9F13;&#x52B1;&#x8D44;&#x6DF1;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x9014;&#x5F84;&#x7ED9;&#x65B0;&#x4EBA;&#x63D0;&#x4F9B;&#x5E2E;&#x52A9;&#x3002;</p>
+<p>&#x901A;&#x8FC7; Stack Overflow &#x6216;&#x8005; Segment Fault &#x63D0;&#x95EE;&#x65F6;&#xFF0C;&#x5EFA;&#x8BAE;&#x52A0;&#x4E0A; <code>antd</code> &#x6807;&#x7B7E;&#x3002;</p>
+<ol>
+<li><a href="http://stackoverflow.com/questions/tagged/antd" target="_blank">Stack Overflow</a>&#xFF08;&#x82F1;&#x6587;&#xFF09;</li>
+<li><a href="https://segmentfault.com/t/antd" target="_blank">Segment Fault</a>&#xFF08;&#x4E2D;&#x6587;&#xFF09;</li>
+<li><a href="https://gitter.im/ant-design/ant-design?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge" target="_blank"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/ant-design/ant-design"></a></li>
+</ol>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-26 15:52:19
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: UI库">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../material-ui/" class="navigation navigation-next " aria-label="Next page: Material-UI">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Ant Design","level":"1.6.2.3.13.1","depth":5,"next":{"title":"Material-UI","level":"1.6.2.3.13.2","depth":5,"path":"Labrary/React/Labrary/_UI/material-ui/README.md","ref":"Labrary/React/Labrary/_UI/material-ui/README.md","articles":[]},"previous":{"title":"UI库","level":"1.6.2.3.13","depth":4,"path":"Labrary/React/Labrary/_UI/README.md","ref":"Labrary/React/Labrary/_UI/README.md","articles":[{"title":"Ant Design","level":"1.6.2.3.13.1","depth":5,"path":"Labrary/React/Labrary/_UI/Ant Design/README.md","ref":"Labrary/React/Labrary/_UI/Ant Design/README.md","articles":[]},{"title":"Material-UI","level":"1.6.2.3.13.2","depth":5,"path":"Labrary/React/Labrary/_UI/material-ui/README.md","ref":"Labrary/React/Labrary/_UI/material-ui/README.md","articles":[]},{"title":"react-bootstrap","level":"1.6.2.3.13.3","depth":5,"path":"Labrary/React/Labrary/_UI/react-bootstrap/README.md","ref":"Labrary/React/Labrary/_UI/react-bootstrap/README.md","articles":[]},{"title":"Semantic-UI-React","level":"1.6.2.3.13.4","depth":5,"path":"Labrary/React/Labrary/_UI/Semantic-UI-React/README.md","ref":"Labrary/React/Labrary/_UI/Semantic-UI-React/README.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"Labrary/React/Labrary/_UI/Ant Design/README.md","mtime":"2017-11-26T07:52:19.087Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-14T10:33:49.807Z"},"basePath":"../../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

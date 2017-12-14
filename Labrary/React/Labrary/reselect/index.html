@@ -1,0 +1,1699 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>reselect · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../text-mask/" />
+    
+    
+    <link rel="prev" href="../recompose/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../../HTML/">
+            
+                <a href="../../../../HTML/">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../CSS/">
+            
+                <a href="../../../../CSS/">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../JavaScript/">
+            
+                <a href="../../../../JavaScript/">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../../Http/">
+            
+                <a href="../../../../Http/">
+            
+                    
+                    Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Labrary
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../VUE/">
+            
+                <a href="../../../VUE/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../docs/">
+            
+                <a href="../../docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../Create-React-App/">
+            
+                <a href="../../Create-React-App/">
+            
+                    
+                    Create-React-App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.1" data-path="../Redux/">
+            
+                <a href="../Redux/">
+            
+                    
+                    redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.2" data-path="../react-redux/">
+            
+                <a href="../react-redux/">
+            
+                    
+                    react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.3" data-path="../react-router/">
+            
+                <a href="../react-router/">
+            
+                    
+                    react-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.4" data-path="../react-router-redux/4.x/">
+            
+                <a href="../react-router-redux/4.x/">
+            
+                    
+                    react-router-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.5" data-path="../fetch/">
+            
+                <a href="../fetch/">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.6" data-path="../isomorphic-fetch/">
+            
+                <a href="../isomorphic-fetch/">
+            
+                    
+                    isomorphic-fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.7" data-path="../prop-types/">
+            
+                <a href="../prop-types/">
+            
+                    
+                    prop-types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.8" data-path="../react-autosuggest/">
+            
+                <a href="../react-autosuggest/">
+            
+                    
+                    react-autosuggest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.9" data-path="../recharts/">
+            
+                <a href="../recharts/">
+            
+                    
+                    recharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.10" data-path="../recompose/">
+            
+                <a href="../recompose/">
+            
+                    
+                    recompose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2.3.11" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    reselect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.12" data-path="../text-mask/">
+            
+                <a href="../text-mask/">
+            
+                    
+                    text-mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13" data-path="../_UI/">
+            
+                <a href="../_UI/">
+            
+                    
+                    UI库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.13.1" data-path="../_UI/Ant Design/">
+            
+                <a href="../_UI/Ant Design/">
+            
+                    
+                    Ant Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.2" data-path="../_UI/material-ui/">
+            
+                <a href="../_UI/material-ui/">
+            
+                    
+                    Material-UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.3" data-path="../_UI/react-bootstrap/">
+            
+                <a href="../_UI/react-bootstrap/">
+            
+                    
+                    react-bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.4" data-path="../_UI/Semantic-UI-React/">
+            
+                <a href="../_UI/Semantic-UI-React/">
+            
+                    
+                    Semantic-UI-React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="../../example/">
+            
+                <a href="../../example/">
+            
+                    
+                    示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="../../_Questions/questions.html">
+            
+                <a href="../../_Questions/questions.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="../../_experience/">
+            
+                <a href="../../_experience/">
+            
+                    
+                    经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../React Native/">
+            
+                <a href="../../../React Native/">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../Nodejs/">
+            
+                <a href="../../../Nodejs/">
+            
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../../../Nodejs/docsList.html">
+            
+                <a href="../../../Nodejs/docsList.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../../../Nodejs/Labrary/">
+            
+                <a href="../../../Nodejs/Labrary/">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.2.1" data-path="../../../Nodejs/Labrary/nvm/">
+            
+                <a href="../../../Nodejs/Labrary/nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.2" data-path="../../../Nodejs/Labrary/request/">
+            
+                <a href="../../../Nodejs/Labrary/request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.3" data-path="../../../Nodejs/Labrary/async/">
+            
+                <a href="../../../Nodejs/Labrary/async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.4" data-path="../../../Nodejs/Labrary/supervisor/">
+            
+                <a href="../../../Nodejs/Labrary/supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.5" data-path="../../../Nodejs/Labrary/express/">
+            
+                <a href="../../../Nodejs/Labrary/express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../UI/">
+            
+                <a href="../../../UI/">
+            
+                    
+                    UI 库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    其他库
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >reselect</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#reselect"><b>1. </b>Reselect</a></li><ul><li><span class="title-icon "></span><a href="#table-of-contents"><b>1.1. </b>Table of Contents</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;"><b>1.2. </b>&#x5B89;&#x88C5;</a></li><li><span class="title-icon "></span><a href="#&#x6848;&#x4F8B;"><b>1.3. </b>&#x6848;&#x4F8B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x7684;&#x52A8;&#x673A;"><b>1.3.1. </b>&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x7684;&#x52A8;&#x673A;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x9009;&#x62E9;&#x5668;"><b>1.3.2. </b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x9009;&#x62E9;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;"><b>1.3.3. </b>&#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5230;redux"><b>1.3.4. </b>&#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5230;redux</a></li><li><span class="title-icon "></span><a href="#&#x5728;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;react-props"><b>1.3.5. </b>&#x5728;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;React Props</a></li><li><span class="title-icon "></span><a href="#&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x5E26;props&#x7684;&#x9009;&#x62E9;&#x5668;"><b>1.3.6. </b>&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x5E26;Props&#x7684;&#x9009;&#x62E9;&#x5668;</a></li></ul><li><span class="title-icon "></span><a href="#api"><b>1.4. </b>API</a></li><ul><li><span class="title-icon "></span><a href="#createselectorinputselectors--inputselectors-resultfunc"><b>1.4.1. </b>createSelector(...inputSelectors | [inputSelectors], resultFunc)</a></li><li><span class="title-icon "></span><a href="#defaultmemoizefunc-equalitycheck--defaultequalitycheck"><b>1.4.2. </b>defaultMemoize(func, equalityCheck = defaultEqualityCheck)</a></li><li><span class="title-icon "></span><a href="#createselectorcreatormemoize-memoizeoptions"><b>1.4.3. </b>createSelectorCreator(memoize, ...memoizeOptions)</a></li><li><span class="title-icon "></span><a href="#createstructuredselectorinputselectors-selectorcreator--createselector"><b>1.4.4. </b>createStructuredSelector({inputSelectors}, selectorCreator = createSelector)</a></li></ul><li><span class="title-icon "></span><a href="#faq"><b>1.5. </b>FAQ</a></li><ul><li><span class="title-icon "></span><a href="#q-why-isnt-my-selector-recomputing-when-the-input-state-changes"><b>1.5.1. </b>Q: Why isn&#x2019;t my selector recomputing when the input state changes?</a></li><li><span class="title-icon "></span><a href="#q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same"><b>1.5.2. </b>Q: Why is my selector recomputing when the input state stays the same?</a></li><li><span class="title-icon "></span><a href="#q-can-i-use-reselect-without-redux"><b>1.5.3. </b>Q: Can I use Reselect without Redux?</a></li><li><span class="title-icon "></span><a href="#q-how-do-i-create-a-selector-that-takes-an-argument"><b>1.5.4. </b>Q: How do I create a selector that takes an argument?</a></li><li><span class="title-icon "></span><a href="#q-the-default-memoization-function-is-no-good-can-i-use-a-different-one"><b>1.5.5. </b>Q: The default memoization function is no good, can I use a different one?</a></li><li><span class="title-icon "></span><a href="#q-how-do-i-test-a-selector"><b>1.5.6. </b>Q: How do I test a selector?</a></li><li><span class="title-icon "></span><a href="#q-how-do-i-use-reselect-with-immutablejs"><b>1.5.7. </b>Q: How do I use Reselect with Immutable.js?</a></li><li><span class="title-icon "></span><a href="#q-can-i-share-a-selector-across-multiple-components"><b>1.5.8. </b>Q: Can I share a selector across multiple components?</a></li><li><span class="title-icon "></span><a href="#q-are-there-typescript-typings"><b>1.5.9. </b>Q: Are there TypeScript Typings?</a></li><li><span class="title-icon "></span><a href="#q-&#x600E;&#x4E48;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;-curried-&#x9009;&#x62E9;&#x5668;"><b>1.5.10. </b>Q: &#x600E;&#x4E48;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; curried &#x9009;&#x62E9;&#x5668;?</a></li></ul><li><span class="title-icon "></span><a href="#&#x76F8;&#x5173;&#x9879;&#x76EE;"><b>1.6. </b>&#x76F8;&#x5173;&#x9879;&#x76EE;</a></li><ul><li><span class="title-icon "></span><a href="#re-reselect"><b>1.6.1. </b>re-reselect</a></li><li><span class="title-icon "></span><a href="#reselect-map"><b>1.6.2. </b>reselect-map</a></li></ul><li><span class="title-icon "></span><a href="#license"><b>1.7. </b>License</a></li></ul></ul></div><a href="#reselect" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="reselect"><a name="reselect" class="anchor-navigation-ex-anchor" href="#reselect"><i class="fa fa-link" aria-hidden="true"></i></a>1. Reselect</h1>
+<p><a href="https://travis-ci.org/reactjs/reselect" target="_blank"><img src="https://img.shields.io/travis/reactjs/reselect/master.svg?style=flat-square" alt="Travis"></a>
+<a href="https://www.npmjs.org/package/reselect" target="_blank"><img src="https://img.shields.io/npm/v/reselect.svg?style=flat-square" alt="npm package"></a>
+<a href="https://coveralls.io/github/reactjs/reselect" target="_blank"><img src="https://img.shields.io/coveralls/reactjs/reselect/master.svg?style=flat-square" alt="Coveralls"></a></p>
+<p>&#x8FD9;&#x662F;&#x4E3A;React&#x63D0;&#x4F9B;&#x7B80;&#x5355;&#x7684;&#x201C;&#x9009;&#x62E9;&#x5668;&#x201D;&#x5E93;&#x3002;&#x672C;&#x5E93;&#x53D7;&#x5230;<a href="https://github.com/optimizely/nuclear-js.git" target="_blank">NuclearJS</a>&#x4E2D;&#x7684;getters,
+<a href="https://github.com/Day8/re-frame" target="_blank">re-frame</a>&#x4E2D;&#x7684;<a href="https://github.com/Day8/re-frame#just-a-read-only-cursor" target="_blank">subscriptions</a>&#x548C;&#x6765;&#x81EA;
+<a href="https://github.com/speedskater" target="_blank">speedskater</a>&#x7684;&#x8FD9;&#x4E2A; 
+<a href="https://github.com/gaearon/redux/pull/169" target="_blank">proposal</a>&#x7B49;&#x7684;&#x542F;&#x53D1; .</p>
+<ul>
+<li>&#x9009;&#x62E9;&#x5668;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x6D3E;&#x751F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5141;&#x8BB8;Redux&#x5B58;&#x50A8;&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x7684;state&#x3002;</li>
+<li>&#x9009;&#x62E9;&#x5668;&#x662F;&#x6709;&#x6548;&#x7684;&#x3002;&#x9664;&#x975E;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5426;&#x5219;&#x9009;&#x62E9;&#x5668;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;</li>
+<li>&#x9009;&#x62E9;&#x5668;&#x662F;&#x53EF;&#x7EC4;&#x5408;&#x3002;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x5176;&#x4ED6;&#x9009;&#x62E9;&#x5668;&#x7684;&#x8F93;&#x5165;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelector <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;reselect&apos;</span>
+
+<span class="token keyword">const</span> shopItemsSelector <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>shop<span class="token punctuation">.</span>items
+<span class="token keyword">const</span> taxPercentSelector <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>shop<span class="token punctuation">.</span>taxPercent
+
+<span class="token keyword">const</span> subtotalSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  shopItemsSelector<span class="token punctuation">,</span>
+  items <span class="token operator">=</span><span class="token operator">&gt;</span> items<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>acc<span class="token punctuation">,</span> item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> acc <span class="token operator">+</span> item<span class="token punctuation">.</span>value<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> taxSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  subtotalSelector<span class="token punctuation">,</span>
+  taxPercentSelector<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>subtotal<span class="token punctuation">,</span> taxPercent<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> subtotal <span class="token operator">*</span> <span class="token punctuation">(</span>taxPercent <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> totalSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  subtotalSelector<span class="token punctuation">,</span>
+  taxSelector<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>subtotal<span class="token punctuation">,</span> tax<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> total<span class="token punctuation">:</span> subtotal <span class="token operator">+</span> tax <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> exampleState <span class="token operator">=</span> <span class="token punctuation">{</span>
+  shop<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    taxPercent<span class="token punctuation">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+    items<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;apple&apos;</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token number">1.20</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;orange&apos;</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token number">0.95</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">subtotalSelector</span><span class="token punctuation">(</span>exampleState<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 2.15</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">taxSelector</span><span class="token punctuation">(</span>exampleState<span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">// 0.172</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">totalSelector</span><span class="token punctuation">(</span>exampleState<span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">// { total: 2.322 }</span>
+</code></pre>
+<h2 id="table-of-contents"><a name="table-of-contents" class="anchor-navigation-ex-anchor" href="#table-of-contents"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Table of Contents</h2>
+<ul>
+<li><a href="#&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</a></li>
+<li><a href="#&#x6848;&#x4F8B;">&#x6848;&#x4F8B;</a><ul>
+<li><a href="#&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x7684;&#x52A8;&#x673A;">&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x7684;&#x52A8;&#x673A;</a></li>
+<li><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x9009;&#x62E9;&#x5668;">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x9009;&#x62E9;&#x5668;</a></li>
+<li><a href="#&#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;">&#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;</a></li>
+<li><a href="#&#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5230;redux">&#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5230;Redux Store</a></li>
+<li><a href="#&#x5728;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;react-props">&#x5728;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;React Props</a></li>
+<li><a href="#&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x5E26;props&#x7684;&#x9009;&#x62E9;&#x5668;">&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x5E26;Props&#x7684;&#x9009;&#x62E9;&#x5668;</a></li>
+</ul>
+</li>
+<li><a href="#api">API</a><ul>
+<li><a href="#createselectorinputselectors--inputselectors-resultfunc"><code>createSelector</code></a></li>
+<li><a href="#defaultmemoizefunc-equalitycheck--defaultequalitycheck"><code>defaultMemoize</code></a></li>
+<li><a href="#createselectorcreatormemoize-memoizeoptions"><code>createSelectorCreator</code></a></li>
+<li><a href="#createstructuredselectorinputselectors-selectorcreator--createselector"><code>createStructuredSelector</code></a></li>
+</ul>
+</li>
+<li><p><a href="#faq">FAQ</a></p>
+<ul>
+<li><a href="#q-why-isnt-my-selector-recomputing-when-the-input-state-changes">&#x5F53;&#x8F93;&#x5165;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x7684;&#x9009;&#x62E9;&#x5668;&#x4E0D;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;?</a></li>
+<li><a href="#q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same">&#x5F53;&#x8F93;&#x5165;&#x72B6;&#x6001;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x65F6;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x9009;&#x62E9;&#x5668;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;?</a></li>
+<li><a href="#q-can-i-use-reselect-without-redux">&#x6211;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Reselect&#x800C;&#x4E0D;&#x7528;Redux&#x5417;?</a></li>
+<li><a href="#q-the-default-memoization-function-is-no-good-can-i-use-a-different-one">&#x9ED8;&#x8BA4;&#x7684;&#x5185;&#x5B58;&#x5316;&#x51FD;&#x6570;&#x662F;&#x4E0D;&#x597D;&#x7684;&#xFF0C;&#x6211;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x5417;?</a></li>
+<li><a href="#q-how-do-i-test-a-selector">&#x5982;&#x4F55;&#x6D4B;&#x8BD5;&#x9009;&#x62E9;&#x5668;?</a></li>
+<li><a href="#q-how-do-i-create-a-selector-that-takes-an-argument">&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x9009;&#x62E9;&#x5668;?</a></li>
+<li><a href="#q-how-do-i-use-reselect-with-immutablejs">&#x5982;&#x4F55;&#x540C;&#x65F6;Reselect&#x4E0E;Immutable.js?</a></li>
+<li><a href="#q-can-i-share-a-selector-across-multiple-components">&#x6211;&#x53EF;&#x4EE5;&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5417;?</a></li>
+<li><a href="#q-are-there-typescript-typings">Are there TypeScript typings?</a></li>
+<li><a href="#q-how-can-i-make-a-curried-selector">&#x5982;&#x4F55;&#x5236;&#x4F5C;&#x4E00;&#x4E2A;&#x5496;&#x55B1;&#x9009;&#x62E9;&#x5668;?</a></li>
+</ul>
+</li>
+<li><p><a href="#related-projects">Related &#x9879;&#x76EE;</a></p>
+</li>
+<li><a href="#license">&#x6388;&#x6743;</a></li>
+</ul>
+<h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5B89;&#x88C5;</h2>
+<pre class="language-"><code>npm install reselect
+</code></pre><h2 id="&#x6848;&#x4F8B;"><a name="&#x6848;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x6848;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x6848;&#x4F8B;</h2>
+<p>&#x5982;&#x679C;&#x4F60;&#x559C;&#x6B22;&#x89C6;&#x9891;&#x6559;&#x7A0B;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;<a href="https://www.youtube.com/watch?v=6Xwo5mVxDqI" target="_blank">&#x8FD9;&#x513F;</a>&#x627E;&#x5230;.</p>
+<h3 id="&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x7684;&#x52A8;&#x673A;"><a name="&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x7684;&#x52A8;&#x673A;" class="anchor-navigation-ex-anchor" href="#&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x7684;&#x52A8;&#x673A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. &#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x7684;&#x52A8;&#x673A;</h3>
+<blockquote>
+<p>&#x672C;&#x8282;&#x4E2D;&#x7684;&#x6848;&#x4F8B;&#x57FA;&#x4E8E; <a href="http://redux.js.org/docs/basics/UsageWithReact.html" target="_blank">React TodoList &#x793A;&#x4F8B;</a>.</p>
+</blockquote>
+<h4 id="containersvisibletodolistjs"><a name="containersvisibletodolistjs" class="anchor-navigation-ex-anchor" href="#containersvisibletodolistjs"><i class="fa fa-link" aria-hidden="true"></i></a><a name="containersvisibletodolistjs" class="plugin-anchor" href="#containersvisibletodolistjs"><i class="fa fa-link" aria-hidden="true"></i></a><code>containers/VisibleTodoList.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> toggleTodo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../actions&apos;</span>
+<span class="token keyword">import</span> TodoList <span class="token keyword">from</span> <span class="token string">&apos;../components/TodoList&apos;</span>
+
+<span class="token keyword">const</span> getVisibleTodos <span class="token operator">=</span> <span class="token punctuation">(</span>todos<span class="token punctuation">,</span> filter<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>filter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ALL&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todos
+    <span class="token keyword">case</span> <span class="token string">&apos;SHOW_COMPLETED&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> t<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ACTIVE&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">!</span>t<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    todos<span class="token punctuation">:</span> <span class="token function">getVisibleTodos</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> state<span class="token punctuation">.</span>visibilityFilter<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mapDispatchToProps <span class="token operator">=</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    onTodoClick<span class="token punctuation">:</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">toggleTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> VisibleTodoList <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>
+  mapStateToProps<span class="token punctuation">,</span>
+  mapDispatchToProps
+<span class="token punctuation">)</span><span class="token punctuation">(</span>TodoList<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> VisibleTodoList
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;<code>mapStateToProps</code>&#x8C03;&#x7528;<code>getVisibleTodos</code>&#x6765;&#x8BA1;&#x7B97;<code>todos</code>&#x3002;&#x8FD9;&#x5F88;&#x597D;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x7F3A;&#x70B9;:&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x72B6;&#x6001;&#x6811;&#x65F6;&#x90FD;&#x8981;&#x8BA1;&#x7B97;<code>todos</code>&#x3002;&#x5982;&#x679C;&#x72B6;&#x6001;&#x6811;&#x5F88;&#x5927;&#xFF0C;&#x6216;&#x8005;&#x8BA1;&#x7B97;&#x6210;&#x672C;&#x5F88;&#x9AD8;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x65F6;&#x91CD;&#x590D;&#x8BA1;&#x7B97;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;Reselect&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x907F;&#x514D;&#x8FD9;&#x4E9B;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;</p>
+<h3 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x9009;&#x62E9;&#x5668;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x9009;&#x62E9;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x9009;&#x62E9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x7684;&#x9009;&#x62E9;&#x5668;</h3>
+<p>&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x7528;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#x7684;&#x9009;&#x62E9;&#x5668;&#x6765;&#x66FF;&#x6362;<code>getVisibleTodos</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x4F1A;&#x5728;<code>state.todos</code>&#x503C;&#x6216;&#x8005;<code>state.visibilityFilter</code>&#x53D8;&#x5316;&#x65F6;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;<code>todos</code>&#xFF0C;&#x4F46;&#x5728;&#x53D8;&#x5316;&#x53D1;&#x751F;&#x5728;&#x72B6;&#x6001;&#x6811;&#x7684;&#x5176;&#x4ED6;&#xFF08;&#x4E0D;&#x76F8;&#x5173;&#x7684;&#xFF09;&#x90E8;&#x5206;&#x65F6;&#x4E0D;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>Reselect&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x51FD;&#x6570;<code>createSelector</code>&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x3002;<code>createSelector</code>&#x63A5;&#x53D7;&#x4E86;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x6570;&#x7EC4;&#x548C;&#x4E00;&#x4E2A;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x5176;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;Redux&#x72B6;&#x6001;&#x6811;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x5BFC;&#x81F4;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x7684;&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x90A3;&#x4E48;&#x9009;&#x62E9;&#x5668;&#x5C06;&#x4F7F;&#x7528;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x7684;&#x503C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x8C03;&#x7528;&#x5B83;&#x7684;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x3002;&#x5982;&#x679C;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x7684;&#x503C;&#x4E0E;&#x4E4B;&#x524D;&#x5BF9;&#x9009;&#x62E9;&#x5668;&#x7684;&#x8C03;&#x7528;&#x76F8;&#x540C;&#xFF0C;&#x5B83;&#x5C06;&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x8BA1;&#x7B97;&#x7684;&#x503C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8C03;&#x7528;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>getVisibleTodos</code>&#x7684;&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x6765;&#x66FF;&#x6362;&#x4E0A;&#x9762;&#x7684;&#x975E;&#x8BB0;&#x5FC6;&#x5316;&#x7248;&#x672C;:</p>
+<h4 id="selectorsindexjs"><a name="selectorsindexjs" class="anchor-navigation-ex-anchor" href="#selectorsindexjs"><i class="fa fa-link" aria-hidden="true"></i></a><a name="selectorsindexjs" class="plugin-anchor" href="#selectorsindexjs"><i class="fa fa-link" aria-hidden="true"></i></a><code>selectors/index.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelector <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;reselect&apos;</span>
+
+<span class="token keyword">const</span> getVisibilityFilter <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>visibilityFilter
+<span class="token keyword">const</span> getTodos <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>todos
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> getVisibleTodos <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  <span class="token punctuation">[</span> getVisibilityFilter<span class="token punctuation">,</span> getTodos <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>visibilityFilter<span class="token punctuation">,</span> todos<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>visibilityFilter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ALL&apos;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> todos
+      <span class="token keyword">case</span> <span class="token string">&apos;SHOW_COMPLETED&apos;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> t<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+      <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ACTIVE&apos;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">!</span>t<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;, <code>getVisibilityFilter</code> &#x548C; <code>getTodos</code>&#x662F;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x3002;&#x5B83;&#x4EEC;&#x88AB;&#x521B;&#x5EFA;&#x4E3A;&#x666E;&#x901A;&#x7684;&#x975E;&#x5185;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x4E0D;&#x8F6C;&#x6362;&#x6240;&#x9009;&#x62E9;&#x7684;&#x6570;&#x636E;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;<code>getVisibleTodos</code>&#x662F;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x3002;&#x5B83;&#x5C06;<code>getVisibilityFilter</code>&#x548C;<code>getTodos</code>&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#x6765;&#x8BA1;&#x7B97;&#x7ECF;&#x8FC7;&#x8FC7;&#x6EE4;&#x7684;todos&#x5217;&#x8868;&#x3002;</p>
+<h3 id="&#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;"><a name="&#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.3. &#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;</h3>
+<p>&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x7684;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x3002;&#x4E0B;&#x9762;&#x662F;<code>getVisibleTodos</code>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x7684;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x5173;&#x952E;&#x5B57;&#x8FDB;&#x4E00;&#x6B65;&#x8FC7;&#x6EE4;todos:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> getKeyword <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>keyword
+
+<span class="token keyword">const</span> getVisibleTodosFilteredByKeyword <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  <span class="token punctuation">[</span> getVisibleTodos<span class="token punctuation">,</span> getKeyword <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>visibleTodos<span class="token punctuation">,</span> keyword<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> visibleTodos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>
+    todo <span class="token operator">=</span><span class="token operator">&gt;</span> todo<span class="token punctuation">.</span>text<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>keyword<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5230;redux"><a name="&#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5230;redux" class="anchor-navigation-ex-anchor" href="#&#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5230;redux"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.4. &#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5230;redux</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; <a href="https://github.com/reactjs/react-redux" target="_blank">React Redux</a>,&#x4F60;&#x53EF;&#x4EE5;&#x5728;<code>mapStateToProps()</code>&#x91CC;&#x5C06;&#x9009;&#x62E9;&#x5668;&#x4F5C;&#x4E3A;&#x5E38;&#x89C4;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF1A;</p>
+<h4 id="containersvisibletodolistjs_1"><a name="containersvisibletodolistjs_1" class="anchor-navigation-ex-anchor" href="#containersvisibletodolistjs_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="containersvisibletodolistjs" class="plugin-anchor" href="#containersvisibletodolistjs"><i class="fa fa-link" aria-hidden="true"></i></a><code>containers/VisibleTodoList.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> toggleTodo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../actions&apos;</span>
+<span class="token keyword">import</span> TodoList <span class="token keyword">from</span> <span class="token string">&apos;../components/TodoList&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getVisibleTodos <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../selectors&apos;</span>
+
+<span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    todos<span class="token punctuation">:</span> <span class="token function">getVisibleTodos</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mapDispatchToProps <span class="token operator">=</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    onTodoClick<span class="token punctuation">:</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">toggleTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> VisibleTodoList <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>
+  mapStateToProps<span class="token punctuation">,</span>
+  mapDispatchToProps
+<span class="token punctuation">)</span><span class="token punctuation">(</span>TodoList<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> VisibleTodoList
+</code></pre>
+<h3 id="&#x5728;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;react-props"><a name="&#x5728;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;react-props" class="anchor-navigation-ex-anchor" href="#&#x5728;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;react-props"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.5. &#x5728;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;React Props</h3>
+<blockquote>
+<p>&#x8FD9;&#x4E00;&#x8282;&#x5C06;&#x5411;&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5F15;&#x5165;&#x4E00;&#x4E2A;&#x5047;&#x8BBE;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x5141;&#x8BB8;&#x5B83;&#x652F;&#x6301;&#x591A;&#x4E2A;Todo&#x5217;&#x8868;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E2A;&#x6269;&#x5C55;&#x7684;&#x5B8C;&#x6574;&#x5B9E;&#x73B0;&#x9700;&#x8981;&#x5BF9;reducers&#x3001;&#x7EC4;&#x4EF6;&#x3001;actions&#x7B49;&#x7684;&#x66F4;&#x6539;&#xFF0C;&#x8FD9;&#x4E9B;&#x66F4;&#x6539;&#x4E0E;&#x8BA8;&#x8BBA;&#x7684;&#x4E3B;&#x9898;&#x4E0D;&#x76F4;&#x63A5;&#x76F8;&#x5173;&#xFF0C;&#x5E76;&#x4E14;&#x4E3A;&#x4E86;&#x7B80;&#x6D01;&#x800C;&#x7701;&#x7565;&#x4E86;&#x3002;</p>
+</blockquote>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x770B;&#x5230;&#x9009;&#x62E9;&#x5668;&#x63A5;&#x6536;Redux store state&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x9009;&#x62E9;&#x5668;&#x4E5F;&#x53EF;&#x4EE5;&#x63A5;&#x6536;props&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x65F6;&#x4E00;&#x4E2A;<code>App</code> &#x7EC4;&#x4EF6;&#xFF0C;&#x5B83;&#x6E32;&#x67D3;&#x4E09;&#x4E2A;<code>VisibleTodoList</code>&#x7EC4;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E2A;<code>VisibleTodoList</code>&#x90FD;&#x6709;&#x4E00;&#x4E2A;<code>listId</code>&#x7684;&#x5C5E;&#x6027;:</p>
+<h4 id="componentsappjs"><a name="componentsappjs" class="anchor-navigation-ex-anchor" href="#componentsappjs"><i class="fa fa-link" aria-hidden="true"></i></a><a name="componentsappjs" class="plugin-anchor" href="#componentsappjs"><i class="fa fa-link" aria-hidden="true"></i></a><code>components/App.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+<span class="token keyword">import</span> Footer <span class="token keyword">from</span> <span class="token string">&apos;./Footer&apos;</span>
+<span class="token keyword">import</span> AddTodo <span class="token keyword">from</span> <span class="token string">&apos;../containers/AddTodo&apos;</span>
+<span class="token keyword">import</span> VisibleTodoList <span class="token keyword">from</span> <span class="token string">&apos;../containers/VisibleTodoList&apos;</span>
+
+<span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>VisibleTodoList listId<span class="token operator">=</span><span class="token string">&quot;1&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>VisibleTodoList listId<span class="token operator">=</span><span class="token string">&quot;2&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>VisibleTodoList listId<span class="token operator">=</span><span class="token string">&quot;3&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6BCF;&#x4E2A;<code>VisibleTodoList</code>&#x5BB9;&#x5668;&#x5E94;&#x8BE5;&#x6839;&#x636E;<code>listId</code>&#x5C5E;&#x6027;&#x7684;&#x503C;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x56E0;&#x6B64;&#x8BA9;&#x6211;&#x4EEC;&#x4FEE;&#x6539;<code>getVisibilityFilter</code>&#x548C;<code>getTodos</code>&#x6765;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;props&#x53C2;&#x6570;:</p>
+<h4 id="selectorstodoselectorsjs"><a name="selectorstodoselectorsjs" class="anchor-navigation-ex-anchor" href="#selectorstodoselectorsjs"><i class="fa fa-link" aria-hidden="true"></i></a><a name="selectorstodoselectorsjs" class="plugin-anchor" href="#selectorstodoselectorsjs"><i class="fa fa-link" aria-hidden="true"></i></a><code>selectors/todoSelectors.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelector <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;reselect&apos;</span>
+
+<span class="token keyword">const</span> getVisibilityFilter <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  state<span class="token punctuation">.</span>todoLists<span class="token punctuation">[</span>props<span class="token punctuation">.</span>listId<span class="token punctuation">]</span><span class="token punctuation">.</span>visibilityFilter
+
+<span class="token keyword">const</span> getTodos <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  state<span class="token punctuation">.</span>todoLists<span class="token punctuation">[</span>props<span class="token punctuation">.</span>listId<span class="token punctuation">]</span><span class="token punctuation">.</span>todos
+
+<span class="token keyword">const</span> getVisibleTodos <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  <span class="token punctuation">[</span> getVisibilityFilter<span class="token punctuation">,</span> getTodos <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>visibilityFilter<span class="token punctuation">,</span> todos<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>visibilityFilter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">&apos;SHOW_COMPLETED&apos;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> todo<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+      <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ACTIVE&apos;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+      <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> todos
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> getVisibleTodos
+</code></pre>
+<p><code>props</code> &#x53EF;&#x4EE5;&#x4ECE;<code>mapStateToProps</code>&#x4F20;&#x9012;&#x5230;<code>getVisibleTodos</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    todos<span class="token punctuation">:</span> <span class="token function">getVisibleTodos</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;<code>getVisibleTodos</code>&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;<code>props</code>&#xFF0C;&#x4E00;&#x5207;&#x770B;&#x8D77;&#x6765;&#x90FD;&#x5F88;&#x6B63;&#x5E38;</p>
+<p><strong>&#x4F46;&#x662F;&#x8FD9;&#x6709;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1F;</strong></p>
+<p>&#x4F7F;&#x7528;&#x5E26;&#x6709;<code>VisibleTodoList</code>&#x5BB9;&#x5668;&#x7684;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;<code>getVisibleTodos</code>&#x9009;&#x62E9;&#x5668;&#x5C06;&#x4E0D;&#x80FD;&#x6B63;&#x786E;&#x5730;&#x7F13;&#x5B58;:</p>
+<h4 id="containersvisibletodolistjs_2"><a name="containersvisibletodolistjs_2" class="anchor-navigation-ex-anchor" href="#containersvisibletodolistjs_2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="containersvisibletodolistjs" class="plugin-anchor" href="#containersvisibletodolistjs"><i class="fa fa-link" aria-hidden="true"></i></a><code>containers/VisibleTodoList.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> toggleTodo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../actions&apos;</span>
+<span class="token keyword">import</span> TodoList <span class="token keyword">from</span> <span class="token string">&apos;../components/TodoList&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getVisibleTodos <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../selectors&apos;</span>
+
+<span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// &#x8B66;&#x544A;: &#x4E0B;&#x9762;&#x7684;&#x9009;&#x62E9;&#x5668;&#x4E0D;&#x80FD;&#x6B63;&#x786E;&#x5730;&#x8FDB;&#x884C;&#x7F13;&#x5B58;</span>
+    todos<span class="token punctuation">:</span> <span class="token function">getVisibleTodos</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mapDispatchToProps <span class="token operator">=</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    onTodoClick<span class="token punctuation">:</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">toggleTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> VisibleTodoList <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>
+  mapStateToProps<span class="token punctuation">,</span>
+  mapDispatchToProps
+<span class="token punctuation">)</span><span class="token punctuation">(</span>TodoList<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> VisibleTodoList
+</code></pre>
+<p>&#x4F7F;&#x7528;<code>createSelector</code>&#x521B;&#x5EFA;&#x7684;&#x9009;&#x62E9;&#x5668;&#x6709;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x5927;&#x5C0F;&#x4E3A;1&#xFF0C;&#x5F53;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x96C6;&#x4E0E;&#x4E4B;&#x524D;&#x7684;&#x53C2;&#x6570;&#x96C6;&#x76F8;&#x540C;&#x65F6;&#xFF0C;&#x53EA;&#x8FD4;&#x56DE;&#x7F13;&#x5B58;&#x7684;&#x503C;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8F6E;&#x6D41;&#x6E32;&#x67D3;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisibleTodoList</span> <span class="token attr-name">listId</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span></code>&#x548C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisibleTodoList</span> <span class="token attr-name">listId</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>2<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span></code>&#xFF0C;&#x5171;&#x4EAB;&#x9009;&#x62E9;&#x5668;&#x5C06;&#x8F6E;&#x6D41;&#x63A5;&#x6536; <code>{listId: 1}</code> and <code>{listId: 2}</code> &#x4F5C;&#x4E3A;&#x5B83;&#x4EEC;&#x7684; <code>props</code> &#x53C2;&#x6570;&#x3002;&#x8FD9;&#x5C06;&#x5BFC;&#x81F4;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x9009;&#x62E9;&#x5668;&#x5C06;&#x603B;&#x662F;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x800C;&#x4E0D;&#x662F;&#x8FD4;&#x56DE;&#x7F13;&#x5B58;&#x7684;&#x503C;&#x3002;&#x5728;&#x4E0B;&#x4E00;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E86;&#x89E3;&#x5982;&#x4F55;&#x514B;&#x670D;&#x8FD9;&#x4E00;&#x9650;&#x5236;&#x3002;</p>
+<h3 id="&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x5E26;props&#x7684;&#x9009;&#x62E9;&#x5668;"><a name="&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x5E26;props&#x7684;&#x9009;&#x62E9;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x5E26;props&#x7684;&#x9009;&#x62E9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.6. &#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x5E26;Props&#x7684;&#x9009;&#x62E9;&#x5668;</h3>
+<blockquote>
+<p>&#x672C;&#x8282;&#x4E2D;&#x7684;&#x793A;&#x4F8B;&#x9700;&#x8981;Redux v4.3.0&#x6216;&#x66F4;&#x9AD8;&#x7248;&#x672C;</p>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F; <a href="https://github.com/toomuchdesign/re-reselect" target="_blank">re-reselect</a></p>
+</blockquote>
+<p>&#x5F53;&#x4F20;&#x5165;<code>props</code>&#x65F6;&#xFF0C;&#x5728;&#x591A;&#x4E2A;<code>VisibleTodoList</code>&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#xFF0C;<strong>&#x5E76;&#x4E14;</strong>&#x4FDD;&#x7559;&#x7F13;&#x5B58;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#x90FD;&#x9700;&#x8981;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x9009;&#x62E9;&#x5668;&#x7684;&#x79C1;&#x6709;&#x526F;&#x672C;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>makeGetVisibleTodos</code>&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x5C06;&#x5728;&#x6BCF;&#x6B21;&#x8C03;&#x7528;<code>getVisibleTodos</code>&#x9009;&#x62E9;&#x5668;&#x65F6;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x526F;&#x672C;:</p>
+<h4 id="selectorstodoselectorsjs_1"><a name="selectorstodoselectorsjs_1" class="anchor-navigation-ex-anchor" href="#selectorstodoselectorsjs_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="selectorstodoselectorsjs" class="plugin-anchor" href="#selectorstodoselectorsjs"><i class="fa fa-link" aria-hidden="true"></i></a><code>selectors/todoSelectors.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelector <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;reselect&apos;</span>
+
+<span class="token keyword">const</span> getVisibilityFilter <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  state<span class="token punctuation">.</span>todoLists<span class="token punctuation">[</span>props<span class="token punctuation">.</span>listId<span class="token punctuation">]</span><span class="token punctuation">.</span>visibilityFilter
+
+<span class="token keyword">const</span> getTodos <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  state<span class="token punctuation">.</span>todoLists<span class="token punctuation">[</span>props<span class="token punctuation">.</span>listId<span class="token punctuation">]</span><span class="token punctuation">.</span>todos
+
+<span class="token keyword">const</span> makeGetVisibleTodos <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+    <span class="token punctuation">[</span> getVisibilityFilter<span class="token punctuation">,</span> getTodos <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>visibilityFilter<span class="token punctuation">,</span> todos<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">switch</span> <span class="token punctuation">(</span>visibilityFilter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">&apos;SHOW_COMPLETED&apos;</span><span class="token punctuation">:</span>
+          <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> todo<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ACTIVE&apos;</span><span class="token punctuation">:</span>
+          <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+          <span class="token keyword">return</span> todos
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> makeGetVisibleTodos
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x5BB9;&#x5668;&#x7684;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x90FD;&#x63D0;&#x4F9B;&#x7ED9;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x6709;&#x9009;&#x62E9;&#x5668;&#x3002;<code>mapstatetoprop</code>&#x7684;<code>connect</code>&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<p><strong>&#x5982;&#x679C;<code>connect</code>&#x63D0;&#x4F9B;&#x7684;<code>mapstatetoprop</code>&#x53C2;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C06;&#x88AB;&#x7528;&#x4E8E;&#x4E3A;&#x5BB9;&#x5668;&#x7684;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;<code>mapStateToProps</code>&#x51FD;&#x6570;&#x3002;</strong></p>
+<p>&#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;<code>makeMapStateToProps</code>&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;<code>getVisibleTodos</code>&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>mapStateToProps</code>&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x5177;&#x6709;&#x5BF9;&#x65B0;&#x9009;&#x62E9;&#x5668;&#x7684;&#x72EC;&#x6709;&#x7684;&#x8BBF;&#x95EE;&#x6743;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> makeMapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> getVisibleTodos <span class="token operator">=</span> <span class="token function">makeGetVisibleTodos</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      todos<span class="token punctuation">:</span> <span class="token function">getVisibleTodos</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> mapStateToProps
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;<code>makeMapStateToProps</code>&#x6765;<code>connect</code>&#xFF0C;<code>VisibleTodosList</code>&#x5BB9;&#x5668;&#x7684;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x90FD;&#x5C06;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x79C1;&#x6709;&#x7684;<code>getVisibleTodos</code>&#x9009;&#x62E9;&#x5668;&#x6765;&#x83B7;&#x5F97;&#x5B83;&#x81EA;&#x5DF1;&#x7684;<code>mapStateToProps</code>&#x51FD;&#x6570;&#x3002;&#x8BB0;&#x5FC6;&#x5316;&#x73B0;&#x5728;&#x90FD;&#x53EF;&#x4EE5;&#x6B63;&#x786E;&#x5730;&#x5DE5;&#x4F5C;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x8003;&#x8651;<code>VisibleTodoList</code>&#x5BB9;&#x5668;&#x7684;&#x6E32;&#x67D3;&#x987A;&#x5E8F;&#x3002;</p>
+<h4 id="containersvisibletodolistjs_3"><a name="containersvisibletodolistjs_3" class="anchor-navigation-ex-anchor" href="#containersvisibletodolistjs_3"><i class="fa fa-link" aria-hidden="true"></i></a><a name="containersvisibletodolistjs" class="plugin-anchor" href="#containersvisibletodolistjs"><i class="fa fa-link" aria-hidden="true"></i></a><code>containers/VisibleTodoList.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> toggleTodo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../actions&apos;</span>
+<span class="token keyword">import</span> TodoList <span class="token keyword">from</span> <span class="token string">&apos;../components/TodoList&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> makeGetVisibleTodos <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../selectors&apos;</span>
+
+<span class="token keyword">const</span> makeMapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> getVisibleTodos <span class="token operator">=</span> <span class="token function">makeGetVisibleTodos</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      todos<span class="token punctuation">:</span> <span class="token function">getVisibleTodos</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> mapStateToProps
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mapDispatchToProps <span class="token operator">=</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    onTodoClick<span class="token punctuation">:</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">toggleTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> VisibleTodoList <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>
+  makeMapStateToProps<span class="token punctuation">,</span>
+  mapDispatchToProps
+<span class="token punctuation">)</span><span class="token punctuation">(</span>TodoList<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> VisibleTodoList
+</code></pre>
+<blockquote>
+<p>&#x8FD9;&#x4E2A;&#x5B9E;&#x73B0;&#x7684;&#x6838;&#x5FC3;&#x601D;&#x60F3;&#x662F;&#x5229;&#x7528;&#x4E86;&#x95ED;&#x5305;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4FDD;&#x6301;&#x5BF9;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x7684;&#x8D44;&#x6E90;&#x5F15;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<h2 id="api"><a name="api" class="anchor-navigation-ex-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. API</h2>
+</blockquote>
+<h3 id="createselectorinputselectors--inputselectors-resultfunc"><a name="createselectorinputselectors--inputselectors-resultfunc" class="anchor-navigation-ex-anchor" href="#createselectorinputselectors--inputselectors-resultfunc"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.1. createSelector(...inputSelectors | [inputSelectors], resultFunc)</h3>
+<p>&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x6216;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x6570;&#x7EC4;&#xFF0C;&#x8BA1;&#x7B97;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;<code>resultFunc</code>&#x3002;</p>
+<p><code>createSelector</code>&#x786E;&#x5B9A;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x662F;&#x5426;&#x5728;&#x4F7F;&#x7528;&#x5F15;&#x7528;&#x76F8;&#x7B49;(<code>===</code>)&#x7684;&#x8C03;&#x7528;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x4E86;&#x66F4;&#x6539;&#x3002;&#x4F7F;&#x7528;<code>createSelector</code>&#x521B;&#x5EFA;&#x7684;&#x9009;&#x62E9;&#x5668;&#x7684;&#x8F93;&#x5165;&#x5E94;&#x8BE5;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>createSelector</code>&#x521B;&#x5EFA;&#x7684;&#x9009;&#x62E9;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x5927;&#x5C0F;&#x4E3A;1&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5F53;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x7684;&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x603B;&#x662F;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#xFF0C;&#x56E0;&#x4E3A;&#x9009;&#x62E9;&#x5668;&#x53EA;&#x5B58;&#x50A8;&#x6BCF;&#x4E2A;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x524D;&#x4E00;&#x4E2A;&#x503C;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> mySelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>values<span class="token punctuation">.</span>value1<span class="token punctuation">,</span>
+  state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>values<span class="token punctuation">.</span>value2<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>value1<span class="token punctuation">,</span> value2<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> value1 <span class="token operator">+</span> value2
+<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// &#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x6570;&#x7EC4;</span>
+<span class="token keyword">const</span> totalSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  <span class="token punctuation">[</span>
+    state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>values<span class="token punctuation">.</span>value1<span class="token punctuation">,</span>
+    state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>values<span class="token punctuation">.</span>value2
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>value1<span class="token punctuation">,</span> value2<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> value1 <span class="token operator">+</span> value2
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4ECE;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;&#x7EC4;&#x4EF6;&#x7684;props&#x662F;&#x5F88;&#x6709;&#x7528;&#x7684;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x8FDE;&#x63A5;&#x5230;&#x4E00;&#x4E2A;&#x5E26;&#x6709;<code>connect</code>&#x7684;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x7EC4;&#x4EF6;&#x7684;props&#x5C06;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x9009;&#x62E9;&#x5668;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> abSelector <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>a <span class="token operator">*</span> props<span class="token punctuation">.</span>b
+
+<span class="token comment" spellcheck="true">// &#x53EA;&#x6709;props (&#x5FFD;&#x7565; state &#x53C2;&#x6570;)</span>
+<span class="token keyword">const</span> cSelector <span class="token operator">=</span>  <span class="token punctuation">(</span>_<span class="token punctuation">,</span> props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> props<span class="token punctuation">.</span>c
+
+<span class="token comment" spellcheck="true">// &#x53EA;&#x6709;state (props &#x53C2;&#x6570;&#x88AB;&#x7701;&#x7565;&#x4E86;&#xFF0C;&#x5B83;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;)</span>
+<span class="token keyword">const</span> dSelector <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>d
+
+<span class="token keyword">const</span> totalSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  abSelector<span class="token punctuation">,</span>
+  cSelector<span class="token punctuation">,</span>
+  dSelector<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>ab<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    total<span class="token punctuation">:</span> ab <span class="token operator">+</span> c <span class="token operator">+</span> d
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="defaultmemoizefunc-equalitycheck--defaultequalitycheck"><a name="defaultmemoizefunc-equalitycheck--defaultequalitycheck" class="anchor-navigation-ex-anchor" href="#defaultmemoizefunc-equalitycheck--defaultequalitycheck"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.2. defaultMemoize(func, equalityCheck = defaultEqualityCheck)</h3>
+<p><code>defaultMemoize</code> &#x5B58;&#x50A8;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x51FD;&#x6570;&#x5230;fun&#x53C2;&#x6570;&#x4E2D;&#x3002;&#x5B83;&#x662F;&#x88AB;<code>createSelector</code>&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x51FD;&#x6570;&#x3002;</p>
+<p><code>defaultMemoize</code> &#x7684;&#x7F13;&#x5B58;&#x5927;&#x5C0F;&#x4E3A;1. &#x8FD9;&#x610F;&#x5473;&#x7740;&#x5F53;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x5B83;&#x603B;&#x662F;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>defaultMemoize<code>&#x901A;&#x8FC7;&#x8C03;&#x7528;</code>equalityCheck<code>&#x51FD;&#x6570;&#x6765;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5426;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x3002;&#x7531;&#x4E8E;</code>defaultMemoize<code>&#x88AB;&#x8BBE;&#x8BA1;&#x7528;&#x4E8E;&#x4E0E;&#x4E0D;&#x53EF;&#x53D8;&#x6570;&#x636E;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;</code>equalityCheck`&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x5F15;&#x7528;&#x5168;&#x7B49;&#x6765;&#x68C0;&#x67E5;&#x66F4;&#x6539;&#x3002;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">defaultEqualityCheck</span><span class="token punctuation">(</span>currentVal<span class="token punctuation">,</span> previousVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> currentVal <span class="token operator">===</span> previousVal
+<span class="token punctuation">}</span>
+</code></pre>
+<p><code>defaultMemoize</code> &#x53EF;&#x4EE5;&#x88AB; <code>createSelectorCreator</code> &#x7528;&#x6765; <a href="#customize-equalitycheck-for-defaultmemoize">&#x81EA;&#x5B9A;&#x4E49; <code>equalityCheck</code> &#x51FD;&#x6570;</a>.</p>
+<h3 id="createselectorcreatormemoize-memoizeoptions"><a name="createselectorcreatormemoize-memoizeoptions" class="anchor-navigation-ex-anchor" href="#createselectorcreatormemoize-memoizeoptions"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.3. createSelectorCreator(memoize, ...memoizeOptions)</h3>
+<p><code>createSelectorCreator</code> &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; <code>createSelector</code>.</p>
+<p><code>memoize</code>&#x662F;&#x4E00;&#x4E2A;&#x7528;&#x6765;&#x66FF;&#x6362;<code>defaultMemoize</code>&#x7684;&#x5B58;&#x50A8;&#x51FD;&#x6570;</p>
+<p><code>...memoizeOptions</code> &#x5C55;&#x5F00;&#x53C2;&#x6570;&#x6709;0&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x914D;&#x7F6E;&#x9009;&#x9879;&#xFF0C;&#x5B83;&#x4EEC;&#x88AB;&#x4F20;&#x9012;&#x5230;<code>memoizeFunc</code>&#x3002;&#x9009;&#x62E9;&#x5668; <code>resultFunc</code>&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x88AB;&#x4F20;&#x9012;&#x5230;<code>memoize</code>&#xFF0C;&#x800C;<code>memoizeOptions</code>&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x88AB;&#x4F20;&#x9012;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> customSelectorCreator <span class="token operator">=</span> <span class="token function">createSelectorCreator</span><span class="token punctuation">(</span>
+  customMemoize<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x88AB;&#x7528;&#x6765;&#x7F13;&#x5B58;resultFunc</span>
+  option1<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// option1 &#x5C06;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x88AB;&#x4F20;&#x9012;&#x5230;customMemoize</span>
+  option2<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// option1 &#x5C06;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x88AB;&#x4F20;&#x9012;&#x5230;customMemoize</span>
+  option3 <span class="token comment" spellcheck="true">// option1 &#x5C06;&#x4F5C;&#x4E3A;&#x7B2C;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#x88AB;&#x4F20;&#x9012;&#x5230;customMemoize</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> customSelector <span class="token operator">=</span> <span class="token function">customSelectorCreator</span><span class="token punctuation">(</span>
+  input1<span class="token punctuation">,</span>
+  input2<span class="token punctuation">,</span>
+  resultFunc <span class="token comment" spellcheck="true">// resultFunc &#x5C06;&#x88AB;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;customMemoize</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5728;&#x5185;&#x90E8;&#xFF0C; <code>customSelector</code>&#x8C03;&#x7528;memoize function:</p>
+<pre class="language-"><code class="lang-js"><span class="token function">customMemoize</span><span class="token punctuation">(</span>resultFunc<span class="token punctuation">,</span> option1<span class="token punctuation">,</span> option2<span class="token punctuation">,</span> option3<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;&#xFF0C;&#x6559;&#x4F60;&#x5982;&#x4F55;&#x4F7F;&#x7528;<code>createSelectorCreator</code>:</p>
+<h4 id="customize-equalitycheck-for-defaultmemoize"><a name="customize-equalitycheck-for-defaultmemoize" class="anchor-navigation-ex-anchor" href="#customize-equalitycheck-for-defaultmemoize"><i class="fa fa-link" aria-hidden="true"></i></a><a name="customize-equalitycheck-for-defaultmemoize" class="plugin-anchor" href="#customize-equalitycheck-for-defaultmemoize"><i class="fa fa-link" aria-hidden="true"></i></a>Customize <code>equalityCheck</code> for <code>defaultMemoize</code></h4>
+<p>&#x4E3A;<code>defaultMemoize</code>&#x81EA;&#x5B9A;&#x4E49;<code>equalityCheck</code></p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelectorCreator<span class="token punctuation">,</span> defaultMemoize <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;reselect&apos;</span>
+<span class="token keyword">import</span> isEqual <span class="token keyword">from</span> <span class="token string">&apos;lodash.isEqual&apos;</span>
+
+<span class="token comment" spellcheck="true">// create a &quot;selector creator&quot; that uses lodash.isEqual instead of ===</span>
+<span class="token keyword">const</span> createDeepEqualSelector <span class="token operator">=</span> <span class="token function">createSelectorCreator</span><span class="token punctuation">(</span>
+  defaultMemoize<span class="token punctuation">,</span>
+  isEqual
+<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// use the new &quot;selector creator&quot; to create a selector</span>
+<span class="token keyword">const</span> mySelector <span class="token operator">=</span> <span class="token function">createDeepEqualSelector</span><span class="token punctuation">(</span>
+  state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>values<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>val <span class="token operator">=</span><span class="token operator">&gt;</span> val <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  values <span class="token operator">=</span><span class="token operator">&gt;</span> values<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>acc<span class="token punctuation">,</span> val<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> acc <span class="token operator">+</span> val<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<h4 id="use-memoize-function-from-lodash-for-an-unbounded-cache"><a name="use-memoize-function-from-lodash-for-an-unbounded-cache" class="anchor-navigation-ex-anchor" href="#use-memoize-function-from-lodash-for-an-unbounded-cache"><i class="fa fa-link" aria-hidden="true"></i></a><a name="use-memoize-function-from-lodash-for-an-unbounded-cache" class="plugin-anchor" href="#use-memoize-function-from-lodash-for-an-unbounded-cache"><i class="fa fa-link" aria-hidden="true"></i></a>Use memoize function from lodash for an unbounded cache</h4>
+<p>&#x4F7F;&#x7528;&#x6765;&#x81EA;lodash&#x7684;memoize&#x51FD;&#x6570;&#x6765;&#x8FDB;&#x884C;&#x65E0;&#x9650;&#x7F13;&#x5B58;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelectorCreator <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;reselect&apos;</span>
+<span class="token keyword">import</span> memoize <span class="token keyword">from</span> <span class="token string">&apos;lodash.memoize&apos;</span>
+
+<span class="token keyword">let</span> called <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">const</span> hashFn <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span>acc<span class="token punctuation">,</span> val<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> acc <span class="token operator">+</span> <span class="token string">&apos;-&apos;</span> <span class="token operator">+</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;&apos;</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">const</span> customSelectorCreator <span class="token operator">=</span> <span class="token function">createSelectorCreator</span><span class="token punctuation">(</span>memoize<span class="token punctuation">,</span> hashFn<span class="token punctuation">)</span>
+<span class="token keyword">const</span> selector <span class="token operator">=</span> <span class="token function">customSelectorCreator</span><span class="token punctuation">(</span>
+  state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>a<span class="token punctuation">,</span>
+  state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>b<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    called<span class="token operator">++</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="createstructuredselectorinputselectors-selectorcreator--createselector"><a name="createstructuredselectorinputselectors-selectorcreator--createselector" class="anchor-navigation-ex-anchor" href="#createstructuredselectorinputselectors-selectorcreator--createselector"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.4. createStructuredSelector({inputSelectors}, selectorCreator = createSelector)</h3>
+<p><code>createStructuredSelector</code> &#x5BF9;&#x4E8E;&#x5728;&#x4F7F;&#x7528;Reselect&#x65F6;&#x51FA;&#x73B0;&#x7684;&#x5E38;&#x89C1;&#x6A21;&#x5F0F;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x4FBF;&#x7684;&#x51FD;&#x6570;&#x3002;&#x4F20;&#x9012;&#x7ED9;<code>connect</code>&#x88C5;&#x9970;&#x5668;&#x7684;&#x9009;&#x62E9;&#x5668;&#x901A;&#x5E38;&#x53EA;&#x83B7;&#x53D6;&#x5176;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#x7684;&#x503C;&#x5E76;&#x5C06;&#x5176;&#x6620;&#x5C04;&#x5230;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x952E;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> mySelectorA <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>a
+<span class="token keyword">const</span> mySelectorB <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>b
+
+<span class="token comment" spellcheck="true">// The result function in the following selector</span>
+<span class="token comment" spellcheck="true">// is simply building an object from the input selectors</span>
+<span class="token keyword">const</span> structuredSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+   mySelectorA<span class="token punctuation">,</span>
+   mySelectorB<span class="token punctuation">,</span>
+   mySelectorC<span class="token punctuation">,</span>
+   <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+     a<span class="token punctuation">,</span>
+     b<span class="token punctuation">,</span>
+     c
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p><code>createStructuredSelector</code>&#x9009;&#x62E9;&#x5668;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x9009;&#x62E9;&#x5668;&#x3002;&#x8FD9;&#x4E2A;&#x7ED3;&#x6784;&#x5316;&#x9009;&#x62E9;&#x5668;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4E0E;<code>inputselector</code>&#x53C2;&#x6570;&#x76F8;&#x540C;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x66FF;&#x6362;&#x4E86;&#x5B83;&#x4EEC;&#x7684;&#x503C;.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> mySelectorA <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>a
+<span class="token keyword">const</span> mySelectorB <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>b
+
+<span class="token keyword">const</span> structuredSelector <span class="token operator">=</span> <span class="token function">createStructuredSelector</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  x<span class="token punctuation">:</span> mySelectorA<span class="token punctuation">,</span>
+  y<span class="token punctuation">:</span> mySelectorB
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">structuredSelector</span><span class="token punctuation">(</span><span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// will produce { x: 1, y: 2 }</span>
+</code></pre>
+<p>&#x7ED3;&#x6784;&#x5316;&#x7684;&#x9009;&#x62E9;&#x5668;&#x53EF;&#x4EE5;&#x662F;&#x5D4C;&#x5957;&#x7684;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> nestedSelector <span class="token operator">=</span> <span class="token function">createStructuredSelector</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  subA<span class="token punctuation">:</span> <span class="token function">createStructuredSelector</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selectorA<span class="token punctuation">,</span>
+    selectorB
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  subB<span class="token punctuation">:</span> <span class="token function">createStructuredSelector</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selectorC<span class="token punctuation">,</span>
+    selectorD
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="faq"><a name="faq" class="anchor-navigation-ex-anchor" href="#faq"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. FAQ</h2>
+<p>&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x89E3;&#x7B54;</p>
+<h3 id="q-why-isnt-my-selector-recomputing-when-the-input-state-changes"><a name="q-why-isnt-my-selector-recomputing-when-the-input-state-changes" class="anchor-navigation-ex-anchor" href="#q-why-isnt-my-selector-recomputing-when-the-input-state-changes"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.1. Q: Why isn&#x2019;t my selector recomputing when the input state changes?</h3>
+<p>&#x5F53;&#x8F93;&#x5165;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x7684;&#x9009;&#x62E9;&#x5668;&#x4E0D;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;?</p>
+<p>A: &#x68C0;&#x67E5;&#x60A8;&#x7684;&#x8BB0;&#x5FC6;&#x5316;&#x51FD;&#x6570;&#x662F;&#x5426;&#x4E0E;&#x60A8;&#x7684;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x51FD;&#x6570;&#x517C;&#x5BB9;(&#x4F8B;&#x5982;&#xFF0C;reducer,&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;Redux)&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4F7F;&#x7528;<code>createSelector</code>&#x521B;&#x5EFA;&#x7684;&#x9009;&#x62E9;&#x5668;&#x4F7F;&#x7528;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x51FD;&#x6570;&#x6765;&#x4FEE;&#x6539;&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6BCF;&#x6B21;&#x90FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C06;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x3002;<code>createSelector</code>&#x4F7F;&#x7528;&#x8EAB;&#x4EFD;&#x68C0;&#x67E5;(<code>===</code>)&#x6765;&#x68C0;&#x6D4B;&#x8F93;&#x5165;&#x662F;&#x5426;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x53D8;&#x5F02;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x9009;&#x62E9;&#x5668;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#xFF0C;&#x56E0;&#x4E3A;&#x5BF9;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x53D8;&#x5F02;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x5176;&#x6807;&#x8BC6;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;Redux&#xFF0C;&#x5BF9;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x4FEE;&#x6539;<a href="http://redux.js.org/docs/Troubleshooting.html" target="_blank">&#x51E0;&#x4E4E;&#x80AF;&#x5B9A;&#x662F;&#x9519;&#x8BEF;&#x7684;</a>.</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5B83;&#x5224;&#x65AD;todos&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;todo&#x9879;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> isFirstTodoCompleteSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  todo <span class="token operator">=</span><span class="token operator">&gt;</span> todo <span class="token operator">&amp;&amp;</span> todo<span class="token punctuation">.</span>completed
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0B;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x51FD;&#x6570;&#x5C06;<strong>&#x65E0;&#x6CD5;</strong>&#x548C;<code>isFirstTodoCompleteSelector</code>&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">todos</span><span class="token punctuation">(</span>state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> COMPLETE_ALL<span class="token punctuation">:</span>
+    <span class="token keyword">const</span> areAllMarked <span class="token operator">=</span> state<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> todo<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// BAD: mutating an existing object</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      todo<span class="token punctuation">.</span>completed <span class="token operator">=</span> <span class="token operator">!</span>areAllMarked
+      <span class="token keyword">return</span> todo
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">default</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0B;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x51FD;&#x6570;&#x5C06;&#x548C;<code>isFirstTodoCompleteSelector</code>&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">todos</span><span class="token punctuation">(</span>state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> COMPLETE_ALL<span class="token punctuation">:</span>
+    <span class="token keyword">const</span> areAllMarked <span class="token operator">=</span> state<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> todo<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// GOOD: returning a new object each time with Object.assign</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> todo<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      completed<span class="token punctuation">:</span> <span class="token operator">!</span>areAllMarked
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">default</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x60A8;&#x6CA1;&#x6709;&#x4F7F;&#x7528;Redux&#xFF0C;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x53EF;&#x53D8;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>createSelectorCreator</code>&#x6765;&#x66FF;&#x6362;&#x9ED8;&#x8BA4;&#x7684;&#x8BB0;&#x5FC6;&#x5316; function&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x76F8;&#x7B49;&#x68C0;&#x67E5;&#x51FD;&#x6570;&#x3002; &#x67E5;&#x9605; <a href="#use-memoize-function-from-lodash-for-an-unbounded-cache">here</a> &#x548C; <a href="#customize-equalitycheck-for-defaultmemoize">here</a> &#x7684;&#x793A;&#x4F8B;</p>
+<h3 id="q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same"><a name="q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same" class="anchor-navigation-ex-anchor" href="#q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.2. Q: Why is my selector recomputing when the input state stays the same?</h3>
+<p>&#x5F53;&#x8F93;&#x5165;&#x72B6;&#x6001;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x65F6;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x9009;&#x62E9;&#x5668;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;?</p>
+<p>A: &#x68C0;&#x67E5;&#x4F60;&#x7684;&#x8BB0;&#x5FC6;&#x5316;&#x51FD;&#x6570;&#x4E0E;&#x4F60;&#x7684;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x51FD;&#x6570;&#x517C;&#x5BB9;(&#x4F8B;&#x5982;&#xFF0C;reducer,&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x7684;&#x662F;Redux)&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x7531;<code>createSelector</code>&#x521B;&#x5EFA;&#x7684;&#x9009;&#x62E9;&#x5668;&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x4E2D;&#x63A5;&#x6536;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x7BA1;&#x5B83;&#x6240;&#x5305;&#x542B;&#x7684;&#x503C;&#x662F;&#x5426;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x3002;<code>createSelector</code>&#x4F7F;&#x7528;&#x8EAB;&#x4EFD;&#x68C0;&#x67E5;(<code>===</code>)&#x6765;&#x68C0;&#x6D4B;&#x8F93;&#x5165;&#x662F;&#x5426;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x4E2D;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x610F;&#x5473;&#x7740;&#x9009;&#x62E9;&#x5668;&#x5C06;&#x5728;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x4E2D;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> REMOVE_OLD <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../constants/ActionTypes&apos;</span>
+
+<span class="token keyword">const</span> initialState <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    text<span class="token punctuation">:</span> <span class="token string">&apos;Use Redux&apos;</span><span class="token punctuation">,</span>
+    completed<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    id<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    timestamp<span class="token punctuation">:</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">todos</span><span class="token punctuation">(</span>state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> REMOVE_OLD<span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> todo<span class="token punctuation">.</span>timestamp <span class="token operator">+</span> <span class="token number">30</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">&gt;</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">default</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x9009;&#x62E9;&#x5668;&#x5C06;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x5F53;&#x6BCF;&#x6B21;<code>REMOVE_OLD</code>&#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x56E0;&#x4E3A; <code>Array.filter</code>&#x603B;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>REMOVE_OLD</code>&#x64CD;&#x4F5C;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;todos&#x7684;&#x5217;&#x8868;&#xFF0C;&#x56E0;&#x6B64;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x662F;&#x4E0D;&#x5FC5;&#x8981;&#x7684;.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelector <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;reselect&apos;</span>
+
+<span class="token keyword">const</span> todosSelector <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>todos
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> visibleTodosSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  todosSelector<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>todos<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x53EA;&#x6709;&#x5F53;&#x4E00;&#x4E2A;&#x6DF1;&#x5EA6;&#x7684;&#x76F8;&#x7B49;&#x68C0;&#x67E5;&#x53D1;&#x73B0;todos&#x7684;&#x5217;&#x8868;&#x5B9E;&#x9645;&#x4E0A;&#x5DF2;&#x7ECF;&#x6539;&#x53D8;&#x4E86;&#xFF0C;&#x624D;&#x901A;&#x8FC7;&#x4ECE;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x51FD;&#x6570;&#x4E2D;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x6765;&#x6D88;&#x9664;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> REMOVE_OLD <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../constants/ActionTypes&apos;</span>
+<span class="token keyword">import</span> isEqual <span class="token keyword">from</span> <span class="token string">&apos;lodash.isEqual&apos;</span>
+
+<span class="token keyword">const</span> initialState <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    text<span class="token punctuation">:</span> <span class="token string">&apos;Use Redux&apos;</span><span class="token punctuation">,</span>
+    completed<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    id<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    timestamp<span class="token punctuation">:</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">todos</span><span class="token punctuation">(</span>state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> REMOVE_OLD<span class="token punctuation">:</span>
+    <span class="token keyword">const</span> updatedState <span class="token operator">=</span>  state<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> todo<span class="token punctuation">.</span>timestamp <span class="token operator">+</span> <span class="token number">30</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">&gt;</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">isEqual</span><span class="token punctuation">(</span>updatedState<span class="token punctuation">,</span> state<span class="token punctuation">)</span> <span class="token operator">?</span> state <span class="token punctuation">:</span> updatedState
+  <span class="token keyword">default</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6216;&#x8005;&#xFF0C;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x9ED8;&#x8BA4;&#x7684;<code>equalityCheck</code>&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x88AB;&#x4E00;&#x4E2A;&#x6DF1;&#x5EA6;&#x7684;&#x76F8;&#x7B49;&#x68C0;&#x67E5;&#x4EE3;&#x66FF;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelectorCreator<span class="token punctuation">,</span> defaultMemoize <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;reselect&apos;</span>
+<span class="token keyword">import</span> isEqual <span class="token keyword">from</span> <span class="token string">&apos;lodash.isEqual&apos;</span>
+
+<span class="token keyword">const</span> todosSelector <span class="token operator">=</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>todos
+
+<span class="token comment" spellcheck="true">// create a &quot;selector creator&quot; that uses lodash.isEqual instead of ===</span>
+<span class="token keyword">const</span> createDeepEqualSelector <span class="token operator">=</span> <span class="token function">createSelectorCreator</span><span class="token punctuation">(</span>
+  defaultMemoize<span class="token punctuation">,</span>
+  isEqual
+<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// use the new &quot;selector creator&quot; to create a selector</span>
+<span class="token keyword">const</span> mySelector <span class="token operator">=</span> <span class="token function">createDeepEqualSelector</span><span class="token punctuation">(</span>
+  todosSelector<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>todos<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x59CB;&#x7EC8;&#x68C0;&#x67E5;&#xFF0C;&#x5728;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x66FF;&#x4EE3;&#x7684;<code>equalityCheck</code>&#x51FD;&#x6570;&#x6216;&#x6DF1;&#x5EA6;&#x76F8;&#x7B49;&#x68C0;&#x67E5;&#x7684;&#x6210;&#x672C;&#x662F;&#x5426;&#x5927;&#x4E8E;&#x6BCF;&#x6B21;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x7684;&#x6210;&#x672C;&#x3002;&#x5982;&#x679C;&#x6BCF;&#x6B21;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x90FD;&#x662F;&#x66F4;&#x4FBF;&#x5B9C;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Reselect&#x4E0D;&#x4F1A;&#x7ED9;&#x60A8;&#x5E26;&#x6765;&#x4EFB;&#x4F55;&#x597D;&#x5904;&#xFF0C;&#x56E0;&#x4E3A;&#x901A;&#x8FC7;&#x7684;<code>mapStateToProps</code>&#x51FD;&#x6570;&#x6765;<code>connect</code>&#x66F4;&#x7B80;&#x5355;&#x3002;</p>
+<h3 id="q-can-i-use-reselect-without-redux"><a name="q-can-i-use-reselect-without-redux" class="anchor-navigation-ex-anchor" href="#q-can-i-use-reselect-without-redux"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.3. Q: Can I use Reselect without Redux?</h3>
+<p>&#x6211;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Reselect&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;Redux
+A: &#x662F;&#x7684;&#x3002;Reselect&#x5BF9;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7684;&#x5305;&#x90FD;&#x6CA1;&#x6709;&#x4F9D;&#x8D56;&#x6027;&#xFF0C;&#x56E0;&#x6B64;&#x5C3D;&#x7BA1;&#x5B83;&#x88AB;&#x8BBE;&#x8BA1;&#x4E3A;&#x4E0E;Redux&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x4F7F;&#x7528;&#x3002;&#x5B83;&#x76EE;&#x524D;&#x5728;&#x4F20;&#x7EDF;&#x7684;Flux&#x5E94;&#x7528;&#x4E2D;&#x88AB;&#x6210;&#x529F;&#x4F7F;&#x7528;</p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; <code>createSelector</code>&#x521B;&#x5EFA;&#x4E86;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;.
+&#x53C2;&#x9605; <a href="#createselectorinputselectors--inputselectors-resultfunc">here</a></p>
+</blockquote>
+<h3 id="q-how-do-i-create-a-selector-that-takes-an-argument"><a name="q-how-do-i-create-a-selector-that-takes-an-argument" class="anchor-navigation-ex-anchor" href="#q-how-do-i-create-a-selector-that-takes-an-argument"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.4. Q: How do I create a selector that takes an argument?</h3>
+<p>&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x9009;&#x62E9;&#x5668;
+A: &#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x9009;&#x62E9;&#x5668;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;React props&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x7684;&#x53C2;&#x6570;&#x662F;(&#x6216;&#x53EF;&#x4F5C;&#x4E3A;)React props&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x529F;&#x80FD;&#x3002; <a href="#accessing-react-props-in-selectors">&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;</a> </p>
+<p>&#x53E6;&#x5916;&#xFF0C;Reselect&#x5BF9;&#x4E8E;&#x521B;&#x5EFA;&#x63A5;&#x53D7;&#x53C2;&#x6570;&#x7684;&#x9009;&#x62E9;&#x5668;&#x5E76;&#x6CA1;&#x6709;&#x5185;&#x7F6E;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E9B;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;&#x529F;&#x80FD;&#x7684;&#x5EFA;&#x8BAE;...</p>
+<p>&#x5982;&#x679C;&#x53C2;&#x6570;&#x4E0D;&#x662F;&#x52A8;&#x6001;&#x7684;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5DE5;&#x5382;&#x51FD;&#x6570;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> expensiveItemSelectorFactory <span class="token operator">=</span> minValue <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+    shopItemsSelector<span class="token punctuation">,</span>
+    items <span class="token operator">=</span><span class="token operator">&gt;</span> items<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">&gt;</span> item<span class="token punctuation">.</span>value <span class="token operator">&gt;</span> minValue<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> subtotalSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  <span class="token function">expensiveItemSelectorFactory</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  items <span class="token operator">=</span><span class="token operator">&gt;</span> items<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>acc<span class="token punctuation">,</span> item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> acc <span class="token operator">+</span> item<span class="token punctuation">.</span>value<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x666E;&#x904D;&#x7684;&#x5171;&#x8BC6; <a href="https://github.com/reactjs/reselect/issues/38" target="_blank">here</a> &#x548C; <a href="https://github.com/optimizely/nuclear-js/issues/14" target="_blank">over at nuclear-js</a>&#x5982;&#x679C;&#x9009;&#x62E9;&#x5668;&#x9700;&#x8981;&#x52A8;&#x6001;&#x53C2;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x53C2;&#x6570;&#x5E94;&#x8BE5;&#x662F;store&#x4E2D;&#x7684;state&#x3002;&#x5982;&#x679C;&#x60A8;&#x51B3;&#x5B9A;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x52A8;&#x6001;&#x53C2;&#x6570;&#x7684;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x51FD;&#x6570;&#x7684;&#x9009;&#x62E9;&#x5668;&#x53EF;&#x80FD;&#x662F;&#x5408;&#x9002;&#x7684;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSelector <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;reselect&apos;</span>
+<span class="token keyword">import</span> memoize <span class="token keyword">from</span> <span class="token string">&apos;lodash.memoize&apos;</span>
+
+<span class="token keyword">const</span> expensiveSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>items<span class="token punctuation">,</span>
+  items <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">memoize</span><span class="token punctuation">(</span>
+    minValue <span class="token operator">=</span><span class="token operator">&gt;</span> items<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">&gt;</span> item<span class="token punctuation">.</span>value <span class="token operator">&gt;</span> minValue<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> expensiveFilter <span class="token operator">=</span> <span class="token function">expensiveSelector</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> slightlyExpensive <span class="token operator">=</span> <span class="token function">expensiveFilter</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> veryExpensive <span class="token operator">=</span> <span class="token function">expensiveFilter</span><span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="q-the-default-memoization-function-is-no-good-can-i-use-a-different-one"><a name="q-the-default-memoization-function-is-no-good-can-i-use-a-different-one" class="anchor-navigation-ex-anchor" href="#q-the-default-memoization-function-is-no-good-can-i-use-a-different-one"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.5. Q: The default memoization function is no good, can I use a different one?</h3>
+<p>&#x9ED8;&#x8BA4;&#x7684;&#x8BB0;&#x5FC6;&#x51FD;&#x6570;&#x662F;&#x4E0D;&#x597D;&#xFF0C;&#x6211;&#x53EF;&#x4EE5;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x5417;?
+A: &#x6211;&#x4EEC;&#x8BA4;&#x4E3A;&#x5B83;&#x5BF9;&#x5F88;&#x591A;&#x7528;&#x4F8B;&#x90FD;&#x5F88;&#x6709;&#x7528;, &#x4F46;&#x4F60;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684;. &#x53C2;&#x9605; <a href="#customize-equalitycheck-for-defaultmemoize">&#x8FD9;&#x4E9B;&#x4F8B;&#x5B50;</a>.</p>
+<h3 id="q-how-do-i-test-a-selector"><a name="q-how-do-i-test-a-selector" class="anchor-navigation-ex-anchor" href="#q-how-do-i-test-a-selector"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.6. Q: How do I test a selector?</h3>
+<p>&#x5982;&#x4F55;&#x6D4B;&#x8BD5;&#x9009;&#x62E9;&#x5668;
+A: &#x5BF9;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x9009;&#x62E9;&#x5668;&#x5E94;&#x8BE5;&#x603B;&#x662F;&#x4EA7;&#x751F;&#x76F8;&#x540C;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#xFF0C;&#x4ED6;&#x4EEC;&#x5F88;&#x5BB9;&#x6613;&#x8FDB;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> selector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>a<span class="token punctuation">,</span>
+  state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>b<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    c<span class="token punctuation">:</span> a <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    d<span class="token punctuation">:</span> b <span class="token operator">*</span> <span class="token number">3</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;selector unit test&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span><span class="token function">selector</span><span class="token punctuation">(</span><span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> c<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token number">6</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span><span class="token function">selector</span><span class="token punctuation">(</span><span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> c<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6BCF;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x90FD;&#x6709;&#x4E00;&#x4E2A;<code>recomputations</code>&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x5C06;&#x8FD4;&#x56DE;&#x88AB;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x7684;&#x6B21;&#x6570;&#x3002;&#x5B83;&#x6709;&#x53EF;&#x80FD;&#x5BF9;&#x4E8E;&#x68C0;&#x67E5;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x7684;&#x8BB0;&#x5FC6;&#x5316;&#x51FD;&#x6570;&#x662F;&#x5426;&#x6B63;&#x786E;&#x5730;&#x4E0E;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x51FD;&#x6570;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;(&#x4F8B;&#x5982;&#xFF0C;reducer,&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;Redux)&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token function">suite</span><span class="token punctuation">(</span><span class="token string">&apos;selector&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> state <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> reducer <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token punctuation">{</span>
+      a<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      b<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>b<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> selector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+    state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>a<span class="token punctuation">,</span>
+    state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>b<span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      c<span class="token punctuation">:</span> a <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      d<span class="token punctuation">:</span> b <span class="token operator">*</span> <span class="token number">3</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> plusOne <span class="token operator">=</span> x <span class="token operator">=</span><span class="token operator">&gt;</span> x <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token keyword">const</span> id <span class="token operator">=</span> x <span class="token operator">=</span><span class="token operator">&gt;</span> x
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;selector unit test&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    state <span class="token operator">=</span> <span class="token function">reducer</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> plusOne<span class="token punctuation">)</span>
+    assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span><span class="token function">selector</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> c<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    state <span class="token operator">=</span> <span class="token function">reducer</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> id<span class="token punctuation">)</span>
+    assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span><span class="token function">selector</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> c<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>selector<span class="token punctuation">.</span><span class="token function">recomputations</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    state <span class="token operator">=</span> <span class="token function">reducer</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> plusOne<span class="token punctuation">)</span>
+    assert<span class="token punctuation">.</span><span class="token function">deepEqual</span><span class="token punctuation">(</span><span class="token function">selector</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> c<span class="token punctuation">:</span> <span class="token number">6</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>selector<span class="token punctuation">.</span><span class="token function">recomputations</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Additionally, selectors keep a reference to the last result function as <code>.resultFunc</code>. If you have selectors composed of many other selectors this can help you test each selector without coupling all of your tests to the shape of your state&#x6B64;&#x5916;&#xFF0C;&#x9009;&#x62E9;&#x5668;&#x4FDD;&#x7559;&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x51FD;&#x6570;&#x7684;&#x5F15;&#x7528;&#x4F5C;&#x4E3A;<code>.resultFunc</code>&#x3002;&#x5982;&#x679C;&#x60A8;&#x7684;&#x9009;&#x62E9;&#x5668;&#x7531;&#x8BB8;&#x591A;&#x5176;&#x4ED6;&#x9009;&#x62E9;&#x5668;&#x7EC4;&#x6210;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x60A8;&#x6D4B;&#x8BD5;&#x6BCF;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x5C06;&#x6240;&#x6709;&#x7684;&#x6D4B;&#x8BD5;&#x4E0E;state&#x7684;&#x6A21;&#x578B;&#x8026;&#x5408;.</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E00;&#x7EC4;&#x8FD9;&#x6837;&#x7684;&#x9009;&#x62E9;&#x5668;:</p>
+<p><strong>selectors.js</strong></p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">const</span> firstSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span> <span class="token operator">...</span> <span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> secondSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span> <span class="token operator">...</span> <span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> thirdSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span> <span class="token operator">...</span> <span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> myComposedSelector <span class="token operator">=</span> <span class="token function">createSelector</span><span class="token punctuation">(</span>
+  firstSelector<span class="token punctuation">,</span>
+  secondSelector<span class="token punctuation">,</span>
+  thirdSelector<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>first<span class="token punctuation">,</span> second<span class="token punctuation">,</span> third<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> first <span class="token operator">*</span> second <span class="token operator">&lt;</span> third
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x7EC4;&#x5355;&#x5143;&#x6D4B;&#x8BD5;:</p>
+<p><strong>test/selectors.js</strong></p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// tests for the first three selectors...</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;firstSelector unit test&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;secondSelector unit test&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;thirdSelector unit test&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// We have already tested the previous</span>
+<span class="token comment" spellcheck="true">// three selector outputs so we can just call `.resultFunc`</span>
+<span class="token comment" spellcheck="true">// with the values we want to test directly:</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;myComposedSelector unit test&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// here instead of calling selector()</span>
+  <span class="token comment" spellcheck="true">// we just call selector.resultFunc()</span>
+  <span class="token function">assert</span><span class="token punctuation">(</span>myComposedSelector<span class="token punctuation">.</span><span class="token function">resultFunc</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+  <span class="token function">assert</span><span class="token punctuation">(</span>myComposedSelector<span class="token punctuation">.</span><span class="token function">resultFunc</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Finally, each selector has a <code>resetRecomputations</code> method that sets
+recomputations back to 0.  The intended use is for a complex selector that may
+have many independent tests and you don&apos;t want to manually manage the
+computation count or create a &quot;dummy&quot; selector for each test.&#x6700;&#x540E;&#xFF0C;&#x6BCF;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x90FD;&#x6709;&#x4E00;&#x4E2A;<code>resetRecomputations</code>&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x5C06;&#x91CD;&#x8BA1;&#x7B97;&#x6B21;&#x6570;&#x91CD;&#x7F6E;&#x4E3A;0&#x3002;&#x5B83;&#x7684;&#x7528;&#x9014;&#x662F;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x7684;&#x9009;&#x62E9;&#x5668;
+&#xFF0C;&#x8FD9;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x53EF;&#x80FD;&#x6709;&#x5F88;&#x591A;&#x72EC;&#x7ACB;&#x7684;&#x6D4B;&#x8BD5;&#xFF0C;&#x5E76;&#x4E14;&#x4F60;&#x4E0D;&#x60F3;&#x624B;&#x52A8;&#x7BA1;&#x7406;&#x8BA1;&#x7B97;&#x8BA1;&#x6570;&#x6216;&#x4E3A;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x201C;dummy&#x201D;&#x9009;&#x62E9;&#x5668;</p>
+<h3 id="q-how-do-i-use-reselect-with-immutablejs"><a name="q-how-do-i-use-reselect-with-immutablejs" class="anchor-navigation-ex-anchor" href="#q-how-do-i-use-reselect-with-immutablejs"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.7. Q: How do I use Reselect with Immutable.js?</h3>
+<p>&#x5982;&#x4F55;&#x5C06;Reselect&#x4E0E;Immutable.js&#x4E00;&#x540C;&#x4F7F;&#x7528;
+A: &#x4F7F;&#x7528;<code>createSelector</code>&#x521B;&#x5EFA;&#x7684;&#x9009;&#x62E9;&#x5668;&#x53EF;&#x4EE5;&#x4E0E;Immutable.js&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x914D;&#x5408;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x7684;&#x9009;&#x62E9;&#x5668;&#x662F;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#xFF0C;&#x5E76;&#x4E14;&#x60A8;&#x4E0D;&#x8BA4;&#x4E3A;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x60A8;&#x77E5;&#x9053;&#x54EA;&#x4E2A;Immutable.js&#x66F4;&#x65B0;&#x65B9;&#x6CD5;<strong>&#x603B;&#x662F;</strong>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x54EA;&#x4E2A;&#x65B9;&#x6CD5;&#x5728;&#x5F53;&#x96C6;&#x5408;&#x5B9E;&#x9645;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> Immutable <span class="token keyword">from</span> <span class="token string">&apos;immutable&apos;</span>
+
+<span class="token keyword">let</span> myMap <span class="token operator">=</span> Immutable<span class="token punctuation">.</span><span class="token function">Map</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  b<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  c<span class="token punctuation">:</span> <span class="token number">3</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+ <span class="token comment" spellcheck="true">// set, merge and others only return a new obj when update changes collection</span>
+<span class="token keyword">let</span> newMap <span class="token operator">=</span> myMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>myMap<span class="token punctuation">,</span> newMap<span class="token punctuation">)</span>
+newMap <span class="token operator">=</span> myMap<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>myMap<span class="token punctuation">,</span> newMap<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// map, reduce, filter and others always return a new obj</span>
+newMap <span class="token operator">=</span> myMap<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>a <span class="token operator">=</span><span class="token operator">&gt;</span> a <span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">)</span>
+assert<span class="token punctuation">.</span><span class="token function">notEqual</span><span class="token punctuation">(</span>myMap<span class="token punctuation">,</span> newMap<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x7684;&#x8F93;&#x5165;&#x88AB;&#x4E00;&#x4E2A;&#x603B;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x7684;&#x64CD;&#x4F5C;&#x6240;&#x66F4;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x53EF;&#x80FD;&#x4F1A;&#x6267;&#x884C;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002; &#x53C2;&#x8003; <a href="#q-why-is-my-selector-recomputing-when-the-input-state-stays-the-same">here</a> &#x4E86;&#x89E3;&#x5173;&#x4E8E;&#x4E3A;&#x4E86;&#x6D88;&#x9664;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x4F7F;&#x7528;&#x50CF;<code>Immutable.is</code>&#x5E93;&#x4E00;&#x6837;&#x8FDB;&#x884C;&#x6DF1;&#x5EA6;&#x76F8;&#x7B49;&#x68C0;&#x67E5;&#x7684;&#x5229;&#x5F0A;&#x7684;&#x8BA8;&#x8BBA;&#x3002;</p>
+<h3 id="q-can-i-share-a-selector-across-multiple-components"><a name="q-can-i-share-a-selector-across-multiple-components" class="anchor-navigation-ex-anchor" href="#q-can-i-share-a-selector-across-multiple-components"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.8. Q: Can I share a selector across multiple components?</h3>
+<p>&#x80FD;&#x5426;&#x5728;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;</p>
+<p>A: &#x4F7F;&#x7528;<code>createSelector</code>&#x521B;&#x5EFA;&#x7684;&#x9009;&#x62E9;&#x5668;&#x7684;&#x7F13;&#x5B58;&#x5927;&#x5C0F;&#x4E3A;1&#x3002;&#x5982;&#x679C;&#x9009;&#x62E9;&#x5668;&#x7684;&#x53C2;&#x6570;&#x5BF9;&#x4E8E;&#x7EC4;&#x4EF6;&#x7684;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x90FD;&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x5C31;&#x4F7F;&#x5F97;&#x5B83;&#x4EEC;&#x4E0D;&#x9002;&#x5408;&#x8DE8;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x5171;&#x4EAB;&#x3002;&#x6709;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;</p>
+<ul>
+<li><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x4E3A;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x9009;&#x62E9;&#x5668;&#x3002;&#x5728;&#x54CD;&#x5E94;Redux v4.3&#x6216;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6709;&#x5185;&#x7F6E;&#x7684;&#x5BF9;&#x5DE5;&#x5382;&#x529F;&#x80FD;&#x7684;&#x652F;&#x6301; &#x67E5;&#x770B; <a href="#sharing-selectors-with-props-across-multiple-components">&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;</a></p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x5927;&#x5C0F;&#x5927;&#x4E8E;1&#x7684;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9009;&#x62E9;&#x5668;&#x3002;</p>
+</li>
+</ul>
+<h3 id="q-are-there-typescript-typings"><a name="q-are-there-typescript-typings" class="anchor-navigation-ex-anchor" href="#q-are-there-typescript-typings"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.9. Q: Are there TypeScript Typings?</h3>
+<p>A: &#x662F;&#x7684;! &#x5B83;&#x4EEC;&#x5305;&#x542B;&#x5728;<code>package.json</code>&#x4E2D;&#x3002; &#x4ED6;&#x4EEC;&#x5E94;&#x8BE5;&#x5DE5;&#x4F5C;&#x2122;.</p>
+<h3 id="q-&#x600E;&#x4E48;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;-curried-&#x9009;&#x62E9;&#x5668;"><a name="q-&#x600E;&#x4E48;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;-curried-&#x9009;&#x62E9;&#x5668;" class="anchor-navigation-ex-anchor" href="#q-&#x600E;&#x4E48;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;-curried-&#x9009;&#x62E9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.10. Q: &#x600E;&#x4E48;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; curried &#x9009;&#x62E9;&#x5668;?</h3>
+<p>A: &#x5C1D;&#x8BD5;&#x8FD9;&#x4E9B;  &#x7ECF;&#x7531; <a href="https://github.com/MattSPalmer" target="_blank">MattSPalmer</a>&#x63D0;&#x4F9B;&#x7684;<a href="https://github.com/reactjs/reselect/issues/159#issuecomment-238724788" target="_blank">&#x5E2E;&#x52A9; &#x51FD;&#x6570;</a></p>
+<h2 id="&#x76F8;&#x5173;&#x9879;&#x76EE;"><a name="&#x76F8;&#x5173;&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x76F8;&#x5173;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x76F8;&#x5173;&#x9879;&#x76EE;</h2>
+<h3 id="re-reselect"><a name="re-reselect" class="anchor-navigation-ex-anchor" href="#re-reselect"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.1. re-reselect</h3>
+<p>&#x901A;&#x8FC7;&#x5305;&#x88C5;<code>createSelector</code>&#x6765;&#x589E;&#x5F3A;Reselect&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x7531;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x89E3;&#x6790;&#x5668;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;cache&#x952E;&#x6240;&#x7D22;&#x5F15;&#x7684;&#x9009;&#x62E9;&#x5668;&#x3002;</p>
+<p>&#x5F53;&#x76F8;&#x540C;&#x7684;&#x9009;&#x62E9;&#x5668;&#x88AB;&#x91CD;&#x590D;&#x5730;&#x8C03;&#x7528;&#x4E00;&#x4E2A;/&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x9009;&#x62E9;&#x5668;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;</p>
+<h3 id="reselect-map"><a name="reselect-map" class="anchor-navigation-ex-anchor" href="#reselect-map"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.2. reselect-map</h3>
+<p>&#x5728;&#x5BF9;&#x5143;&#x7D20;&#x96C6;&#x5408;&#x8FDB;&#x884C;<strong>&#x975E;&#x5E38;&#x6602;&#x8D35;</strong>&#x7684;&#x8BA1;&#x7B97;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;Reselect&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x7ED9;&#x60A8;&#x6240;&#x9700;&#x7684;&#x7F13;&#x5B58;&#x7C92;&#x5EA6;&#x3002;&#x8BF7;&#x67E5;&#x770B;reselect-maps&#x7684;README&#x3002;</p>
+<p><strong>reselect-map&#x4E2D;&#x6240;&#x505A;&#x7684;&#x4F18;&#x5316;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5C11;&#x6570;&#x60C5;&#x51B5;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x9700;&#x8981;&#x5B83;&#xFF0C;&#x4F60;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#xFF01;</strong></p>
+<h2 id="license"><a name="license" class="anchor-navigation-ex-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. License</h2>
+<p>MIT</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-26 15:52:19
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../recompose/" class="navigation navigation-prev " aria-label="Previous page: recompose">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../text-mask/" class="navigation navigation-next " aria-label="Next page: text-mask">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"reselect","level":"1.6.2.3.11","depth":4,"next":{"title":"text-mask","level":"1.6.2.3.12","depth":4,"path":"Labrary/React/Labrary/text-mask/README.md","ref":"Labrary/React/Labrary/text-mask/README.md","articles":[]},"previous":{"title":"recompose","level":"1.6.2.3.10","depth":4,"path":"Labrary/React/Labrary/recompose/README.md","ref":"Labrary/React/Labrary/recompose/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"Labrary/React/Labrary/reselect/README.md","mtime":"2017-11-26T07:52:19.721Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-14T10:33:49.807Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,969 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>react-router · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../react-router-redux/4.x/" />
+    
+    
+    <link rel="prev" href="../react-redux/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../../HTML/">
+            
+                <a href="../../../../HTML/">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../CSS/">
+            
+                <a href="../../../../CSS/">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../JavaScript/">
+            
+                <a href="../../../../JavaScript/">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../../Http/">
+            
+                <a href="../../../../Http/">
+            
+                    
+                    Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Labrary
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../VUE/">
+            
+                <a href="../../../VUE/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../docs/">
+            
+                <a href="../../docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../Create-React-App/">
+            
+                <a href="../../Create-React-App/">
+            
+                    
+                    Create-React-App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.1" data-path="../Redux/">
+            
+                <a href="../Redux/">
+            
+                    
+                    redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.2" data-path="../react-redux/">
+            
+                <a href="../react-redux/">
+            
+                    
+                    react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    react-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.4" data-path="../react-router-redux/4.x/">
+            
+                <a href="../react-router-redux/4.x/">
+            
+                    
+                    react-router-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.5" data-path="../fetch/">
+            
+                <a href="../fetch/">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.6" data-path="../isomorphic-fetch/">
+            
+                <a href="../isomorphic-fetch/">
+            
+                    
+                    isomorphic-fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.7" data-path="../prop-types/">
+            
+                <a href="../prop-types/">
+            
+                    
+                    prop-types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.8" data-path="../react-autosuggest/">
+            
+                <a href="../react-autosuggest/">
+            
+                    
+                    react-autosuggest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.9" data-path="../recharts/">
+            
+                <a href="../recharts/">
+            
+                    
+                    recharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.10" data-path="../recompose/">
+            
+                <a href="../recompose/">
+            
+                    
+                    recompose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.11" data-path="../reselect/">
+            
+                <a href="../reselect/">
+            
+                    
+                    reselect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.12" data-path="../text-mask/">
+            
+                <a href="../text-mask/">
+            
+                    
+                    text-mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13" data-path="../_UI/">
+            
+                <a href="../_UI/">
+            
+                    
+                    UI库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.13.1" data-path="../_UI/Ant Design/">
+            
+                <a href="../_UI/Ant Design/">
+            
+                    
+                    Ant Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.2" data-path="../_UI/material-ui/">
+            
+                <a href="../_UI/material-ui/">
+            
+                    
+                    Material-UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.3" data-path="../_UI/react-bootstrap/">
+            
+                <a href="../_UI/react-bootstrap/">
+            
+                    
+                    react-bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.4" data-path="../_UI/Semantic-UI-React/">
+            
+                <a href="../_UI/Semantic-UI-React/">
+            
+                    
+                    Semantic-UI-React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="../../example/">
+            
+                <a href="../../example/">
+            
+                    
+                    示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="../../_Questions/questions.html">
+            
+                <a href="../../_Questions/questions.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="../../_experience/">
+            
+                <a href="../../_experience/">
+            
+                    
+                    经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../React Native/">
+            
+                <a href="../../../React Native/">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../Nodejs/">
+            
+                <a href="../../../Nodejs/">
+            
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../../../Nodejs/docsList.html">
+            
+                <a href="../../../Nodejs/docsList.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../../../Nodejs/Labrary/">
+            
+                <a href="../../../Nodejs/Labrary/">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.2.1" data-path="../../../Nodejs/Labrary/nvm/">
+            
+                <a href="../../../Nodejs/Labrary/nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.2" data-path="../../../Nodejs/Labrary/request/">
+            
+                <a href="../../../Nodejs/Labrary/request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.3" data-path="../../../Nodejs/Labrary/async/">
+            
+                <a href="../../../Nodejs/Labrary/async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.4" data-path="../../../Nodejs/Labrary/supervisor/">
+            
+                <a href="../../../Nodejs/Labrary/supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.5" data-path="../../../Nodejs/Labrary/express/">
+            
+                <a href="../../../Nodejs/Labrary/express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../UI/">
+            
+                <a href="../../../UI/">
+            
+                    
+                    UI 库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    其他库
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >react-router</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p align="center">
+  <a href="https://reacttraining.com/react-router/" target="_blank">
+    <img alt="react-router" src="https://reacttraining.com/react-router/android-chrome-144x144.png" width="144">
+  </a>
+</p>
+
+<h3 align="center" id="
+--react-router
+"><a name="
+--react-router
+" class="anchor-navigation-ex-anchor" href="#%0A--react-router"><i class="fa fa-link" aria-hidden="true"></i></a><a name="
+--react-router
+" class="plugin-anchor" href="#%0A--react-router"><i class="fa fa-link" aria-hidden="true"></i></a>
+  React Router
+</h3>
+
+<p align="center">
+ &#x58F0;&#x660E;&#x5F0F; <a href="https://facebook.github.io/react" target="_blank">React</a>&#x8DEF;&#x7531;
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/react-router" target="_blank"><img src="https://img.shields.io/npm/v/react-router.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/react-router" target="_blank"><img src="https://img.shields.io/npm/dm/react-router.svg?style=flat-square"></a>
+  <a href="https://travis-ci.org/ReactTraining/react-router" target="_blank"><img src="https://img.shields.io/travis/ReactTraining/react-router/master.svg?style=flat-square"></a>
+</p>
+
+<h2 id="docs"><a name="docs" class="anchor-navigation-ex-anchor" href="#docs"><i class="fa fa-link" aria-hidden="true"></i></a><a name="docs" class="plugin-anchor" href="#docs"><i class="fa fa-link" aria-hidden="true"></i></a>Docs</h2>
+<p><strong><a href="../../../../React/React-Router/packages/react-router/docs">&#x67E5;&#x770B;&#x8FD9;&#x91CC;&#x7684;&#x6587;&#x6863;</a></strong></p>
+<p><a href="packages/react-router/docs/guides/migrating.md">&#x4ECE; 2.x/3.x? &#x8FC1;&#x79FB;</a></p>
+<p><a href="https://github.com/ReactTraining/react-router/blob/v3/docs" target="_blank">3.x &#x6587;&#x6863;</a></p>
+<p><a href="https://github.com/ReactTraining/react-router/blob/v2.8.1/docs" target="_blank">2.x &#x6587;&#x6863;</a></p>
+<h2 id="&#x5305;"><a name="&#x5305;" class="anchor-navigation-ex-anchor" href="#&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5305;" class="plugin-anchor" href="#&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5305;</h2>
+<p>&#x8FD9;&#x4E2A;&#x4ED3;&#x5E93;&#x662F;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<a href="https://github.com/lerna/lerna" target="_blank">Lerna</a>&#x7BA1;&#x7406;&#x7684;&#x4E00;&#x4E2A;<a href="../../../../Questions/Q1/Monorepo.md">monorepo</a>&#x3002;&#x8FD9;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x6211;&#x4EEC;&#x53D1;&#x5E03;&#x5230;npm&#x7684;<a href="https://github.com/ReactTraining/react-router/tree/master/packages" target="_blank">&#x51E0;&#x4E2A;&#x5305;</a>&#x90FD;&#x6765;&#x81EA;&#x4E8E;&#x76F8;&#x540C;&#x7684;&#x4EE3;&#x7801;&#x5E93;&#xFF0C;&#x5305;&#x62EC;:</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+<th>Docs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../../../packages/react-router"><code>react-router</code></a></td>
+<td><a href="https://www.npmjs.com/package/react-router" target="_blank"><img src="https://img.shields.io/npm/v/react-router.svg?style=flat-square" alt="npm"></a></td>
+<td><a href="https://reacttraining.com/react-router/core/guides/quick-start" target="_blank"><img src="https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat-square" alt=""></a> <a href="../../../../packages/react-router/docs"><img src="https://img.shields.io/badge/API%20Docs-markdown-lightgrey.svg?style=flat-square" alt=""></a></td>
+<td>The core of React Router</td>
+</tr>
+<tr>
+<td><a href="../../../../packages/react-router-dom"><code>react-router-dom</code></a></td>
+<td><a href="https://www.npmjs.com/package/react-router-dom" target="_blank"><img src="https://img.shields.io/npm/v/react-router-dom.svg?style=flat-square" alt="npm"></a></td>
+<td><a href="https://reacttraining.com/react-router/web/guides/quick-start" target="_blank"><img src="https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat-square" alt=""></a> <a href="../../../../packages/react-router-dom/docs"><img src="https://img.shields.io/badge/API%20Docs-markdown-lightgrey.svg?style=flat-square" alt=""></a></td>
+<td>DOM bindings for React Router</td>
+</tr>
+<tr>
+<td><a href="../../../../packages/react-router-native"><code>react-router-native</code></a></td>
+<td><a href="https://www.npmjs.com/package/react-router-native" target="_blank"><img src="https://img.shields.io/npm/v/react-router-native.svg?style=flat-square" alt="npm"></a></td>
+<td><a href="https://reacttraining.com/react-router/native/guides/quick-start" target="_blank"><img src="https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat-square" alt=""></a> <a href="../../../../packages/react-router-native/docs"><img src="https://img.shields.io/badge/API%20Docs-markdown-lightgrey.svg?style=flat-square" alt=""></a></td>
+<td><a href="https://facebook.github.io/react-native/" target="_blank">React Native</a> bindings for React Router</td>
+</tr>
+<tr>
+<td><a href="../../../../packages/react-router-redux"><code>react-router-redux</code></a></td>
+<td><a href="https://www.npmjs.com/package/react-router-redux" target="_blank"><img src="https://img.shields.io/badge/npm-v5.0.0--alpha.7-orange.svg?style=flat-square" alt="npm"></a></td>
+<td><a href="../../../../packages/react-router-redux#readme"><img src="https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square" alt=""></a></td>
+<td>Integration with React Router and Redux</td>
+</tr>
+<tr>
+<td><a href="../../../../packages/react-router-config"><code>react-router-config</code></a></td>
+<td><a href="https://www.npmjs.com/package/react-router-config" target="_blank"><img src="https://img.shields.io/npm/v/react-router-config.svg?style=flat-square" alt="npm"></a></td>
+<td><a href="../../../../packages/react-router-config#readme"><img src="https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square" alt=""></a></td>
+<td>Static route config helpers</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x5173;&#x4E8E;"><a name="&#x5173;&#x4E8E;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x4E8E;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5173;&#x4E8E;" class="plugin-anchor" href="#&#x5173;&#x4E8E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5173;&#x4E8E;</h2>
+<p>react-router &#x662F;&#x7531;<a href="https://reacttraining.com" target="_blank">React Training</a> &#x548C;&#x8BB8;&#x591A; <a href="https://github.com/ReactTraining/react-router/graphs/contributors" target="_blank">&#x4E9A;&#x9A6C;&#x900A;&#x8D21;&#x732E;&#x8005;</a> &#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x7684;. &#x5982;&#x679C;&#x4F60;&#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x5173;&#x4E8E;React&#x80FD;&#x4E3A;&#x4F60;&#x7684;&#x516C;&#x53F8;&#x505A;&#x4EC0;&#x4E48;&#x7684;&#x8BDD;&#xFF0C;&#x8BF7;<a href="mailto:hello@reacttraining.com" target="_blank">&#x8054;&#x7CFB;</a>!</p>
+<h2 id="&#x81F4;&#x8C22;"><a name="&#x81F4;&#x8C22;" class="anchor-navigation-ex-anchor" href="#&#x81F4;&#x8C22;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x81F4;&#x8C22;" class="plugin-anchor" href="#&#x81F4;&#x8C22;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81F4;&#x8C22;</h2>
+<p>&#x611F;&#x8C22;<a href="https://github.com/ReactTraining/react-router/blob/master/SPONSORS.md" target="_blank">&#x6211;&#x4EEC;&#x7684;&#x8D5E;&#x52A9;&#x5546;</a> &#x5BF9;React Router &#x5F00;&#x53D1;&#x7684;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="&#x8BD1;&#x8005;&#x5907;&#x6CE8;"><a name="&#x8BD1;&#x8005;&#x5907;&#x6CE8;" class="anchor-navigation-ex-anchor" href="#&#x8BD1;&#x8005;&#x5907;&#x6CE8;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8BD1;&#x8005;&#x5907;&#x6CE8;" class="plugin-anchor" href="#&#x8BD1;&#x8005;&#x5907;&#x6CE8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BD1;&#x8005;&#x5907;&#x6CE8;</h2>
+<p><a href="https://github.com/ReactTraining/react-router" target="_blank">Github&#x5730;&#x5740;</a> </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-26 15:52:19
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../react-redux/" class="navigation navigation-prev " aria-label="Previous page: react-redux">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../react-router-redux/4.x/" class="navigation navigation-next " aria-label="Next page: react-router-redux">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"react-router","level":"1.6.2.3.3","depth":4,"next":{"title":"react-router-redux","level":"1.6.2.3.4","depth":4,"path":"Labrary/React/Labrary/react-router-redux/4.x/README.md","ref":"Labrary/React/Labrary/react-router-redux/4.x/README.md","articles":[]},"previous":{"title":"react-redux","level":"1.6.2.3.2","depth":4,"path":"Labrary/React/Labrary/react-redux/README.md","ref":"Labrary/React/Labrary/react-redux/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"Labrary/React/Labrary/react-router/README.md","mtime":"2017-11-26T07:52:19.605Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-14T10:33:49.807Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

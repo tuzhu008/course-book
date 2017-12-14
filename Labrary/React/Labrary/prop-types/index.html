@@ -1,0 +1,1086 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>prop-types · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../react-autosuggest/" />
+    
+    
+    <link rel="prev" href="../isomorphic-fetch/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../../HTML/">
+            
+                <a href="../../../../HTML/">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../CSS/">
+            
+                <a href="../../../../CSS/">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../JavaScript/">
+            
+                <a href="../../../../JavaScript/">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../../Http/">
+            
+                <a href="../../../../Http/">
+            
+                    
+                    Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Labrary
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../VUE/">
+            
+                <a href="../../../VUE/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../docs/">
+            
+                <a href="../../docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../Create-React-App/">
+            
+                <a href="../../Create-React-App/">
+            
+                    
+                    Create-React-App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.1" data-path="../Redux/">
+            
+                <a href="../Redux/">
+            
+                    
+                    redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.2" data-path="../react-redux/">
+            
+                <a href="../react-redux/">
+            
+                    
+                    react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.3" data-path="../react-router/">
+            
+                <a href="../react-router/">
+            
+                    
+                    react-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.4" data-path="../react-router-redux/4.x/">
+            
+                <a href="../react-router-redux/4.x/">
+            
+                    
+                    react-router-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.5" data-path="../fetch/">
+            
+                <a href="../fetch/">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.6" data-path="../isomorphic-fetch/">
+            
+                <a href="../isomorphic-fetch/">
+            
+                    
+                    isomorphic-fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2.3.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    prop-types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.8" data-path="../react-autosuggest/">
+            
+                <a href="../react-autosuggest/">
+            
+                    
+                    react-autosuggest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.9" data-path="../recharts/">
+            
+                <a href="../recharts/">
+            
+                    
+                    recharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.10" data-path="../recompose/">
+            
+                <a href="../recompose/">
+            
+                    
+                    recompose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.11" data-path="../reselect/">
+            
+                <a href="../reselect/">
+            
+                    
+                    reselect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.12" data-path="../text-mask/">
+            
+                <a href="../text-mask/">
+            
+                    
+                    text-mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13" data-path="../_UI/">
+            
+                <a href="../_UI/">
+            
+                    
+                    UI库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.13.1" data-path="../_UI/Ant Design/">
+            
+                <a href="../_UI/Ant Design/">
+            
+                    
+                    Ant Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.2" data-path="../_UI/material-ui/">
+            
+                <a href="../_UI/material-ui/">
+            
+                    
+                    Material-UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.3" data-path="../_UI/react-bootstrap/">
+            
+                <a href="../_UI/react-bootstrap/">
+            
+                    
+                    react-bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.4" data-path="../_UI/Semantic-UI-React/">
+            
+                <a href="../_UI/Semantic-UI-React/">
+            
+                    
+                    Semantic-UI-React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="../../example/">
+            
+                <a href="../../example/">
+            
+                    
+                    示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="../../_Questions/questions.html">
+            
+                <a href="../../_Questions/questions.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="../../_experience/">
+            
+                <a href="../../_experience/">
+            
+                    
+                    经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../React Native/">
+            
+                <a href="../../../React Native/">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../Nodejs/">
+            
+                <a href="../../../Nodejs/">
+            
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../../../Nodejs/docsList.html">
+            
+                <a href="../../../Nodejs/docsList.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../../../Nodejs/Labrary/">
+            
+                <a href="../../../Nodejs/Labrary/">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.2.1" data-path="../../../Nodejs/Labrary/nvm/">
+            
+                <a href="../../../Nodejs/Labrary/nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.2" data-path="../../../Nodejs/Labrary/request/">
+            
+                <a href="../../../Nodejs/Labrary/request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.3" data-path="../../../Nodejs/Labrary/async/">
+            
+                <a href="../../../Nodejs/Labrary/async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.4" data-path="../../../Nodejs/Labrary/supervisor/">
+            
+                <a href="../../../Nodejs/Labrary/supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.5" data-path="../../../Nodejs/Labrary/express/">
+            
+                <a href="../../../Nodejs/Labrary/express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../UI/">
+            
+                <a href="../../../UI/">
+            
+                    
+                    UI 库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    其他库
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >prop-types</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#prop-types"><b>1. </b>prop-types</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;"><b>1.1. </b>&#x5B89;&#x88C5;</a></li><li><span class="title-icon "></span><a href="#&#x5BFC;&#x5165;"><b>1.2. </b>&#x5BFC;&#x5165;</a></li><ul><li><span class="title-icon "></span><a href="#cdn"><b>1.2.1. </b>CDN</a></li></ul><li><span class="title-icon "></span><a href="#&#x4ECE;reactproptypes&#x8FC1;&#x79FB;"><b>1.3. </b>&#x4ECE;React.PropTypes&#x8FC1;&#x79FB;</a></li><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x4F9D;&#x8D56;&#x8FD9;&#x4E2A;&#x5305;"><b>1.4. </b>&#x5982;&#x4F55;&#x4F9D;&#x8D56;&#x8FD9;&#x4E2A;&#x5305;?</a></li><li><span class="title-icon "></span><a href="#&#x517C;&#x5BB9;&#x6027;"><b>1.5. </b>&#x517C;&#x5BB9;&#x6027;</a></li><ul><li><span class="title-icon "></span><a href="#react-014"><b>1.5.1. </b>React 0.14</a></li><li><span class="title-icon "></span><a href="#react-15"><b>1.5.2. </b>React 15+</a></li><li><span class="title-icon "></span><a href="#&#x5728;&#x5176;&#x4ED6;react&#x7248;&#x672C;&#x4E0A;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;"><b>1.5.3. </b>&#x5728;&#x5176;&#x4ED6;React&#x7248;&#x672C;&#x4E0A;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;?</a></li></ul><li><span class="title-icon "></span><a href="#&#x533A;&#x522B;reactproptypes-&#x4E0D;&#x8C03;&#x7528;&#x9A8C;&#x8BC1;&#x5668;&#x51FD;&#x6570;"><b>1.6. </b>&#x533A;&#x522B;React.PropTypes: &#x4E0D;&#x8C03;&#x7528;&#x9A8C;&#x8BC1;&#x5668;&#x51FD;&#x6570;</a></li><li><span class="title-icon "></span><a href="#proptypescheckproptypes"><b>1.7. </b>PropTypes.checkPropTypes</a></li></ul></ul></div><a href="#prop-types" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="prop-types"><a name="prop-types" class="anchor-navigation-ex-anchor" href="#prop-types"><i class="fa fa-link" aria-hidden="true"></i></a>1. prop-types</h1>
+<p>&#x9002;&#x7528;&#x4E8E; React props &#x548C; &#x7C7B;&#x4F3C;&#x5BF9;&#x8C61;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x7C7B;&#x578B;&#x68C0;&#x67E5;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;prop-types&#x6765;&#x8BB0;&#x5F55;&#x6240;&#x4F20;&#x9012;&#x7ED9;&#x7EC4;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x9884;&#x671F;&#x7C7B;&#x578B;&#x3002;React(&#x53EF;&#x80FD;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x5E93;&#x2014;&#x2014;&#x67E5;&#x770B;checkPropTypes()
+&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x53C2;&#x8003;&#x8D44;&#x6599;)&#x5C06;&#x68C0;&#x67E5;&#x4F20;&#x9012;&#x7ED9;&#x60A8;&#x7684;&#x7EC4;&#x4EF6;&#x7684;props&#x7684;
+&#x5B9A;&#x4E49;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5339;&#x914D;&#xFF0C;&#x5219;&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#x3002;</p>
+<h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5B89;&#x88C5;</h2>
+<pre class="language-"><code class="lang-shell">npm install --save prop-types
+</code></pre>
+<h2 id="&#x5BFC;&#x5165;"><a name="&#x5BFC;&#x5165;" class="anchor-navigation-ex-anchor" href="#&#x5BFC;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5BFC;&#x5165;</h2>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> PropTypes <span class="token keyword">from</span> <span class="token string">&apos;prop-types&apos;</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ES6</span>
+<span class="token keyword">var</span> PropTypes <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;prop-types&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// ES5 with npm</span>
+</code></pre>
+<h3 id="cdn"><a name="cdn" class="anchor-navigation-ex-anchor" href="#cdn"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. CDN</h3>
+<p>&#x5982;&#x679C;&#x60A8;&#x559C;&#x6B22;&#x5C06;<code>prop-types</code>&#x5728;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x6392;&#x9664;&#x5E76;&#x901A;&#x8FC7;<code>window.PropTypes</code>&#x5168;&#x5C40;&#x4F7F;&#x7528;&#x5B83;&#x5728;&#xFF0C;<code>prop-types</code>&#x5305;&#x63D0;&#x4F9B;&#x5355;&#x6587;&#x4EF6;&#x53D1;&#x884C;&#x7248;&#xFF0C;&#x5B83;&#x6258;&#x7BA1;&#x5728;&#x4EE5;&#x4E0B;&#x7684;CDNs:</p>
+<ul>
+<li><a href="https://unpkg.com/prop-types/" target="_blank"><strong>unpkg</strong></a>
+```html<!-- 开发版本 -->
+<script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+
+</li>
+</ul>
+<!-- 生产版本 -->
+<script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
+```
+
+* [**cdnjs**](https://cdnjs.com/libraries/prop-types)
+```html
+<!-- 开发版本 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"></script>
+
+<!-- 生产版本 -->
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.min.js"></script></p>
+<pre class="language-"><code>
+&#x4F7F;&#x7528;&#x7248;&#x672C;&#x53F7;&#x6765;&#x52A0;&#x8F7D;&#x7279;&#x5B9A;&#x7248;&#x672C;&#x7684;`prop-types`&#x66FF;&#x6362;`15.6.0`&#x3002;
+
+## &#x4F7F;&#x7528;&#x65B9;&#x6CD5;
+
+PropTypes&#x6700;&#x521D;&#x662F;&#x4F5C;&#x4E3A;React&#x6838;&#x5FC3;&#x6A21;&#x5757;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x516C;&#x5F00;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x5E38;&#x7528;&#x4E8E;React&#x7EC4;&#x4EF6;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;PropTypes&#x548C;React&#x7EC4;&#x4EF6;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5B83;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x9A8C;&#x8BC1;&#x5668;:
+
+```js
+import React from &apos;react&apos;;
+import PropTypes from &apos;prop-types&apos;;
+
+class MyComponent extends React.Component {
+  render() {
+    // ... do things with the props
+  }
+}
+
+MyComponent.propTypes = {
+  // &#x4F60;&#x53EF;&#x4EE5;&#x58F0;&#x660E;&#x4E00;&#x4E2A;prop&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;JS&#x539F;&#x59CB;&#x7C7B;&#x578B;
+  // &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4ED6;&#x4EEC;&#x90FD;&#x662F;&#x53EF;&#x9009;&#x7684;
+  optionalArray: PropTypes.array,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,
+
+  // &#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#x90FD;&#x53EF;&#x4EE5;&#x88AB;&#x6E32;&#x67D3;: numbers, strings, elements &#x6216;&#x8005; &#x4E00;&#x4E2A;&#x5305;&#x542B;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x7684;array&#xFF08;&#x6216;&#x8005;&#x662F;fragment[&#x7247;&#x6BB5;]&#xFF09;
+  optionalNode: PropTypes.node,
+
+  //&#x4E00;&#x4E2A;React&#x5143;&#x7D20;.
+  optionalElement: PropTypes.element,
+
+  // &#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x58F0;&#x660E;&#x4E00;&#x4E2A;prop&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x8FD9;&#x4F7F;&#x7528;&#x7684;&#x662F;JS&#x7684; instanceof &#x64CD;&#x4F5C;&#x7B26;
+  optionalMessage: PropTypes.instanceOf(Message),
+
+  // &#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;&#x5176;&#x89C6;&#x4E3A;enum&#x6765;&#x786E;&#x4FDD;&#x60A8;&#x7684;prop&#x4EC5;&#x9650;&#x4E8E;&#x7279;&#x5B9A;&#x7684;&#x503C;&#x3002;
+  optionalEnum: PropTypes.oneOf([&apos;News&apos;, &apos;Photos&apos;]),
+
+  // &#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x662F;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;
+  optionalUnion: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Message)
+  ]),
+
+  // &#x4E00;&#x79CD;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;
+  optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
+
+  // &#x5177;&#x6709;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#x503C;&#x7684;&#x5BF9;&#x8C61;
+  optionalObjectOf: PropTypes.objectOf(PropTypes.number),
+
+  // &#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x5F62;&#x5F0F;&#x7684;&#x5BF9;&#x8C61;
+  optionalObjectWithShape: PropTypes.shape({
+    color: PropTypes.string,
+    fontSize: PropTypes.number
+  }),
+
+  // &#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; isRequired &#x5C06;&#x4E0A;&#x8FF0;&#x4EFB;&#x4F55;&#x4E00;&#x79CD;&#x94FE;&#x63A5;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x5728;&#x4E0D;&#x63D0;&#x4F9B;&#x8BE5;prop&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#x3002;
+  requiredFunc: PropTypes.func.isRequired,
+
+  // &#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x503C;
+  requiredAny: PropTypes.any.isRequired,
+
+  //&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9A8C;&#x8BC1;&#x5668;&#x3002;&#x5982;&#x679C;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;&#xFF0C;&#x5B83;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;&#x3002;&#x4E0D;&#x8981;`console.warn`&#xFF0C;&#x629B;&#x51FA;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x5728;`oneOfType`&#x4E2D;&#x662F;&#x884C;&#x4E0D;&#x901A;&#x7684;&#x3002;
+  customProp: function(props, propName, componentName) {
+    if (!/matchme/.test(props[propName])) {
+      return new Error(
+        &apos;Invalid prop `&apos; + propName + &apos;` supplied to&apos; +
+        &apos; `&apos; + componentName + &apos;`. Validation failed.&apos;
+      );
+    }
+  },
+
+  // &#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x5411;`arrayOf`&#x548C;`objectOf`&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9A8C;&#x8BC1;&#x5668;&#x3002;
+  // &#x5982;&#x679C;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;&#xFF0C;&#x5B83;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;&#x3002; &#x9A8C;&#x8BC1;&#x5668;&#x5C06;&#x8C03;&#x7528;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x952E;&#x3002;
+  // &#x9A8C;&#x8BC1;&#x5668;&#x7684;&#x524D;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#xFF0C;&#x4EE5;&#x53CA;&#x5F53;&#x524D;&#x9879;&#x7684;&#x952E;&#x3002;
+  customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
+    if (!/matchme/.test(propValue[key])) {
+      return new Error(
+        &apos;Invalid prop `&apos; + propFullName + &apos;` supplied to&apos; +
+        &apos; `&apos; + componentName + &apos;`. Validation failed.&apos;
+      );
+    }
+  })
+};
+</code></pre><p>&#x53C2;&#x8003;<a href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html" target="_blank">React &#x6587;&#x6863;</a> &#x83B7;&#x5F97;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<h2 id="&#x4ECE;reactproptypes&#x8FC1;&#x79FB;"><a name="&#x4ECE;reactproptypes&#x8FC1;&#x79FB;" class="anchor-navigation-ex-anchor" href="#&#x4ECE;reactproptypes&#x8FC1;&#x79FB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x4ECE;React.PropTypes&#x8FC1;&#x79FB;</h2>
+<p>&#x770B;&#x770B; <a href="https://facebook.github.io/react/blog/2017/04/07/react-v15.5.0.html#migrating-from-react.proptypes" target="_blank">&#x4ECE;React.PropTypes&#x8FC1;&#x79FB;</a> &#x83B7;&#x5F97;&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x5982;&#x4F55;&#x4ECE;<code>React.PropTypes</code>&#x8FC1;&#x79FB;&#x5230;<code>prop-types</code>&#x7684;&#x7EC6;&#x8282;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A; &#x8FD9;&#x7BC7;&#x535A;&#x5BA2;&#x6587;&#x7AE0; <strong>&#x63D0;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x8F6C;&#x6362;&#x7684;codemod&#x811A;&#x672C;</strong>.</p>
+<p>&#x4E0B;&#x9762;&#x8FD8;&#x6709;&#x91CD;&#x8981;&#x7684;&#x6CE8;&#x91CA;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x4F9D;&#x8D56;&#x8FD9;&#x4E2A;&#x5305;"><a name="&#x5982;&#x4F55;&#x4F9D;&#x8D56;&#x8FD9;&#x4E2A;&#x5305;" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x4F9D;&#x8D56;&#x8FD9;&#x4E2A;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x5982;&#x4F55;&#x4F9D;&#x8D56;&#x8FD9;&#x4E2A;&#x5305;?</h2>
+<p>&#x5BF9;&#x4E8E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x5C06;&#x5176;&#x4E0E;&#x7248;&#x672C;&#x4E00;&#x8D77;&#x653E;&#x5728;<code>package.json</code>&#x7684;<code>dependencies</code>&#x4E2D;</p>
+<p>&#x4F8B;&#x5982;:</p>
+<pre class="language-"><code class="lang-js">  <span class="token string">&quot;dependencies&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;prop-types&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;^15.5.7&quot;</span> 
+  <span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x5E93;, &#x6211;&#x4EEC;&#x4E5F;&#x5EFA;&#x8BAE;&#x5C06;&#x5176;&#x653E;&#x5728;<code>dependencies</code>&#x4E2D;:</p>
+<pre class="language-"><code class="lang-js">  <span class="token string">&quot;dependencies&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;prop-types&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;^15.5.7&quot;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;peerDependencies&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;react&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;^15.5.0&quot;</span> 
+  <span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;:</strong> &#x5728;15.5.7&#x4E4B;&#x524D;&#x7248;&#x672C;&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x5DF2;&#x77E5;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x5B83;&#x4F5C;&#x4E3A;&#x6700;&#x4F4E;&#x7248;&#x672C;&#x3002;</p>
+<p>&#x786E;&#x4FDD;&#x7248;&#x672C;&#x8303;&#x56F4;&#x4F7F;&#x7528;&#x4E86;caret(<code>^</code>)&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5E7F;&#x6CDB;&#x5730;&#x4F7F;&#x7528;npm&#x6765;&#x6709;&#x6548;&#x5730;&#x590D;&#x5236;&#x5305;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x60A8;&#x7684;&#x7EC4;&#x4EF6;&#x7684;UMD&#x6346;&#x7ED1;&#x5305;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x5728;&#x6784;&#x5EFA;&#x4E2D;<strong>&#x4E0D;</strong>&#x5305;&#x542B;<code>PropTypes</code>&#x3002;&#x901A;&#x5E38;&#x8FD9;&#x662F;&#x901A;&#x8FC7;&#x628A;&#x5B83;&#x6807;&#x8BB0;&#x4E3A;&#x4E00;&#x4E2A;&#x5916;&#x90E8;&#x7684;(&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x7684;&#x6253;&#x5305;&#x5668;)&#xFF0C;&#x5C31;&#x50CF;&#x4F60;&#x7684;React&#x4E00;&#x6837;&#x3002;</p>
+<h2 id="&#x517C;&#x5BB9;&#x6027;"><a name="&#x517C;&#x5BB9;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x517C;&#x5BB9;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x517C;&#x5BB9;&#x6027;</h2>
+<h3 id="react-014"><a name="react-014" class="anchor-navigation-ex-anchor" href="#react-014"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.1. React 0.14</h3>
+<p>&#x8FD9;&#x4E2A;&#x5305;&#x4E0E;<strong>React 0.14.9</strong>&#x662F;&#x517C;&#x5BB9;&#x7684;&#x3002;&#x4E0E;0.14.8(&#x4E00;&#x5E74;&#x524D;&#x53D1;&#x5E03;&#x7684;)&#x76F8;&#x6BD4;&#xFF0C;0.14.9&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x65E0;&#x75DB;&#x7684;&#x5347;&#x7EA7;&#x3002;</p>
+<pre class="language-"><code class="lang-shell"># &#x6CE8;&#x610F;: &#x53EA;&#x6709;&#x5728;&#x4F60;&#x4ECD;&#x7136;&#x4F7F;&#x7528;React 0.14&#x7684;&#x65F6;&#x5019;&#x624D;&#x8FD0;&#x884C;&#x8FD9;&#x4E2A;&#xFF01;
+npm install --save react@^0.14.9 react-dom@^0.14.9
+</code></pre>
+<h3 id="react-15"><a name="react-15" class="anchor-navigation-ex-anchor" href="#react-15"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.2. React 15+</h3>
+<p>&#x8FD9;&#x4E2A;&#x5305;&#x4E0E;<strong>React 15.3.0</strong>&#x548C;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x517C;&#x5BB9;&#x3002;</p>
+<pre class="language-"><code>npm install --save react@^15.3.0 react-dom@^15.3.0
+</code></pre><h3 id="&#x5728;&#x5176;&#x4ED6;react&#x7248;&#x672C;&#x4E0A;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;"><a name="&#x5728;&#x5176;&#x4ED6;react&#x7248;&#x672C;&#x4E0A;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;" class="anchor-navigation-ex-anchor" href="#&#x5728;&#x5176;&#x4ED6;react&#x7248;&#x672C;&#x4E0A;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.3. &#x5728;&#x5176;&#x4ED6;React&#x7248;&#x672C;&#x4E0A;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;?</h3>
+<p>&#x5373;&#x4F7F;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6CA1;&#x6709;&#x505A;&#x9519;&#x4EFB;&#x4F55;&#x4E8B;&#x60C5;&#xFF0C;&#x5B83;&#x4E5F;&#x4F1A;&#x8F93;&#x51FA;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#x3002;&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x9664;&#x4E86;&#x66F4;&#x65B0;React&#x5230;15.3.0&#x6216;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x4E4B;&#x5916;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7684;&#x662F;React0.14&#xFF0C;&#x5219;&#x662F;0.14.9&#x3002;</p>
+<h2 id="&#x533A;&#x522B;reactproptypes-&#x4E0D;&#x8C03;&#x7528;&#x9A8C;&#x8BC1;&#x5668;&#x51FD;&#x6570;"><a name="&#x533A;&#x522B;reactproptypes-&#x4E0D;&#x8C03;&#x7528;&#x9A8C;&#x8BC1;&#x5668;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x533A;&#x522B;reactproptypes-&#x4E0D;&#x8C03;&#x7528;&#x9A8C;&#x8BC1;&#x5668;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x533A;&#x522B;React.PropTypes: &#x4E0D;&#x8C03;&#x7528;&#x9A8C;&#x8BC1;&#x5668;&#x51FD;&#x6570;</h2>
+<p>&#x9996;&#x5148;&#xFF0C;<strong>which version of React are you using</strong>?&#x60A8;&#x53EF;&#x80FD;&#x4F1A;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x56E0;&#x4E3A;&#x7EC4;&#x4EF6;&#x5E93;&#x5DF2;&#x7ECF;&#x66F4;&#x65B0;&#x4E86;&#x4F7F;&#x7528;<code>prop-types</code>&#x5305;&#xFF0C;&#x4F46;&#x662F;&#x60A8;&#x7684;React&#x7248;&#x672C;&#x4E0E;&#x5B83;&#x662F;&#x4E0D;&#x517C;&#x5BB9;&#x7684;&#x3002;&#x6709;&#x5173;&#x66F4;&#x591A;&#x7EC6;&#x8282;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="#&#x517C;&#x5BB9;&#x6027;">&#x4E0A;&#x9762;&#x7684;&#x90E8;&#x5206;</a>(&#x517C;&#x5BB9;&#x6027;)&#x3002;</p>
+<p>&#x4F60;&#x4F7F;&#x7528;&#x7684;&#x662F;0.14.9&#x8FD8;&#x662F;&#x6BD4;React15.3.0&#x66F4;&#x9AD8;&#x7684;&#x7248;&#x672C;?&#x7EE7;&#x7EED;&#x8BFB;&#x4E0B;&#x53BB;&#x3002;</p>
+<p>&#x5F53;&#x60A8;&#x5C06;&#x7EC4;&#x4EF6;&#x8FC1;&#x79FB;&#x5230;&#x4F7F;&#x7528;&#x72EC;&#x7ACB;&#x7684;<code>prop-types</code>&#x65F6;&#xFF0C;<strong>&#x5982;&#x679C;&#x60A8;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x5B83;&#x4EEC;&#xFF0C;&#x6240;&#x6709;&#x9A8C;&#x8BC1;&#x5668;&#x51FD;&#x6570;&#x90FD;&#x5C06;&#x5F00;&#x59CB;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;</strong>&#x3002;&#x8FD9;&#x786E;&#x4FDD;&#x6CA1;&#x6709;&#x4EBA;&#x5728;&#x751F;&#x4EA7;&#x4EE3;&#x7801;&#x4E2D;&#x4F9D;&#x8D56;&#x4E8E;&#x5B83;&#x4EEC;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5B89;&#x5168;&#x5730;&#x5C06;&#x5B83;&#x4EEC;&#x7684;&#x5B9E;&#x73B0;&#x53BB;&#x6389;&#x4EE5;&#x4F18;&#x5316;&#x5305;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x4ECD;&#x7136;&#x5F88;&#x597D;:</p>
+<pre class="language-"><code class="lang-js">MyComponent<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  myProp<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>bool
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x50CF;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x4E0D;&#x80FD;&#x4E0E;<code>prop-types</code>&#x5305;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;:</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// Will not work with `prop-types` package!</span>
+<span class="token keyword">var</span> errorOrNull <span class="token operator">=</span> PropTypes<span class="token punctuation">.</span><span class="token function">bool</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">&apos;myProp&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;MyComponent&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;prop&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5B83;&#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF1A;</p>
+<pre class="language-"><code>&#x76F4;&#x63A5;&#x8C03;&#x7528;PropTypes&#x9A8C;&#x8BC1;&#x5668;&#x4E0D;&#x53D7;`prop-types`&#x5305;&#x7684;&#x652F;&#x6301;&#x3002;
+&#x4F7F;&#x7528;PropTypes.checkPropTypes()&#x6765;&#x8C03;&#x7528;&#x5B83;&#x4EEC;&#x3002;
+</code></pre><p>(&#x5982;&#x679C;&#x60A8;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x6D88;&#x606F;&#x7684;<strong>&#x8B66;&#x544A;</strong>&#x800C;&#x4E0D;&#x662F;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;<a href="#compatibility">&#x4E0A;&#x9762;&#x7684;&#x5173;&#x4E8E;&#x517C;&#x5BB9;&#x6027;&#x7684;&#x90E8;&#x5206;</a>)</p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5F53;&#x4F60;&#x4ECE;<code>React.PropTypes</code>&#x8FC1;&#x79FB;&#x5230;<code>prop-types</code>&#x65F6;&#xFF0C;&#x4F60;&#x53EA;&#x4F1A;&#x9047;&#x5230;&#x5B83;&#x3002;&#x5BF9;&#x4E8E;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7684;&#x7EC4;&#x4EF6;,&#x8FD9;&#x5E76;&#x4E0D;&#x91CD;&#x8981;,&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x5728;&#x4F60;&#x7684;&#x7EC4;&#x4EF6;&#x770B;&#x5230;<a href="https://facebook.github.io/react/warnings/dont-call-proptypes.html" target="_blank">&#x8B66;&#x544A;</a>,&#x60A8;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x5B89;&#x5168;&#x7684;&#x8FC1;&#x79FB;&#x3002;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;React&#x4E2D;&#x4E00;&#x4E2A;&#x7A81;&#x53D1;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x56E0;&#x4E3A;&#x60A8;&#x53EA;&#x662F;&#x901A;&#x8FC7;&#x663E;&#x5F0F;&#x5730;&#x5C06;&#x5BFC;&#x5165;&#x66F4;&#x6539;&#x4E3A;&#x4F7F;&#x7528;<code>prop-types</code>&#x6765;&#x9009;&#x62E9;&#x7EC4;&#x4EF6;&#x7684;&#x66F4;&#x6539;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6682;&#x65F6;&#x9700;&#x8981;&#x65E7;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;<code>React.PropTypes</code>&#x76F4;&#x5230;React 16&#x3002;</p>
+<p><strong>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x624B;&#x52A8;&#x89E6;&#x53D1;&#x9A8C;&#x8BC1;</strong>, &#x8C03;&#x7528; <code>PropTypes.checkPropTypes()</code>&#x3002;&#x4E0E;&#x9A8C;&#x8BC1;&#x5668;&#x672C;&#x8EAB;&#x4E0D;&#x540C;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5728;&#x751F;&#x4EA7;&#x4E2D;&#x662F;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5C06;&#x88AB;&#x4E00;&#x4E2A;&#x7A7A;&#x51FD;&#x6570;&#x6240;&#x66FF;&#x4EE3;:</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// Works with standalone PropTypes</span>
+PropTypes<span class="token punctuation">.</span><span class="token function">checkPropTypes</span><span class="token punctuation">(</span>MyComponent<span class="token punctuation">.</span>propTypes<span class="token punctuation">,</span> props<span class="token punctuation">,</span> <span class="token string">&apos;prop&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;MyComponent&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x8BF7;&#x53C2;&#x89C1;&#x4E0B;&#x9762;&#x3002;</p>
+<p><strong>&#x4F60;&#x53EF;&#x80FD;&#x4E5F;&#x4F1A;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;</strong> &#xFF0C;&#x5982;&#x679C;&#x60A8;&#x4ECE;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x81EA;&#x5B9A;&#x4E49;<code>PropTypes</code>&#x9A8C;&#x8BC1;&#x5668;&#x4E2D;&#x8C03;&#x7528;&#x4E00;&#x4E2A;<code>PropTypes</code>s&#x9A8C;&#x8BC1;&#x5668;&#x3002;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;&#x4FEE;&#x590D;(fix)&#x7684;&#x76EE;&#x7684;&#x662F;&#x786E;&#x4FDD;&#x5C06;&#x6240;&#x6709;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x3002;<a href="https://facebook.github.io/react/warnings/dont-call-proptypes.html#fixing-the-false-positive-in-third-party-proptypes" target="_blank">&#x5728;&#x8FD9;&#x4E2A;&#x9875;&#x9762;</a>&#x6709;&#x4E00;&#x4E2A;&#x66F4;&#x6DF1;&#x5165;&#x7684;&#x89E3;&#x91CA;&#x5982;&#x4F55;&#x4FEE;&#x7406;&#x5B83;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x6216;&#x8005;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6682;&#x65F6;&#x4FDD;&#x6301;&#x4F7F;&#x7528;<code>React.PropTypes</code>&#x76F4;&#x5230;React16&#xFF0C;&#x5B83;&#x624D;&#x4F1A;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x4ECD;&#x7136;&#x4F1A;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x50CF;Browserify&#x6216;Webpack&#x7684;&#x6253;&#x5305;&#x5668;,&#x522B;&#x5FD8;&#x4E86;<a href="https://facebook.github.io/react/docs/installation.html#development-and-production-versions" target="_blank">&#x6309;&#x4EE5;&#x4E0B;&#x6307;&#x793A;</a>&#x6765;&#x5728;&#x5F00;&#x53D1;&#x6216;&#x751F;&#x4EA7;&#x6A21;&#x5F0F;&#x4E2D;&#x6B63;&#x786E;&#x6253;&#x5305;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x60A8;&#x5C06;&#x5411;&#x60A8;&#x7684;&#x7528;&#x6237;&#x53D1;&#x9001;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<h2 id="proptypescheckproptypes"><a name="proptypescheckproptypes" class="anchor-navigation-ex-anchor" href="#proptypescheckproptypes"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. PropTypes.checkPropTypes</h2>
+<p>React&#x5C06;&#x81EA;&#x52A8;&#x68C0;&#x67E5;&#x60A8;&#x5728;&#x7EC4;&#x4EF6;&#x4E0A;&#x8BBE;&#x7F6E;&#x7684;propTypes&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x4E86;&#x6CA1;&#x6709;React&#x7684;PropTypes&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x53EF;&#x80FD;&#x60F3;&#x8981;&#x624B;&#x52A8;&#x8C03;&#x7528;<code>PropTypes.checkPropTypes</code>,&#x50CF;&#x8FD9;&#x6837;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> myPropTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>number<span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// ... &#x5B9A;&#x4E49;&#x4F60;&#x7684;prop&#x9A8C;&#x8BC1;&#x5668;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> props <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">&apos;hello&apos;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x6709;&#x6548;</span>
+  age<span class="token punctuation">:</span> <span class="token string">&apos;world&apos;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x65E0;&#x6548;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x6BD4;&#x65B9;&#x8BF4;&#xFF0C;&#x4F60;&#x7684;&#x7EC4;&#x4EF6;&#x88AB;&#x79F0;&#x4E3A;MyComponent</span>
+
+<span class="token comment" spellcheck="true">// &#x9002;&#x7528;&#x4E8E;&#x72EC;&#x7ACB;PropTypes</span>
+PropTypes<span class="token punctuation">.</span><span class="token function">checkPropTypes</span><span class="token punctuation">(</span>myPropTypes<span class="token punctuation">,</span> props<span class="token punctuation">,</span> <span class="token string">&apos;prop&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;MyComponent&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// &#x8FD9;&#x5C06;&#x4F1A;&#x53D1;&#x51FA;&#x5982;&#x4E0B;&#x8B66;&#x544A;:</span>
+<span class="token comment" spellcheck="true">// Warning: Failed prop type: Invalid prop `age` of type `string` supplied to `MyComponent`, expected `number`.</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-26 15:52:19
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../isomorphic-fetch/" class="navigation navigation-prev " aria-label="Previous page: isomorphic-fetch">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../react-autosuggest/" class="navigation navigation-next " aria-label="Next page: react-autosuggest">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"prop-types","level":"1.6.2.3.7","depth":4,"next":{"title":"react-autosuggest","level":"1.6.2.3.8","depth":4,"path":"Labrary/React/Labrary/react-autosuggest/README.md","ref":"Labrary/React/Labrary/react-autosuggest/README.md","articles":[]},"previous":{"title":"isomorphic-fetch","level":"1.6.2.3.6","depth":4,"path":"Labrary/React/Labrary/isomorphic-fetch/README.md","ref":"Labrary/React/Labrary/isomorphic-fetch/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"Labrary/React/Labrary/prop-types/README.md","mtime":"2017-11-26T07:52:19.594Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-14T10:33:49.807Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

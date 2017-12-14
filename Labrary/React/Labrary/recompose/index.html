@@ -1,0 +1,1094 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>recompose · webpack中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../reselect/" />
+    
+    
+    <link rel="prev" href="../recharts/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../../HTML/">
+            
+                <a href="../../../../HTML/">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../../CSS/">
+            
+                <a href="../../../../CSS/">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../../JavaScript/">
+            
+                <a href="../../../../JavaScript/">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../../Http/">
+            
+                <a href="../../../../Http/">
+            
+                    
+                    Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Labrary
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../VUE/">
+            
+                <a href="../../../VUE/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../docs/">
+            
+                <a href="../../docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../Create-React-App/">
+            
+                <a href="../../Create-React-App/">
+            
+                    
+                    Create-React-App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.1" data-path="../Redux/">
+            
+                <a href="../Redux/">
+            
+                    
+                    redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.2" data-path="../react-redux/">
+            
+                <a href="../react-redux/">
+            
+                    
+                    react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.3" data-path="../react-router/">
+            
+                <a href="../react-router/">
+            
+                    
+                    react-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.4" data-path="../react-router-redux/4.x/">
+            
+                <a href="../react-router-redux/4.x/">
+            
+                    
+                    react-router-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.5" data-path="../fetch/">
+            
+                <a href="../fetch/">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.6" data-path="../isomorphic-fetch/">
+            
+                <a href="../isomorphic-fetch/">
+            
+                    
+                    isomorphic-fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.7" data-path="../prop-types/">
+            
+                <a href="../prop-types/">
+            
+                    
+                    prop-types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.8" data-path="../react-autosuggest/">
+            
+                <a href="../react-autosuggest/">
+            
+                    
+                    react-autosuggest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.9" data-path="../recharts/">
+            
+                <a href="../recharts/">
+            
+                    
+                    recharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2.3.10" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    recompose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.11" data-path="../reselect/">
+            
+                <a href="../reselect/">
+            
+                    
+                    reselect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.12" data-path="../text-mask/">
+            
+                <a href="../text-mask/">
+            
+                    
+                    text-mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13" data-path="../_UI/">
+            
+                <a href="../_UI/">
+            
+                    
+                    UI库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.3.13.1" data-path="../_UI/Ant Design/">
+            
+                <a href="../_UI/Ant Design/">
+            
+                    
+                    Ant Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.2" data-path="../_UI/material-ui/">
+            
+                <a href="../_UI/material-ui/">
+            
+                    
+                    Material-UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.3" data-path="../_UI/react-bootstrap/">
+            
+                <a href="../_UI/react-bootstrap/">
+            
+                    
+                    react-bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3.13.4" data-path="../_UI/Semantic-UI-React/">
+            
+                <a href="../_UI/Semantic-UI-React/">
+            
+                    
+                    Semantic-UI-React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="../../example/">
+            
+                <a href="../../example/">
+            
+                    
+                    示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="../../_Questions/questions.html">
+            
+                <a href="../../_Questions/questions.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="../../_experience/">
+            
+                <a href="../../_experience/">
+            
+                    
+                    经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../React Native/">
+            
+                <a href="../../../React Native/">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../Nodejs/">
+            
+                <a href="../../../Nodejs/">
+            
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../../../Nodejs/docsList.html">
+            
+                <a href="../../../Nodejs/docsList.html">
+            
+                    
+                    参考文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../../../Nodejs/Labrary/">
+            
+                <a href="../../../Nodejs/Labrary/">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.2.1" data-path="../../../Nodejs/Labrary/nvm/">
+            
+                <a href="../../../Nodejs/Labrary/nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.2" data-path="../../../Nodejs/Labrary/request/">
+            
+                <a href="../../../Nodejs/Labrary/request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.3" data-path="../../../Nodejs/Labrary/async/">
+            
+                <a href="../../../Nodejs/Labrary/async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.4" data-path="../../../Nodejs/Labrary/supervisor/">
+            
+                <a href="../../../Nodejs/Labrary/supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2.5" data-path="../../../Nodejs/Labrary/express/">
+            
+                <a href="../../../Nodejs/Labrary/express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../UI/">
+            
+                <a href="../../../UI/">
+            
+                    
+                    UI 库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    其他库
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >recompose</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="recompose"><a name="recompose" class="anchor-navigation-ex-anchor" href="#recompose"><i class="fa fa-link" aria-hidden="true"></i></a><a name="recompose" class="plugin-anchor" href="#recompose"><i class="fa fa-link" aria-hidden="true"></i></a>Recompose</h2>
+<p><a href="https://travis-ci.org/acdlite/recompose" target="_blank"><img src="https://img.shields.io/travis/acdlite/recompose/master.svg?style=flat-square" alt="build status"></a>
+<a href="https://codecov.io/github/acdlite/recompose" target="_blank"><img src="https://img.shields.io/codecov/c/github/acdlite/recompose.svg?style=flat-square" alt="coverage"></a>
+<a href="https://codeclimate.com/github/acdlite/recompose" target="_blank"><img src="https://img.shields.io/codeclimate/github/acdlite/recompose.svg?style=flat-square" alt="code climate"></a>
+<a href="https://www.npmjs.com/package/recompose" target="_blank"><img src="https://img.shields.io/npm/v/recompose.svg?style=flat-square" alt="npm version"></a>
+<a href="https://www.npmjs.com/package/recompose" target="_blank"><img src="https://img.shields.io/npm/dm/recompose.svg?style=flat-square" alt="npm downloads"></a></p>
+<p>Recompose &#x662F;&#x9002;&#x5408;&#x4E8E;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x548C;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x6253;&#x9020;&#x7684;&#x529F;&#x80FD;&#x8170;&#x5E26;&#x3002;&#x628A;&#x5B83;&#x60F3;&#x8C61;&#x6210;&#x9002;&#x5408;React&#x7684;lodash&#x3002;</p>
+<p><a href="docs/API.md"><strong>&#x5B8C;&#x6574;&#x7684;API&#x6587;&#x6863;</strong></a> - &#x4E86;&#x89E3;&#x6BCF;&#x4E00;&#x4E2A;&#x52A9;&#x624B;</p>
+<p><a href="https://jsfiddle.net/samsch/p3vsmrvo/24/" target="_blank"><strong>Recompose Base Fiddle</strong></a> - &#x5BB9;&#x6613;&#x7684;&#x65B9;&#x6CD5;:</p>
+<pre class="language-"><code>npm install recompose --save
+</code></pre><p><strong>&#x1F4FA; &#x89C2;&#x770B; Andrew&apos;s <a href="https://www.youtube.com/watch?v=zD_judE-bXk" target="_blank">talk on Recompose at React Europe</a>.</strong></p>
+<h3 id="&#x76F8;&#x5173;&#x6A21;&#x5757;"><a name="&#x76F8;&#x5173;&#x6A21;&#x5757;" class="anchor-navigation-ex-anchor" href="#&#x76F8;&#x5173;&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x76F8;&#x5173;&#x6A21;&#x5757;" class="plugin-anchor" href="#&#x76F8;&#x5173;&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F8;&#x5173;&#x6A21;&#x5757;</h3>
+<p><a href="src/packages/recompose-relay"><strong>recompose-relay</strong></a> &#x2014; &#x9002;&#x7528;&#x4E8E;Relay&#x7684;Recompose helpers</p>
+<h2 id="&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;recompose-&#x6765;"><a name="&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;recompose-&#x6765;" class="anchor-navigation-ex-anchor" href="#&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;recompose-&#x6765;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;recompose-&#x6765;" class="plugin-anchor" href="#&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;recompose-&#x6765;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Recompose &#x6765;...</h2>
+<h3 id="&#x5C06;state&#x63D0;&#x5347;&#x5230;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x5668;"><a name="&#x5C06;state&#x63D0;&#x5347;&#x5230;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x5C06;state&#x63D0;&#x5347;&#x5230;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5C06;state&#x63D0;&#x5347;&#x5230;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x5668;" class="plugin-anchor" href="#&#x5C06;state&#x63D0;&#x5347;&#x5230;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>...&#x5C06;state&#x63D0;&#x5347;&#x5230;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x5668;</h3>
+<p><code>withState()</code> &#x548C; <code>withReducer()</code>&#x52A9;&#x624B;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x79CD;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8868;&#x8FBE;&#x72B6;&#x6001;&#x66F4;&#x65B0;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> enhance <span class="token operator">=</span> <span class="token function">withState</span><span class="token punctuation">(</span><span class="token string">&apos;counter&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;setCounter&apos;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Counter <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span> counter<span class="token punctuation">,</span> setCounter <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    Count<span class="token punctuation">:</span> <span class="token punctuation">{</span>counter<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">setCounter</span><span class="token punctuation">(</span>n <span class="token operator">=</span><span class="token operator">&gt;</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Increment<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">setCounter</span><span class="token punctuation">(</span>n <span class="token operator">=</span><span class="token operator">&gt;</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Decrement<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x6216;&#x8005; with a Redux-style reducer:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> counterReducer <span class="token operator">=</span> <span class="token punctuation">(</span>count<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> INCREMENT<span class="token punctuation">:</span>
+    <span class="token keyword">return</span> count <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token keyword">case</span> DECREMENT<span class="token punctuation">:</span>
+    <span class="token keyword">return</span> count <span class="token operator">-</span> <span class="token number">1</span>
+  <span class="token keyword">default</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> count
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> enhance <span class="token operator">=</span> <span class="token function">withReducer</span><span class="token punctuation">(</span><span class="token string">&apos;counter&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;dispatch&apos;</span><span class="token punctuation">,</span> counterReducer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Counter <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span> counter<span class="token punctuation">,</span> dispatch <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    Count<span class="token punctuation">:</span> <span class="token punctuation">{</span>counter<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> INCREMENT <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Increment<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> DECREMENT <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Decrement<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x6267;&#x884C;&#x6700;&#x5E38;&#x89C1;&#x7684;react&#x6A21;&#x5F0F;"><a name="&#x6267;&#x884C;&#x6700;&#x5E38;&#x89C1;&#x7684;react&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x6267;&#x884C;&#x6700;&#x5E38;&#x89C1;&#x7684;react&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6267;&#x884C;&#x6700;&#x5E38;&#x89C1;&#x7684;react&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x6267;&#x884C;&#x6700;&#x5E38;&#x89C1;&#x7684;react&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>...&#x6267;&#x884C;&#x6700;&#x5E38;&#x89C1;&#x7684;React&#x6A21;&#x5F0F;</h3>
+<p>Helpers like <code>componentFromProp()</code> &#x548C; <code>withContext()</code>&#x52A9;&#x624B; &#x5C06;&#x5E38;&#x89C1;&#x7684;React&#x6A21;&#x5F0F;&#x5C01;&#x88C5;&#x5230;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x529F;&#x80FD;&#x63A5;&#x53E3;&#x4E2D;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> enhance <span class="token operator">=</span> <span class="token function">defaultProps</span><span class="token punctuation">(</span><span class="token punctuation">{</span> component<span class="token punctuation">:</span> <span class="token string">&apos;button&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Button <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span><span class="token function">componentFromProp</span><span class="token punctuation">(</span><span class="token string">&apos;component&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token operator">&lt;</span>Button <span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token comment" spellcheck="true">// renders &lt;button&gt;</span>
+<span class="token operator">&lt;</span>Button component<span class="token operator">=</span><span class="token punctuation">{</span>Link<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token comment" spellcheck="true">// renders &lt;Link /&gt;</span>
+</code></pre>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> provide <span class="token operator">=</span> store <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">withContext</span><span class="token punctuation">(</span>
+  <span class="token punctuation">{</span> store<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>object <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> store <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// &#x9002;&#x7528;&#x4E8E;&#x57FA;&#x7840;&#x7EC4;&#x4EF6;</span>
+<span class="token comment" spellcheck="true">// &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x540E;&#x4EE3;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;context.store</span>
+<span class="token keyword">const</span> AppWithContext <span class="token operator">=</span> <span class="token function">provide</span><span class="token punctuation">(</span>store<span class="token punctuation">)</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;"><a name="&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;" class="anchor-navigation-ex-anchor" href="#&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;" class="plugin-anchor" href="#&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>...&#x4F18;&#x5316;&#x6E32;&#x67D3;&#x6027;&#x80FD;</h3>
+<p>&#x4E0D;&#x9700;&#x8981;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;<code>shouldComponentUpdate()</code>&#x3002;Recompose&#x7684;<code>pure()</code> &#x548C; <code>onlyUpdateForKeys()</code>&#x52A9;&#x624B;&#x6765;&#x5E2E;&#x4F60;&#x505A;&#x8FD9;&#x4EF6;&#x4E8B;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// A component that is expensive to render</span>
+<span class="token keyword">const</span> ExpensiveComponent <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> propA<span class="token punctuation">,</span> propB <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// &#x76F8;&#x540C;&#x7EC4;&#x4EF6;&#x7684;&#x4F18;&#x5316;&#x7248;&#x672C;, &#x4F7F;&#x7528;&#x4E86;props&#x7684;&#x6D45;&#x6BD4;&#x8F83;</span>
+<span class="token comment" spellcheck="true">// &#x548C;React.PureComponent&#x7684;&#x6548;&#x679C;&#x65F6;&#x4E00;&#x6837;&#x7684;</span>
+<span class="token keyword">const</span> OptimizedComponent <span class="token operator">=</span> <span class="token function">pure</span><span class="token punctuation">(</span>ExpensiveComponent<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// &#x66F4;&#x4F18;&#x5316;&#x7684;&#x662F;:&#x53EA;&#x6709;&#x5728;&#x7279;&#x5B9A;&#x7684;prop&#x952E;&#x6539;&#x53D8;&#x65F6;&#x624D;&#x4F1A;&#x66F4;&#x65B0;</span>
+<span class="token keyword">const</span> HyperOptimizedComponent <span class="token operator">=</span> <span class="token function">onlyUpdateForKeys</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&apos;propA&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;propB&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span>ExpensiveComponent<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x4E0E;&#x5176;&#x4ED6;&#x5E93;&#x76F8;&#x4E92;&#x64CD;&#x4F5C;"><a name="&#x4E0E;&#x5176;&#x4ED6;&#x5E93;&#x76F8;&#x4E92;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x4E0E;&#x5176;&#x4ED6;&#x5E93;&#x76F8;&#x4E92;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E0E;&#x5176;&#x4ED6;&#x5E93;&#x76F8;&#x4E92;&#x64CD;&#x4F5C;" class="plugin-anchor" href="#&#x4E0E;&#x5176;&#x4ED6;&#x5E93;&#x76F8;&#x4E92;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>...&#x4E0E;&#x5176;&#x4ED6;&#x5E93;&#x76F8;&#x4E92;&#x64CD;&#x4F5C;</h3>
+<p>Recompose &#x52A9;&#x624B;&#x4E0E;&#x5916;&#x90E8;&#x5E93;&#x7684;&#x96C6;&#x6210;&#x975E;&#x5E38;&#x597D;&#xFF0C;&#x5982; Relay, Redux, and RxJS</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> enhance <span class="token operator">=</span> <span class="token function">compose</span><span class="token punctuation">(</span>
+  <span class="token comment" spellcheck="true">// &#x8FD9;&#x662F;&#x7531;recompose-relay&#x63D0;&#x4F9B;&#x7684;&#xFF0C;Relay.createContainer()&#x7684;Recompose&#x53CB;&#x597D;&#x7248;&#x672C;&#x3002;</span>
+  <span class="token function">createContainer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    fragments<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      post<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> Relay<span class="token punctuation">.</span>QL<span class="token template-string"><span class="token string">`
+        fragment on Post {
+          title,
+          content
+        }
+      `</span></span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function">flattenProp</span><span class="token punctuation">(</span><span class="token string">&apos;post&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> Post <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span> title<span class="token punctuation">,</span> content <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>article<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span>content<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>article<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x6784;&#x5EFA;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x5E93;"><a name="&#x6784;&#x5EFA;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x5E93;" class="anchor-navigation-ex-anchor" href="#&#x6784;&#x5EFA;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6784;&#x5EFA;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x5E93;" class="plugin-anchor" href="#&#x6784;&#x5EFA;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>...&#x6784;&#x5EFA;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x5E93;</h3>
+<p>&#x8BB8;&#x591A;React&#x5E93;&#x6700;&#x7EC8;&#x4F1A;&#x4E00;&#x6B21;&#x53C8;&#x4E00;&#x6B21;&#x5730;&#x5B9E;&#x73B0;&#x76F8;&#x540C;&#x7684;&#x5B9E;&#x7528;&#x5DE5;&#x5177;&#xFF0C;&#x5C31;&#x50CF;<code>shallowEqual()</code>&#x548C;<code>getDisplayName()</code>&#x3002;Recompose&#x4E3A;&#x60A8;&#x63D0;&#x4F9B;&#x8FD9;&#x4E9B;&#x5B9E;&#x7528;&#x5DE5;&#x5177;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x4EFB;&#x4F55;Recompose&#x5408;&#x6A21;&#x5757;&#x90FD;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x5BFC;&#x5165;</span>
+<span class="token keyword">import</span> getDisplayName <span class="token keyword">from</span> <span class="token string">&apos;recompose/getDisplayName&apos;</span>
+ConnectedComponent<span class="token punctuation">.</span>displayName <span class="token operator">=</span> <span class="token template-string"><span class="token string">`connect(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getDisplayName</span><span class="token punctuation">(</span>BaseComponent<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)`</span></span>
+
+<span class="token comment" spellcheck="true">// &#x6216;&#x8005;, &#x751A;&#x81F3;&#x66F4;&#x597D;&#x7684;:</span>
+<span class="token keyword">import</span> wrapDisplayName <span class="token keyword">from</span> <span class="token string">&apos;recompose/wrapDisplayName&apos;</span>
+ConnectedComponent<span class="token punctuation">.</span>displayName <span class="token operator">=</span> <span class="token function">wrapDisplayName</span><span class="token punctuation">(</span>BaseComponent<span class="token punctuation">,</span> <span class="token string">&apos;connect&apos;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">import</span> toClass <span class="token keyword">from</span> <span class="token string">&apos;recompose/toClass&apos;</span>
+<span class="token comment" spellcheck="true">// &#x5C06;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x7C7B;&#x7EC4;&#x4EF6;, &#x6BD4;&#x5982; &#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;ref&#x3002; &#x8FD4;&#x56DE;&#x7684;&#x7C7B;&#x7EC4;&#x4EF6;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</span>
+<span class="token keyword">const</span> ClassComponent <span class="token operator">=</span> <span class="token function">toClass</span><span class="token punctuation">(</span>FunctionComponent<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x66F4;&#x591A;"><a name="&#x66F4;&#x591A;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x591A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x66F4;&#x591A;" class="plugin-anchor" href="#&#x66F4;&#x591A;"><i class="fa fa-link" aria-hidden="true"></i></a>...&#x66F4;&#x591A;</h3>
+<h2 id="api-&#x6587;&#x6863;"><a name="api-&#x6587;&#x6863;" class="anchor-navigation-ex-anchor" href="#api-&#x6587;&#x6863;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="api-&#x6587;&#x6863;" class="plugin-anchor" href="#api-&#x6587;&#x6863;"><i class="fa fa-link" aria-hidden="true"></i></a>API &#x6587;&#x6863;</h2>
+<p><a href="docs/API.md">&#x9605;&#x8BFB;&#x5B83;&#x4EEC;</a></p>
+<h2 id="flow-&#x652F;&#x6301;"><a name="flow-&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#flow-&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="flow-&#x652F;&#x6301;" class="plugin-anchor" href="#flow-&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>Flow &#x652F;&#x6301;</h2>
+<p><a href="types">&#x9605;&#x8BFB;&#x8FD9;&#x4E2A;</a></p>
+<h2 id="&#x7FFB;&#x8BD1;"><a name="&#x7FFB;&#x8BD1;" class="anchor-navigation-ex-anchor" href="#&#x7FFB;&#x8BD1;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7FFB;&#x8BD1;" class="plugin-anchor" href="#&#x7FFB;&#x8BD1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7FFB;&#x8BD1;</h2>
+<p><a href="https://github.com/neighborhood999/recompose" target="_blank">&#x7E41;&#x4F53;&#x4E2D;&#x6587;&#x6587;&#x6863;</a></p>
+<h2 id="why"><a name="why" class="anchor-navigation-ex-anchor" href="#why"><i class="fa fa-link" aria-hidden="true"></i></a><a name="why" class="plugin-anchor" href="#why"><i class="fa fa-link" aria-hidden="true"></i></a>Why</h2>
+<p>&#x5FD8;&#x4E86; ES6 class &#x548C; <code>createClass()</code>&#x5427;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x60EF;&#x7528;&#x7684;React&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E3B;&#x8981;&#x7531;&#x8BB8;&#x591A;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x6784;&#x6210;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> Greeting <span class="token operator">=</span> props <span class="token operator">=</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>
+    Hello<span class="token punctuation">,</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">!</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+</code></pre>
+<p>&#x529F;&#x80FD;&#x7EC4;&#x4EF6;&#x6709;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x4F18;&#x52BF;:</p>
+<ul>
+<li>&#x4ED6;&#x4EEC;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x6EE5;&#x7528;<code>setState()</code> API, &#x4EE5;props&#x4EE3;&#x66FF;.</li>
+<li>&#x4ED6;&#x4EEC;&#x9F13;&#x52B1; <a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0" target="_blank">&quot;smart&quot; vs. &quot;dumb&quot; &#x7EC4;&#x4EF6;&#x6A21;&#x5F0F;</a>.</li>
+<li>&#x5B83;&#x4EEC;&#x9F13;&#x52B1;&#x4F7F;&#x7528;&#x53EF;&#x590D;&#x7528;&#x548C;&#x6A21;&#x5757;&#x5316;&#x7684;&#x4EE3;&#x7801;&#x3002;</li>
+<li>&#x4ED6;&#x4EEC;&#x4E0D;&#x9F13;&#x52B1;&#x90A3;&#x4E9B;&#x505A;&#x592A;&#x591A;&#x4E8B;&#x60C5;&#x7684;&#x590D;&#x6742;&#x7684;&#x3001;&#x590D;&#x6742;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</li>
+<li>&#x5728;&#x5C06;&#x6765;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x5141;&#x8BB8;React&#x901A;&#x8FC7;&#x907F;&#x514D;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x68C0;&#x67E5;&#x548C;&#x5185;&#x5B58;&#x5206;&#x914D;&#x6765;&#x8FDB;&#x884C;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x3002;</li>
+</ul>
+<p>(&#x6CE8;&#x610F;&#xFF0C;&#x867D;&#x7136;Recompose&#x63A8;&#x8350;&#x5C3D;&#x53EF;&#x80FD;&#x5730;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4ECD;&#x53EF;&#x4EE5;&#x4E0E;&#x666E;&#x901A;&#x7684;React&#x7EC4;&#x4EF6;&#x4E00;&#x540C;&#x5DE5;&#x4F5C;)</p>
+<h3 id="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x8BA9;&#x4E00;&#x5207;&#x53D8;&#x5F97;&#x7B80;&#x5355;"><a name="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x8BA9;&#x4E00;&#x5207;&#x53D8;&#x5F97;&#x7B80;&#x5355;" class="anchor-navigation-ex-anchor" href="#&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x8BA9;&#x4E00;&#x5207;&#x53D8;&#x5F97;&#x7B80;&#x5355;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x8BA9;&#x4E00;&#x5207;&#x53D8;&#x5F97;&#x7B80;&#x5355;" class="plugin-anchor" href="#&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x8BA9;&#x4E00;&#x5207;&#x53D8;&#x5F97;&#x7B80;&#x5355;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x8BA9;&#x4E00;&#x5207;&#x53D8;&#x5F97;&#x7B80;&#x5355;</h3>
+<p>&#x5927;&#x591A;&#x6570;&#x65F6;&#x5019;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x5728;React&#x4E2D;&#x6784;&#x6210;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x7684;&#x662F;&#x7EC4;&#x4EF6;&#x7684;&#x6784;&#x6210;&#x3002;&#x4F8B;&#x5982;&#xFF0C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Blog</span><span class="token punctuation">&gt;</span></span></code>&#x7EC4;&#x4EF6;&#x53EF;&#x80FD;&#x7531;&#x8BB8;&#x591A;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Post</span><span class="token punctuation">&gt;</span></span></code>&#x7EC4;&#x4EF6;&#x7EC4;&#x6210;&#xFF0C;&#x800C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Post</span><span class="token punctuation">&gt;</span></span></code>&#x7EC4;&#x4EF6;&#x53C8;&#x662F;&#x7531;&#x8BB8;&#x591A;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Comment</span><span class="token punctuation">&gt;</span></span></code>&#x7EC4;&#x4EF6;&#x7EC4;&#x6210;&#x7684;&#x3002;</p>
+<p>Recompose&#x7684;&#x91CD;&#x70B9;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x7EC4;&#x6210;&#x5355;&#x5143;:<strong>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;</strong>(HoCs)&#x3002;HoCs&#x662F;&#x63A5;&#x53D7;&#x57FA;&#x672C;&#x7EC4;&#x4EF6;&#x5E76;&#x8FD4;&#x56DE;&#x5E26;&#x6709;&#x9644;&#x52A0;&#x529F;&#x80FD;&#x7684;&#x65B0;&#x7EC4;&#x4EF6;&#x7684;&#x51FD;&#x6570;&#x3002;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5C06;&#x516C;&#x5171;&#x4EFB;&#x52A1;&#x62BD;&#x8C61;&#x4E3A;&#x53EF;&#x91CD;&#x7528;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+<p>Recompose&#x4E3A;&#x521B;&#x5EFA;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x8F85;&#x52A9;&#x51FD;&#x6570;&#x7684;&#x5DE5;&#x5177;&#x7BB1;&#x3002;</p>
+<h2 id="&#x6211;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5B83;&#x5417;&#x62C5;&#x5FC3;&#x6027;&#x80FD;&#x548C;&#x5176;&#x4ED6;&#x95EE;&#x9898;"><a name="&#x6211;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5B83;&#x5417;&#x62C5;&#x5FC3;&#x6027;&#x80FD;&#x548C;&#x5176;&#x4ED6;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x6211;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5B83;&#x5417;&#x62C5;&#x5FC3;&#x6027;&#x80FD;&#x548C;&#x5176;&#x4ED6;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6211;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5B83;&#x5417;&#x62C5;&#x5FC3;&#x6027;&#x80FD;&#x548C;&#x5176;&#x4ED6;&#x95EE;&#x9898;" class="plugin-anchor" href="#&#x6211;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5B83;&#x5417;&#x62C5;&#x5FC3;&#x6027;&#x80FD;&#x548C;&#x5176;&#x4ED6;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a><a href="docs/performance.md">&#x6211;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5B83;&#x5417;?&#x62C5;&#x5FC3;&#x6027;&#x80FD;&#x548C;&#x5176;&#x4ED6;&#x95EE;&#x9898;</a></h2>
+<h2 id="&#x7528;&#x6CD5;"><a name="&#x7528;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7528;&#x6CD5;" class="plugin-anchor" href="#&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7528;&#x6CD5;</h2>
+<p>&#x6240;&#x6709;&#x51FD;&#x6570;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x9876;&#x7EA7;export&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> compose<span class="token punctuation">,</span> mapProps<span class="token punctuation">,</span> withState <span class="token comment" spellcheck="true">/* ... */</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;recompose&apos;</span>
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;:</strong> <code>react</code> is a <em>peer dependency</em> of Recompose.  &#x5982;&#x679C;&#x4F60;&#x6B63;&#x5728;&#x4F7F;&#x7528; <code>preact</code>, &#x6DFB;&#x52A0;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5230;&#x4F60;&#x7684; <code>webpack.config.js</code>:</p>
+<pre class="language-"><code class="lang-js">resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  alias<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    react<span class="token punctuation">:</span> <span class="token string">&quot;preact&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x7EC4;&#x5408;"><a name="&#x7EC4;&#x5408;" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x5408;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7EC4;&#x5408;" class="plugin-anchor" href="#&#x7EC4;&#x5408;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EC4;&#x5408;</h3>
+<p>Recompose&#x52A9;&#x624B;&#x88AB;&#x8BBE;&#x8BA1;&#x4E3A;&#x53EF;&#x7EC4;&#x5408;&#x7684;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> BaseComponent <span class="token operator">=</span> props <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// &#x8FD9;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x4F46;&#x5F88;&#x4E4F;&#x5473;</span>
+<span class="token keyword">let</span> EnhancedComponent <span class="token operator">=</span> <span class="token function">pure</span><span class="token punctuation">(</span>BaseComponent<span class="token punctuation">)</span>
+EnhancedComponent <span class="token operator">=</span> <span class="token function">mapProps</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">/*...args*/</span><span class="token punctuation">)</span><span class="token punctuation">(</span>EnhancedComponent<span class="token punctuation">)</span>
+EnhancedComponent <span class="token operator">=</span> <span class="token function">withState</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">/*...args*/</span><span class="token punctuation">)</span><span class="token punctuation">(</span>EnhancedComponent<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// &#x8FD9;&#x6837;&#x505A;&#x6765;&#x66FF;&#x4EE3;&#x4E4B;&#x524D;&#x7684;&#x505A;&#x6CD5;</span>
+<span class="token comment" spellcheck="true">// &#x6CE8;&#x610F;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x987A;&#x5E8F;&#x4E0E;&#x4E0A;&#x9762;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x9700;&#x8981;&#x98A0;&#x5012;- props &#x6D41;&#x662F;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x8981;&#x4E00;&#x5C42;&#x4E00;&#x5C42;&#x8FD4;&#x56DE;&#x3002;</span>
+<span class="token keyword">const</span> enhance <span class="token operator">=</span> <span class="token function">compose</span><span class="token punctuation">(</span>
+  <span class="token function">withState</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">/*...args*/</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function">mapProps</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">/*...args*/</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  pure
+<span class="token punctuation">)</span>
+<span class="token keyword">const</span> EnhancedComponent <span class="token operator">=</span> <span class="token function">enhance</span><span class="token punctuation">(</span>BaseComponent<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4ECE;&#x6280;&#x672F;&#x4E0A;&#x8BB2;&#xFF0C;&#x8FD9;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x4F5C;&#x4E3A;&#x88C5;&#x9970;&#x5668;&#x4F7F;&#x7528;(&#x53D6;&#x81EA;&#x65BC;&#x4F60;&#x7684;&#x6C7A;&#x5B9A;):</p>
+<pre class="language-"><code class="lang-js">@<span class="token function">withState</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">/*...args*/</span><span class="token punctuation">)</span>
+@<span class="token function">mapProps</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">/*...args*/</span><span class="token punctuation">)</span>
+@pure
+<span class="token keyword">class</span> <span class="token class-name">Component</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x4F18;&#x5316;&#x5305;&#x7684;&#x5927;&#x5C0F;"><a name="&#x4F18;&#x5316;&#x5305;&#x7684;&#x5927;&#x5C0F;" class="anchor-navigation-ex-anchor" href="#&#x4F18;&#x5316;&#x5305;&#x7684;&#x5927;&#x5C0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F18;&#x5316;&#x5305;&#x7684;&#x5927;&#x5C0F;" class="plugin-anchor" href="#&#x4F18;&#x5316;&#x5305;&#x7684;&#x5927;&#x5C0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F18;&#x5316;&#x5305;&#x7684;&#x5927;&#x5C0F;</h3>
+<p>&#x7531;&#x4E8E; <code>0.23.1</code>&#x7248;&#x672C;&#x7684; recompose &#x5F97;&#x5230;&#x4E86; ES2015 &#x6A21;&#x5757;&#x7684;&#x652F;&#x6301;&#x3002; &#x8981;&#x6E1B;&#x5C11;&#x5305;&#x5927;&#x5C0F;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x652F;&#x6301;&#x6811;&#x6447;&#x6643;&#x7684;&#x6253;&#x5305;&#x5668;&#x50CF;&#x662F;&#x5982;<a href="https://github.com/webpack/webpack" target="_blank">webpack 2</a> &#x6216; <a href="https://github.com/rollup/rollup" target="_blank">Rollup</a>.</p>
+<h4 id="&#x4F7F;&#x7528;-babel-lodash-plugin"><a name="&#x4F7F;&#x7528;-babel-lodash-plugin" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;-babel-lodash-plugin"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F7F;&#x7528;-babel-lodash-plugin" class="plugin-anchor" href="#&#x4F7F;&#x7528;-babel-lodash-plugin"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528; babel-lodash-plugin</h4>
+<p><a href="https://github.com/lodash/babel-plugin-lodash" target="_blank">babel-lodash-plugin</a> &#x4E0D;&#x4EC5;&#x9650;&#x9002;&#x7528;&#x4E8E; <a href="https://github.com/lodash/lodash" target="_blank">lodash</a>.  &#x5B83;&#x53EF;&#x4EE5;&#x4E0E;<code>recompose</code> &#x5F88;&#x597D;&#x7684;&#x5DE5;&#x4F5C;.</p>
+<p>&#x8FD9;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;<code>.babelrc</code>&#x4E2D;&#x66F4;&#x65B0;<code>lodash</code>&#x914D;&#x7F6E;&#x6765;&#x5B8C;&#x6210;&#x3002;</p>
+<pre class="language-"><code class="lang-diff"> {
+<span class="token deleted">-  &quot;plugins&quot;: [&quot;lodash&quot;]</span>
+<span class="token inserted">+  &quot;plugins&quot;: [</span>
+<span class="token inserted">+    [&quot;lodash&quot;, { &quot;id&quot;: [&quot;lodash&quot;, &quot;recompose&quot;] }]</span>
+<span class="token inserted">+  ]</span>
+ }
+</code></pre>
+<p>&#x5728;&#x6B64;&#x4E4B;&#x540E;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x50CF;&#x4E0B;&#x9762;&#x90A3;&#x6837;&#x8FDB;&#x884C;&#x5BFC;&#x5165;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x9645;&#x5305;&#x542B;&#x6574;&#x4E2A;&#x5E93;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> compose<span class="token punctuation">,</span> mapProps<span class="token punctuation">,</span> withState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;recompose&apos;</span>
+</code></pre>
+<h2 id="&#x8C01;&#x5728;&#x4F7F;&#x7528;recompose"><a name="&#x8C01;&#x5728;&#x4F7F;&#x7528;recompose" class="anchor-navigation-ex-anchor" href="#&#x8C01;&#x5728;&#x4F7F;&#x7528;recompose"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8C01;&#x5728;&#x4F7F;&#x7528;recompose" class="plugin-anchor" href="#&#x8C01;&#x5728;&#x4F7F;&#x7528;recompose"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8C01;&#x5728;&#x4F7F;&#x7528;Recompose</h2>
+<p>&#x5982;&#x679C;&#x60A8;&#x7684;&#x516C;&#x53F8;&#x6216;&#x9879;&#x76EE;&#x4F7F;&#x7528;&#x4E86;Recompose&#xFF0C;&#x8BF7;&#x901A;&#x8FC7;<a href="https://github.com/acdlite/recompose/wiki/Sites-Using-Recompose/_edit" target="_blank">&#x7F16;&#x8F91;</a>wiki&#x9875;&#x9762;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;<a href="https://github.com/acdlite/recompose/wiki/Sites-Using-Recompose" target="_blank">&#x6B63;&#x5F0F;&#x7684;&#x7528;&#x6237;&#x5217;&#x8868;</a>&#x4E2D;&#x3002;</p>
+<h2 id="recipes&#x7684;&#x7075;&#x611F;"><a name="recipes&#x7684;&#x7075;&#x611F;" class="anchor-navigation-ex-anchor" href="#recipes&#x7684;&#x7075;&#x611F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="recipes&#x7684;&#x7075;&#x611F;" class="plugin-anchor" href="#recipes&#x7684;&#x7075;&#x611F;"><i class="fa fa-link" aria-hidden="true"></i></a>Recipes&#x7684;&#x7075;&#x611F;</h2>
+<p>&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x793E;&#x533A;&#x9A71;&#x52A8;&#x7684; Recipes &#x9875;&#x9762;&#x3002; &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5206;&#x4EAB;&#x548C;&#x770B;&#x5230;recompose&#x6A21;&#x5F0F;&#x7075;&#x611F;&#x7684;&#x5730;&#x65B9;&#x3002;&#x8BF7;&#x65B0;&#x589E;&#x5230;<a href="https://github.com/acdlite/recompose/wiki/Recipes" target="_blank">Recipes</a>.</p>
+<h2 id="&#x53CD;&#x9988;"><a name="&#x53CD;&#x9988;" class="anchor-navigation-ex-anchor" href="#&#x53CD;&#x9988;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53CD;&#x9988;" class="plugin-anchor" href="#&#x53CD;&#x9988;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CD;&#x9988;</h2>
+<p>&#x9879;&#x76EE;&#x4ECD;&#x5904;&#x4E8E;&#x65E9;&#x671F;&#x9636;&#x6BB5;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6709;&#x5EFA;&#x8BAE;&#xFF0C;&#x8BF7;&#x63D0;&#x51FA;&#x95EE;&#x9898;&#x6216;&#x63D0;&#x4EA4;PR&#x3002; &#x6216;&#x8005;&#x5728; <a href="https://twitter.com/acdlite" target="_blank">Twitter</a>&#x4E0A; @&#x6211; (Andrew Clark) .</p>
+<h2 id="&#x83B7;&#x5F97;&#x5E2E;&#x52A9;"><a name="&#x83B7;&#x5F97;&#x5E2E;&#x52A9;" class="anchor-navigation-ex-anchor" href="#&#x83B7;&#x5F97;&#x5E2E;&#x52A9;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x83B7;&#x5F97;&#x5E2E;&#x52A9;" class="plugin-anchor" href="#&#x83B7;&#x5F97;&#x5E2E;&#x52A9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x83B7;&#x5F97;&#x5E2E;&#x52A9;</h2>
+<p><strong>&#x5173;&#x4E8E;&#x652F;&#x6301;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x50CF; &#x201C;&#x5982;&#x4F55;&#x7528;Recompose&#x6765;&#x505A;X&#x201D; &#x548C; &#x201C;&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;&#x4E0D;&#x80FD;&#x5DE5;&#x4F5C;&#x201D;, &#x8BF7;&#x9996;&#x5148;&#x5728; <a href="http://stackoverflow.com/questions/tagged/recompose?sort=votes&amp;pageSize=50" target="_blank">StackOverflow &#x7684;Recompose&#x6807;&#x7B7E;</a> &#x4E0B;&#x63D0;&#x95EE;.</strong></p>
+<p>&#x6211;&#x4EEC;&#x8981;&#x6C42;&#x4F60;&#x8FD9;&#x4E48;&#x505A;&#x662F;StackOverflow&#x53EF;&#x4EE5;&#x8BA9;&#x5E38;&#x89C1;&#x7684;&#x53EF;&#x4EE5;&#x88AB;&#x770B;&#x5230;&#x3002;&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x5728;Github&#x4E0A;&#x597D;&#x7684;&#x7B54;&#x6848;&#x53EF;&#x80FD;&#x4F1A;&#x4E22;&#x5931;&#x3002;</p>
+<p>&#x6709;&#x4E9B;&#x95EE;&#x9898;&#x9700;&#x8981;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#x624D;&#x80FD;&#x5F97;&#x5230;&#x7B54;&#x6848;&#x3002; <strong>&#x5982;&#x679C;&#x4F60;&#x7684;&#x95EE;&#x9898;&#x88AB;&#x5173;&#x95ED;&#x4E86;&#x6216;&#x8005;&#x4F60;&#x5728;StackOverflow&#x4E0A;&#x8D85;&#x8FC7;&#x51E0;&#x5929;&#x6CA1;&#x6709;&#x5F97;&#x5230;&#x56DE;&#x590D;</strong> &#x6211;&#x4EEC;&#x9F13;&#x52B1;&#x4F60;&#x53D1;&#x8868;&#x4E00;&#x4E2A;&#x4E0E;&#x4F60;&#x7684;&#x95EE;&#x9898;&#x6709;&#x5173;&#x7684;issue&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5173;&#x95ED;&#x4F60;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x8FD9;&#x5C06;&#x8BA9;&#x4EBA;&#x4EEC;&#x6709;&#x5C31;&#x4F1A;&#x5728;repo&#x770B;&#x5230;&#x4F60;&#x7684;&#x95EE;&#x9898;&#x5E76;&#x5728;StackOverflow&#x4E0A;&#x56DE;&#x7B54;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x8BF7;&#x539F;&#x8C05;&#x6211;&#x4EEC;&#x8FD9;&#x4E48;&#x505A;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E0D;&#x662F;issue tracker&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x3002;</p>
+<h3 id="&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4E5F;&#x5E2E;&#x52A9;&#x4F60;"><a name="&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4E5F;&#x5E2E;&#x52A9;&#x4F60;" class="anchor-navigation-ex-anchor" href="#&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4E5F;&#x5E2E;&#x52A9;&#x4F60;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4E5F;&#x5E2E;&#x52A9;&#x4F60;" class="plugin-anchor" href="#&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4E5F;&#x5E2E;&#x52A9;&#x4F60;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4E5F;&#x5E2E;&#x52A9;&#x4F60;</h3>
+<p>&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x7F51;&#x7AD9;&#x4E0A;&#xFF0C;&#x7528;&#x4E00;&#x79CD;&#x6613;&#x4E8E;&#x9605;&#x8BFB;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x7EC4;&#x7EC7;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x95EE;&#x9898;&#xFF0C;&#x4EE5;&#x5438;&#x5F15;&#x4EBA;&#x4EEC;&#x53BB;&#x56DE;&#x7B54;&#x5B83;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x9F13;&#x52B1;&#x60A8;&#x5728;&#x6BB5;&#x843D;&#x4E2D;&#x4F7F;&#x7528;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x3001;&#x7F29;&#x8FDB;&#x548C;&#x5206;&#x5272;&#x6587;&#x672C;&#x3002;</p>
+<p>&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x4EBA;&#x4EEC;&#x4F1A;&#x628A;&#x4ED6;&#x4EEC;&#x7684;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x7528;&#x6765;&#x5E2E;&#x52A9;&#x4F60;&#x3002;&#x5982;&#x679C;&#x60A8;&#x63D0;&#x4F9B;&#x76F8;&#x5173;&#x5E93;&#x7684;&#x7248;&#x672C;&#x548C;&#x4E00;&#x4E2A;&#x53EF;&#x8FD0;&#x884C;&#x7684;&#x5C0F;&#x9879;&#x76EE;&#x6765;&#x91CD;&#x73B0;&#x60A8;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x5B83;&#x4EEC;&#x53D8;&#x5F97;&#x66F4;&#x5BB9;&#x6613;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x4EE3;&#x7801;&#x653E;&#x5728;<a href="http://jsbin.com" target="_blank">JSBin</a> &#x4E0A;&#xFF0C;&#x6216;&#x8005;&#x5728;GitHub&#x4E0A;&#x8FDB;&#x884C;&#x66F4;&#x5927;&#x7684;&#x9879;&#x76EE;&#x3002;&#x786E;&#x4FDD;&#x6240;&#x6709;&#x5FC5;&#x8981;&#x7684;&#x4F9D;&#x8D56;&#x9879;&#x90FD;&#x5728;<code>package.json</code> &#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4EFB;&#x4F55;&#x4EBA;&#x90FD;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;<code>npm install &amp;&amp; npm start</code>&#x5E76;&#x91CD;&#x73B0;&#x60A8;&#x7684;&#x95EE;&#x9898;&#x3002; </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-11-26 15:52:19
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../recharts/" class="navigation navigation-prev " aria-label="Previous page: recharts">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../reselect/" class="navigation navigation-next " aria-label="Next page: reselect">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"recompose","level":"1.6.2.3.10","depth":4,"next":{"title":"reselect","level":"1.6.2.3.11","depth":4,"path":"Labrary/React/Labrary/reselect/README.md","ref":"Labrary/React/Labrary/reselect/README.md","articles":[]},"previous":{"title":"recharts","level":"1.6.2.3.9","depth":4,"path":"Labrary/React/Labrary/recharts/README.md","ref":"Labrary/React/Labrary/recharts/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack中文","language":"zh-hans","gitbook":"*","description":"webpack学习资料和过程记录"},"file":{"path":"Labrary/React/Labrary/recompose/README.md","mtime":"2017-11-26T07:52:19.716Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-14T10:33:49.807Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
