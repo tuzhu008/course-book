@@ -24,7 +24,7 @@ An object that can have any of the following properties:
   * `hash`: A hash to put in the URL, e.g. `#a-hash`.
   * `state`: State to persist to the `location`.
 
-```js
+```jsx
 <Link to={{
   pathname: '/courses',
   search: '?sort=name',
