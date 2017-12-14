@@ -712,60 +712,51 @@ request.get({
 
 ---
 
-- `qs` - object containing querystring values to be appended to the `uri`
-- `qsParseOptions` - object containing options to pass to the [qs.parse](https://github.com/hapijs/qs#parsing-objects) method. Alternatively pass options to the [querystring.parse](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_parse_str_sep_eq_options) method using this format `{sep:';', eq:':', options:{}}`
-- `qsStringifyOptions` - object containing options to pass to the [qs.stringify](https://github.com/hapijs/qs#stringifying) method. Alternatively pass options to the  [querystring.stringify](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_stringify_obj_sep_eq_options) method using this format `{sep:';', eq:':', options:{}}`. For example, to change the way arrays are converted to query strings using the `qs` module pass the `arrayFormat` option with one of `indices|brackets|repeat`
-- `useQuerystring` - if true, use `querystring` to stringify and parse
-  querystrings, otherwise use `qs` (default: `false`). Set this option to
-  `true` if you need arrays to be serialized as `foo=bar&foo=baz` instead of the
-  default `foo[0]=bar&foo[1]=baz`.
+- `qs` - 对象。包含被附加到 uri` 的查询字符串值。
+- `qsParseOptions` - 对象。包含传递到 [qs.parse](https://github.com/hapijs/qs#parsing-objects) 方法的一些选项。或者，使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.parse](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_parse_str_sep_eq_options)
+- `qsStringifyOptions` - 对象。包含传递到 [qs.stringify](https://github.com/hapijs/qs#stringifying) 方法的一些选项。或者使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.stringify](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_stringify_obj_sep_eq_options) 方法。例如, 为了改变数组被转换为查询字符串的方式，使用 `qs` 模块传递  `arrayFormat` 选项(`indices|brackets|repeat` 中的一个 ) 。
+- `useQuerystring` - 布尔值。若为 `true`, 使用 `querystring` 来字符串化和解析查询字符串，否则使用 `qs`。 (默认值: `false`) 。如果你需要数组被字符串化为 `foo=bar&foo=baz` 而不是默认的  `foo[0]=bar&foo[1]=baz`，请设置这个选项为 `true`。
 
 ---
 
-- `body` - entity body for PATCH, POST and PUT requests. Must be a `Buffer`, `String` or `ReadStream`. If `json` is `true`, then `body` must be a JSON-serializable object.
-- `form` - when passed an object or a querystring, this sets `body` to a querystring representation of value, and adds `Content-type: application/x-www-form-urlencoded` header. When passed no options, a `FormData` instance is returned (and is piped to request). See "Forms" section above.
-- `formData` - data to pass for a `multipart/form-data` request. See
-  [Forms](#forms) section above.
-- `multipart` - array of objects which contain their own headers and `body`
-  attributes. Sends a `multipart/related` request. See [Forms](#forms) section
-  above.
-  - Alternatively you can pass in an object `{chunked: false, data: []}` where
-    `chunked` is used to specify whether the request is sent in
-    [chunked transfer encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding)
-    In non-chunked requests, data items with body streams are not allowed.
-- `preambleCRLF` - append a newline/CRLF before the boundary of your `multipart/form-data` request.
-- `postambleCRLF` - append a newline/CRLF at the end of the boundary of your `multipart/form-data` request.
-- `json` - sets `body` to JSON representation of value and adds `Content-type: application/json` header. Additionally, parses the response body as JSON.
-- `jsonReviver` - a [reviver function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) that will be passed to `JSON.parse()` when parsing a JSON response body.
-- `jsonReplacer` - a [replacer function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) that will be passed to `JSON.stringify()` when stringifying a JSON request body.
+- `body` - PATCH, POST 和 PUT 请求的实体主体 。必须是一个 `Buffer`, `String` 或者 `ReadStream`。如果 `json` 为 `true`，`body` 必须是一个可序列化为JSON的对象。
+- `form` - 当传递一个对象或者查询字符串时，它将 `body` 设置为一个值的查询字符串表示，并添加 `Content-type: application/x-www-form-urlencoded` 头。当没有传递选项时，将返回一个 `FormData` 实例(并被 pipe 到请求)。参见上面的 [Forms](#forms) 部分。
+- `formData` - 用于传递 `multipart/form-data` 请求的数据。参见上面的 [Forms](#forms) 部分。
+- `multipart` - 包含了他们自己的头和 `body` 属性的对象数组。发送一个 `multipart/related` 请求。 参见上面的 [Forms](#forms) 部分。
+  - 或者，您可以传入一个 `{chunked: false, data: []}` 来指示在何处使用 `chunked` 来指定请求是否以 [分块传输编码(chunked transfer encoding)](https://en.wikipedia.org/wiki/Chunked_transfer_encoding) 发送。在非块的请求中，不允许带有主体流的数据项。
+- `preambleCRLF` - 在 `multipart/form-data` 请求的边界之前添加一个newline/CRLF。
+- `postambleCRLF` - 在 `multipart/form-data` 请求的边界结束处添加一个 newline/CRLF。
+- `json` - 设置`body` 为知道的 JSON 表示，并添加 `Content-type: application/json` 头。另外，将响应主体解析为JSON。
+- `jsonReviver` - 一个 [reviver function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) ，当解析一个 JSON 请求主体时，它将被传递给 `JSON.parse()` 。
+- `jsonReplacer` - 一个 [replacer function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) ，当字符串化一个 JSON 请求主体时，它将被传递给 `JSON.stringify()`。
 
 ---
 
-- `auth` - a hash containing values `user` || `username`, `pass` || `password`, and `sendImmediately` (optional). See documentation above.
-- `oauth` - options for OAuth HMAC-SHA1 signing. See documentation above.
-- `hawk` - options for [Hawk signing](https://github.com/hueniverse/hawk). The `credentials` key must contain the necessary signing info, [see hawk docs for details](https://github.com/hueniverse/hawk#usage-example).
-- `aws` - `object` containing AWS signing information. Should have the properties `key`, `secret`, and optionally `session` (note that this only works for services that require session as part of the canonical string). Also requires the property `bucket`, unless you’re specifying your `bucket` as part of the path, or the request doesn’t use a bucket (i.e. GET Services). If you want to use AWS sign version 4 use the parameter `sign_version` with value `4` otherwise the default is version 2. **Note:** you need to `npm install aws4` first.
-- `httpSignature` - options for the [HTTP Signature Scheme](https://github.com/joyent/node-http-signature/blob/master/http_signing.md) using [Joyent's library](https://github.com/joyent/node-http-signature). The `keyId` and `key` properties must be specified. See the docs for other options.
+- `auth` - 一个哈希，包含值 `user` || `username`, `pass` || `password`, 和 `sendImmediately` (可选). 参见上面的文档。
+- `oauth` - OAuth HMAC-SHA1 签名的选项. 参见上面的文档。
+- `hawk` - [Hawk signing](https://github.com/hueniverse/hawk) 的选项。`credentials` 键必须包含必要的签名信息，[参见 hawk 文档获得更多细节](https://github.com/hueniverse/hawk#usage-example).
+- `aws` - `object`，包含 AWS 签名信息。 它应该有属性 `key`, `secret`, 和可选的 `session` (注意， 这只适用于需要会话作为规范（canonical）字符串的一部分的服务)。也需要 `bucket` 属性，除非你指定了 `bucket` 作为路径的一部分，或者不使用 bucket 的请求 (即 GET 服务)。如果想要使用 AWS 签名的第 4 个版本，将 `sign_version` 参数设置为 `4`，否则默认使用版本 2。 **注意:** 你首先需要使用 `npm install aws4` 安装它。
+- `httpSignature` - 一些选项，提供给使用 [Joyent 的库](https://github.com/joyent/node-http-signature) 的 [HTTP 签名方案](https://github.com/joyent/node-http-signature/blob/master/http_signing.md) 。 `keyId` 和 `key` 属性必须被指定。参见仓库文档获得更多选项。
 
 ---
 
-- `followRedirect` - follow HTTP 3xx responses as redirects (default: `true`). This property can also be implemented as function which gets `response` object as a single argument and should return `true` if redirects should continue or `false` otherwise.
-- `followAllRedirects` - follow non-GET HTTP 3xx responses as redirects (default: `false`)
-- `followOriginalHttpMethod` - by default we redirect to HTTP method GET. you can enable this property to redirect to the original HTTP method (default: `false`)
-- `maxRedirects` - the maximum number of redirects to follow (default: `10`)
-- `removeRefererHeader` - removes the referer header when a redirect happens (default: `false`). **Note:** if true, referer header set in the initial request is preserved during redirect chain.
+- `followRedirect` - 遵循 HTTP 3xx 响应作为重定向(默认值: `true`)。该属性还可以作为一个函数实现，它将 `response` 对象作为单个参数，如果重定向应该继续则应该返回`true`，否则返回 `false`。 
+- `followAllRedirects` - 遵循 non-GET HTTP 3xx 响应作为重定向 (默认值: `false`)
+- `followOriginalHttpMethod` - 默认情况下重定向到 HTTP 方法 GET。可以启用这个属性来重定向到原始的 HTTP 方法(默认: `false`)
+- `maxRedirects` - 要执行的重定向的最大数量 (默认值: `10`)
+- `removeRefererHeader` - 当重定向发生时，删除 referer 头(默认值：`false`)。**注意**:如果为 `true`，在重定向链中，在初始请求中设置的 referer 头信息被保留。
 
 ---
 
-- `encoding` - encoding to be used on `setEncoding` of response data. If `null`, the `body` is returned as a `Buffer`. Anything else **(including the default value of `undefined`)** will be passed as the [encoding](http://nodejs.org/api/buffer.html#buffer_buffer) parameter to `toString()` (meaning this is effectively `utf8` by default). (**Note:** if you expect binary data, you should set `encoding: null`.)
-- `gzip` - if `true`, add an `Accept-Encoding` header to request compressed content encodings from the server (if not already present) and decode supported content encodings in the response. **Note:** Automatic decoding of the response content is performed on the body data returned through `request` (both through the `request` stream and passed to the callback function) but is not performed on the `response` stream (available from the `response` event) which is the unmodified `http.IncomingMessage` object which may contain compressed data. See example below.
-- `jar` - if `true`, remember cookies for future use (or define your custom cookie jar; see examples section)
+- `encoding` - encoding 被用到响应数据的 `setEncoding` 上。如果为 `null`，`body` 被作为一个 `Buffer` 返回。其他任何东西 **(包括 `undefined` 的默认值)** 都将作为 [encoding](http://nodejs.org/api/buffer.html#buffer_buffer) 参数被传递给 `toString()` (这意味着默认情况下是 `utf8`). (**注意:** 如果期望是二进制数据，你应该设置 `encoding: null`.)
+- `gzip` - 如果为 `true`，添加一个 `Accept-Encoding` 头，用来从服务器请求被压缩的内容编码(如果不是已经存在的话)。，并在响应中解码受支持的内容编码。**注意：** 响应内容的自动解码是在通过 `request` 返回的主体数据上执行的(通过 `request` 流并传递给回调函数)，但是没有在 `response` 流（从 `response` 事件中获得）上执行，这是未修改的 `http.IncomingMessage` 对象，它可能包含被压缩的数据。请参见下面的例子。
+- `jar` - 如果为 `true`，记住 cookies，以供将来使用(或者定义你的自定义 cookie jar；请参见下面的例子。)
 
 ---
 
-- `agent` - `http(s).Agent` instance to use
-- `agentClass` - alternatively specify your agent's class name
-- `agentOptions` - and pass its options. **Note:** for HTTPS see [tls API doc for TLS/SSL options](http://nodejs.org/api/tls.html#tls_tls_connect_options_callback) and the [documentation above](#using-optionsagentoptions).
+- `agent` - `http(s).Agent` 实例
+- `agentClass` - 另外指定 agent 的类名
+- `agentOptions` - 传递给 agent 的选项。 **注意：** 对于 HTTPS ，请参见 [tls API doc for TLS/SSL options](http://nodejs.org/api/tls.html#tls_tls_connect_options_callback) 和 [上面的文档](#using-optionsagentoptions).
 - `forever` - set to `true` to use the [forever-agent](https://github.com/request/forever-agent) **Note:** Defaults to `http(s).Agent({keepAlive:true})` in node 0.12+
 - `pool` - an object describing which agents to use for the request. If this option is omitted the request will use the global agent (as long as your options allow for it). Otherwise, request will search the pool for your custom agent. If no custom agent is found, a new agent will be created and added to the pool. **Note:** `pool` is used only when the `agent` option is not specified.
   - A `maxSockets` property can also be provided on the `pool` object to set the max number of sockets for all agents created (ex: `pool: {maxSockets: Infinity}`).
