@@ -546,7 +546,6 @@ via
  * `HTTPS_PROXY` / `https_proxy`
  * `NO_PROXY` / `no_proxy`
 
-When `HTTP_PROXY` / `http_proxy` are set, they will be used to proxy non-SSL requests that do not have an explicit `proxy` configuration option present. Similarly, `HTTPS_PROXY` / `https_proxy` will be respected for SSL requests that do not have an explicit `proxy` configuration option. It is valid to define a proxy in one of the environment variables, but then override it for a specific request, using the `proxy` configuration option. Furthermore, the `proxy` configuration option can be explicitly set to false / null to opt out of proxying altogether for that request.
 
 当设置了 `HTTP_PROXY` / `http_proxy` 时，它们将被用于代理「非 SSL」请求，这些请求没有显式的 `proxy` 配置选项。类似地，对于没有显式 `proxy` 配置选项的 SSL 请求，将遵循 `HTTPS_PROXY` / `https_proxy` 。在其中一个环境变量中定义一个代理是有效的，但是使用 `proxy` 配置选项将其覆盖到一个特定的请求。此外，`proxy` 配置选项可以显式地设置为 false/null，从而完全退出代理。
 
@@ -713,10 +712,11 @@ request.get({
 
 第一个参数可以是一个 `url`，也可以是一个 `options` 对象。唯一必须的选项是 `uri`;其他都是可选的。
 
-- `uri` || `url` - 完全合格的 uri，或者一个来自 `url.parse()` 的已解析的 url
-- `baseUrl` - 一个完全合格的 uri，被用作基 url。fully qualified uri string used as the base url. 与 `request.defaults` 配合最有用处，例如，当想要对相同域名做很多次请求的时候。如果 `baseUrl` 是 `https://example.com/api/`，然后请求 `/end/point?test=true`，将获取 `https://example.com/api/end/point?test=true`。当给定了 `baseUrl`，`uri` 必须是一个字符串。
+- `uri` || `url` - 完全合格的 uri，或者一个来自 `url.parse()` 的已解析的 url 对象
+- `baseUrl` - 一个完全合格的 uri，被用作基 url。 与 `request.defaults` 配合最有用处，例如，当想要对相同域名做很多次请求的时候。如果 `baseUrl` 是 `https://example.com/api/`，然后请求 `/end/point?test=true`，将获取 `https://example.com/api/end/point?test=true`。当给定了 `baseUrl`，`uri` 必须是一个字符串。
 - `method` - http method (default: `"GET"`)
 - `headers` - http headers (default: `{}`)
+
 
 ---
 
@@ -724,6 +724,8 @@ request.get({
 - `qsParseOptions` - 对象。包含传递到 [qs.parse](https://github.com/hapijs/qs#parsing-objects) 方法的一些选项。或者，使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.parse](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_parse_str_sep_eq_options)
 - `qsStringifyOptions` - 对象。包含传递到 [qs.stringify](https://github.com/hapijs/qs#stringifying) 方法的一些选项。或者使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.stringify](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_stringify_obj_sep_eq_options) 方法。例如, 为了改变数组被转换为查询字符串的方式，使用 `qs` 模块传递  `arrayFormat` 选项(`indices|brackets|repeat` 中的一个 ) 。
 - `useQuerystring` - 布尔值。若为 `true`, 使用 `querystring` 来字符串化和解析查询字符串，否则使用 `qs`。 (默认值: `false`) 。如果你需要数组被字符串化为 `foo=bar&foo=baz` 而不是默认的  `foo[0]=bar&foo[1]=baz`，请设置这个选项为 `true`。
+
+
 
 ---
 
@@ -733,18 +735,21 @@ request.get({
 - `multipart` - 包含了他们自己的头和 `body` 属性的对象数组。发送一个 `multipart/related` 请求。 参见上面的 [Forms](#forms) 部分。
   - 或者，您可以传入一个 `{chunked: false, data: []}` 来指示在何处使用 `chunked` 来指定请求是否以 [分块传输编码(chunked transfer encoding)](https://en.wikipedia.org/wiki/Chunked_transfer_encoding) 发送。在非块的请求中，不允许带有主体流的数据项。
 - `preambleCRLF` - 在 `multipart/form-data` 请求的边界之前添加一个newline/CRLF。
-- `postambleCRLF` - 在 `multipart/form-data` 请求的边界结束处添加一个 newline/CRLF。
+- `postambleCRLF` - 在 `multipart/form-data` 请求的边界之前添加一个newline/CRLF。
 - `json` - 设置`body` 为知道的 JSON 表示，并添加 `Content-type: application/json` 头。另外，将响应主体解析为JSON。
 - `jsonReviver` - 一个 [reviver function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) ，当解析一个 JSON 请求主体时，它将被传递给 `JSON.parse()` 。
 - `jsonReplacer` - 一个 [replacer function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) ，当字符串化一个 JSON 请求主体时，它将被传递给 `JSON.stringify()`。
 
+
+
 ---
 
 - `auth` - 一个哈希，包含值 `user` || `username`, `pass` || `password`, 和 `sendImmediately` (可选). 参见上面的文档。
-- `oauth` - OAuth HMAC-SHA1 签名的选项. 参见上面的文档。
+- `oauth` - 用于OAuth HMAC-SHA1 签名的选项. 参见上面的文档。
 - `hawk` - [Hawk signing](https://github.com/hueniverse/hawk) 的选项。`credentials` 键必须包含必要的签名信息，[参见 hawk 文档获得更多细节](https://github.com/hueniverse/hawk#usage-example).
 - `aws` - `object`，包含 AWS 签名信息。 它应该有属性 `key`, `secret`, 和可选的 `session` (注意， 这只适用于需要会话作为规范（canonical）字符串的一部分的服务)。也需要 `bucket` 属性，除非你指定了 `bucket` 作为路径的一部分，或者不使用 bucket 的请求 (即 GET 服务)。如果想要使用 AWS 签名的第 4 个版本，将 `sign_version` 参数设置为 `4`，否则默认使用版本 2。 **注意:** 你首先需要使用 `npm install aws4` 安装它。
 - `httpSignature` - 一些选项，提供给使用 [Joyent 的库](https://github.com/joyent/node-http-signature) 的 [HTTP 签名方案](https://github.com/joyent/node-http-signature/blob/master/http_signing.md) 。 `keyId` 和 `key` 属性必须被指定。参见仓库文档获得更多选项。
+
 
 ---
 
@@ -759,6 +764,7 @@ request.get({
 - `encoding` - encoding 被用到响应数据的 `setEncoding` 上。如果为 `null`，`body` 被作为一个 `Buffer` 返回。其他任何东西 **(包括 `undefined` 的默认值)** 都将作为 [encoding](http://nodejs.org/api/buffer.html#buffer_buffer) 参数被传递给 `toString()` (这意味着默认情况下是 `utf8`). (**注意:** 如果期望是二进制数据，你应该设置 `encoding: null`.)
 - `gzip` - 如果为 `true`，添加一个 `Accept-Encoding` 头，用来从服务器请求被压缩的内容编码(如果不是已经存在的话)。，并在响应中解码受支持的内容编码。**注意：** 响应内容的自动解码是在通过 `request` 返回的主体数据上执行的(通过 `request` 流并传递给回调函数)，但是没有在 `response` 流（从 `response` 事件中获得）上执行，这是未修改的 `http.IncomingMessage` 对象，它可能包含被压缩的数据。请参见下面的例子。
 - `jar` - 如果为 `true`，记住 cookies，以供将来使用(或者定义你的自定义 cookie jar；请参见下面的例子。)
+
 
 ---
 
@@ -809,13 +815,64 @@ request.get({
 - `har` - 一个 [HAR 1.2 请求对象](http://www.softwareishard.com/blog/har-12-spec/#request)，将从 HAR 格式处理为覆盖匹配值的选项 *(参见 [HAR 1.2 部分](#support-for-har-1.2) 获取细节)*
 - `callback` - 在选项对象中另外传递请求的回调
 
+
 这个回调有 3 个参数:
 
 1. 一个 `error` 对象，发生错误时可用 (通常来自[`http.ClientRequest`](http://nodejs.org/api/http.html#http_class_http_clientrequest) 对象)
 2. 一个 [`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage) 对象 (响应对象)
 3. 第三个是 `response` 主体 (`String` or `Buffer`, 或者 JSON 对象（如果提供了 `json` 选项）)
 
+名称 | 类型 | 描述 | 默认值
+---------|----------|---------|:---------:
+ `uri` \|\| `url` | String \|\| Object | 完全合格的 uri，或者一个来自 `url.parse()` 的已解析的 url 对象 |-
+`baseUrl`| String | 一个完全合格的 uri，被用作基 url。 与 `request.defaults` 配合最有用处，例如，当想要对相同域名做很多次请求的时候。如果 `baseUrl` 是 `https://example.com/api/`，然后请求 `/end/point?test=true`，将获取 `https://example.com/api/end/point?test=true`。当给定了 `baseUrl`，`uri` 必须是一个字符串。 |-
+ `method` | String | http 方法 | `"GET"`
+ `headers` | Object | http 头 | `{}`
+ `qs` | Object | 包含被附加到 uri` 的查询字符串值。 | -
+ `qsParseOptions` | Object | 包含传递到 [qs.parse](https://github.com/hapijs/qs#parsing-objects) 方法的一些选项。或者，使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.parse](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_parse_str_sep_eq_options) | -
+ `qsStringifyOptions` | Object | 包含传递到 [qs.stringify](https://github.com/hapijs/qs#stringifying) 方法的一些选项。或者使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.stringify](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_stringify_obj_sep_eq_options) 方法。例如, 为了改变数组被转换为查询字符串的方式，使用 `qs` 模块传递  `arrayFormat` 选项(`indices|brackets|repeat` 中的一个 ) 。| -
+ `useQuerystring` | Boolean | 若为 `true`, 使用 `querystring` 来字符串化和解析查询字符串，否则使用 `qs`。 (默认值: `false`) 。如果你需要数组被字符串化为 `foo=bar&foo=baz` 而不是默认的  `foo[0]=bar&foo[1]=baz`，请设置这个选项为 `true`。| `false`
+ `body` | Buffer \|\| String \|\| ReadStram \|\| Json-Object| PATCH, POST 和 PUT 请求的实体主体 。 | -
+ `form` | String \|\| Object | 当传递一个对象或者查询字符串时，它将 `body` 设置为一个值的查询字符串表示，并添加 `Content-type: application/x-www-form-urlencoded` 头。当没有传递选项时，将返回一个 `FormData` 实例(并被 pipe 到请求)。 | -
+  `formData` |  | 用于传递 `multipart/form-data` 请求的数据。 | -
+  `multipart` | Array | 包含了他们自己的头和 `body` 属性的对象数组。发送一个 `multipart/related` 请求。 | -
+  `preambleCRLF` | Boolean | 在 `multipart/form-data` 请求的边界之前添加一个newline/CRLF。 | `false`
+  `postambleCRLF` | Boolean | 在 `multipart/form-data` 请求的边界之前添加一个newline/CRLF。| `false`
+  `json` | Boolean | 设置`body` 为知道的 JSON 表示，并添加 `Content-type: application/json` 头。另外，将响应主体解析为JSON。| `false`
+  `jsonReviver` | Function | 一个 [reviver function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) ，当解析一个 JSON 请求主体时，它将被传递给 `JSON.parse()` 。 | -
+  `jsonReplacer`| Function | 一个 [replacer function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) ，当字符串化一个 JSON 请求主体时，它将被传递给 `JSON.stringify()`。 | -
+  `auth` |   | 一个哈希，包含值 `user` || `username`, `pass` || `password`, 和 `sendImmediately` (可选).  | -
+  `oauth` |   |  用于OAuth HMAC-SHA1 签名的选项. | -
+  `hawk` |   |  Hawk signing](https://github.com/hueniverse/hawk) 的选项。`credentials` 键必须包含必要的签名信息，[参见 hawk 文档获得更多细节](https://github.com/hueniverse/hawk#usage-example). |
+  `aws`  | Object  | 包含 AWS 签名信息。 它应该有属性 `key`, `secret`, 和可选的 `session` (注意， 这只适用于需要会话作为规范（canonical）字符串的一部分的服务)。也需要 `bucket` 属性，除非你指定了 `bucket` 作为路径的一部分，或者不使用 bucket 的请求 (即 GET 服务)。如果想要使用 AWS 签名的第 4 个版本，将 `sign_version` 参数设置为 `4`，否则默认使用版本 2。 **注意:** 你首先需要使用 `npm install aws4` 安装它。  | -
+  `httpSignature`  | Object  |  提供给使用 [Joyent 的库](https://github.com/joyent/node-http-signature) 的 [HTTP 签名方案](https://github.com/joyent/node-http-signature/blob/master/http_signing.md) 。 `keyId` 和 `key` 属性必须被指定。参见仓库文档获得更多选项。 |
+  `followRedirect`  | Boolean \|\| Function  |  遵循 HTTP 3xx 响应作为重定向。该属性还可以作为一个函数实现，它将 `response` 对象作为单个参数，如果重定向应该继续则应该返回`true`，否则返回 `false`。 | `true`
+  `followAllRedirects`  |  Boolean |  遵循 non-GET HTTP 3xx 响应作为重定向。| `false`
+  `followOriginalHttpMethod`  |  Boolean | 默认情况下重定向到 HTTP 方法 GET。可以启用这个属性来重定向到原始的 HTTP 方法  | `false`
+  `maxRedirects`  |  Number |  要执行的重定向的最大数量 | `10`
+  `removeRefererHeader`  |  Boolean | 当重定向发生时，删除 referer 头。**注意**:如果为 `true`，在重定向链中，在初始请求中设置的 referer 头信息被保留。  | `false`
+  `encoding` |  String  | encoding 被用到响应数据的 `setEncoding` 上。如果为 `null`，`body` 被作为一个 `Buffer` 返回。其他任何东西 **(包括 `undefined` 的默认值)** 都将作为 [encoding](http://nodejs.org/api/buffer.html#buffer_buffer) 参数被传递给 `toString()` (这意味着默认情况下是 `utf8`). (**注意:** 如果期望是二进制数据，你应该设置 `encoding: null`.)  | `utf8`
+  `gzip` | Boolean  |  如果为 `true`，添加一个 `Accept-Encoding` 头，用来从服务器请求被压缩的内容编码(如果不是已经存在的话)。，并在响应中解码受支持的内容编码。**注意：** 响应内容的自动解码是在通过 `request` 返回的主体数据上执行的(通过 `request` 流并传递给回调函数)，但是没有在 `response` 流（从 `response` 事件中获得）上执行，这是未修改的 `http.IncomingMessage` 对象，它可能包含被压缩的数据。请参见下面的例子。 | `false`
+  `jar`  |  Bealean |  如果为 `true`，记住 cookies，以供将来使用 | `false`
+  `agent` |   |  `http(s).Agent` 实例 | -
+  `agentClass` |   | 另外指定 agent 的类名  |-
+  `agentOptions`  |   |  传递给 agent 的选项。 **注意：** 对于 HTTPS ，请参见 [tls API doc for TLS/SSL options](http://nodejs.org/api/tls.html#tls_tls_connect_options_callback) 和 [上面的文档](#using-optionsagentoptions).| -
+  `forever` |  Boolean |  设为 `true` 以使用 [forever-agent](https://github.com/request/forever-agent) **注意：** 在 node 0.12+ 中默认为 `http(s).Agent({keepAlive:true})` | `false`
+  `pool`  |  Object |  一个描述用于请求的代理（agent）的对象。如果这个选项被省略，请求将使用全局代理(只要你的设置允许这样做)。否则请求将在池（pool）中搜索自定义代理。如果没有找到自定义的代理，就会创建一个新的代理并将其添加到池。**注意：** `pool` 仅在 `agent` 选项未被指定的时候使用。 | -
+  `timeout`  | Number  |  一个整数，包含等待服务器发送响应头(并启动响应体)的毫秒数，超过这个事件，则中止请求。注意，如果不能建立底层的 TCP 连接，那么操作系统范围（OS-wide）的 TCP 连接超时将超过 `timeout` 选项（[Linux 中默认值可以是 20-120 秒][linux-timeout]）。 | -
+  `localAddress` |   |  用来绑定网络连接的本地接口。 | -
+  `proxy` |   |  使用的 HTTP 代理。支持使用 Basic Auth 的 代理 Auth，与 `url` 参数的支持完全相同(通过将认证信息嵌入到 `uri` 中) |-
+  `strictSSL`  |  Boolean | 如果为 `true`, 要求 SSL 证书是有效的。**注意：** 为了使用你自己的认证中心，您需要指定使用该 CA 作为选项创建的代理（agent）。  | `false`
+  `tunnel`  |   | 控制 [HTTP `CONNECT` 隧道](https://en.wikipedia.org/wiki/HTTP_tunnel#HTTP_CONNECT_tunneling) 的行为。 | -
+  `proxyHeaderWhiteList`  |   |  一个 headers 白名单，用来发送一个隧道代理（tunneling proxy）。 | -
+  `proxyHeaderExclusiveList`  |   | 一个 headers 白名单，只发送给一个隧道代理，而不是目的地。 | -
+  `time` | Boolean  |  如果为 `true`，请求-响应周期(包括所有重定向)都以毫秒级精度进行计时。在设置时，以下属性将被添加到响应对象: |-
+  `har` | Object  |  一个 [HAR 1.2 请求对象](http://www.softwareishard.com/blog/har-12-spec/#request)，将从 HAR 格式处理为覆盖匹配值的选项 *(参见 [HAR 1.2 部分](#support-for-har-1.2) 获取细节)* | -
+  `callback`  | Function  |  在选项对象中另外传递请求的回调,这个回调有 3 个参数。| -
+
+
 [回到顶部 ->](#table-of-contents)
+
 
 
 ---
