@@ -30,7 +30,7 @@ An object that can have any of the following properties:
   search: '?sort=name',
   hash: '#the-hash',
   state: { fromDashboard: true }
-}}/>
+}} />
 ```
 
 ## replace: bool
